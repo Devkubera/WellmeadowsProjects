@@ -75,8 +75,8 @@ Partial Class MainForm
         Me.TableLayoutPanel1.Controls.Add(Me.row2Btn, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.row1Btn, 0, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 582)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 569)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -92,7 +92,7 @@ Partial Class MainForm
         Me.row6Btn.Controls.Add(Me.Label6, 1, 0)
         Me.row6Btn.Dock = System.Windows.Forms.DockStyle.Fill
         Me.row6Btn.Location = New System.Drawing.Point(847, 2)
-        Me.row6Btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.row6Btn.Margin = New System.Windows.Forms.Padding(2)
         Me.row6Btn.Name = "row6Btn"
         Me.row6Btn.RowCount = 1
         Me.row6Btn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -104,7 +104,7 @@ Partial Class MainForm
         Me.PictureBox6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox6.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
         Me.PictureBox6.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox6.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(47, 38)
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -133,7 +133,7 @@ Partial Class MainForm
         Me.row5Btn.Controls.Add(Me.Label5, 1, 0)
         Me.row5Btn.Dock = System.Windows.Forms.DockStyle.Fill
         Me.row5Btn.Location = New System.Drawing.Point(678, 2)
-        Me.row5Btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.row5Btn.Margin = New System.Windows.Forms.Padding(2)
         Me.row5Btn.Name = "row5Btn"
         Me.row5Btn.RowCount = 1
         Me.row5Btn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -145,7 +145,7 @@ Partial Class MainForm
         Me.PictureBox5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox5.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
         Me.PictureBox5.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(45, 38)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -174,7 +174,7 @@ Partial Class MainForm
         Me.row4Btn.Controls.Add(Me.Label4, 1, 0)
         Me.row4Btn.Dock = System.Windows.Forms.DockStyle.Fill
         Me.row4Btn.Location = New System.Drawing.Point(509, 2)
-        Me.row4Btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.row4Btn.Margin = New System.Windows.Forms.Padding(2)
         Me.row4Btn.Name = "row4Btn"
         Me.row4Btn.RowCount = 1
         Me.row4Btn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -186,7 +186,7 @@ Partial Class MainForm
         Me.PictureBox4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox4.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
         Me.PictureBox4.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(45, 38)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -215,7 +215,7 @@ Partial Class MainForm
         Me.row3Btn.Controls.Add(Me.Label3, 1, 0)
         Me.row3Btn.Dock = System.Windows.Forms.DockStyle.Fill
         Me.row3Btn.Location = New System.Drawing.Point(340, 2)
-        Me.row3Btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.row3Btn.Margin = New System.Windows.Forms.Padding(2)
         Me.row3Btn.Name = "row3Btn"
         Me.row3Btn.RowCount = 1
         Me.row3Btn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -227,7 +227,7 @@ Partial Class MainForm
         Me.PictureBox3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox3.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
         Me.PictureBox3.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(45, 38)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -256,7 +256,7 @@ Partial Class MainForm
         Me.row2Btn.Controls.Add(Me.Label2, 1, 0)
         Me.row2Btn.Dock = System.Windows.Forms.DockStyle.Fill
         Me.row2Btn.Location = New System.Drawing.Point(171, 2)
-        Me.row2Btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.row2Btn.Margin = New System.Windows.Forms.Padding(2)
         Me.row2Btn.Name = "row2Btn"
         Me.row2Btn.RowCount = 1
         Me.row2Btn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -268,7 +268,7 @@ Partial Class MainForm
         Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox2.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
         Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(45, 38)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -296,7 +296,7 @@ Partial Class MainForm
         Me.row1Btn.Controls.Add(Me.PictureBox1, 0, 0)
         Me.row1Btn.Controls.Add(Me.Label1, 1, 0)
         Me.row1Btn.Location = New System.Drawing.Point(2, 2)
-        Me.row1Btn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.row1Btn.Margin = New System.Windows.Forms.Padding(2)
         Me.row1Btn.Name = "row1Btn"
         Me.row1Btn.RowCount = 1
         Me.row1Btn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -308,7 +308,7 @@ Partial Class MainForm
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PictureBox1.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
         Me.PictureBox1.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(36, 37)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -333,18 +333,18 @@ Partial Class MainForm
         Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1019, 628)
+        Me.Panel1.Size = New System.Drawing.Size(1019, 615)
         Me.Panel1.TabIndex = 1
         '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1019, 628)
+        Me.ClientSize = New System.Drawing.Size(1019, 615)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MainForm"
         Me.Text = "Form1"
         Me.TableLayoutPanel1.ResumeLayout(False)
