@@ -24,38 +24,37 @@ Partial Class MainForm
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.row6Btn = New System.Windows.Forms.TableLayoutPanel()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.row5Btn = New System.Windows.Forms.TableLayoutPanel()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.row4Btn = New System.Windows.Forms.TableLayoutPanel()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.row3Btn = New System.Windows.Forms.TableLayoutPanel()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.row2Btn = New System.Windows.Forms.TableLayoutPanel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.row1Btn = New System.Windows.Forms.TableLayoutPanel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.row6Btn.SuspendLayout()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.row5Btn.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.row4Btn.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.row3Btn.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.row2Btn.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.row1Btn.SuspendLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -75,13 +74,13 @@ Partial Class MainForm
         Me.TableLayoutPanel1.Controls.Add(Me.row2Btn, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.row1Btn, 0, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 569)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 583)
         Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(1019, 46)
-        Me.TableLayoutPanel1.TabIndex = 0
+        Me.TableLayoutPanel1.TabIndex = 1
         '
         'row6Btn
         '
@@ -98,18 +97,6 @@ Partial Class MainForm
         Me.row6Btn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.row6Btn.Size = New System.Drawing.Size(170, 42)
         Me.row6Btn.TabIndex = 3
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox6.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
-        Me.PictureBox6.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox6.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(47, 38)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox6.TabIndex = 3
-        Me.PictureBox6.TabStop = False
         '
         'Label6
         '
@@ -140,18 +127,6 @@ Partial Class MainForm
         Me.row5Btn.Size = New System.Drawing.Size(165, 42)
         Me.row5Btn.TabIndex = 3
         '
-        'PictureBox5
-        '
-        Me.PictureBox5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox5.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
-        Me.PictureBox5.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(45, 38)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox5.TabIndex = 3
-        Me.PictureBox5.TabStop = False
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -180,18 +155,6 @@ Partial Class MainForm
         Me.row4Btn.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.row4Btn.Size = New System.Drawing.Size(165, 42)
         Me.row4Btn.TabIndex = 3
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox4.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
-        Me.PictureBox4.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(45, 38)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 3
-        Me.PictureBox4.TabStop = False
         '
         'Label4
         '
@@ -222,18 +185,6 @@ Partial Class MainForm
         Me.row3Btn.Size = New System.Drawing.Size(165, 42)
         Me.row3Btn.TabIndex = 3
         '
-        'PictureBox3
-        '
-        Me.PictureBox3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox3.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
-        Me.PictureBox3.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(45, 38)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 3
-        Me.PictureBox3.TabStop = False
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -263,18 +214,6 @@ Partial Class MainForm
         Me.row2Btn.Size = New System.Drawing.Size(165, 42)
         Me.row2Btn.TabIndex = 3
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox2.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
-        Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(45, 38)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 3
-        Me.PictureBox2.TabStop = False
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -303,18 +242,6 @@ Partial Class MainForm
         Me.row1Btn.Size = New System.Drawing.Size(134, 41)
         Me.row1Btn.TabIndex = 2
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox1.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
-        Me.PictureBox1.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(36, 37)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -328,54 +255,125 @@ Partial Class MainForm
         Me.Label1.Text = "Home"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Panel1
+        'pnlMain
         '
-        Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1019, 615)
-        Me.Panel1.TabIndex = 1
+        Me.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlMain.Location = New System.Drawing.Point(0, 0)
+        Me.pnlMain.Name = "pnlMain"
+        Me.pnlMain.Size = New System.Drawing.Size(1019, 583)
+        Me.pnlMain.TabIndex = 2
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox6.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
+        Me.PictureBox6.Location = New System.Drawing.Point(2, 2)
+        Me.PictureBox6.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(47, 38)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox6.TabIndex = 3
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox5.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
+        Me.PictureBox5.Location = New System.Drawing.Point(2, 2)
+        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(45, 38)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox5.TabIndex = 3
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox4.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
+        Me.PictureBox4.Location = New System.Drawing.Point(2, 2)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(45, 38)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox4.TabIndex = 3
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox3.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
+        Me.PictureBox3.Location = New System.Drawing.Point(2, 2)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(45, 38)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.TabIndex = 3
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox2.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
+        Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(45, 38)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 3
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.WellmeadowsProjects.My.Resources.Resources.home
+        Me.PictureBox1.Location = New System.Drawing.Point(2, 2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(36, 37)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
         '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1019, 615)
-        Me.Controls.Add(Me.Panel1)
+        Me.ClientSize = New System.Drawing.Size(1019, 629)
+        Me.Controls.Add(Me.pnlMain)
+        Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MainForm"
-        Me.Text = "Form1"
+        Me.Text = "MainForm"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.row6Btn.ResumeLayout(False)
         Me.row6Btn.PerformLayout()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.row5Btn.ResumeLayout(False)
         Me.row5Btn.PerformLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.row4Btn.ResumeLayout(False)
         Me.row4Btn.PerformLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.row3Btn.ResumeLayout(False)
         Me.row3Btn.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.row2Btn.ResumeLayout(False)
         Me.row2Btn.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.row1Btn.ResumeLayout(False)
         Me.row1Btn.PerformLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents row1Btn As TableLayoutPanel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents row6Btn As TableLayoutPanel
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents row5Btn As TableLayoutPanel
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents Label5 As Label
     Friend WithEvents row4Btn As TableLayoutPanel
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents Label4 As Label
@@ -385,10 +383,8 @@ Partial Class MainForm
     Friend WithEvents row2Btn As TableLayoutPanel
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents row6Btn As TableLayoutPanel
-    Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents row5Btn As TableLayoutPanel
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents Label5 As Label
+    Friend WithEvents row1Btn As TableLayoutPanel
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents pnlMain As Panel
 End Class

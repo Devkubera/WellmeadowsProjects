@@ -1,41 +1,29 @@
 ﻿Public Class MainForm
+    Private Sub switchForm(form As Form)
+        pnlMain.Controls.Clear()
+        form.TopLevel = False
+        form.Dock = DockStyle.Fill
+        pnlMain.Controls.Add(form)
+        form.BringToFront()
+        form.Show()
+    End Sub
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Dim formHome = New InPatient()
+        switchForm(formHome)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         Controls.Add(New TextBox)
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+        Dim formHome = New Patient()
+        switchForm(formHome)
 
     End Sub
 
-    Private Sub row1Btn_MouseClick(sender As Object, e As MouseEventArgs) Handles row1Btn.MouseClick
-
-    End Sub
-
-    Private Sub row2Btn_MouseClick(sender As Object, e As MouseEventArgs) Handles row2Btn.MouseClick
-
-    End Sub
-
-    Private Sub row3Btn_MouseClick(sender As Object, e As MouseEventArgs) Handles row3Btn.MouseClick
-
-    End Sub
-
-    Private Sub row4Btn_MouseClick(sender As Object, e As MouseEventArgs) Handles row4Btn.MouseClick
-
-    End Sub
-
-    Private Sub Label5_MouseClick(sender As Object, e As MouseEventArgs) Handles Label5.MouseClick
-
-    End Sub
-
-    Private Sub row6Btn_MouseClick(sender As Object, e As MouseEventArgs) Handles row6Btn.MouseClick
-
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+        Dim formHome = New Medicine()
+        switchForm(formHome)
     End Sub
 End Class
