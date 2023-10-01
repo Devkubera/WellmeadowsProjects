@@ -1,41 +1,47 @@
 ﻿Public Class MainForm
+
+    Private Sub switchForm(form As Form)
+        PanelMain.Controls.Clear()
+        form.TopLevel = False
+        form.Dock = DockStyle.Fill
+        PanelMain.Controls.Add(form)
+        form.BringToFront()
+        form.Show()
+    End Sub
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Dim homeform = New HomeForm()
+        switchForm(homeform)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         Controls.Add(New TextBox)
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
+        Dim home = New HomeForm()
+        switchForm(home)
+    End Sub
+
+    Private Sub btnStaff_Click(sender As Object, e As EventArgs) Handles btnStaff.Click
+        Dim staff = New StaffForm()
+        switchForm(staff)
+    End Sub
+
+    Private Sub btnWard_Click(sender As Object, e As EventArgs) Handles btnWard.Click
+        Dim ward = New WardForm()
+        switchForm(ward)
+    End Sub
+
+    Private Sub PatientBtn_Click(sender As Object, e As EventArgs) Handles PatientBtn.Click
 
     End Sub
 
-    Private Sub row1Btn_MouseClick(sender As Object, e As MouseEventArgs) Handles row1Btn.MouseClick
+    Private Sub btnMedical_Click(sender As Object, e As EventArgs) Handles btnMedical.Click
 
     End Sub
 
-    Private Sub row2Btn_MouseClick(sender As Object, e As MouseEventArgs) Handles row2Btn.MouseClick
-
-    End Sub
-
-    Private Sub row3Btn_MouseClick(sender As Object, e As MouseEventArgs) Handles row3Btn.MouseClick
-
-    End Sub
-
-    Private Sub row4Btn_MouseClick(sender As Object, e As MouseEventArgs) Handles row4Btn.MouseClick
-
-    End Sub
-
-    Private Sub Label5_MouseClick(sender As Object, e As MouseEventArgs) Handles Label5.MouseClick
-
-    End Sub
-
-    Private Sub row6Btn_MouseClick(sender As Object, e As MouseEventArgs) Handles row6Btn.MouseClick
-
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+    Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
 
     End Sub
 End Class
