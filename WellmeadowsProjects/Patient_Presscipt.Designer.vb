@@ -38,9 +38,10 @@ Partial Class Patient_Presscipt
         '
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDelete.Location = New System.Drawing.Point(811, 503)
+        Me.btnDelete.Location = New System.Drawing.Point(1081, 619)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(120, 37)
+        Me.btnDelete.Size = New System.Drawing.Size(160, 46)
         Me.btnDelete.TabIndex = 29
         Me.btnDelete.Text = "ลบข้อมูล"
         Me.btnDelete.UseVisualStyleBackColor = False
@@ -49,9 +50,10 @@ Partial Class Patient_Presscipt
         '
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUpdate.Location = New System.Drawing.Point(681, 503)
+        Me.btnUpdate.Location = New System.Drawing.Point(908, 619)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(120, 37)
+        Me.btnUpdate.Size = New System.Drawing.Size(160, 46)
         Me.btnUpdate.TabIndex = 28
         Me.btnUpdate.Text = "แก้ไขข้อมูล"
         Me.btnUpdate.UseVisualStyleBackColor = False
@@ -60,9 +62,10 @@ Partial Class Patient_Presscipt
         '
         Me.btnReport.BackColor = System.Drawing.Color.RoyalBlue
         Me.btnReport.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnReport.Location = New System.Drawing.Point(546, 503)
+        Me.btnReport.Location = New System.Drawing.Point(728, 619)
+        Me.btnReport.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnReport.Name = "btnReport"
-        Me.btnReport.Size = New System.Drawing.Size(120, 37)
+        Me.btnReport.Size = New System.Drawing.Size(160, 46)
         Me.btnReport.TabIndex = 27
         Me.btnReport.Text = "สร้างรายงาน"
         Me.btnReport.UseVisualStyleBackColor = False
@@ -70,26 +73,30 @@ Partial Class Patient_Presscipt
         'ViewPress
         '
         Me.ViewPress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ViewPress.Location = New System.Drawing.Point(78, 139)
+        Me.ViewPress.Location = New System.Drawing.Point(104, 171)
+        Me.ViewPress.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ViewPress.Name = "ViewPress"
-        Me.ViewPress.Size = New System.Drawing.Size(853, 328)
+        Me.ViewPress.RowHeadersWidth = 51
+        Me.ViewPress.Size = New System.Drawing.Size(1137, 404)
         Me.ViewPress.TabIndex = 26
         '
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
-        Me.btnAdd.Location = New System.Drawing.Point(856, 78)
+        Me.btnAdd.Location = New System.Drawing.Point(1141, 96)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(75, 37)
+        Me.btnAdd.Size = New System.Drawing.Size(100, 46)
         Me.btnAdd.TabIndex = 25
         Me.btnAdd.Text = "เพิ่ม"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(763, 78)
+        Me.btnSearch.Location = New System.Drawing.Point(1017, 96)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(75, 37)
+        Me.btnSearch.Size = New System.Drawing.Size(100, 46)
         Me.btnSearch.TabIndex = 24
         Me.btnSearch.Text = "ค้นหา"
         Me.btnSearch.UseVisualStyleBackColor = True
@@ -98,34 +105,37 @@ Partial Class Patient_Presscipt
         '
         Me.lableSearch.AutoSize = True
         Me.lableSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lableSearch.Location = New System.Drawing.Point(602, 71)
+        Me.lableSearch.Location = New System.Drawing.Point(803, 87)
+        Me.lableSearch.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lableSearch.Name = "lableSearch"
-        Me.lableSearch.Size = New System.Drawing.Size(116, 16)
+        Me.lableSearch.Size = New System.Drawing.Size(171, 20)
         Me.lableSearch.TabIndex = 23
         Me.lableSearch.Text = "ค้นหาหมายเลขใบจ่ายยา"
         '
         'txtSearch
         '
-        Me.txtSearch.Location = New System.Drawing.Point(605, 95)
+        Me.txtSearch.Location = New System.Drawing.Point(807, 117)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(142, 20)
+        Me.txtSearch.Size = New System.Drawing.Size(188, 22)
         Me.txtSearch.TabIndex = 22
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.25!)
-        Me.Label1.Location = New System.Drawing.Point(73, 71)
+        Me.Label1.Location = New System.Drawing.Point(97, 87)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(204, 29)
+        Me.Label1.Size = New System.Drawing.Size(249, 35)
         Me.Label1.TabIndex = 21
         Me.Label1.Text = "Pateint Presscipt"
         '
         'Patient_Presscipt
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1004, 611)
+        Me.ClientSize = New System.Drawing.Size(1339, 752)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnReport)
@@ -135,6 +145,7 @@ Partial Class Patient_Presscipt
         Me.Controls.Add(Me.lableSearch)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Label1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Patient_Presscipt"
         Me.Text = "Patient_Presscipt"
         CType(Me.ViewPress, System.ComponentModel.ISupportInitialize).EndInit()

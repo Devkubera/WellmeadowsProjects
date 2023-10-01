@@ -35,18 +35,19 @@ Partial Class Edit_InPatient
         Me.lableSearch = New System.Windows.Forms.Label()
         Me.p_Id = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.View_Inpa_table = New System.Windows.Forms.DataGridView()
+        Me.View_Edit_Inpa = New System.Windows.Forms.DataGridView()
         Me.start_Date = New System.Windows.Forms.DateTimePicker()
-        CType(Me.View_Inpa_table, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.View_Edit_Inpa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnAdd.Location = New System.Drawing.Point(847, 31)
+        Me.btnAdd.Location = New System.Drawing.Point(1129, 38)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(120, 37)
+        Me.btnAdd.Size = New System.Drawing.Size(160, 46)
         Me.btnAdd.TabIndex = 31
         Me.btnAdd.Text = "แก้ไขข้อมูล"
         Me.btnAdd.UseVisualStyleBackColor = False
@@ -55,77 +56,86 @@ Partial Class Edit_InPatient
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label5.Location = New System.Drawing.Point(260, 316)
+        Me.Label5.Location = New System.Drawing.Point(347, 389)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(113, 24)
+        Me.Label5.Size = New System.Drawing.Size(145, 29)
         Me.Label5.TabIndex = 29
         Me.Label5.Text = "จำนวนวันที่อยู่"
         '
         'expect
         '
-        Me.expect.Location = New System.Drawing.Point(264, 354)
+        Me.expect.Location = New System.Drawing.Point(352, 436)
+        Me.expect.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.expect.Name = "expect"
-        Me.expect.Size = New System.Drawing.Size(142, 20)
+        Me.expect.Size = New System.Drawing.Size(188, 22)
         Me.expect.TabIndex = 28
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label6.Location = New System.Drawing.Point(58, 316)
+        Me.Label6.Location = New System.Drawing.Point(77, 389)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(108, 24)
+        Me.Label6.Size = New System.Drawing.Size(142, 29)
         Me.Label6.TabIndex = 27
         Me.Label6.Text = "หมายเลขเตียง"
         '
         'bad_Id
         '
-        Me.bad_Id.Location = New System.Drawing.Point(62, 354)
+        Me.bad_Id.Location = New System.Drawing.Point(83, 436)
+        Me.bad_Id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.bad_Id.Name = "bad_Id"
-        Me.bad_Id.Size = New System.Drawing.Size(142, 20)
+        Me.bad_Id.Size = New System.Drawing.Size(188, 22)
         Me.bad_Id.TabIndex = 26
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label3.Location = New System.Drawing.Point(260, 215)
+        Me.Label3.Location = New System.Drawing.Point(347, 265)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(138, 24)
+        Me.Label3.Size = New System.Drawing.Size(179, 29)
         Me.Label3.TabIndex = 25
         Me.Label3.Text = "หมายเลขพนักงาน"
         '
         's_Id
         '
-        Me.s_Id.Location = New System.Drawing.Point(264, 253)
+        Me.s_Id.Location = New System.Drawing.Point(352, 311)
+        Me.s_Id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.s_Id.Name = "s_Id"
-        Me.s_Id.Size = New System.Drawing.Size(142, 20)
+        Me.s_Id.Size = New System.Drawing.Size(188, 22)
         Me.s_Id.TabIndex = 24
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label4.Location = New System.Drawing.Point(58, 215)
+        Me.Label4.Location = New System.Drawing.Point(77, 265)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(111, 24)
+        Me.Label4.Size = New System.Drawing.Size(149, 29)
         Me.Label4.TabIndex = 23
         Me.Label4.Text = "หมายเลขวอร์ด"
         '
         'w_Id
         '
-        Me.w_Id.Location = New System.Drawing.Point(62, 253)
+        Me.w_Id.Location = New System.Drawing.Point(83, 311)
+        Me.w_Id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.w_Id.Name = "w_Id"
-        Me.w_Id.Size = New System.Drawing.Size(142, 20)
+        Me.w_Id.Size = New System.Drawing.Size(188, 22)
         Me.w_Id.TabIndex = 22
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label2.Location = New System.Drawing.Point(260, 105)
+        Me.Label2.Location = New System.Drawing.Point(347, 129)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 24)
+        Me.Label2.Size = New System.Drawing.Size(87, 29)
         Me.Label2.TabIndex = 21
         Me.Label2.Text = "วันที่เข้า"
         '
@@ -133,51 +143,57 @@ Partial Class Edit_InPatient
         '
         Me.lableSearch.AutoSize = True
         Me.lableSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.lableSearch.Location = New System.Drawing.Point(58, 105)
+        Me.lableSearch.Location = New System.Drawing.Point(77, 129)
+        Me.lableSearch.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lableSearch.Name = "lableSearch"
-        Me.lableSearch.Size = New System.Drawing.Size(115, 24)
+        Me.lableSearch.Size = New System.Drawing.Size(149, 29)
         Me.lableSearch.TabIndex = 19
         Me.lableSearch.Text = "หมายเลขผู้ป่วย"
         '
         'p_Id
         '
-        Me.p_Id.Location = New System.Drawing.Point(62, 143)
+        Me.p_Id.Location = New System.Drawing.Point(83, 176)
+        Me.p_Id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.p_Id.Name = "p_Id"
-        Me.p_Id.Size = New System.Drawing.Size(142, 20)
+        Me.p_Id.Size = New System.Drawing.Size(188, 22)
         Me.p_Id.TabIndex = 18
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(403, 39)
+        Me.Label1.Location = New System.Drawing.Point(537, 48)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(209, 29)
+        Me.Label1.Size = New System.Drawing.Size(262, 36)
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "แก้ไขข้อมูลผู้ป่วยใน"
         '
-        'View_Inpa_table
+        'View_Edit_Inpa
         '
-        Me.View_Inpa_table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.View_Inpa_table.Location = New System.Drawing.Point(489, 105)
-        Me.View_Inpa_table.Name = "View_Inpa_table"
-        Me.View_Inpa_table.Size = New System.Drawing.Size(478, 477)
-        Me.View_Inpa_table.TabIndex = 32
+        Me.View_Edit_Inpa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.View_Edit_Inpa.Location = New System.Drawing.Point(652, 129)
+        Me.View_Edit_Inpa.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.View_Edit_Inpa.Name = "View_Edit_Inpa"
+        Me.View_Edit_Inpa.RowHeadersWidth = 51
+        Me.View_Edit_Inpa.Size = New System.Drawing.Size(637, 587)
+        Me.View_Edit_Inpa.TabIndex = 32
         '
         'start_Date
         '
-        Me.start_Date.Location = New System.Drawing.Point(264, 143)
+        Me.start_Date.Location = New System.Drawing.Point(352, 176)
+        Me.start_Date.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.start_Date.Name = "start_Date"
-        Me.start_Date.Size = New System.Drawing.Size(200, 20)
+        Me.start_Date.Size = New System.Drawing.Size(265, 22)
         Me.start_Date.TabIndex = 33
         '
         'Edit_InPatient
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1020, 650)
+        Me.ClientSize = New System.Drawing.Size(1360, 800)
         Me.Controls.Add(Me.start_Date)
-        Me.Controls.Add(Me.View_Inpa_table)
+        Me.Controls.Add(Me.View_Edit_Inpa)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.expect)
@@ -191,9 +207,10 @@ Partial Class Edit_InPatient
         Me.Controls.Add(Me.lableSearch)
         Me.Controls.Add(Me.p_Id)
         Me.Controls.Add(Me.Label1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Edit_InPatient"
         Me.Text = "Edit_InPatient"
-        CType(Me.View_Inpa_table, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.View_Edit_Inpa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -212,6 +229,6 @@ Partial Class Edit_InPatient
     Friend WithEvents lableSearch As Label
     Friend WithEvents p_Id As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents View_Inpa_table As DataGridView
+    Friend WithEvents View_Edit_Inpa As DataGridView
     Friend WithEvents start_Date As DateTimePicker
 End Class

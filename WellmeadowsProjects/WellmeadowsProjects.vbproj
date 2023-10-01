@@ -14,6 +14,21 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -121,13 +136,89 @@
     <Compile Include="Add_Supplies.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataSet1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <Compile Include="Add_OutPantientToWardForm.Designer.vb">
+      <DependentUpon>Add_OutPantientToWardForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="DataSet1.vb">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <Compile Include="Add_OutPantientToWardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_PateintToWardForm.Designer.vb">
+      <DependentUpon>Add_PateintToWardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add_PateintToWardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_StaffForm.Designer.vb">
+      <DependentUpon>Add_StaffForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add_StaffForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_StaffInWardForm.Designer.vb">
+      <DependentUpon>Add_StaffInWardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add_StaffInWardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_WaitingListForm.Designer.vb">
+      <DependentUpon>Add_WaitingListForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add_WaitingListForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Medicine.Designer.vb">
+      <DependentUpon>Edit_Medicine.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Medicine.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_PateintToWardForm.Designer.vb">
+      <DependentUpon>Edit_PateintToWardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_PateintToWardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Patient.Designer.vb">
+      <DependentUpon>Edit_Patient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Patient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Presscript.Designer.vb">
+      <DependentUpon>Edit_Presscript.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Presscript.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_StaffInWardForm.Designer.vb">
+      <DependentUpon>Edit_StaffInWardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_StaffInWardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Supplies.Designer.vb">
+      <DependentUpon>Edit_Supplies.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Supplies.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_VisitPatient.Designer.vb">
+      <DependentUpon>Edit_VisitPatient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_VisitPatient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_WaitingListForm.Designer.vb">
+      <DependentUpon>Edit_WaitingListForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_WaitingListForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm.Designer.vb">
+      <DependentUpon>HomeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HomeForm.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Edit_InPatient.Designer.vb">
       <DependentUpon>Edit_InPatient.vb</DependentUpon>
@@ -206,6 +297,48 @@
     <Compile Include="Supplies.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="OutPatientForm.Designer.vb">
+      <DependentUpon>OutPatientForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OutPatientForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientInWardForm.Designer.vb">
+      <DependentUpon>PatientInWardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PatientInWardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffForm.Designer.vb">
+      <DependentUpon>StaffForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffInWardForm.Designer.vb">
+      <DependentUpon>StaffInWardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffInWardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitingListForm.Designer.vb">
+      <DependentUpon>WaitingListForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WaitingListForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WardForm.Designer.vb">
+      <DependentUpon>WardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_OutPantientToWardForm.Designer.vb">
+      <DependentUpon>Edit_OutPantientToWardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_OutPantientToWardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Add_InPatient.resx">
@@ -229,11 +362,53 @@
     <EmbeddedResource Include="Edit_InPatient.resx">
       <DependentUpon>Edit_InPatient.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Medicine.resx">
+      <DependentUpon>Edit_Medicine.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Patient.resx">
+      <DependentUpon>Edit_Patient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Presscript.resx">
+      <DependentUpon>Edit_Presscript.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Supplies.resx">
+      <DependentUpon>Edit_Supplies.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_VisitPatient.resx">
+      <DependentUpon>Edit_VisitPatient.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHome.resx">
       <DependentUpon>FormHome.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InPatient.resx">
       <DependentUpon>InPatient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_OutPantientToWardForm.resx">
+      <DependentUpon>Add_OutPantientToWardForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_PateintToWardForm.resx">
+      <DependentUpon>Add_PateintToWardForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_StaffForm.resx">
+      <DependentUpon>Add_StaffForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_StaffInWardForm.resx">
+      <DependentUpon>Add_StaffInWardForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_WaitingListForm.resx">
+      <DependentUpon>Add_WaitingListForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_PateintToWardForm.resx">
+      <DependentUpon>Edit_PateintToWardForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_StaffInWardForm.resx">
+      <DependentUpon>Edit_StaffInWardForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_WaitingListForm.resx">
+      <DependentUpon>Edit_WaitingListForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeForm.resx">
+      <DependentUpon>HomeForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
@@ -262,19 +437,29 @@
     <EmbeddedResource Include="Supplies.resx">
       <DependentUpon>Supplies.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OutPatientForm.resx">
+      <DependentUpon>OutPatientForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientInWardForm.resx">
+      <DependentUpon>PatientInWardForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffForm.resx">
+      <DependentUpon>StaffForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffInWardForm.resx">
+      <DependentUpon>StaffInWardForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitingListForm.resx">
+      <DependentUpon>WaitingListForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WardForm.resx">
+      <DependentUpon>WardForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_OutPantientToWardForm.resx">
+      <DependentUpon>Edit_OutPantientToWardForm.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -300,6 +485,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Line 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Group 8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staff.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashbord.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medical.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patient.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ward.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

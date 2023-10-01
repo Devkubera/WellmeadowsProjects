@@ -53,68 +53,76 @@ Partial Class Add_Presscipt
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label14.Location = New System.Drawing.Point(700, 233)
+        Me.Label14.Location = New System.Drawing.Point(933, 287)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(213, 24)
+        Me.Label14.Size = New System.Drawing.Size(276, 29)
         Me.Label14.TabIndex = 153
         Me.Label14.Text = "ปริมาณยาที่ผู้ป่วยได้รับต่อวัน"
         '
         'm_dosage
         '
-        Me.m_dosage.Location = New System.Drawing.Point(704, 271)
+        Me.m_dosage.Location = New System.Drawing.Point(939, 334)
+        Me.m_dosage.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.m_dosage.Name = "m_dosage"
-        Me.m_dosage.Size = New System.Drawing.Size(142, 20)
+        Me.m_dosage.Size = New System.Drawing.Size(188, 22)
         Me.m_dosage.TabIndex = 152
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label12.Location = New System.Drawing.Point(700, 166)
+        Me.Label12.Location = New System.Drawing.Point(933, 204)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(48, 24)
+        Me.Label12.Size = New System.Drawing.Size(61, 29)
         Me.Label12.TabIndex = 151
         Me.Label12.Text = "ชื่อยา"
         '
         'm_name
         '
-        Me.m_name.Location = New System.Drawing.Point(704, 204)
+        Me.m_name.Location = New System.Drawing.Point(939, 251)
+        Me.m_name.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.m_name.Name = "m_name"
-        Me.m_name.Size = New System.Drawing.Size(142, 20)
+        Me.m_name.Size = New System.Drawing.Size(188, 22)
         Me.m_name.TabIndex = 150
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label13.Location = New System.Drawing.Point(530, 166)
+        Me.Label13.Location = New System.Drawing.Point(707, 204)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(93, 24)
+        Me.Label13.Size = New System.Drawing.Size(120, 29)
         Me.Label13.TabIndex = 149
         Me.Label13.Text = "หมายเลขยา"
         '
         'm_id
         '
-        Me.m_id.Location = New System.Drawing.Point(534, 204)
+        Me.m_id.Location = New System.Drawing.Point(712, 251)
+        Me.m_id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.m_id.Name = "m_id"
-        Me.m_id.Size = New System.Drawing.Size(143, 20)
+        Me.m_id.Size = New System.Drawing.Size(189, 22)
         Me.m_id.TabIndex = 148
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label11.Location = New System.Drawing.Point(530, 387)
+        Me.Label11.Location = New System.Drawing.Point(707, 476)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(153, 24)
+        Me.Label11.Size = New System.Drawing.Size(205, 29)
         Me.Label11.TabIndex = 147
         Me.Label11.Text = "รายละเอียดการรักษา"
         '
         'm_desc
         '
-        Me.m_desc.Location = New System.Drawing.Point(534, 428)
+        Me.m_desc.Location = New System.Drawing.Point(712, 527)
+        Me.m_desc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.m_desc.Name = "m_desc"
-        Me.m_desc.Size = New System.Drawing.Size(313, 96)
+        Me.m_desc.Size = New System.Drawing.Size(416, 117)
         Me.m_desc.TabIndex = 146
         Me.m_desc.Text = ""
         '
@@ -122,43 +130,48 @@ Partial Class Add_Presscipt
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label2.Location = New System.Drawing.Point(263, 233)
+        Me.Label2.Location = New System.Drawing.Point(351, 287)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(70, 24)
+        Me.Label2.Size = New System.Drawing.Size(91, 29)
         Me.Label2.TabIndex = 130
         Me.Label2.Text = "นามสกุล"
         '
         'pt_lastName
         '
-        Me.pt_lastName.Location = New System.Drawing.Point(267, 271)
+        Me.pt_lastName.Location = New System.Drawing.Point(356, 334)
+        Me.pt_lastName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pt_lastName.Name = "pt_lastName"
-        Me.pt_lastName.Size = New System.Drawing.Size(142, 20)
+        Me.pt_lastName.Size = New System.Drawing.Size(188, 22)
         Me.pt_lastName.TabIndex = 129
         '
         'Lable1
         '
         Me.Lable1.AutoSize = True
         Me.Lable1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Lable1.Location = New System.Drawing.Point(84, 163)
+        Me.Lable1.Location = New System.Drawing.Point(112, 201)
+        Me.Lable1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Lable1.Name = "Lable1"
-        Me.Lable1.Size = New System.Drawing.Size(115, 24)
+        Me.Lable1.Size = New System.Drawing.Size(149, 29)
         Me.Lable1.TabIndex = 124
         Me.Lable1.Text = "หมายเลขผู้ป่วย"
         '
         'pt_id
         '
-        Me.pt_id.Location = New System.Drawing.Point(88, 201)
+        Me.pt_id.Location = New System.Drawing.Point(117, 247)
+        Me.pt_id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pt_id.Name = "pt_id"
-        Me.pt_id.Size = New System.Drawing.Size(142, 20)
+        Me.pt_id.Size = New System.Drawing.Size(188, 22)
         Me.pt_id.TabIndex = 123
         '
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
         Me.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnAdd.Location = New System.Drawing.Point(818, 30)
+        Me.btnAdd.Location = New System.Drawing.Point(1091, 37)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(120, 37)
+        Me.btnAdd.Size = New System.Drawing.Size(160, 46)
         Me.btnAdd.TabIndex = 122
         Me.btnAdd.Text = "เพิ่มข้อมูล"
         Me.btnAdd.UseVisualStyleBackColor = False
@@ -167,9 +180,10 @@ Partial Class Add_Presscipt
         '
         Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnClear.ForeColor = System.Drawing.Color.Snow
-        Me.btnClear.Location = New System.Drawing.Point(727, 30)
+        Me.btnClear.Location = New System.Drawing.Point(969, 37)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(75, 37)
+        Me.btnClear.Size = New System.Drawing.Size(100, 46)
         Me.btnClear.TabIndex = 121
         Me.btnClear.Text = "ล้างค่า"
         Me.btnClear.UseVisualStyleBackColor = False
@@ -178,36 +192,40 @@ Partial Class Add_Presscipt
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(381, 30)
+        Me.Label1.Location = New System.Drawing.Point(508, 37)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(201, 29)
+        Me.Label1.Size = New System.Drawing.Size(269, 36)
         Me.Label1.TabIndex = 120
-        Me.Label1.Text = "เพิ่มข้อมูลการให้ยา"
+        Me.Label1.Text = "แก้ไขข้อมูลการให้ยา"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label3.Location = New System.Drawing.Point(84, 233)
+        Me.Label3.Location = New System.Drawing.Point(112, 287)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(30, 24)
+        Me.Label3.Size = New System.Drawing.Size(39, 29)
         Me.Label3.TabIndex = 155
         Me.Label3.Text = "ชื่อ"
         '
         'pt_firstName
         '
-        Me.pt_firstName.Location = New System.Drawing.Point(88, 271)
+        Me.pt_firstName.Location = New System.Drawing.Point(117, 334)
+        Me.pt_firstName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pt_firstName.Name = "pt_firstName"
-        Me.pt_firstName.Size = New System.Drawing.Size(142, 20)
+        Me.pt_firstName.Size = New System.Drawing.Size(188, 22)
         Me.pt_firstName.TabIndex = 154
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(84, 123)
+        Me.Label4.Location = New System.Drawing.Point(112, 151)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(61, 25)
+        Me.Label4.Size = New System.Drawing.Size(76, 31)
         Me.Label4.TabIndex = 156
         Me.Label4.Text = "ผู้ป่วย"
         '
@@ -215,9 +233,10 @@ Partial Class Add_Presscipt
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(529, 123)
+        Me.Label5.Location = New System.Drawing.Point(705, 151)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(83, 25)
+        Me.Label5.Size = New System.Drawing.Size(103, 31)
         Me.Label5.TabIndex = 157
         Me.Label5.Text = "ข้อมูลยา"
         '
@@ -225,9 +244,10 @@ Partial Class Add_Presscipt
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label6.Location = New System.Drawing.Point(531, 233)
+        Me.Label6.Location = New System.Drawing.Point(708, 287)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(153, 24)
+        Me.Label6.Size = New System.Drawing.Size(198, 29)
         Me.Label6.TabIndex = 159
         Me.Label6.Text = "วิธีการให้ยากับผู้ป่วย"
         '
@@ -235,50 +255,55 @@ Partial Class Add_Presscipt
         '
         Me.m_method.FormattingEnabled = True
         Me.m_method.Items.AddRange(New Object() {"Oral", "Skin"})
-        Me.m_method.Location = New System.Drawing.Point(535, 270)
+        Me.m_method.Location = New System.Drawing.Point(713, 332)
+        Me.m_method.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.m_method.Name = "m_method"
-        Me.m_method.Size = New System.Drawing.Size(142, 21)
+        Me.m_method.Size = New System.Drawing.Size(188, 24)
         Me.m_method.TabIndex = 160
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label7.Location = New System.Drawing.Point(701, 309)
+        Me.Label7.Location = New System.Drawing.Point(935, 380)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(213, 24)
+        Me.Label7.Size = New System.Drawing.Size(273, 29)
         Me.Label7.TabIndex = 164
         Me.Label7.Text = "วันที่ให้ยาครบตามที่แพทย์สั่ง"
         '
         'm_endDate
         '
-        Me.m_endDate.Location = New System.Drawing.Point(705, 347)
+        Me.m_endDate.Location = New System.Drawing.Point(940, 427)
+        Me.m_endDate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.m_endDate.Name = "m_endDate"
-        Me.m_endDate.Size = New System.Drawing.Size(142, 20)
+        Me.m_endDate.Size = New System.Drawing.Size(188, 22)
         Me.m_endDate.TabIndex = 163
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label8.Location = New System.Drawing.Point(531, 309)
+        Me.Label8.Location = New System.Drawing.Point(708, 380)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(105, 24)
+        Me.Label8.Size = New System.Drawing.Size(138, 29)
         Me.Label8.TabIndex = 162
         Me.Label8.Text = "วันที่เริ่มให้ยา"
         '
         'm_startDate
         '
-        Me.m_startDate.Location = New System.Drawing.Point(535, 347)
+        Me.m_startDate.Location = New System.Drawing.Point(713, 427)
+        Me.m_startDate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.m_startDate.Name = "m_startDate"
-        Me.m_startDate.Size = New System.Drawing.Size(143, 20)
+        Me.m_startDate.Size = New System.Drawing.Size(189, 22)
         Me.m_startDate.TabIndex = 161
         '
         'Add_Presscipt
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1004, 611)
+        Me.ClientSize = New System.Drawing.Size(1339, 752)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.m_endDate)
         Me.Controls.Add(Me.Label8)
@@ -304,6 +329,7 @@ Partial Class Add_Presscipt
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.Label1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Add_Presscipt"
         Me.Text = "Add_Presscipt"
         Me.ResumeLayout(False)

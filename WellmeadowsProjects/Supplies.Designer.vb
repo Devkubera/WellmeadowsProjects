@@ -38,9 +38,10 @@ Partial Class Supplies
         '
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDelete.Location = New System.Drawing.Point(811, 496)
+        Me.btnDelete.Location = New System.Drawing.Point(1081, 610)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(120, 37)
+        Me.btnDelete.Size = New System.Drawing.Size(160, 46)
         Me.btnDelete.TabIndex = 38
         Me.btnDelete.Text = "ลบข้อมูล"
         Me.btnDelete.UseVisualStyleBackColor = False
@@ -49,9 +50,10 @@ Partial Class Supplies
         '
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUpdate.Location = New System.Drawing.Point(681, 496)
+        Me.btnUpdate.Location = New System.Drawing.Point(908, 610)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(120, 37)
+        Me.btnUpdate.Size = New System.Drawing.Size(160, 46)
         Me.btnUpdate.TabIndex = 37
         Me.btnUpdate.Text = "แก้ไขข้อมูล"
         Me.btnUpdate.UseVisualStyleBackColor = False
@@ -60,9 +62,10 @@ Partial Class Supplies
         '
         Me.btnReport.BackColor = System.Drawing.Color.RoyalBlue
         Me.btnReport.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnReport.Location = New System.Drawing.Point(546, 496)
+        Me.btnReport.Location = New System.Drawing.Point(728, 610)
+        Me.btnReport.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnReport.Name = "btnReport"
-        Me.btnReport.Size = New System.Drawing.Size(120, 37)
+        Me.btnReport.Size = New System.Drawing.Size(160, 46)
         Me.btnReport.TabIndex = 36
         Me.btnReport.Text = "สร้างรายงาน"
         Me.btnReport.UseVisualStyleBackColor = False
@@ -70,26 +73,30 @@ Partial Class Supplies
         'ViewSup
         '
         Me.ViewSup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ViewSup.Location = New System.Drawing.Point(78, 132)
+        Me.ViewSup.Location = New System.Drawing.Point(104, 162)
+        Me.ViewSup.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ViewSup.Name = "ViewSup"
-        Me.ViewSup.Size = New System.Drawing.Size(853, 328)
+        Me.ViewSup.RowHeadersWidth = 51
+        Me.ViewSup.Size = New System.Drawing.Size(1137, 404)
         Me.ViewSup.TabIndex = 35
         '
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
-        Me.btnAdd.Location = New System.Drawing.Point(856, 71)
+        Me.btnAdd.Location = New System.Drawing.Point(1141, 87)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(75, 37)
+        Me.btnAdd.Size = New System.Drawing.Size(100, 46)
         Me.btnAdd.TabIndex = 34
         Me.btnAdd.Text = "เพิ่ม"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(763, 71)
+        Me.btnSearch.Location = New System.Drawing.Point(1017, 87)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(75, 37)
+        Me.btnSearch.Size = New System.Drawing.Size(100, 46)
         Me.btnSearch.TabIndex = 33
         Me.btnSearch.Text = "ค้นหา"
         Me.btnSearch.UseVisualStyleBackColor = True
@@ -98,34 +105,37 @@ Partial Class Supplies
         '
         Me.lableSearch.AutoSize = True
         Me.lableSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lableSearch.Location = New System.Drawing.Point(602, 64)
+        Me.lableSearch.Location = New System.Drawing.Point(803, 79)
+        Me.lableSearch.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lableSearch.Name = "lableSearch"
-        Me.lableSearch.Size = New System.Drawing.Size(103, 16)
+        Me.lableSearch.Size = New System.Drawing.Size(149, 20)
         Me.lableSearch.TabIndex = 32
         Me.lableSearch.Text = "ค้นหาหมายเลขผู้ผลิต"
         '
         'txtSearch
         '
-        Me.txtSearch.Location = New System.Drawing.Point(605, 88)
+        Me.txtSearch.Location = New System.Drawing.Point(807, 108)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(142, 20)
+        Me.txtSearch.Size = New System.Drawing.Size(188, 22)
         Me.txtSearch.TabIndex = 31
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(73, 64)
+        Me.Label1.Location = New System.Drawing.Point(97, 79)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(116, 29)
+        Me.Label1.Size = New System.Drawing.Size(139, 36)
         Me.Label1.TabIndex = 30
         Me.Label1.Text = "Supplies"
         '
         'Supplies
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1004, 611)
+        Me.ClientSize = New System.Drawing.Size(1339, 752)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnReport)
@@ -135,7 +145,7 @@ Partial Class Supplies
         Me.Controls.Add(Me.lableSearch)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Label1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Supplies"
         Me.Text = "Supplies"
         CType(Me.ViewSup, System.ComponentModel.ISupportInitialize).EndInit()

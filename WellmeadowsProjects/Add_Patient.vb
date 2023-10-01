@@ -1,5 +1,5 @@
 ﻿Public Class Add_Patient
-    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+    Private Sub btnClear_Click(sender As Object, e As EventArgs)
         If Not String.IsNullOrEmpty(pt_firstName.Text) Then
             pt_firstName.Text = String.Empty
         End If
@@ -19,4 +19,9 @@
             pt_date.Text = String.Empty
         End If
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
 End Class
