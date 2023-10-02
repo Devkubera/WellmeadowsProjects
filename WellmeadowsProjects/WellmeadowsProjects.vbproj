@@ -238,17 +238,17 @@
     <Compile Include="InPatient.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LoginPage.Designer.vb">
+      <DependentUpon>LoginPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.vb">
       <DependentUpon>MainForm.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainStaff.Designer.vb">
-      <DependentUpon>MainStaff.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MainStaff.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Medicine.Designer.vb">
@@ -339,6 +339,11 @@
     <Compile Include="Edit_OutPantientToWardForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="WellmeadowsDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WellmeadowsDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Add_InPatient.resx">
@@ -410,11 +415,11 @@
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage.resx">
+      <DependentUpon>LoginPage.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainStaff.resx">
-      <DependentUpon>MainStaff.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Medicine.resx">
       <DependentUpon>Medicine.vb</DependentUpon>
@@ -470,6 +475,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="WellmeadowsDataSet.xsc">
+      <DependentUpon>WellmeadowsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WellmeadowsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WellmeadowsDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WellmeadowsDataSet.xss">
+      <DependentUpon>WellmeadowsDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\5348074.jpg" />
@@ -518,6 +534,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_baseline-phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\material-symbols_login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staff_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

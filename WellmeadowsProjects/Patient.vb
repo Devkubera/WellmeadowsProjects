@@ -8,4 +8,9 @@
         Patient_Visit.Show()
     End Sub
 
+    Private Sub Patient_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Patients' table. You can move, or remove it, as needed.
+        Me.PatientsTableAdapter.Fill(Me.WellmeadowsDataSet.Patients)
+
+    End Sub
 End Class
