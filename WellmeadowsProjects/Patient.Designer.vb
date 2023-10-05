@@ -29,17 +29,6 @@ Partial Class Patient
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.ViewPa = New System.Windows.Forms.DataGridView()
-        Me.PatientIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.KinsIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LocalDocIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GenderDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MarryStatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DobDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateregisterDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PatientsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.btnReport = New System.Windows.Forms.Button()
@@ -53,6 +42,17 @@ Partial Class Patient
         Me.LocalDoctorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
         Me.Patient_kinsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PatientIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KinsIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LocalDocIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GenderDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MarryStatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DobDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateregisterDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.ViewPa, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PatientsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,40 +65,36 @@ Partial Class Patient
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Prompt", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(114, 121)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(86, 98)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(123, 46)
+        Me.Label1.Size = New System.Drawing.Size(96, 36)
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "Patient"
         '
         'txtSearch
         '
         Me.txtSearch.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(771, 120)
-        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtSearch.Location = New System.Drawing.Point(578, 98)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(241, 38)
+        Me.txtSearch.Size = New System.Drawing.Size(182, 32)
         Me.txtSearch.TabIndex = 12
         '
         'lableSearch
         '
         Me.lableSearch.AutoSize = True
         Me.lableSearch.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lableSearch.Location = New System.Drawing.Point(766, 90)
-        Me.lableSearch.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lableSearch.Location = New System.Drawing.Point(574, 73)
         Me.lableSearch.Name = "lableSearch"
-        Me.lableSearch.Size = New System.Drawing.Size(158, 26)
+        Me.lableSearch.Size = New System.Drawing.Size(132, 21)
         Me.lableSearch.TabIndex = 13
         Me.lableSearch.Text = "ค้นหาหมายเลขผู้ป่วย"
         '
         'btnSearch
         '
         Me.btnSearch.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.Location = New System.Drawing.Point(1035, 112)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSearch.Location = New System.Drawing.Point(776, 91)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(100, 46)
+        Me.btnSearch.Size = New System.Drawing.Size(75, 37)
         Me.btnSearch.TabIndex = 14
         Me.btnSearch.Text = "ค้นหา"
         Me.btnSearch.UseVisualStyleBackColor = True
@@ -107,10 +103,9 @@ Partial Class Patient
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
         Me.btnAdd.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(1159, 112)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAdd.Location = New System.Drawing.Point(869, 91)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(100, 46)
+        Me.btnAdd.Size = New System.Drawing.Size(75, 37)
         Me.btnAdd.TabIndex = 15
         Me.btnAdd.Text = "เพิ่ม"
         Me.btnAdd.UseVisualStyleBackColor = False
@@ -125,116 +120,13 @@ Partial Class Patient
         Me.ViewPa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PatientIDDataGridViewTextBoxColumn, Me.KinsIDDataGridViewTextBoxColumn, Me.LocalDocIDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.GenderDataGridViewTextBoxColumn, Me.MarryStatusDataGridViewTextBoxColumn, Me.TelDataGridViewTextBoxColumn, Me.DobDataGridViewTextBoxColumn, Me.DateregisterDataGridViewTextBoxColumn})
         Me.ViewPa.DataSource = Me.PatientsBindingSource1
         Me.ViewPa.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
-        Me.ViewPa.Location = New System.Drawing.Point(121, 195)
-        Me.ViewPa.Margin = New System.Windows.Forms.Padding(4)
+        Me.ViewPa.Location = New System.Drawing.Point(91, 158)
         Me.ViewPa.Name = "ViewPa"
         Me.ViewPa.ReadOnly = True
         Me.ViewPa.RowHeadersWidth = 51
         Me.ViewPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ViewPa.Size = New System.Drawing.Size(1154, 404)
+        Me.ViewPa.Size = New System.Drawing.Size(866, 328)
         Me.ViewPa.TabIndex = 16
-        '
-        'PatientIDDataGridViewTextBoxColumn
-        '
-        Me.PatientIDDataGridViewTextBoxColumn.DataPropertyName = "patientID"
-        Me.PatientIDDataGridViewTextBoxColumn.Frozen = True
-        Me.PatientIDDataGridViewTextBoxColumn.HeaderText = "รหัสผู้ป่วย"
-        Me.PatientIDDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PatientIDDataGridViewTextBoxColumn.Name = "PatientIDDataGridViewTextBoxColumn"
-        Me.PatientIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PatientIDDataGridViewTextBoxColumn.Width = 90
-        '
-        'KinsIDDataGridViewTextBoxColumn
-        '
-        Me.KinsIDDataGridViewTextBoxColumn.DataPropertyName = "kinsID"
-        Me.KinsIDDataGridViewTextBoxColumn.HeaderText = "รหัสญาติผู้ป่วย"
-        Me.KinsIDDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.KinsIDDataGridViewTextBoxColumn.Name = "KinsIDDataGridViewTextBoxColumn"
-        Me.KinsIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.KinsIDDataGridViewTextBoxColumn.Width = 125
-        '
-        'LocalDocIDDataGridViewTextBoxColumn
-        '
-        Me.LocalDocIDDataGridViewTextBoxColumn.DataPropertyName = "localDocID"
-        Me.LocalDocIDDataGridViewTextBoxColumn.HeaderText = "รหัสหมอท้องถิ่น"
-        Me.LocalDocIDDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.LocalDocIDDataGridViewTextBoxColumn.Name = "LocalDocIDDataGridViewTextBoxColumn"
-        Me.LocalDocIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.LocalDocIDDataGridViewTextBoxColumn.Width = 125
-        '
-        'FirstNameDataGridViewTextBoxColumn
-        '
-        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName"
-        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "ชื่อ"
-        Me.FirstNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
-        Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.FirstNameDataGridViewTextBoxColumn.Width = 125
-        '
-        'LastNameDataGridViewTextBoxColumn
-        '
-        Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName"
-        Me.LastNameDataGridViewTextBoxColumn.HeaderText = "นามสกุล"
-        Me.LastNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
-        Me.LastNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.LastNameDataGridViewTextBoxColumn.Width = 125
-        '
-        'AddressDataGridViewTextBoxColumn
-        '
-        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "address"
-        Me.AddressDataGridViewTextBoxColumn.HeaderText = "ที่อยู่"
-        Me.AddressDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
-        Me.AddressDataGridViewTextBoxColumn.ReadOnly = True
-        Me.AddressDataGridViewTextBoxColumn.Width = 125
-        '
-        'GenderDataGridViewTextBoxColumn
-        '
-        Me.GenderDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.GenderDataGridViewTextBoxColumn.DataPropertyName = "gender"
-        Me.GenderDataGridViewTextBoxColumn.HeaderText = "เพศภาพ"
-        Me.GenderDataGridViewTextBoxColumn.MinimumWidth = 3
-        Me.GenderDataGridViewTextBoxColumn.Name = "GenderDataGridViewTextBoxColumn"
-        Me.GenderDataGridViewTextBoxColumn.ReadOnly = True
-        Me.GenderDataGridViewTextBoxColumn.Width = 74
-        '
-        'MarryStatusDataGridViewTextBoxColumn
-        '
-        Me.MarryStatusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.MarryStatusDataGridViewTextBoxColumn.DataPropertyName = "marryStatus"
-        Me.MarryStatusDataGridViewTextBoxColumn.HeaderText = "สถานภาพ"
-        Me.MarryStatusDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.MarryStatusDataGridViewTextBoxColumn.Name = "MarryStatusDataGridViewTextBoxColumn"
-        Me.MarryStatusDataGridViewTextBoxColumn.ReadOnly = True
-        Me.MarryStatusDataGridViewTextBoxColumn.Width = 81
-        '
-        'TelDataGridViewTextBoxColumn
-        '
-        Me.TelDataGridViewTextBoxColumn.DataPropertyName = "tel"
-        Me.TelDataGridViewTextBoxColumn.HeaderText = "เบอร์โทรศัพท์"
-        Me.TelDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.TelDataGridViewTextBoxColumn.Name = "TelDataGridViewTextBoxColumn"
-        Me.TelDataGridViewTextBoxColumn.ReadOnly = True
-        Me.TelDataGridViewTextBoxColumn.Width = 125
-        '
-        'DobDataGridViewTextBoxColumn
-        '
-        Me.DobDataGridViewTextBoxColumn.DataPropertyName = "dob"
-        Me.DobDataGridViewTextBoxColumn.HeaderText = "วันเกิด"
-        Me.DobDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.DobDataGridViewTextBoxColumn.Name = "DobDataGridViewTextBoxColumn"
-        Me.DobDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DobDataGridViewTextBoxColumn.Width = 125
-        '
-        'DateregisterDataGridViewTextBoxColumn
-        '
-        Me.DateregisterDataGridViewTextBoxColumn.DataPropertyName = "date_register"
-        Me.DateregisterDataGridViewTextBoxColumn.HeaderText = "วันที่ลงทะเบียน"
-        Me.DateregisterDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.DateregisterDataGridViewTextBoxColumn.Name = "DateregisterDataGridViewTextBoxColumn"
-        Me.DateregisterDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DateregisterDataGridViewTextBoxColumn.Width = 125
         '
         'PatientsBindingSource1
         '
@@ -251,10 +143,9 @@ Partial Class Patient
         Me.btnReport.BackColor = System.Drawing.Color.RoyalBlue
         Me.btnReport.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReport.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnReport.Location = New System.Drawing.Point(745, 635)
-        Me.btnReport.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnReport.Location = New System.Drawing.Point(559, 516)
         Me.btnReport.Name = "btnReport"
-        Me.btnReport.Size = New System.Drawing.Size(160, 46)
+        Me.btnReport.Size = New System.Drawing.Size(120, 37)
         Me.btnReport.TabIndex = 18
         Me.btnReport.Text = "สร้างรายงาน"
         Me.btnReport.UseVisualStyleBackColor = False
@@ -264,10 +155,9 @@ Partial Class Patient
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnUpdate.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUpdate.Location = New System.Drawing.Point(925, 635)
-        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnUpdate.Location = New System.Drawing.Point(694, 516)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(160, 46)
+        Me.btnUpdate.Size = New System.Drawing.Size(120, 37)
         Me.btnUpdate.TabIndex = 19
         Me.btnUpdate.Text = "แก้ไขข้อมูล"
         Me.btnUpdate.UseVisualStyleBackColor = False
@@ -277,10 +167,9 @@ Partial Class Patient
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnDelete.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDelete.Location = New System.Drawing.Point(1099, 635)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnDelete.Location = New System.Drawing.Point(824, 516)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(160, 46)
+        Me.btnDelete.Size = New System.Drawing.Size(120, 37)
         Me.btnDelete.TabIndex = 20
         Me.btnDelete.Text = "ลบข้อมูล"
         Me.btnDelete.UseVisualStyleBackColor = False
@@ -290,10 +179,9 @@ Partial Class Patient
         Me.btnVisit.BackColor = System.Drawing.Color.Black
         Me.btnVisit.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnVisit.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnVisit.Location = New System.Drawing.Point(1035, 42)
-        Me.btnVisit.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnVisit.Location = New System.Drawing.Point(776, 34)
         Me.btnVisit.Name = "btnVisit"
-        Me.btnVisit.Size = New System.Drawing.Size(224, 46)
+        Me.btnVisit.Size = New System.Drawing.Size(168, 37)
         Me.btnVisit.TabIndex = 21
         Me.btnVisit.Text = "การนัดหมายผู้ป่วย"
         Me.btnVisit.UseVisualStyleBackColor = False
@@ -350,11 +238,88 @@ Partial Class Patient
         Me.Patient_kinsBindingSource.DataMember = "Patient_kins"
         Me.Patient_kinsBindingSource.DataSource = Me.WellmeadowsDataSet
         '
+        'PatientIDDataGridViewTextBoxColumn
+        '
+        Me.PatientIDDataGridViewTextBoxColumn.DataPropertyName = "patientID"
+        Me.PatientIDDataGridViewTextBoxColumn.HeaderText = "รหัสผู้ป่วย"
+        Me.PatientIDDataGridViewTextBoxColumn.Name = "PatientIDDataGridViewTextBoxColumn"
+        Me.PatientIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'KinsIDDataGridViewTextBoxColumn
+        '
+        Me.KinsIDDataGridViewTextBoxColumn.DataPropertyName = "kinsID"
+        Me.KinsIDDataGridViewTextBoxColumn.HeaderText = "รหัสญาติผู้ป่วย"
+        Me.KinsIDDataGridViewTextBoxColumn.Name = "KinsIDDataGridViewTextBoxColumn"
+        Me.KinsIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'LocalDocIDDataGridViewTextBoxColumn
+        '
+        Me.LocalDocIDDataGridViewTextBoxColumn.DataPropertyName = "localDocID"
+        Me.LocalDocIDDataGridViewTextBoxColumn.HeaderText = "รหัสหมอท้องถิ่น"
+        Me.LocalDocIDDataGridViewTextBoxColumn.Name = "LocalDocIDDataGridViewTextBoxColumn"
+        Me.LocalDocIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'FirstNameDataGridViewTextBoxColumn
+        '
+        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName"
+        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "ชื่อ"
+        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
+        Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'LastNameDataGridViewTextBoxColumn
+        '
+        Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName"
+        Me.LastNameDataGridViewTextBoxColumn.HeaderText = "นามสกุล"
+        Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
+        Me.LastNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'AddressDataGridViewTextBoxColumn
+        '
+        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "address"
+        Me.AddressDataGridViewTextBoxColumn.HeaderText = "ที่อยู่"
+        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
+        Me.AddressDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'GenderDataGridViewTextBoxColumn
+        '
+        Me.GenderDataGridViewTextBoxColumn.DataPropertyName = "gender"
+        Me.GenderDataGridViewTextBoxColumn.HeaderText = "เพศสภาพ"
+        Me.GenderDataGridViewTextBoxColumn.Name = "GenderDataGridViewTextBoxColumn"
+        Me.GenderDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'MarryStatusDataGridViewTextBoxColumn
+        '
+        Me.MarryStatusDataGridViewTextBoxColumn.DataPropertyName = "marryStatus"
+        Me.MarryStatusDataGridViewTextBoxColumn.HeaderText = "สถานภาพ"
+        Me.MarryStatusDataGridViewTextBoxColumn.Name = "MarryStatusDataGridViewTextBoxColumn"
+        Me.MarryStatusDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TelDataGridViewTextBoxColumn
+        '
+        Me.TelDataGridViewTextBoxColumn.DataPropertyName = "tel"
+        Me.TelDataGridViewTextBoxColumn.HeaderText = "เบอร์โทรศัพท์"
+        Me.TelDataGridViewTextBoxColumn.Name = "TelDataGridViewTextBoxColumn"
+        Me.TelDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DobDataGridViewTextBoxColumn
+        '
+        Me.DobDataGridViewTextBoxColumn.DataPropertyName = "dob"
+        Me.DobDataGridViewTextBoxColumn.HeaderText = "วันเกิด"
+        Me.DobDataGridViewTextBoxColumn.Name = "DobDataGridViewTextBoxColumn"
+        Me.DobDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DateregisterDataGridViewTextBoxColumn
+        '
+        Me.DateregisterDataGridViewTextBoxColumn.DataPropertyName = "date_register"
+        Me.DateregisterDataGridViewTextBoxColumn.HeaderText = "วันที่ลงทะเบียน"
+        Me.DateregisterDataGridViewTextBoxColumn.Name = "DateregisterDataGridViewTextBoxColumn"
+        Me.DateregisterDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'Patient
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1360, 942)
+        Me.ClientSize = New System.Drawing.Size(1020, 765)
         Me.Controls.Add(Me.btnVisit)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnUpdate)
@@ -366,7 +331,6 @@ Partial Class Patient
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Patient"
         Me.Text = "Patient"
         CType(Me.ViewPa, System.ComponentModel.ISupportInitialize).EndInit()
@@ -397,6 +361,8 @@ Partial Class Patient
     Friend WithEvents LocalDoctorsBindingSource As BindingSource
     Friend WithEvents LocalDoctorsTableAdapter As WellmeadowsDataSetTableAdapters.LocalDoctorsTableAdapter
     Friend WithEvents TableAdapterManager As WellmeadowsDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents Patient_kinsBindingSource As BindingSource
+    Friend WithEvents Patient_kinsTableAdapter As WellmeadowsDataSetTableAdapters.Patient_kinsTableAdapter
     Friend WithEvents PatientIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents KinsIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LocalDocIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -408,6 +374,4 @@ Partial Class Patient
     Friend WithEvents TelDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DobDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DateregisterDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Patient_kinsBindingSource As BindingSource
-    Friend WithEvents Patient_kinsTableAdapter As WellmeadowsDataSetTableAdapters.Patient_kinsTableAdapter
 End Class

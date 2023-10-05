@@ -1,4 +1,5 @@
 ﻿Public Class Patient
+    Private Const ordinalIgnoreCase As StringComparison = StringComparison.OrdinalIgnoreCase
     Public patientData As New Dictionary(Of String, String)
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -82,8 +83,15 @@
     End Sub
 
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
-        Dim result = PatientsTableAdapter.GetDataBySearchPatient(("%" & txtSearch.Text & "%").Trim())
-        PatientsTableAdapter.Fill(result)
-        'Console.WriteLine(result)
+
+
+        Dim searchText As String = txtSearch.Text.Trim()
+        If String.IsNullOrEmpty(searchText) Then
+            PatientsBindingSource1.RemoveFilter()
+        Else
+            PatientsBindingSource1.Filter = $"patientID LIKE '*{searchText}*' OR firstName LIKE '*{searchText}*' OR lastName LIKE '*{searchText}*' "
+        End If
     End Sub
+
+
 End Class

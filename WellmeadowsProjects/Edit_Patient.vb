@@ -1,4 +1,6 @@
-﻿Public Class Edit_Patient
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
+Public Class Edit_Patient
     Public patientID As String = ""
     Public kinID As String = ""
     Public localDoctorID As String = ""
@@ -7,40 +9,49 @@
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        Console.WriteLine("PatientKins : " & kinID)
-        Console.WriteLine("localDoctorID : " & localDoctorID)
-        PatientsTableAdapter.UpdatePatient(
-            kinID,
-            localDoctorID,
-            pt_firstName.Text,
-            pt_lastName.Text,
-            pt_address.Text,
-            pt_gender.Text,
-            pt_status.Text,
-            pt_tel.Text,
-            pt_birthday.Value,
-            pt_date.Value,
-            patientID
-        )
 
-        Patient_kinsTableAdapter.UpdateByKinsID(
-            kin_fullName.Text,
-            kin_address.Text,
-            kin_rela.Text,
-            kin_tel.Text,
-            kinID
-        )
 
-        LocalDoctorsTableAdapter.UpdateByLocalDocID(
-            local_fullName.Text,
-            local_clinic_ID.Text,
-            local_address.Text,
-            local_tel.Text,
-            localDoctorID
-        )
+        Try
+            Console.WriteLine("PatientKins : " & kinID)
+            Console.WriteLine("localDoctorID : " & localDoctorID)
+            PatientsTableAdapter.UpdatePatient(
+                kinID,
+                localDoctorID,
+                pt_firstName.Text,
+                pt_lastName.Text,
+                pt_address.Text,
+                pt_gender.Text,
+                pt_status.Text,
+                pt_tel.Text,
+                pt_birthday.Value,
+                pt_date.Value,
+                patientID
+            )
 
-        'Patient.ViewPa.Refresh()
-        'Patient.Patient_Load(New Object, Nothing)
+            Patient_kinsTableAdapter.UpdateByKinsID(
+                kin_fullName.Text,
+                kin_address.Text,
+                kin_rela.Text,
+                kin_tel.Text,
+                kinID
+            )
+
+            LocalDoctorsTableAdapter.UpdateByLocalDocID(
+                local_fullName.Text,
+                local_clinic_ID.Text,
+                local_address.Text,
+                local_tel.Text,
+                localDoctorID
+            )
+
+            'Patient.ViewPa.Refresh()
+            'Patient.Patient_Load(New Object, Nothing)
+
+            Me.Close()
+
+        Catch ex As Exception
+            MessageBox.Show("Error. please check your data fill", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End Try
 
     End Sub
 

@@ -57,52 +57,59 @@ Public Class Add_Patient
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        'custom date format
-        pt_birthday.Format = DateTimePickerFormat.Custom
-        pt_birthday.CustomFormat = "dd/MM/yyyy"
-        pt_date.Format = DateTimePickerFormat.Custom
-        pt_date.CustomFormat = "dd/MM/yyyy"
-        Dim Pfname = pt_firstName.Text
-        Dim Plname = pt_lastName.Text
-        Dim Pdob = pt_birthday.Text
-        Dim Pgender = pt_gender.Text
-        Dim Ptel = pt_tel.Text
-        Dim PdateRegis = pt_date.Text
-        Dim Pstatus = pt_status.Text
-        Dim Paddress = pt_address.Text
 
-        If (kinID <> "") Then
-            System.Console.WriteLine("If Case from KIN" & kinID)
-        Else
-            Dim Kname = kin_fullName.Text
-            Dim Kaddress = kin_address.Text
-            Dim Krela = kin_rela.Text
-            Dim Ktel = kin_tel.Text
+        Try
+            'custom date format
+            pt_birthday.Format = DateTimePickerFormat.Custom
+            pt_birthday.CustomFormat = "dd/MM/yyyy"
+            pt_date.Format = DateTimePickerFormat.Custom
+            pt_date.CustomFormat = "dd/MM/yyyy"
+            Dim Pfname = pt_firstName.Text
+            Dim Plname = pt_lastName.Text
+            Dim Pdob = pt_birthday.Text
+            Dim Pgender = pt_gender.Text
+            Dim Ptel = pt_tel.Text
+            Dim PdateRegis = pt_date.Text
+            Dim Pstatus = pt_status.Text
+            Dim Paddress = pt_address.Text
 
-            Patient_kinsTableAdapter.InsertKins(Kname, Kaddress, Krela, Ktel)
-            kinID = Patient_kinsTableAdapter.getLastKinID()
-            System.Console.WriteLine("Else Case")
-            System.Console.WriteLine(kinID)
-        End If
+            If (kinID <> "") Then
+                System.Console.WriteLine("If Case from KIN" & kinID)
+            Else
+                Dim Kname = kin_fullName.Text
+                Dim Kaddress = kin_address.Text
+                Dim Krela = kin_rela.Text
+                Dim Ktel = kin_tel.Text
 
-        If (localID <> "") Then
-            System.Console.WriteLine("If Case from Local" & localID)
-        Else
-            Dim Lname = local_fullName.Text
-            Dim Ltel = local_tel.Text
-            Dim Laddress = local_address.Text
-            Dim Lclinic = local_clinic_ID.Text
+                Patient_kinsTableAdapter.InsertKins(Kname, Kaddress, Krela, Ktel)
+                kinID = Patient_kinsTableAdapter.getLastKinID()
+                System.Console.WriteLine("Else Case")
+                System.Console.WriteLine(kinID)
+            End If
 
-            LocalDoctorsTableAdapter.InsertLocalDoctor(Lname, Lclinic, Laddress, Ltel)
-            localID = LocalDoctorsTableAdapter.getLastLocID()
-            System.Console.WriteLine("Else Case")
-            System.Console.WriteLine(localID)
-        End If
+            If (localID <> "") Then
+                System.Console.WriteLine("If Case from Local" & localID)
+            Else
+                Dim Lname = local_fullName.Text
+                Dim Ltel = local_tel.Text
+                Dim Laddress = local_address.Text
+                Dim Lclinic = local_clinic_ID.Text
 
-        Console.WriteLine(pt_date.Value & " date regis")
-        Console.WriteLine(pt_birthday.Value & " DOB")
-        Me.PatientsTableAdapter.InsertPatient(Pfname, Plname, Paddress, Pgender, Pstatus, Ptel, pt_birthday.Value, pt_date.Value, kinID, localID)
-        Me.PatientsTableAdapter.Fill(Me.WellmeadowsDataSet.Patients)
+                LocalDoctorsTableAdapter.InsertLocalDoctor(Lname, Lclinic, Laddress, Ltel)
+                localID = LocalDoctorsTableAdapter.getLastLocID()
+                System.Console.WriteLine("Else Case")
+                System.Console.WriteLine(localID)
+            End If
+
+            Console.WriteLine(pt_date.Value & " date regis")
+            Console.WriteLine(pt_birthday.Value & " DOB")
+            Me.PatientsTableAdapter.InsertPatient(Pfname, Plname, Paddress, Pgender, Pstatus, Ptel, pt_birthday.Value, pt_date.Value, kinID, localID)
+            Me.PatientsTableAdapter.Fill(Me.WellmeadowsDataSet.Patients)
+            Me.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error. please check your data fill", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End Try
+
     End Sub
 
     Private Sub btnCheck_kin_Click(sender As Object, e As EventArgs) Handles btnCheck_kin.Click
