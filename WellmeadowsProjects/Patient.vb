@@ -45,8 +45,7 @@
             patientData("status") = ViewPa.SelectedRows(0).Cells(7).Value.ToString
             patientData("tel") = ViewPa.SelectedRows(0).Cells(8).Value.ToString
             patientData("dob") = ViewPa.SelectedRows(0).Cells(9).Value.ToString
-            patientData("dateRegis") = ViewPa.SelectedRows(0).Cells(10).Value.ToString
-
+            patientData("dateRegis") = ViewPa.SelectedRows(0).Cells(10).Value.ToStrin
 
             Edit_Patient.patientID = patientData("patientID")
             Edit_Patient.kinID = patientData("kinID")
@@ -66,7 +65,6 @@
                 Edit_Patient.kin_rela.Text = row.relationship
                 Edit_Patient.kin_address.Text = row.address
                 Edit_Patient.kin_tel.Text = row.tel
-
             Next
 
             Dim localObject = LocalDoctorsTableAdapter.GetDataByDoclocalID(patientData("localID"))

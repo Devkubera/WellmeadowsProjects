@@ -172,7 +172,6 @@ Partial Class Edit_Patient
         '
         'local_clinic_ID
         '
-        Me.local_clinic_ID.Enabled = False
         Me.local_clinic_ID.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.local_clinic_ID.Location = New System.Drawing.Point(559, 673)
         Me.local_clinic_ID.Margin = New System.Windows.Forms.Padding(0)
@@ -182,7 +181,6 @@ Partial Class Edit_Patient
         '
         'kin_rela
         '
-        Me.kin_rela.Enabled = False
         Me.kin_rela.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.kin_rela.FormattingEnabled = True
         Me.kin_rela.Items.AddRange(New Object() {"บิดา", "มารดา", "ปู่", "ย่า", "ตา", "ยาย", "พี่", "น้อง", "หลาน", "เหลน", "แฟน", "ไม่ระบุ", "ไม่ชัดเจน", "ไม่ได้เป็นอะไรกัน", "ไม่รู้จัก"})
@@ -251,7 +249,6 @@ Partial Class Edit_Patient
         '
         'local_address
         '
-        Me.local_address.Enabled = False
         Me.local_address.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.local_address.Location = New System.Drawing.Point(1064, 567)
         Me.local_address.Margin = New System.Windows.Forms.Padding(4)
@@ -262,7 +259,6 @@ Partial Class Edit_Patient
         '
         'kin_tel
         '
-        Me.kin_tel.Enabled = False
         Me.kin_tel.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.kin_tel.Location = New System.Drawing.Point(830, 394)
         Me.kin_tel.Margin = New System.Windows.Forms.Padding(0)
@@ -307,7 +303,6 @@ Partial Class Edit_Patient
         '
         'local_tel
         '
-        Me.local_tel.Enabled = False
         Me.local_tel.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.local_tel.Location = New System.Drawing.Point(830, 672)
         Me.local_tel.Margin = New System.Windows.Forms.Padding(0)
@@ -328,7 +323,6 @@ Partial Class Edit_Patient
         '
         'local_fullName
         '
-        Me.local_fullName.Enabled = False
         Me.local_fullName.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.local_fullName.Location = New System.Drawing.Point(559, 761)
         Me.local_fullName.Margin = New System.Windows.Forms.Padding(4)
@@ -349,7 +343,6 @@ Partial Class Edit_Patient
         '
         'kin_address
         '
-        Me.kin_address.Enabled = False
         Me.kin_address.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.kin_address.Location = New System.Drawing.Point(1064, 208)
         Me.kin_address.Margin = New System.Windows.Forms.Padding(4)
@@ -433,7 +426,6 @@ Partial Class Edit_Patient
         '
         'kin_fullName
         '
-        Me.kin_fullName.Enabled = False
         Me.kin_fullName.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.kin_fullName.Location = New System.Drawing.Point(560, 280)
         Me.kin_fullName.Margin = New System.Windows.Forms.Padding(4)

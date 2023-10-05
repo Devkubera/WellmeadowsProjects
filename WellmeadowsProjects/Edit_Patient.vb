@@ -20,6 +20,7 @@
             pt_date.Value,
             patientID
         )
+
     End Sub
 
     Private Sub btnCheck_kin_Click(sender As Object, e As EventArgs) Handles btnCheck_kin.Click
