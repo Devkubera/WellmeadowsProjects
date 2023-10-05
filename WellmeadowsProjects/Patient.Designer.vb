@@ -28,17 +28,6 @@ Partial Class Patient
         Me.lableSearch = New System.Windows.Forms.Label()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.ViewPa = New System.Windows.Forms.DataGridView()
-        Me.PatientIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.KinsIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LocalDocIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GenderDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MarryStatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DobDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateregisterDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PatientsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.btnReport = New System.Windows.Forms.Button()
@@ -52,6 +41,17 @@ Partial Class Patient
         Me.LocalDoctorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
         Me.Patient_kinsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PatientIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KinsIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LocalDocIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GenderDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MarryStatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DobDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DateregisterDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.ViewPa, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PatientsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -121,105 +121,6 @@ Partial Class Patient
         Me.ViewPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ViewPa.Size = New System.Drawing.Size(1155, 404)
         Me.ViewPa.TabIndex = 16
-        '
-        'PatientIDDataGridViewTextBoxColumn
-        '
-        Me.PatientIDDataGridViewTextBoxColumn.DataPropertyName = "patientID"
-        Me.PatientIDDataGridViewTextBoxColumn.HeaderText = "รหัสผู้ป่วย"
-        Me.PatientIDDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PatientIDDataGridViewTextBoxColumn.Name = "PatientIDDataGridViewTextBoxColumn"
-        Me.PatientIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PatientIDDataGridViewTextBoxColumn.Width = 125
-        '
-        'KinsIDDataGridViewTextBoxColumn
-        '
-        Me.KinsIDDataGridViewTextBoxColumn.DataPropertyName = "kinsID"
-        Me.KinsIDDataGridViewTextBoxColumn.HeaderText = "รหัสญาติผู้ป่วย"
-        Me.KinsIDDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.KinsIDDataGridViewTextBoxColumn.Name = "KinsIDDataGridViewTextBoxColumn"
-        Me.KinsIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.KinsIDDataGridViewTextBoxColumn.Width = 125
-        '
-        'LocalDocIDDataGridViewTextBoxColumn
-        '
-        Me.LocalDocIDDataGridViewTextBoxColumn.DataPropertyName = "localDocID"
-        Me.LocalDocIDDataGridViewTextBoxColumn.HeaderText = "รหัสหมอท้องถิ่น"
-        Me.LocalDocIDDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.LocalDocIDDataGridViewTextBoxColumn.Name = "LocalDocIDDataGridViewTextBoxColumn"
-        Me.LocalDocIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.LocalDocIDDataGridViewTextBoxColumn.Width = 125
-        '
-        'FirstNameDataGridViewTextBoxColumn
-        '
-        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName"
-        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "ชื่อ"
-        Me.FirstNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
-        Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.FirstNameDataGridViewTextBoxColumn.Width = 125
-        '
-        'LastNameDataGridViewTextBoxColumn
-        '
-        Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName"
-        Me.LastNameDataGridViewTextBoxColumn.HeaderText = "นามสกุล"
-        Me.LastNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
-        Me.LastNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.LastNameDataGridViewTextBoxColumn.Width = 125
-        '
-        'AddressDataGridViewTextBoxColumn
-        '
-        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "address"
-        Me.AddressDataGridViewTextBoxColumn.HeaderText = "ที่อยู่"
-        Me.AddressDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
-        Me.AddressDataGridViewTextBoxColumn.ReadOnly = True
-        Me.AddressDataGridViewTextBoxColumn.Width = 125
-        '
-        'GenderDataGridViewTextBoxColumn
-        '
-        Me.GenderDataGridViewTextBoxColumn.DataPropertyName = "gender"
-        Me.GenderDataGridViewTextBoxColumn.HeaderText = "เพศสภาพ"
-        Me.GenderDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.GenderDataGridViewTextBoxColumn.Name = "GenderDataGridViewTextBoxColumn"
-        Me.GenderDataGridViewTextBoxColumn.ReadOnly = True
-        Me.GenderDataGridViewTextBoxColumn.Width = 125
-        '
-        'MarryStatusDataGridViewTextBoxColumn
-        '
-        Me.MarryStatusDataGridViewTextBoxColumn.DataPropertyName = "marryStatus"
-        Me.MarryStatusDataGridViewTextBoxColumn.HeaderText = "สถานภาพ"
-        Me.MarryStatusDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.MarryStatusDataGridViewTextBoxColumn.Name = "MarryStatusDataGridViewTextBoxColumn"
-        Me.MarryStatusDataGridViewTextBoxColumn.ReadOnly = True
-        Me.MarryStatusDataGridViewTextBoxColumn.Width = 125
-        '
-        'TelDataGridViewTextBoxColumn
-        '
-        Me.TelDataGridViewTextBoxColumn.DataPropertyName = "tel"
-        Me.TelDataGridViewTextBoxColumn.HeaderText = "เบอร์โทรศัพท์"
-        Me.TelDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.TelDataGridViewTextBoxColumn.Name = "TelDataGridViewTextBoxColumn"
-        Me.TelDataGridViewTextBoxColumn.ReadOnly = True
-        Me.TelDataGridViewTextBoxColumn.Width = 125
-        '
-        'DobDataGridViewTextBoxColumn
-        '
-        Me.DobDataGridViewTextBoxColumn.DataPropertyName = "dob"
-        Me.DobDataGridViewTextBoxColumn.HeaderText = "วันเกิด"
-        Me.DobDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.DobDataGridViewTextBoxColumn.Name = "DobDataGridViewTextBoxColumn"
-        Me.DobDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DobDataGridViewTextBoxColumn.Width = 125
-        '
-        'DateregisterDataGridViewTextBoxColumn
-        '
-        Me.DateregisterDataGridViewTextBoxColumn.DataPropertyName = "date_register"
-        Me.DateregisterDataGridViewTextBoxColumn.HeaderText = "วันที่ลงทะเบียน"
-        Me.DateregisterDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.DateregisterDataGridViewTextBoxColumn.Name = "DateregisterDataGridViewTextBoxColumn"
-        Me.DateregisterDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DateregisterDataGridViewTextBoxColumn.Width = 125
         '
         'PatientsBindingSource1
         '
@@ -334,6 +235,106 @@ Partial Class Patient
         '
         Me.Patient_kinsBindingSource.DataMember = "Patient_kins"
         Me.Patient_kinsBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'PatientIDDataGridViewTextBoxColumn
+        '
+        Me.PatientIDDataGridViewTextBoxColumn.DataPropertyName = "patientID"
+        Me.PatientIDDataGridViewTextBoxColumn.Frozen = True
+        Me.PatientIDDataGridViewTextBoxColumn.HeaderText = "รหัสผู้ป่วย"
+        Me.PatientIDDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PatientIDDataGridViewTextBoxColumn.Name = "PatientIDDataGridViewTextBoxColumn"
+        Me.PatientIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PatientIDDataGridViewTextBoxColumn.Width = 125
+        '
+        'KinsIDDataGridViewTextBoxColumn
+        '
+        Me.KinsIDDataGridViewTextBoxColumn.DataPropertyName = "kinsID"
+        Me.KinsIDDataGridViewTextBoxColumn.HeaderText = "รหัสญาติผู้ป่วย"
+        Me.KinsIDDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.KinsIDDataGridViewTextBoxColumn.Name = "KinsIDDataGridViewTextBoxColumn"
+        Me.KinsIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.KinsIDDataGridViewTextBoxColumn.Width = 125
+        '
+        'LocalDocIDDataGridViewTextBoxColumn
+        '
+        Me.LocalDocIDDataGridViewTextBoxColumn.DataPropertyName = "localDocID"
+        Me.LocalDocIDDataGridViewTextBoxColumn.HeaderText = "รหัสหมอท้องถิ่น"
+        Me.LocalDocIDDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.LocalDocIDDataGridViewTextBoxColumn.Name = "LocalDocIDDataGridViewTextBoxColumn"
+        Me.LocalDocIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.LocalDocIDDataGridViewTextBoxColumn.Width = 125
+        '
+        'FirstNameDataGridViewTextBoxColumn
+        '
+        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName"
+        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "ชื่อ"
+        Me.FirstNameDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
+        Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.FirstNameDataGridViewTextBoxColumn.Width = 125
+        '
+        'LastNameDataGridViewTextBoxColumn
+        '
+        Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName"
+        Me.LastNameDataGridViewTextBoxColumn.HeaderText = "นามสกุล"
+        Me.LastNameDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
+        Me.LastNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.LastNameDataGridViewTextBoxColumn.Width = 125
+        '
+        'AddressDataGridViewTextBoxColumn
+        '
+        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "address"
+        Me.AddressDataGridViewTextBoxColumn.HeaderText = "ที่อยู่"
+        Me.AddressDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
+        Me.AddressDataGridViewTextBoxColumn.ReadOnly = True
+        Me.AddressDataGridViewTextBoxColumn.Width = 125
+        '
+        'GenderDataGridViewTextBoxColumn
+        '
+        Me.GenderDataGridViewTextBoxColumn.DataPropertyName = "gender"
+        Me.GenderDataGridViewTextBoxColumn.HeaderText = "เพศสภาพ"
+        Me.GenderDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.GenderDataGridViewTextBoxColumn.Name = "GenderDataGridViewTextBoxColumn"
+        Me.GenderDataGridViewTextBoxColumn.ReadOnly = True
+        Me.GenderDataGridViewTextBoxColumn.Width = 125
+        '
+        'MarryStatusDataGridViewTextBoxColumn
+        '
+        Me.MarryStatusDataGridViewTextBoxColumn.DataPropertyName = "marryStatus"
+        Me.MarryStatusDataGridViewTextBoxColumn.HeaderText = "สถานภาพ"
+        Me.MarryStatusDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.MarryStatusDataGridViewTextBoxColumn.Name = "MarryStatusDataGridViewTextBoxColumn"
+        Me.MarryStatusDataGridViewTextBoxColumn.ReadOnly = True
+        Me.MarryStatusDataGridViewTextBoxColumn.Width = 125
+        '
+        'TelDataGridViewTextBoxColumn
+        '
+        Me.TelDataGridViewTextBoxColumn.DataPropertyName = "tel"
+        Me.TelDataGridViewTextBoxColumn.HeaderText = "เบอร์โทรศัพท์"
+        Me.TelDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.TelDataGridViewTextBoxColumn.Name = "TelDataGridViewTextBoxColumn"
+        Me.TelDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TelDataGridViewTextBoxColumn.Width = 125
+        '
+        'DobDataGridViewTextBoxColumn
+        '
+        Me.DobDataGridViewTextBoxColumn.DataPropertyName = "dob"
+        Me.DobDataGridViewTextBoxColumn.HeaderText = "วันเกิด"
+        Me.DobDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.DobDataGridViewTextBoxColumn.Name = "DobDataGridViewTextBoxColumn"
+        Me.DobDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DobDataGridViewTextBoxColumn.Width = 125
+        '
+        'DateregisterDataGridViewTextBoxColumn
+        '
+        Me.DateregisterDataGridViewTextBoxColumn.DataPropertyName = "date_register"
+        Me.DateregisterDataGridViewTextBoxColumn.HeaderText = "วันที่ลงทะเบียน"
+        Me.DateregisterDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.DateregisterDataGridViewTextBoxColumn.Name = "DateregisterDataGridViewTextBoxColumn"
+        Me.DateregisterDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DateregisterDataGridViewTextBoxColumn.Width = 125
         '
         'Patient
         '

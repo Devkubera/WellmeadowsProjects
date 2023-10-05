@@ -22,6 +22,7 @@ Partial Class StaffForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.StaffPanel = New System.Windows.Forms.Panel()
         Me.btnDel = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
@@ -34,8 +35,28 @@ Partial Class StaffForm
         Me.cbbEduOrExp = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
+        Me.StaffsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.StaffsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.StaffsTableAdapter()
+        Me.StaffIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DoctorIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CnIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MdIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DobDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NinDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PositionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SalaryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HoursWeekDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContactTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PaidTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StaffPanel.SuspendLayout()
         CType(Me.StaffTable, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaffsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StaffPanel
@@ -96,18 +117,25 @@ Partial Class StaffForm
         'searchlb
         '
         Me.searchlb.AutoSize = True
-        Me.searchlb.Font = New System.Drawing.Font("Prompt", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.searchlb.Font = New System.Drawing.Font("Prompt", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.searchlb.Location = New System.Drawing.Point(618, 91)
         Me.searchlb.Name = "searchlb"
-        Me.searchlb.Size = New System.Drawing.Size(167, 19)
+        Me.searchlb.Size = New System.Drawing.Size(194, 22)
         Me.searchlb.TabIndex = 21
         Me.searchlb.Text = "ค้นหาเจ้าหน้าที่ด้วยชื่อองค์กร.."
         '
         'StaffTable
         '
+        Me.StaffTable.AllowUserToAddRows = False
+        Me.StaffTable.AllowUserToDeleteRows = False
+        Me.StaffTable.AllowUserToOrderColumns = True
+        Me.StaffTable.AutoGenerateColumns = False
         Me.StaffTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.StaffTable.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.StaffIDDataGridViewTextBoxColumn, Me.DoctorIDDataGridViewTextBoxColumn, Me.CnIDDataGridViewTextBoxColumn, Me.MdIDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.TelDataGridViewTextBoxColumn, Me.DobDataGridViewTextBoxColumn, Me.NinDataGridViewTextBoxColumn, Me.PositionDataGridViewTextBoxColumn, Me.SalaryDataGridViewTextBoxColumn, Me.HoursWeekDataGridViewTextBoxColumn, Me.ContactTypeDataGridViewTextBoxColumn, Me.PaidTypeDataGridViewTextBoxColumn})
+        Me.StaffTable.DataSource = Me.StaffsBindingSource
         Me.StaffTable.Location = New System.Drawing.Point(86, 170)
         Me.StaffTable.Name = "StaffTable"
+        Me.StaffTable.ReadOnly = True
         Me.StaffTable.RowHeadersWidth = 51
         Me.StaffTable.Size = New System.Drawing.Size(853, 328)
         Me.StaffTable.TabIndex = 20
@@ -153,22 +181,172 @@ Partial Class StaffForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Prompt", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Prompt", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(410, 90)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 19)
+        Me.Label1.Size = New System.Drawing.Size(95, 22)
         Me.Label1.TabIndex = 25
         Me.Label1.Text = "วุฒิการศึกษา"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Prompt", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Prompt", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(194, 90)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(107, 19)
+        Me.Label2.Size = New System.Drawing.Size(123, 22)
         Me.Label2.TabIndex = 26
         Me.Label2.Text = "วิธีการแสดงข้อมูล"
+        '
+        'WellmeadowsDataSet
+        '
+        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
+        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'StaffsBindingSource
+        '
+        Me.StaffsBindingSource.DataMember = "Staffs"
+        Me.StaffsBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'StaffsTableAdapter
+        '
+        Me.StaffsTableAdapter.ClearBeforeFill = True
+        '
+        'StaffIDDataGridViewTextBoxColumn
+        '
+        Me.StaffIDDataGridViewTextBoxColumn.DataPropertyName = "staffID"
+        Me.StaffIDDataGridViewTextBoxColumn.Frozen = True
+        Me.StaffIDDataGridViewTextBoxColumn.HeaderText = "รหัสเจ้าหน้าที่"
+        Me.StaffIDDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.StaffIDDataGridViewTextBoxColumn.Name = "StaffIDDataGridViewTextBoxColumn"
+        Me.StaffIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.StaffIDDataGridViewTextBoxColumn.Width = 125
+        '
+        'DoctorIDDataGridViewTextBoxColumn
+        '
+        Me.DoctorIDDataGridViewTextBoxColumn.DataPropertyName = "doctorID"
+        Me.DoctorIDDataGridViewTextBoxColumn.HeaderText = "รหัสแพทย์"
+        Me.DoctorIDDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.DoctorIDDataGridViewTextBoxColumn.Name = "DoctorIDDataGridViewTextBoxColumn"
+        Me.DoctorIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DoctorIDDataGridViewTextBoxColumn.Width = 125
+        '
+        'CnIDDataGridViewTextBoxColumn
+        '
+        Me.CnIDDataGridViewTextBoxColumn.DataPropertyName = "cnID"
+        Me.CnIDDataGridViewTextBoxColumn.HeaderText = "รหัสหัวหน้าพยาบาล"
+        Me.CnIDDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.CnIDDataGridViewTextBoxColumn.Name = "CnIDDataGridViewTextBoxColumn"
+        Me.CnIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CnIDDataGridViewTextBoxColumn.Width = 125
+        '
+        'MdIDDataGridViewTextBoxColumn
+        '
+        Me.MdIDDataGridViewTextBoxColumn.DataPropertyName = "mdID"
+        Me.MdIDDataGridViewTextBoxColumn.HeaderText = "รหัสผู้อำนวยการทางการแพทย์"
+        Me.MdIDDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.MdIDDataGridViewTextBoxColumn.Name = "MdIDDataGridViewTextBoxColumn"
+        Me.MdIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.MdIDDataGridViewTextBoxColumn.Width = 125
+        '
+        'FirstNameDataGridViewTextBoxColumn
+        '
+        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName"
+        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "ชื่อ"
+        Me.FirstNameDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
+        Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.FirstNameDataGridViewTextBoxColumn.Width = 125
+        '
+        'LastNameDataGridViewTextBoxColumn
+        '
+        Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName"
+        Me.LastNameDataGridViewTextBoxColumn.HeaderText = "สกุล"
+        Me.LastNameDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
+        Me.LastNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.LastNameDataGridViewTextBoxColumn.Width = 125
+        '
+        'AddressDataGridViewTextBoxColumn
+        '
+        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "address"
+        Me.AddressDataGridViewTextBoxColumn.HeaderText = "ที่อยู่"
+        Me.AddressDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
+        Me.AddressDataGridViewTextBoxColumn.ReadOnly = True
+        Me.AddressDataGridViewTextBoxColumn.Width = 125
+        '
+        'TelDataGridViewTextBoxColumn
+        '
+        Me.TelDataGridViewTextBoxColumn.DataPropertyName = "tel"
+        Me.TelDataGridViewTextBoxColumn.HeaderText = "เบอร์โทรศัพท์"
+        Me.TelDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.TelDataGridViewTextBoxColumn.Name = "TelDataGridViewTextBoxColumn"
+        Me.TelDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TelDataGridViewTextBoxColumn.Width = 125
+        '
+        'DobDataGridViewTextBoxColumn
+        '
+        Me.DobDataGridViewTextBoxColumn.DataPropertyName = "dob"
+        Me.DobDataGridViewTextBoxColumn.HeaderText = "วันเกิด"
+        Me.DobDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.DobDataGridViewTextBoxColumn.Name = "DobDataGridViewTextBoxColumn"
+        Me.DobDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DobDataGridViewTextBoxColumn.Width = 125
+        '
+        'NinDataGridViewTextBoxColumn
+        '
+        Me.NinDataGridViewTextBoxColumn.DataPropertyName = "nin"
+        Me.NinDataGridViewTextBoxColumn.HeaderText = "หมายเลขประกันสังคม"
+        Me.NinDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.NinDataGridViewTextBoxColumn.Name = "NinDataGridViewTextBoxColumn"
+        Me.NinDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NinDataGridViewTextBoxColumn.Width = 125
+        '
+        'PositionDataGridViewTextBoxColumn
+        '
+        Me.PositionDataGridViewTextBoxColumn.DataPropertyName = "position"
+        Me.PositionDataGridViewTextBoxColumn.HeaderText = "ตำแหน่ง"
+        Me.PositionDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PositionDataGridViewTextBoxColumn.Name = "PositionDataGridViewTextBoxColumn"
+        Me.PositionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PositionDataGridViewTextBoxColumn.Width = 125
+        '
+        'SalaryDataGridViewTextBoxColumn
+        '
+        Me.SalaryDataGridViewTextBoxColumn.DataPropertyName = "salary"
+        Me.SalaryDataGridViewTextBoxColumn.HeaderText = "เงินเดือน"
+        Me.SalaryDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.SalaryDataGridViewTextBoxColumn.Name = "SalaryDataGridViewTextBoxColumn"
+        Me.SalaryDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SalaryDataGridViewTextBoxColumn.Width = 125
+        '
+        'HoursWeekDataGridViewTextBoxColumn
+        '
+        Me.HoursWeekDataGridViewTextBoxColumn.DataPropertyName = "hoursWeek"
+        Me.HoursWeekDataGridViewTextBoxColumn.HeaderText = "จำนวนชั่วโมงทำงานต่อสัปดาห์"
+        Me.HoursWeekDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.HoursWeekDataGridViewTextBoxColumn.Name = "HoursWeekDataGridViewTextBoxColumn"
+        Me.HoursWeekDataGridViewTextBoxColumn.ReadOnly = True
+        Me.HoursWeekDataGridViewTextBoxColumn.Width = 125
+        '
+        'ContactTypeDataGridViewTextBoxColumn
+        '
+        Me.ContactTypeDataGridViewTextBoxColumn.DataPropertyName = "contactType"
+        Me.ContactTypeDataGridViewTextBoxColumn.HeaderText = "ประเภทสัญญาจ้าง"
+        Me.ContactTypeDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.ContactTypeDataGridViewTextBoxColumn.Name = "ContactTypeDataGridViewTextBoxColumn"
+        Me.ContactTypeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ContactTypeDataGridViewTextBoxColumn.Width = 125
+        '
+        'PaidTypeDataGridViewTextBoxColumn
+        '
+        Me.PaidTypeDataGridViewTextBoxColumn.DataPropertyName = "paidType"
+        Me.PaidTypeDataGridViewTextBoxColumn.HeaderText = "วิธีรับเงินเดือน"
+        Me.PaidTypeDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PaidTypeDataGridViewTextBoxColumn.Name = "PaidTypeDataGridViewTextBoxColumn"
+        Me.PaidTypeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PaidTypeDataGridViewTextBoxColumn.Width = 125
         '
         'StaffForm
         '
@@ -183,6 +361,8 @@ Partial Class StaffForm
         Me.StaffPanel.ResumeLayout(False)
         Me.StaffPanel.PerformLayout()
         CType(Me.StaffTable, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaffsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -199,4 +379,22 @@ Partial Class StaffForm
     Friend WithEvents cbbEduOrExp As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents WellmeadowsDataSet As WellmeadowsDataSet
+    Friend WithEvents StaffsBindingSource As BindingSource
+    Friend WithEvents StaffsTableAdapter As WellmeadowsDataSetTableAdapters.StaffsTableAdapter
+    Friend WithEvents StaffIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DoctorIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CnIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MdIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FirstNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents LastNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents AddressDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TelDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DobDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NinDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PositionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SalaryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents HoursWeekDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ContactTypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PaidTypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
