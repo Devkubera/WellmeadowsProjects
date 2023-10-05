@@ -83,8 +83,6 @@
     End Sub
 
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
-
-
         Dim searchText As String = txtSearch.Text.Trim()
         If String.IsNullOrEmpty(searchText) Then
             PatientsBindingSource1.RemoveFilter()
@@ -92,6 +90,4 @@
             PatientsBindingSource1.Filter = $"patientID LIKE '*{searchText}*' OR firstName LIKE '*{searchText}*' OR lastName LIKE '*{searchText}*' "
         End If
     End Sub
-
-
 End Class

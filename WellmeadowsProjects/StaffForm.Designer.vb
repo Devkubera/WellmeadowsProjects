@@ -28,23 +28,25 @@ Partial Class StaffForm
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.searchlb = New System.Windows.Forms.Label()
         Me.StaffTable = New System.Windows.Forms.DataGridView()
-        Me.btnSearch = New System.Windows.Forms.Button()
         Me.SearchStaff = New System.Windows.Forms.TextBox()
         Me.cbbEduLevel = New System.Windows.Forms.ComboBox()
         Me.Stafflabel = New System.Windows.Forms.Label()
         Me.cbbEduOrExp = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.StaffPanel.SuspendLayout()
         CType(Me.StaffTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StaffPanel
         '
+        Me.StaffPanel.Controls.Add(Me.Label2)
+        Me.StaffPanel.Controls.Add(Me.Label1)
         Me.StaffPanel.Controls.Add(Me.btnDel)
         Me.StaffPanel.Controls.Add(Me.btnEdit)
         Me.StaffPanel.Controls.Add(Me.btnAdd)
         Me.StaffPanel.Controls.Add(Me.searchlb)
         Me.StaffPanel.Controls.Add(Me.StaffTable)
-        Me.StaffPanel.Controls.Add(Me.btnSearch)
         Me.StaffPanel.Controls.Add(Me.SearchStaff)
         Me.StaffPanel.Controls.Add(Me.cbbEduLevel)
         Me.StaffPanel.Controls.Add(Me.Stafflabel)
@@ -52,7 +54,7 @@ Partial Class StaffForm
         Me.StaffPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.StaffPanel.Location = New System.Drawing.Point(0, 0)
         Me.StaffPanel.Name = "StaffPanel"
-        Me.StaffPanel.Size = New System.Drawing.Size(1020, 650)
+        Me.StaffPanel.Size = New System.Drawing.Size(1041, 749)
         Me.StaffPanel.TabIndex = 0
         '
         'btnDel
@@ -94,10 +96,10 @@ Partial Class StaffForm
         'searchlb
         '
         Me.searchlb.AutoSize = True
-        Me.searchlb.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.searchlb.Location = New System.Drawing.Point(584, 80)
+        Me.searchlb.Font = New System.Drawing.Font("Prompt", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.searchlb.Location = New System.Drawing.Point(618, 91)
         Me.searchlb.Name = "searchlb"
-        Me.searchlb.Size = New System.Drawing.Size(208, 24)
+        Me.searchlb.Size = New System.Drawing.Size(167, 19)
         Me.searchlb.TabIndex = 21
         Me.searchlb.Text = "ค้นหาเจ้าหน้าที่ด้วยชื่อองค์กร.."
         '
@@ -106,35 +108,26 @@ Partial Class StaffForm
         Me.StaffTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.StaffTable.Location = New System.Drawing.Point(86, 170)
         Me.StaffTable.Name = "StaffTable"
+        Me.StaffTable.RowHeadersWidth = 51
         Me.StaffTable.Size = New System.Drawing.Size(853, 328)
         Me.StaffTable.TabIndex = 20
         '
-        'btnSearch
-        '
-        Me.btnSearch.BackColor = System.Drawing.Color.White
-        Me.btnSearch.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.ForeColor = System.Drawing.Color.Black
-        Me.btnSearch.Location = New System.Drawing.Point(771, 109)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(75, 37)
-        Me.btnSearch.TabIndex = 19
-        Me.btnSearch.Text = "ค้นหา"
-        Me.btnSearch.UseVisualStyleBackColor = False
-        '
         'SearchStaff
         '
-        Me.SearchStaff.Location = New System.Drawing.Point(588, 109)
+        Me.SearchStaff.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SearchStaff.Location = New System.Drawing.Point(622, 113)
         Me.SearchStaff.Name = "SearchStaff"
-        Me.SearchStaff.Size = New System.Drawing.Size(142, 20)
+        Me.SearchStaff.Size = New System.Drawing.Size(219, 33)
         Me.SearchStaff.TabIndex = 18
         '
         'cbbEduLevel
         '
+        Me.cbbEduLevel.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbbEduLevel.FormattingEnabled = True
         Me.cbbEduLevel.Items.AddRange(New Object() {"ปริญญาตรี", "ปริญญาโท", "ปริญญาเอก"})
-        Me.cbbEduLevel.Location = New System.Drawing.Point(423, 111)
+        Me.cbbEduLevel.Location = New System.Drawing.Point(414, 112)
         Me.cbbEduLevel.Name = "cbbEduLevel"
-        Me.cbbEduLevel.Size = New System.Drawing.Size(121, 21)
+        Me.cbbEduLevel.Size = New System.Drawing.Size(176, 34)
         Me.cbbEduLevel.TabIndex = 17
         '
         'Stafflabel
@@ -143,24 +136,45 @@ Partial Class StaffForm
         Me.Stafflabel.Font = New System.Drawing.Font("Prompt", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Stafflabel.Location = New System.Drawing.Point(81, 103)
         Me.Stafflabel.Name = "Stafflabel"
-        Me.Stafflabel.Size = New System.Drawing.Size(68, 36)
+        Me.Stafflabel.Size = New System.Drawing.Size(87, 46)
         Me.Stafflabel.TabIndex = 15
         Me.Stafflabel.Text = "Staff"
         '
         'cbbEduOrExp
         '
+        Me.cbbEduOrExp.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbbEduOrExp.FormattingEnabled = True
         Me.cbbEduOrExp.Items.AddRange(New Object() {"เจ้าหน้าที่", "ประวัติการศึกษา", "ประวัติการทำงาน"})
-        Me.cbbEduOrExp.Location = New System.Drawing.Point(261, 112)
+        Me.cbbEduOrExp.Location = New System.Drawing.Point(198, 112)
         Me.cbbEduOrExp.Name = "cbbEduOrExp"
-        Me.cbbEduOrExp.Size = New System.Drawing.Size(121, 21)
+        Me.cbbEduOrExp.Size = New System.Drawing.Size(183, 34)
         Me.cbbEduOrExp.TabIndex = 16
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Prompt", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(410, 90)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(79, 19)
+        Me.Label1.TabIndex = 25
+        Me.Label1.Text = "วุฒิการศึกษา"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Prompt", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(194, 90)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(107, 19)
+        Me.Label2.TabIndex = 26
+        Me.Label2.Text = "วิธีการแสดงข้อมูล"
         '
         'StaffForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1020, 650)
+        Me.ClientSize = New System.Drawing.Size(1041, 749)
         Me.Controls.Add(Me.StaffPanel)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -179,9 +193,10 @@ Partial Class StaffForm
     Friend WithEvents btnAdd As Button
     Friend WithEvents searchlb As Label
     Friend WithEvents StaffTable As DataGridView
-    Friend WithEvents btnSearch As Button
     Friend WithEvents SearchStaff As TextBox
     Friend WithEvents cbbEduLevel As ComboBox
     Friend WithEvents Stafflabel As Label
     Friend WithEvents cbbEduOrExp As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
 End Class
