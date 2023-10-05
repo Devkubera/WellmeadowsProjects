@@ -103,7 +103,7 @@ Partial Class MainForm
         Me.btnHome.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnHome.Image = Global.WellmeadowsProjects.My.Resources.Resources.home1
         Me.btnHome.Location = New System.Drawing.Point(4, 4)
-        Me.btnHome.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnHome.Margin = New System.Windows.Forms.Padding(4)
         Me.btnHome.Name = "btnHome"
         Me.btnHome.Size = New System.Drawing.Size(218, 66)
         Me.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -116,7 +116,7 @@ Partial Class MainForm
         Me.btnStaff.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnStaff.Image = Global.WellmeadowsProjects.My.Resources.Resources.staff
         Me.btnStaff.Location = New System.Drawing.Point(230, 4)
-        Me.btnStaff.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnStaff.Margin = New System.Windows.Forms.Padding(4)
         Me.btnStaff.Name = "btnStaff"
         Me.btnStaff.Size = New System.Drawing.Size(218, 66)
         Me.btnStaff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -128,7 +128,7 @@ Partial Class MainForm
         Me.btnWard.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnWard.Image = Global.WellmeadowsProjects.My.Resources.Resources.ward
         Me.btnWard.Location = New System.Drawing.Point(456, 4)
-        Me.btnWard.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnWard.Margin = New System.Windows.Forms.Padding(4)
         Me.btnWard.Name = "btnWard"
         Me.btnWard.Size = New System.Drawing.Size(218, 66)
         Me.btnWard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -140,7 +140,7 @@ Partial Class MainForm
         Me.PatientBtn.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PatientBtn.Image = Global.WellmeadowsProjects.My.Resources.Resources.patient
         Me.PatientBtn.Location = New System.Drawing.Point(682, 4)
-        Me.PatientBtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PatientBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.PatientBtn.Name = "PatientBtn"
         Me.PatientBtn.Size = New System.Drawing.Size(218, 66)
         Me.PatientBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -152,7 +152,7 @@ Partial Class MainForm
         Me.btnMedical.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnMedical.Image = Global.WellmeadowsProjects.My.Resources.Resources.medical
         Me.btnMedical.Location = New System.Drawing.Point(908, 4)
-        Me.btnMedical.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnMedical.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMedical.Name = "btnMedical"
         Me.btnMedical.Size = New System.Drawing.Size(218, 66)
         Me.btnMedical.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -164,7 +164,7 @@ Partial Class MainForm
         Me.btnDashboard.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnDashboard.Image = Global.WellmeadowsProjects.My.Resources.Resources.dashbord
         Me.btnDashboard.Location = New System.Drawing.Point(1134, 4)
-        Me.btnDashboard.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDashboard.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDashboard.Name = "btnDashboard"
         Me.btnDashboard.Size = New System.Drawing.Size(221, 66)
         Me.btnDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -185,7 +185,7 @@ Partial Class MainForm
         '
         Me.PanelMain.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelMain.Location = New System.Drawing.Point(0, 0)
-        Me.PanelMain.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PanelMain.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelMain.Name = "PanelMain"
         Me.PanelMain.Size = New System.Drawing.Size(1359, 785)
         Me.PanelMain.TabIndex = 1
@@ -438,7 +438,7 @@ Partial Class MainForm
         '
         Me.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlMain.Location = New System.Drawing.Point(0, 0)
-        Me.pnlMain.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlMain.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlMain.Name = "pnlMain"
         Me.pnlMain.Size = New System.Drawing.Size(1359, 785)
         Me.pnlMain.TabIndex = 2
@@ -453,6 +453,7 @@ Partial Class MainForm
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "MainForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MainForm"
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.btnHome, System.ComponentModel.ISupportInitialize).EndInit()

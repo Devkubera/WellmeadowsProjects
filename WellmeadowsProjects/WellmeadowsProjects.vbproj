@@ -31,7 +31,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
@@ -61,6 +61,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Oracle.ManagedDataAccess">
@@ -226,12 +229,6 @@
     <Compile Include="Edit_InPatient.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHome.Designer.vb">
-      <DependentUpon>FormHome.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormHome.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="InPatient.Designer.vb">
       <DependentUpon>InPatient.vb</DependentUpon>
     </Compile>
@@ -289,6 +286,18 @@
       <DependentUpon>Patient_Visit.vb</DependentUpon>
     </Compile>
     <Compile Include="Patient_Visit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popup_localDoctor.Designer.vb">
+      <DependentUpon>popup_localDoctor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="popup_localDoctor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popup_patientKin.Designer.vb">
+      <DependentUpon>popup_patientKin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="popup_patientKin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Supplies.Designer.vb">
@@ -382,9 +391,6 @@
     <EmbeddedResource Include="Edit_VisitPatient.resx">
       <DependentUpon>Edit_VisitPatient.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHome.resx">
-      <DependentUpon>FormHome.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="InPatient.resx">
       <DependentUpon>InPatient.vb</DependentUpon>
     </EmbeddedResource>
@@ -439,6 +445,12 @@
     <EmbeddedResource Include="Patient_Visit.resx">
       <DependentUpon>Patient_Visit.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="popup_localDoctor.resx">
+      <DependentUpon>popup_localDoctor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="popup_patientKin.resx">
+      <DependentUpon>popup_patientKin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Supplies.resx">
       <DependentUpon>Supplies.vb</DependentUpon>
     </EmbeddedResource>
@@ -465,6 +477,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

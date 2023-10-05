@@ -22,28 +22,32 @@ Partial Class HomeForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.day_label = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Label1
+        'day_label
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label1.Size = New System.Drawing.Size(184, 37)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "สวัสดีวันจันทร์"
+        Me.day_label.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.day_label.AutoSize = True
+        Me.day_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.day_label.Location = New System.Drawing.Point(431, 219)
+        Me.day_label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.day_label.Name = "day_label"
+        Me.day_label.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.day_label.Size = New System.Drawing.Size(193, 46)
+        Me.day_label.TabIndex = 0
+        Me.day_label.Text = "สวัสดีวันพุธ"
         '
         'HomeForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Label1)
+        Me.ClientSize = New System.Drawing.Size(1067, 554)
+        Me.Controls.Add(Me.day_label)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "HomeForm"
         Me.Text = "HomeForm"
         Me.ResumeLayout(False)
@@ -51,5 +55,5 @@ Partial Class HomeForm
 
     End Sub
 
-    Friend WithEvents Label1 As Label
+    Friend WithEvents day_label As Label
 End Class
