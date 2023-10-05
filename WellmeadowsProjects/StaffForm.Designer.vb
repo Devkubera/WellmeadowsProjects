@@ -357,6 +357,7 @@ Partial Class StaffForm
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "StaffForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "StaffForm"
         Me.StaffPanel.ResumeLayout(False)
         Me.StaffPanel.PerformLayout()

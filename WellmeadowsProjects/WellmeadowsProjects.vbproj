@@ -353,6 +353,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WellmeadowsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WellmeadowsDataSet.vb">
+      <DependentUpon>WellmeadowsDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Add_InPatient.resx">

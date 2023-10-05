@@ -629,6 +629,7 @@ Partial Class Add_Patient
         Me.Controls.Add(Me.Add_panel)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Add_Patient"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add_Patient"
         Me.Add_panel.ResumeLayout(False)
         Me.Add_panel.PerformLayout()
