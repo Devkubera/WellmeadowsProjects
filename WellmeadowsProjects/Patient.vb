@@ -10,7 +10,7 @@
         Patient_Visit.Show()
     End Sub
 
-    Private Sub Patient_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub Patient_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Patient_kins' table. You can move, or remove it, as needed.
         Me.Patient_kinsTableAdapter.Fill(Me.WellmeadowsDataSet.Patient_kins)
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.LocalDoctors' table. You can move, or remove it, as needed.
@@ -45,7 +45,7 @@
             patientData("status") = ViewPa.SelectedRows(0).Cells(7).Value.ToString
             patientData("tel") = ViewPa.SelectedRows(0).Cells(8).Value.ToString
             patientData("dob") = ViewPa.SelectedRows(0).Cells(9).Value.ToString
-            patientData("dateRegis") = ViewPa.SelectedRows(0).Cells(10).Value.ToStrin
+            patientData("dateRegis") = ViewPa.SelectedRows(0).Cells(10).Value.ToString
 
             Edit_Patient.patientID = patientData("patientID")
             Edit_Patient.kinID = patientData("kinID")

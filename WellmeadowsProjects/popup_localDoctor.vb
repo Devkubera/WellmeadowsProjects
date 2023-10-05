@@ -3,7 +3,7 @@
     Private Sub popup_localDoctor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.LocalDoctors' table. You can move, or remove it, as needed.
         Me.LocalDoctorsTableAdapter.Fill(Me.WellmeadowsDataSet.LocalDoctors)
-
+        DocsData("id") = Nothing
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

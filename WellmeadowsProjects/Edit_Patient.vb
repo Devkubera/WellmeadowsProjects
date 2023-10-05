@@ -7,6 +7,8 @@
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        Console.WriteLine("PatientKins : " & kinID)
+        Console.WriteLine("localDoctorID : " & localDoctorID)
         PatientsTableAdapter.UpdatePatient(
             kinID,
             localDoctorID,
@@ -21,24 +23,47 @@
             patientID
         )
 
+        Patient_kinsTableAdapter.UpdateByKinsID(
+            kin_fullName.Text,
+            kin_address.Text,
+            kin_rela.Text,
+            kin_tel.Text,
+            kinID
+        )
+
+        LocalDoctorsTableAdapter.UpdateByLocalDocID(
+            local_fullName.Text,
+            local_clinic_ID.Text,
+            local_address.Text,
+            local_tel.Text,
+            localDoctorID
+        )
+
+        'Patient.ViewPa.Refresh()
+        'Patient.Patient_Load(New Object, Nothing)
+
     End Sub
 
     Private Sub btnCheck_kin_Click(sender As Object, e As EventArgs) Handles btnCheck_kin.Click
+        Dim backupKinID = kinID
         popup_patientKin.ShowDialog()
-        If popup_patientKin.kinsData("id") IsNot Nothing Or popup_patientKin.kinsData("id") <> "" Then
+
+        If popup_patientKin.kinsData("id") IsNot Nothing Then
             kinID = popup_patientKin.kinsData("id")
         Else
-
+            kinID = backupKinID
         End If
         Console.WriteLine("KinsID : " & kinID)
     End Sub
 
     Private Sub btnCheckLocal_Click(sender As Object, e As EventArgs) Handles btnCheckLocal.Click
+        Dim backupLocalID = localDoctorID
         popup_localDoctor.ShowDialog()
-        If popup_localDoctor.DocsData("id") IsNot Nothing Or popup_localDoctor.DocsData("id") <> "" Then
+
+        If popup_localDoctor.DocsData("id") IsNot Nothing Then
             localDoctorID = popup_localDoctor.DocsData("id")
         Else
-
+            localDoctorID = backupLocalID
         End If
         Console.WriteLine("localDoctorID : " & localDoctorID)
     End Sub

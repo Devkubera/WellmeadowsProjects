@@ -14,7 +14,7 @@ Public Class popup_patientKin
     Private Sub popup_patientKin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Patient_kins' table. You can move, or remove it, as needed.
         Me.Patient_kinsTableAdapter.Fill(Me.WellmeadowsDataSet.Patient_kins)
-        kinsData("id") = ""
+        kinsData("id") = Nothing
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
