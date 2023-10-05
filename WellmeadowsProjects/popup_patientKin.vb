@@ -52,4 +52,14 @@ Public Class popup_patientKin
 
 
     End Sub
+
+    Private Sub seachbox_TextChanged(sender As Object, e As EventArgs) Handles seachbox.TextChanged
+
+        Dim searchText As String = seachbox.Text.Trim()
+        If String.IsNullOrEmpty(searchText) Then
+            Patient_kinsBindingSource.RemoveFilter()
+        Else
+            Patient_kinsBindingSource.Filter = $"kinsID LIKE '*{searchText}*' OR fullname LIKE '*{searchText}*' OR relationship LIKE '*{searchText}*' "
+        End If
+    End Sub
 End Class

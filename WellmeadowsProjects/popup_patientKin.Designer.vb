@@ -87,11 +87,12 @@ Partial Class popup_patientKin
         Me.pateintKinDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.pateintKinDG.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
         Me.pateintKinDG.DataSource = Me.Patient_kinsBindingSource
-        Me.pateintKinDG.Location = New System.Drawing.Point(167, 114)
+        Me.pateintKinDG.Location = New System.Drawing.Point(125, 93)
+        Me.pateintKinDG.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.pateintKinDG.Name = "pateintKinDG"
         Me.pateintKinDG.RowHeadersWidth = 51
         Me.pateintKinDG.RowTemplate.Height = 24
-        Me.pateintKinDG.Size = New System.Drawing.Size(936, 259)
+        Me.pateintKinDG.Size = New System.Drawing.Size(702, 210)
         Me.pateintKinDG.TabIndex = 1
         '
         'DataGridViewTextBoxColumn2
@@ -102,7 +103,7 @@ Partial Class popup_patientKin
         Me.DataGridViewTextBoxColumn2.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 104
+        Me.DataGridViewTextBoxColumn2.Width = 99
         '
         'DataGridViewTextBoxColumn3
         '
@@ -140,18 +141,20 @@ Partial Class popup_patientKin
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Prompt", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(161, 57)
+        Me.Label1.Location = New System.Drawing.Point(121, 46)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(253, 35)
+        Me.Label1.Size = New System.Drawing.Size(213, 29)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "เลือกข้อมูลที่ท่านต้องการ"
         '
         'seachbox
         '
         Me.seachbox.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.seachbox.Location = New System.Drawing.Point(704, 57)
+        Me.seachbox.Location = New System.Drawing.Point(528, 46)
+        Me.seachbox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.seachbox.Name = "seachbox"
-        Me.seachbox.Size = New System.Drawing.Size(303, 35)
+        Me.seachbox.Size = New System.Drawing.Size(228, 29)
         Me.seachbox.TabIndex = 3
         Me.seachbox.Text = ""
         '
@@ -159,18 +162,20 @@ Partial Class popup_patientKin
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(699, 28)
+        Me.Label2.Location = New System.Drawing.Point(524, 23)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(175, 26)
+        Me.Label2.Size = New System.Drawing.Size(145, 21)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "ค้นหาด้วยชื่อ, เบอร์โทร"
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(1022, 57)
+        Me.Button1.Location = New System.Drawing.Point(766, 46)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(81, 35)
+        Me.Button1.Size = New System.Drawing.Size(61, 28)
         Me.Button1.TabIndex = 5
         Me.Button1.Text = "ค้นหา"
         Me.Button1.UseVisualStyleBackColor = True
@@ -180,24 +185,26 @@ Partial Class popup_patientKin
         Me.Button2.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Button2.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button2.Location = New System.Drawing.Point(981, 379)
+        Me.Button2.Location = New System.Drawing.Point(736, 308)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(122, 50)
+        Me.Button2.Size = New System.Drawing.Size(92, 41)
         Me.Button2.TabIndex = 6
         Me.Button2.Text = "ตกลง"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'popup_patientKin
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1226, 450)
+        Me.ClientSize = New System.Drawing.Size(920, 366)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.seachbox)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.pateintKinDG)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "popup_patientKin"
         Me.Text = "popup_patientKin"
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
