@@ -22,7 +22,21 @@ Partial Class Add_StaffForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Staff_position = New System.Windows.Forms.ComboBox()
+        Me.old_delete = New System.Windows.Forms.Button()
+        Me.study_delete = New System.Windows.Forms.Button()
+        Me.old_table = New System.Windows.Forms.DataGridView()
+        Me.study_table = New System.Windows.Forms.DataGridView()
+        Me.Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Major = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Congrat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.old_endDate = New System.Windows.Forms.DateTimePicker()
+        Me.study_endDate = New System.Windows.Forms.DateTimePicker()
+        Me.old_startDate = New System.Windows.Forms.DateTimePicker()
+        Me.old_company = New System.Windows.Forms.TextBox()
+        Me.old_position = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAdd = New System.Windows.Forms.Button()
@@ -58,6 +72,8 @@ Partial Class Add_StaffForm
         Me.Staff_tel = New System.Windows.Forms.TextBox()
         Me.Staff_dob = New System.Windows.Forms.DateTimePicker()
         Me.genderlb = New System.Windows.Forms.Label()
+        Me.study_major = New System.Windows.Forms.TextBox()
+        Me.study_cer = New System.Windows.Forms.TextBox()
         Me.Staff_gender = New System.Windows.Forms.TextBox()
         Me.doblb = New System.Windows.Forms.Label()
         Me.subheaderlb2 = New System.Windows.Forms.Label()
@@ -68,21 +84,14 @@ Partial Class Add_StaffForm
         Me.fnamelb = New System.Windows.Forms.Label()
         Me.Staff_firstName = New System.Windows.Forms.TextBox()
         Me.subheaderlb1 = New System.Windows.Forms.Label()
-        Me.old_position = New System.Windows.Forms.TextBox()
-        Me.old_company = New System.Windows.Forms.TextBox()
-        Me.old_startDate = New System.Windows.Forms.DateTimePicker()
-        Me.old_endDate = New System.Windows.Forms.DateTimePicker()
-        Me.study_cer = New System.Windows.Forms.TextBox()
-        Me.study_major = New System.Windows.Forms.TextBox()
-        Me.study_table = New System.Windows.Forms.DataGridView()
-        Me.study_delete = New System.Windows.Forms.Button()
-        Me.old_table = New System.Windows.Forms.DataGridView()
-        Me.old_delete = New System.Windows.Forms.Button()
-        Me.study_endDate = New System.Windows.Forms.DateTimePicker()
-        Me.Staff_position = New System.Windows.Forms.ComboBox()
+        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
+        Me.StaffQualificatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Staff_QualificatesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Staff_QualificatesTableAdapter()
         Me.Panel1.SuspendLayout()
-        CType(Me.study_table, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.old_table, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.study_table, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StaffQualificatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -150,6 +159,135 @@ Partial Class Add_StaffForm
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1633, 1055)
         Me.Panel1.TabIndex = 0
+        '
+        'Staff_position
+        '
+        Me.Staff_position.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Staff_position.FormattingEnabled = True
+        Me.Staff_position.Items.AddRange(New Object() {"เจ้าหน้าที่ฝ่ายบุคคล. Personal Officer", "หัวหน้าพยาบาล. Charge Nurse", "ผู้อำนวยการโรงพยาบาล. Medical Director", "แพทย์. Doctor", "พยาบาล, Nurse", "พนักงานรักษาความปลอดภัย, Guard", "บุรุษพยาบาล, Men-Nurse"})
+        Me.Staff_position.Location = New System.Drawing.Point(126, 613)
+        Me.Staff_position.Name = "Staff_position"
+        Me.Staff_position.Size = New System.Drawing.Size(424, 34)
+        Me.Staff_position.TabIndex = 185
+        '
+        'old_delete
+        '
+        Me.old_delete.BackColor = System.Drawing.Color.Crimson
+        Me.old_delete.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.old_delete.ForeColor = System.Drawing.Color.White
+        Me.old_delete.Location = New System.Drawing.Point(1497, 771)
+        Me.old_delete.Margin = New System.Windows.Forms.Padding(4)
+        Me.old_delete.Name = "old_delete"
+        Me.old_delete.Size = New System.Drawing.Size(76, 46)
+        Me.old_delete.TabIndex = 184
+        Me.old_delete.Text = "ลบ"
+        Me.old_delete.UseVisualStyleBackColor = False
+        '
+        'study_delete
+        '
+        Me.study_delete.BackColor = System.Drawing.Color.Crimson
+        Me.study_delete.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.study_delete.ForeColor = System.Drawing.Color.White
+        Me.study_delete.Location = New System.Drawing.Point(1497, 424)
+        Me.study_delete.Margin = New System.Windows.Forms.Padding(4)
+        Me.study_delete.Name = "study_delete"
+        Me.study_delete.Size = New System.Drawing.Size(76, 46)
+        Me.study_delete.TabIndex = 184
+        Me.study_delete.Text = "ลบ"
+        Me.study_delete.UseVisualStyleBackColor = False
+        '
+        'old_table
+        '
+        Me.old_table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.old_table.Location = New System.Drawing.Point(1094, 578)
+        Me.old_table.Name = "old_table"
+        Me.old_table.RowHeadersWidth = 51
+        Me.old_table.RowTemplate.Height = 24
+        Me.old_table.Size = New System.Drawing.Size(479, 186)
+        Me.old_table.TabIndex = 183
+        '
+        'study_table
+        '
+        Me.study_table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.study_table.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Name, Me.Major, Me.Congrat})
+        Me.study_table.Location = New System.Drawing.Point(1094, 213)
+        Me.study_table.Name = "study_table"
+        Me.study_table.RowHeadersWidth = 51
+        Me.study_table.RowTemplate.Height = 24
+        Me.study_table.Size = New System.Drawing.Size(479, 188)
+        Me.study_table.TabIndex = 183
+        '
+        'Name
+        '
+        Me.Name.HeaderText = "Name"
+        Me.Name.MinimumWidth = 6
+        Me.Name.Name = "Name"
+        Me.Name.Width = 125
+        '
+        'Major
+        '
+        Me.Major.HeaderText = "Major"
+        Me.Major.MinimumWidth = 6
+        Me.Major.Name = "Major"
+        Me.Major.Width = 125
+        '
+        'Congrat
+        '
+        Me.Congrat.HeaderText = "CongratDate"
+        Me.Congrat.MinimumWidth = 6
+        Me.Congrat.Name = "Congrat"
+        Me.Congrat.Width = 125
+        '
+        'old_endDate
+        '
+        Me.old_endDate.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.old_endDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.old_endDate.Location = New System.Drawing.Point(850, 850)
+        Me.old_endDate.Margin = New System.Windows.Forms.Padding(4)
+        Me.old_endDate.Name = "old_endDate"
+        Me.old_endDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.old_endDate.Size = New System.Drawing.Size(180, 33)
+        Me.old_endDate.TabIndex = 182
+        '
+        'study_endDate
+        '
+        Me.study_endDate.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.study_endDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.study_endDate.Location = New System.Drawing.Point(645, 348)
+        Me.study_endDate.Margin = New System.Windows.Forms.Padding(4)
+        Me.study_endDate.Name = "study_endDate"
+        Me.study_endDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.study_endDate.Size = New System.Drawing.Size(385, 33)
+        Me.study_endDate.TabIndex = 182
+        '
+        'old_startDate
+        '
+        Me.old_startDate.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.old_startDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.old_startDate.Location = New System.Drawing.Point(645, 850)
+        Me.old_startDate.Margin = New System.Windows.Forms.Padding(4)
+        Me.old_startDate.Name = "old_startDate"
+        Me.old_startDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.old_startDate.Size = New System.Drawing.Size(173, 33)
+        Me.old_startDate.TabIndex = 182
+        '
+        'old_company
+        '
+        Me.old_company.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.old_company.Location = New System.Drawing.Point(645, 744)
+        Me.old_company.Margin = New System.Windows.Forms.Padding(4)
+        Me.old_company.Name = "old_company"
+        Me.old_company.Size = New System.Drawing.Size(385, 33)
+        Me.old_company.TabIndex = 181
+        '
+        'old_position
+        '
+        Me.old_position.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.old_position.Location = New System.Drawing.Point(645, 663)
+        Me.old_position.Margin = New System.Windows.Forms.Padding(4)
+        Me.old_position.Name = "old_position"
+        Me.old_position.Size = New System.Drawing.Size(385, 33)
+        Me.old_position.TabIndex = 180
         '
         'Label2
         '
@@ -265,7 +403,7 @@ Partial Class Add_StaffForm
         Me.btnAddRow2.Name = "btnAddRow2"
         Me.btnAddRow2.Size = New System.Drawing.Size(160, 46)
         Me.btnAddRow2.TabIndex = 169
-        Me.btnAddRow2.Text = "บันทึกข้อมูล"
+        Me.btnAddRow2.Text = "เพิ่มข้อมูล"
         Me.btnAddRow2.UseVisualStyleBackColor = False
         '
         'subheader4
@@ -332,7 +470,7 @@ Partial Class Add_StaffForm
         Me.btnAddRow.Name = "btnAddRow"
         Me.btnAddRow.Size = New System.Drawing.Size(160, 46)
         Me.btnAddRow.TabIndex = 162
-        Me.btnAddRow.Text = "บันทึกข้อมูล"
+        Me.btnAddRow.Text = "เพิ่มข้อมูล"
         Me.btnAddRow.UseVisualStyleBackColor = False
         '
         'subheader3
@@ -533,6 +671,24 @@ Partial Class Add_StaffForm
         Me.genderlb.TabIndex = 141
         Me.genderlb.Text = "เพศ"
         '
+        'study_major
+        '
+        Me.study_major.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.study_major.Location = New System.Drawing.Point(645, 437)
+        Me.study_major.Margin = New System.Windows.Forms.Padding(4)
+        Me.study_major.Name = "study_major"
+        Me.study_major.Size = New System.Drawing.Size(385, 33)
+        Me.study_major.TabIndex = 140
+        '
+        'study_cer
+        '
+        Me.study_cer.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.study_cer.Location = New System.Drawing.Point(645, 241)
+        Me.study_cer.Margin = New System.Windows.Forms.Padding(4)
+        Me.study_cer.Name = "study_cer"
+        Me.study_cer.Size = New System.Drawing.Size(385, 33)
+        Me.study_cer.TabIndex = 140
+        '
         'Staff_gender
         '
         Me.Staff_gender.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -638,130 +794,19 @@ Partial Class Add_StaffForm
         Me.subheaderlb1.TabIndex = 130
         Me.subheaderlb1.Text = "ประวัติส่วนตัว"
         '
-        'old_position
+        'WellmeadowsDataSet
         '
-        Me.old_position.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.old_position.Location = New System.Drawing.Point(645, 663)
-        Me.old_position.Margin = New System.Windows.Forms.Padding(4)
-        Me.old_position.Name = "old_position"
-        Me.old_position.Size = New System.Drawing.Size(385, 33)
-        Me.old_position.TabIndex = 180
+        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
+        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'old_company
+        'StaffQualificatesBindingSource
         '
-        Me.old_company.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.old_company.Location = New System.Drawing.Point(645, 744)
-        Me.old_company.Margin = New System.Windows.Forms.Padding(4)
-        Me.old_company.Name = "old_company"
-        Me.old_company.Size = New System.Drawing.Size(385, 33)
-        Me.old_company.TabIndex = 181
+        Me.StaffQualificatesBindingSource.DataMember = "Staff_Qualificates"
+        Me.StaffQualificatesBindingSource.DataSource = Me.WellmeadowsDataSet
         '
-        'old_startDate
+        'Staff_QualificatesTableAdapter
         '
-        Me.old_startDate.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.old_startDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.old_startDate.Location = New System.Drawing.Point(645, 850)
-        Me.old_startDate.Margin = New System.Windows.Forms.Padding(4)
-        Me.old_startDate.Name = "old_startDate"
-        Me.old_startDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.old_startDate.Size = New System.Drawing.Size(173, 33)
-        Me.old_startDate.TabIndex = 182
-        '
-        'old_endDate
-        '
-        Me.old_endDate.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.old_endDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.old_endDate.Location = New System.Drawing.Point(850, 850)
-        Me.old_endDate.Margin = New System.Windows.Forms.Padding(4)
-        Me.old_endDate.Name = "old_endDate"
-        Me.old_endDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.old_endDate.Size = New System.Drawing.Size(180, 33)
-        Me.old_endDate.TabIndex = 182
-        '
-        'study_cer
-        '
-        Me.study_cer.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.study_cer.Location = New System.Drawing.Point(645, 241)
-        Me.study_cer.Margin = New System.Windows.Forms.Padding(4)
-        Me.study_cer.Name = "study_cer"
-        Me.study_cer.Size = New System.Drawing.Size(385, 33)
-        Me.study_cer.TabIndex = 140
-        '
-        'study_major
-        '
-        Me.study_major.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.study_major.Location = New System.Drawing.Point(645, 437)
-        Me.study_major.Margin = New System.Windows.Forms.Padding(4)
-        Me.study_major.Name = "study_major"
-        Me.study_major.Size = New System.Drawing.Size(385, 33)
-        Me.study_major.TabIndex = 140
-        '
-        'study_table
-        '
-        Me.study_table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.study_table.Location = New System.Drawing.Point(1094, 213)
-        Me.study_table.Name = "study_table"
-        Me.study_table.RowHeadersWidth = 51
-        Me.study_table.RowTemplate.Height = 24
-        Me.study_table.Size = New System.Drawing.Size(479, 188)
-        Me.study_table.TabIndex = 183
-        '
-        'study_delete
-        '
-        Me.study_delete.BackColor = System.Drawing.Color.Crimson
-        Me.study_delete.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.study_delete.ForeColor = System.Drawing.Color.White
-        Me.study_delete.Location = New System.Drawing.Point(1497, 424)
-        Me.study_delete.Margin = New System.Windows.Forms.Padding(4)
-        Me.study_delete.Name = "study_delete"
-        Me.study_delete.Size = New System.Drawing.Size(76, 46)
-        Me.study_delete.TabIndex = 184
-        Me.study_delete.Text = "ลบ"
-        Me.study_delete.UseVisualStyleBackColor = False
-        '
-        'old_table
-        '
-        Me.old_table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.old_table.Location = New System.Drawing.Point(1094, 578)
-        Me.old_table.Name = "old_table"
-        Me.old_table.RowHeadersWidth = 51
-        Me.old_table.RowTemplate.Height = 24
-        Me.old_table.Size = New System.Drawing.Size(479, 186)
-        Me.old_table.TabIndex = 183
-        '
-        'old_delete
-        '
-        Me.old_delete.BackColor = System.Drawing.Color.Crimson
-        Me.old_delete.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.old_delete.ForeColor = System.Drawing.Color.White
-        Me.old_delete.Location = New System.Drawing.Point(1497, 771)
-        Me.old_delete.Margin = New System.Windows.Forms.Padding(4)
-        Me.old_delete.Name = "old_delete"
-        Me.old_delete.Size = New System.Drawing.Size(76, 46)
-        Me.old_delete.TabIndex = 184
-        Me.old_delete.Text = "ลบ"
-        Me.old_delete.UseVisualStyleBackColor = False
-        '
-        'study_endDate
-        '
-        Me.study_endDate.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.study_endDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.study_endDate.Location = New System.Drawing.Point(645, 348)
-        Me.study_endDate.Margin = New System.Windows.Forms.Padding(4)
-        Me.study_endDate.Name = "study_endDate"
-        Me.study_endDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.study_endDate.Size = New System.Drawing.Size(385, 33)
-        Me.study_endDate.TabIndex = 182
-        '
-        'Staff_position
-        '
-        Me.Staff_position.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Staff_position.FormattingEnabled = True
-        Me.Staff_position.Items.AddRange(New Object() {"เจ้าหน้าที่ฝ่ายบุคคล. Personal Officer", "หัวหน้าพยาบาล. Charge Nurse", "ผู้อำนวยการโรงพยาบาล. Medical Director", "แพทย์. Doctor", "พยาบาล, Nurse", "พนักงานรักษาความปลอดภัย, Guard", "บุรุษพยาบาล, Men-Nurse"})
-        Me.Staff_position.Location = New System.Drawing.Point(126, 613)
-        Me.Staff_position.Name = "Staff_position"
-        Me.Staff_position.Size = New System.Drawing.Size(424, 34)
-        Me.Staff_position.TabIndex = 185
+        Me.Staff_QualificatesTableAdapter.ClearBeforeFill = True
         '
         'Add_StaffForm
         '
@@ -771,13 +816,15 @@ Partial Class Add_StaffForm
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(4)
-        Me.Name = "Add_StaffForm"
+        'Me.Name = "Add_StaffForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "เพิ่มข้อมูลเจ้าหน้าที่"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.study_table, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.old_table, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.study_table, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StaffQualificatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -840,4 +887,10 @@ Partial Class Add_StaffForm
     Friend WithEvents old_table As DataGridView
     Friend WithEvents study_endDate As DateTimePicker
     Friend WithEvents Staff_position As ComboBox
+    Friend WithEvents WellmeadowsDataSet As WellmeadowsDataSet
+    Friend WithEvents StaffQualificatesBindingSource As BindingSource
+    Friend WithEvents Staff_QualificatesTableAdapter As WellmeadowsDataSetTableAdapters.Staff_QualificatesTableAdapter
+    Friend WithEvents Name As DataGridViewTextBoxColumn
+    Friend WithEvents Major As DataGridViewTextBoxColumn
+    Friend WithEvents Congrat As DataGridViewTextBoxColumn
 End Class

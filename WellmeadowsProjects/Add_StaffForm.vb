@@ -1,6 +1,8 @@
 ﻿Public Class Add_StaffForm
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Qualificates' table. You can move, or remove it, as needed.
+        Me.Staff_QualificatesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Qualificates)
         ' Create a button to add more input items
     End Sub
     Private Sub ResetForm()
@@ -82,11 +84,31 @@
     End Sub
 
     Private Sub btnAddRow_Click(sender As Object, e As EventArgs) Handles btnAddRow.Click
-
+        Dim name = study_cer.Text
+        Dim major = study_major.Text
+        Dim congratDate = study_endDate.Text
+        study_table.Rows.Add(name, major, congratDate)
     End Sub
 
     Private Sub btnAddRow2_Click_1(sender As Object, e As EventArgs) Handles btnAddRow2.Click
 
     End Sub
 
+    Private Sub study_delete_Click(sender As Object, e As EventArgs) Handles study_delete.Click
+        'If study_table.CurrentRow IsNot Nothing Then
+        '    study_table.Rows.RemoveAt(study_table.CurrentRow.Index)
+        'End If
+
+        Dim data As New List(Of String) ' Create a list to store the data
+
+        For Each row As DataGridViewRow In study_table.Rows
+            ' Check if the row is not a new row and is not selected (if needed)
+            If Not row.IsNewRow Then
+                ' Access the data in each cell of the row
+                Dim cellData As String = row.Cells(0).Value.ToString() ' Assuming you have only one column
+                ' Add the cellData to your list or process it as needed
+                data.Add(cellData)
+            End If
+        Next
+    End Sub
 End Class

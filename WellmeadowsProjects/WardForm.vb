@@ -11,7 +11,13 @@
         WaitingListForm.Show()
     End Sub
 
-    Private Sub btnMedcAndmede_Click(sender As Object, e As EventArgs) Handles btnMedcAndmede.Click
+    Private Sub btnMedcAndmede_Click(sender As Object, e As EventArgs) 
         Supplies.Show()
+    End Sub
+
+    Private Sub WardForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Wards' table. You can move, or remove it, as needed.
+        Me.WardsTableAdapter.Fill(Me.WellmeadowsDataSet.Wards)
+
     End Sub
 End Class
