@@ -56,4 +56,5 @@ Public Class Medicine
         End If
         Edit_Medicine.Show()
     End Sub
+
 End Class

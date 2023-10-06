@@ -86,4 +86,5 @@
         PatientsTableAdapter.Fill(result)
         'Console.WriteLine(result)
     End Sub
+
 End Class

@@ -27,11 +27,6 @@ Partial Class Medicine
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.ViewMedi = New System.Windows.Forms.DataGridView()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnSearch = New System.Windows.Forms.Button()
-        Me.lableSearch = New System.Windows.Forms.Label()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.MmIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SupplierIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -43,6 +38,11 @@ Partial Class Medicine
         Me.PriceperunitDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MedMedicinesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.lableSearch = New System.Windows.Forms.Label()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Med_MedicinesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Med_MedicinesTableAdapter()
         CType(Me.ViewMedi, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MedMedicinesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,16 +85,92 @@ Partial Class Medicine
         'ViewMedi
         '
         Me.ViewMedi.AllowUserToAddRows = False
+        Me.ViewMedi.AllowUserToDeleteRows = False
+        Me.ViewMedi.AllowUserToOrderColumns = True
         Me.ViewMedi.AutoGenerateColumns = False
         Me.ViewMedi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ViewMedi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.MmIDDataGridViewTextBoxColumn, Me.SupplierIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.DescriptionDataGridViewTextBoxColumn, Me.DosageDataGridViewTextBoxColumn, Me.MethodDataGridViewTextBoxColumn, Me.StockDataGridViewTextBoxColumn, Me.BuyscaleDataGridViewTextBoxColumn, Me.PriceperunitDataGridViewTextBoxColumn})
         Me.ViewMedi.DataSource = Me.MedMedicinesBindingSource
         Me.ViewMedi.Location = New System.Drawing.Point(87, 151)
         Me.ViewMedi.Name = "ViewMedi"
+        Me.ViewMedi.ReadOnly = True
         Me.ViewMedi.RowHeadersWidth = 51
         Me.ViewMedi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ViewMedi.Size = New System.Drawing.Size(853, 328)
         Me.ViewMedi.TabIndex = 27
+        '
+        'MmIDDataGridViewTextBoxColumn
+        '
+        Me.MmIDDataGridViewTextBoxColumn.DataPropertyName = "mmID"
+        Me.MmIDDataGridViewTextBoxColumn.HeaderText = "รหัสยา"
+        Me.MmIDDataGridViewTextBoxColumn.Name = "MmIDDataGridViewTextBoxColumn"
+        Me.MmIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SupplierIDDataGridViewTextBoxColumn
+        '
+        Me.SupplierIDDataGridViewTextBoxColumn.DataPropertyName = "supplierID"
+        Me.SupplierIDDataGridViewTextBoxColumn.HeaderText = "รหัสผู้ผลิต"
+        Me.SupplierIDDataGridViewTextBoxColumn.Name = "SupplierIDDataGridViewTextBoxColumn"
+        Me.SupplierIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NameDataGridViewTextBoxColumn
+        '
+        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
+        Me.NameDataGridViewTextBoxColumn.HeaderText = "ชื่อยา"
+        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
+        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DescriptionDataGridViewTextBoxColumn
+        '
+        Me.DescriptionDataGridViewTextBoxColumn.DataPropertyName = "description"
+        Me.DescriptionDataGridViewTextBoxColumn.HeaderText = "รายละเอียดยา"
+        Me.DescriptionDataGridViewTextBoxColumn.Name = "DescriptionDataGridViewTextBoxColumn"
+        Me.DescriptionDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DosageDataGridViewTextBoxColumn
+        '
+        Me.DosageDataGridViewTextBoxColumn.DataPropertyName = "dosage"
+        Me.DosageDataGridViewTextBoxColumn.HeaderText = "ปริมาณ"
+        Me.DosageDataGridViewTextBoxColumn.Name = "DosageDataGridViewTextBoxColumn"
+        Me.DosageDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'MethodDataGridViewTextBoxColumn
+        '
+        Me.MethodDataGridViewTextBoxColumn.DataPropertyName = "method"
+        Me.MethodDataGridViewTextBoxColumn.HeaderText = "วิธีการให้ยา"
+        Me.MethodDataGridViewTextBoxColumn.Name = "MethodDataGridViewTextBoxColumn"
+        Me.MethodDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'StockDataGridViewTextBoxColumn
+        '
+        Me.StockDataGridViewTextBoxColumn.DataPropertyName = "stock"
+        Me.StockDataGridViewTextBoxColumn.HeaderText = "จำนวนในคลัง"
+        Me.StockDataGridViewTextBoxColumn.Name = "StockDataGridViewTextBoxColumn"
+        Me.StockDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'BuyscaleDataGridViewTextBoxColumn
+        '
+        Me.BuyscaleDataGridViewTextBoxColumn.DataPropertyName = "buy_scale"
+        Me.BuyscaleDataGridViewTextBoxColumn.HeaderText = "ปริมาณการซื้อ"
+        Me.BuyscaleDataGridViewTextBoxColumn.Name = "BuyscaleDataGridViewTextBoxColumn"
+        Me.BuyscaleDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PriceperunitDataGridViewTextBoxColumn
+        '
+        Me.PriceperunitDataGridViewTextBoxColumn.DataPropertyName = "price_per_unit"
+        Me.PriceperunitDataGridViewTextBoxColumn.HeaderText = "ราคา/หน่วย"
+        Me.PriceperunitDataGridViewTextBoxColumn.Name = "PriceperunitDataGridViewTextBoxColumn"
+        Me.PriceperunitDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'MedMedicinesBindingSource
+        '
+        Me.MedMedicinesBindingSource.DataMember = "Med_Medicines"
+        Me.MedMedicinesBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'WellmeadowsDataSet
+        '
+        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
+        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btnAdd
         '
@@ -141,71 +217,6 @@ Partial Class Medicine
         Me.Label1.Size = New System.Drawing.Size(115, 29)
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "Medicine"
-        '
-        'MmIDDataGridViewTextBoxColumn
-        '
-        Me.MmIDDataGridViewTextBoxColumn.DataPropertyName = "mmID"
-        Me.MmIDDataGridViewTextBoxColumn.HeaderText = "รหัสยา"
-        Me.MmIDDataGridViewTextBoxColumn.Name = "MmIDDataGridViewTextBoxColumn"
-        Me.MmIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SupplierIDDataGridViewTextBoxColumn
-        '
-        Me.SupplierIDDataGridViewTextBoxColumn.DataPropertyName = "supplierID"
-        Me.SupplierIDDataGridViewTextBoxColumn.HeaderText = "รหัสผู้ผลิต"
-        Me.SupplierIDDataGridViewTextBoxColumn.Name = "SupplierIDDataGridViewTextBoxColumn"
-        '
-        'NameDataGridViewTextBoxColumn
-        '
-        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
-        Me.NameDataGridViewTextBoxColumn.HeaderText = "ชื่อยา"
-        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
-        '
-        'DescriptionDataGridViewTextBoxColumn
-        '
-        Me.DescriptionDataGridViewTextBoxColumn.DataPropertyName = "description"
-        Me.DescriptionDataGridViewTextBoxColumn.HeaderText = "รายละเอียดยา"
-        Me.DescriptionDataGridViewTextBoxColumn.Name = "DescriptionDataGridViewTextBoxColumn"
-        '
-        'DosageDataGridViewTextBoxColumn
-        '
-        Me.DosageDataGridViewTextBoxColumn.DataPropertyName = "dosage"
-        Me.DosageDataGridViewTextBoxColumn.HeaderText = "ปริมาณ"
-        Me.DosageDataGridViewTextBoxColumn.Name = "DosageDataGridViewTextBoxColumn"
-        '
-        'MethodDataGridViewTextBoxColumn
-        '
-        Me.MethodDataGridViewTextBoxColumn.DataPropertyName = "method"
-        Me.MethodDataGridViewTextBoxColumn.HeaderText = "วิธีการให้ยา"
-        Me.MethodDataGridViewTextBoxColumn.Name = "MethodDataGridViewTextBoxColumn"
-        '
-        'StockDataGridViewTextBoxColumn
-        '
-        Me.StockDataGridViewTextBoxColumn.DataPropertyName = "stock"
-        Me.StockDataGridViewTextBoxColumn.HeaderText = "จำนวนในคลัง"
-        Me.StockDataGridViewTextBoxColumn.Name = "StockDataGridViewTextBoxColumn"
-        '
-        'BuyscaleDataGridViewTextBoxColumn
-        '
-        Me.BuyscaleDataGridViewTextBoxColumn.DataPropertyName = "buy_scale"
-        Me.BuyscaleDataGridViewTextBoxColumn.HeaderText = "ปริมาณการซื้อ"
-        Me.BuyscaleDataGridViewTextBoxColumn.Name = "BuyscaleDataGridViewTextBoxColumn"
-        '
-        'PriceperunitDataGridViewTextBoxColumn
-        '
-        Me.PriceperunitDataGridViewTextBoxColumn.DataPropertyName = "price_per_unit"
-        Me.PriceperunitDataGridViewTextBoxColumn.HeaderText = "ราคา/หน่วย"
-        Me.PriceperunitDataGridViewTextBoxColumn.Name = "PriceperunitDataGridViewTextBoxColumn"
-        '
-        'MedMedicinesBindingSource
-        '
-        Me.MedMedicinesBindingSource.DataMember = "Med_Medicines"
-        Me.MedMedicinesBindingSource.DataSource = Me.WellmeadowsDataSet
-        '
-        'WellmeadowsDataSet
-        '
-        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
-        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Med_MedicinesTableAdapter
         '
