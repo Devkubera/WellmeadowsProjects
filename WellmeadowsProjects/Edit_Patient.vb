@@ -41,7 +41,8 @@
 
         'Patient.ViewPa.Refresh()
         'Patient.Patient_Load(New Object, Nothing)
-
+        Me.Close()
+        Patient.ViewPa.Refresh()
     End Sub
 
     Private Sub btnCheck_kin_Click(sender As Object, e As EventArgs) Handles btnCheck_kin.Click

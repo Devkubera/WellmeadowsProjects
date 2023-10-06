@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Add_Medicine
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,11 @@ Partial Class Add_Medicine
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
-        Me.lableSearch = New System.Windows.Forms.Label()
-        Me.m_Id = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.m_name = New System.Windows.Forms.TextBox()
@@ -41,6 +40,15 @@ Partial Class Add_Medicine
         Me.m_scale = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.m_dosage = New System.Windows.Forms.TextBox()
+        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
+        Me.Med_MedicinesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Med_MedicinesTableAdapter()
+        Me.btnCheck_sup = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.m_sup = New System.Windows.Forms.TextBox()
+        Me.Med_MedicinesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Med_MedicinesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnAdd
@@ -65,23 +73,6 @@ Partial Class Add_Medicine
         Me.btnClear.Text = "ล้างค่า"
         Me.btnClear.UseVisualStyleBackColor = False
         '
-        'lableSearch
-        '
-        Me.lableSearch.AutoSize = True
-        Me.lableSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.lableSearch.Location = New System.Drawing.Point(330, 101)
-        Me.lableSearch.Name = "lableSearch"
-        Me.lableSearch.Size = New System.Drawing.Size(93, 24)
-        Me.lableSearch.TabIndex = 37
-        Me.lableSearch.Text = "หมายเลขยา"
-        '
-        'm_Id
-        '
-        Me.m_Id.Location = New System.Drawing.Point(334, 139)
-        Me.m_Id.Name = "m_Id"
-        Me.m_Id.Size = New System.Drawing.Size(142, 20)
-        Me.m_Id.TabIndex = 36
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -96,7 +87,7 @@ Partial Class Add_Medicine
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label2.Location = New System.Drawing.Point(554, 100)
+        Me.Label2.Location = New System.Drawing.Point(323, 204)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(48, 24)
         Me.Label2.TabIndex = 50
@@ -104,14 +95,14 @@ Partial Class Add_Medicine
         '
         'm_name
         '
-        Me.m_name.Location = New System.Drawing.Point(558, 138)
+        Me.m_name.Location = New System.Drawing.Point(327, 242)
         Me.m_name.Name = "m_name"
         Me.m_name.Size = New System.Drawing.Size(142, 20)
         Me.m_name.TabIndex = 49
         '
         'm_desc
         '
-        Me.m_desc.Location = New System.Drawing.Point(334, 449)
+        Me.m_desc.Location = New System.Drawing.Point(327, 502)
         Me.m_desc.Name = "m_desc"
         Me.m_desc.Size = New System.Drawing.Size(366, 100)
         Me.m_desc.TabIndex = 51
@@ -121,7 +112,7 @@ Partial Class Add_Medicine
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label3.Location = New System.Drawing.Point(330, 408)
+        Me.Label3.Location = New System.Drawing.Point(323, 461)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(168, 24)
         Me.Label3.TabIndex = 52
@@ -131,7 +122,7 @@ Partial Class Add_Medicine
         '
         Me.m_method.FormattingEnabled = True
         Me.m_method.Items.AddRange(New Object() {"Oral", "Skin"})
-        Me.m_method.Location = New System.Drawing.Point(334, 217)
+        Me.m_method.Location = New System.Drawing.Point(551, 241)
         Me.m_method.Name = "m_method"
         Me.m_method.Size = New System.Drawing.Size(142, 21)
         Me.m_method.TabIndex = 53
@@ -140,7 +131,7 @@ Partial Class Add_Medicine
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label4.Location = New System.Drawing.Point(330, 181)
+        Me.Label4.Location = New System.Drawing.Point(547, 205)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(153, 24)
         Me.Label4.TabIndex = 54
@@ -150,7 +141,7 @@ Partial Class Add_Medicine
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label5.Location = New System.Drawing.Point(554, 180)
+        Me.Label5.Location = New System.Drawing.Point(547, 285)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(121, 24)
         Me.Label5.TabIndex = 56
@@ -158,7 +149,7 @@ Partial Class Add_Medicine
         '
         'm_stock
         '
-        Me.m_stock.Location = New System.Drawing.Point(558, 218)
+        Me.m_stock.Location = New System.Drawing.Point(551, 323)
         Me.m_stock.Name = "m_stock"
         Me.m_stock.Size = New System.Drawing.Size(142, 20)
         Me.m_stock.TabIndex = 55
@@ -167,7 +158,7 @@ Partial Class Add_Medicine
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label6.Location = New System.Drawing.Point(554, 263)
+        Me.Label6.Location = New System.Drawing.Point(547, 368)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(89, 24)
         Me.Label6.TabIndex = 60
@@ -175,7 +166,7 @@ Partial Class Add_Medicine
         '
         'm_unit
         '
-        Me.m_unit.Location = New System.Drawing.Point(558, 301)
+        Me.m_unit.Location = New System.Drawing.Point(551, 406)
         Me.m_unit.Name = "m_unit"
         Me.m_unit.Size = New System.Drawing.Size(142, 20)
         Me.m_unit.TabIndex = 59
@@ -184,7 +175,7 @@ Partial Class Add_Medicine
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label7.Location = New System.Drawing.Point(330, 264)
+        Me.Label7.Location = New System.Drawing.Point(323, 369)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(198, 24)
         Me.Label7.TabIndex = 58
@@ -192,7 +183,7 @@ Partial Class Add_Medicine
         '
         'm_scale
         '
-        Me.m_scale.Location = New System.Drawing.Point(334, 302)
+        Me.m_scale.Location = New System.Drawing.Point(327, 407)
         Me.m_scale.Name = "m_scale"
         Me.m_scale.Size = New System.Drawing.Size(142, 20)
         Me.m_scale.TabIndex = 57
@@ -201,7 +192,7 @@ Partial Class Add_Medicine
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label8.Location = New System.Drawing.Point(330, 340)
+        Me.Label8.Location = New System.Drawing.Point(323, 285)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(140, 24)
         Me.Label8.TabIndex = 62
@@ -209,16 +200,87 @@ Partial Class Add_Medicine
         '
         'm_dosage
         '
-        Me.m_dosage.Location = New System.Drawing.Point(334, 378)
+        Me.m_dosage.Location = New System.Drawing.Point(327, 323)
         Me.m_dosage.Name = "m_dosage"
         Me.m_dosage.Size = New System.Drawing.Size(142, 20)
         Me.m_dosage.TabIndex = 61
+        '
+        'WellmeadowsDataSet
+        '
+        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
+        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Med_MedicinesTableAdapter
+        '
+        Me.Med_MedicinesTableAdapter.ClearBeforeFill = True
+        '
+        'btnCheck_sup
+        '
+        Me.btnCheck_sup.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnCheck_sup.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheck_sup.ForeColor = System.Drawing.Color.AliceBlue
+        Me.btnCheck_sup.Location = New System.Drawing.Point(327, 152)
+        Me.btnCheck_sup.Name = "btnCheck_sup"
+        Me.btnCheck_sup.Size = New System.Drawing.Size(141, 31)
+        Me.btnCheck_sup.TabIndex = 147
+        Me.btnCheck_sup.Text = "ตรวจสอบ"
+        Me.btnCheck_sup.UseVisualStyleBackColor = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.Label9.Location = New System.Drawing.Point(323, 107)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(117, 24)
+        Me.Label9.TabIndex = 148
+        Me.Label9.Text = "ตรวจสอบผู้ผลิต"
+        '
+        'm_sup
+        '
+        Me.m_sup.Location = New System.Drawing.Point(551, 159)
+        Me.m_sup.Name = "m_sup"
+        Me.m_sup.Size = New System.Drawing.Size(142, 20)
+        Me.m_sup.TabIndex = 149
+        '
+        'Med_MedicinesBindingSource
+        '
+        Me.Med_MedicinesBindingSource.DataMember = "Med_Medicines"
+        Me.Med_MedicinesBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BedsTableAdapter = Nothing
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.In_PatientsTableAdapter = Nothing
+        Me.TableAdapterManager.LocalDoctorsTableAdapter = Nothing
+        Me.TableAdapterManager.Login_logsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_EquipmentsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_MedicinesTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_kinsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_VisitsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_WardsTableAdapter = Nothing
+        Me.TableAdapterManager.PatientsTableAdapter = Nothing
+        Me.TableAdapterManager.PW_PrescriptsTableAdapter = Nothing
+        Me.TableAdapterManager.ShiftsTableAdapter = Nothing
+        Me.TableAdapterManager.Staff_ExperiencesTableAdapter = Nothing
+        Me.TableAdapterManager.Staff_QualificatesTableAdapter = Nothing
+        Me.TableAdapterManager.StaffsTableAdapter = Nothing
+        Me.TableAdapterManager.SuppilersTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.Ward_RequestsTableAdapter = Nothing
+        Me.TableAdapterManager.Ward_StaffsTableAdapter = Nothing
+        Me.TableAdapterManager.WardsTableAdapter = Nothing
         '
         'Add_Medicine
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1004, 611)
+        Me.ClientSize = New System.Drawing.Size(1098, 720)
+        Me.Controls.Add(Me.m_sup)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.btnCheck_sup)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.m_dosage)
         Me.Controls.Add(Me.Label6)
@@ -235,19 +297,17 @@ Partial Class Add_Medicine
         Me.Controls.Add(Me.m_name)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btnClear)
-        Me.Controls.Add(Me.lableSearch)
-        Me.Controls.Add(Me.m_Id)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Add_Medicine"
         Me.Text = "Add_Medicine"
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Med_MedicinesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnClear As Button
-    Friend WithEvents lableSearch As Label
-    Friend WithEvents m_Id As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents m_name As TextBox
@@ -263,4 +323,11 @@ Partial Class Add_Medicine
     Friend WithEvents m_scale As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents m_dosage As TextBox
+    Friend WithEvents WellmeadowsDataSet As WellmeadowsDataSet
+    Friend WithEvents Med_MedicinesBindingSource As BindingSource
+    Friend WithEvents Med_MedicinesTableAdapter As WellmeadowsDataSetTableAdapters.Med_MedicinesTableAdapter
+    Friend WithEvents TableAdapterManager As WellmeadowsDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents btnCheck_sup As Button
+    Friend WithEvents Label9 As Label
+    Friend WithEvents m_sup As TextBox
 End Class

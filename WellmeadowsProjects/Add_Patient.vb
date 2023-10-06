@@ -103,6 +103,10 @@ Public Class Add_Patient
         Console.WriteLine(pt_birthday.Value & " DOB")
         Me.PatientsTableAdapter.InsertPatient(Pfname, Plname, Paddress, Pgender, Pstatus, Ptel, pt_birthday.Value, pt_date.Value, kinID, localID)
         Me.PatientsTableAdapter.Fill(Me.WellmeadowsDataSet.Patients)
+
+
+        Me.Close()
+        Patient.ViewPa.Refresh()
     End Sub
 
     Private Sub btnCheck_kin_Click(sender As Object, e As EventArgs) Handles btnCheck_kin.Click

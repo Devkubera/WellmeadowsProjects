@@ -1,4 +1,5 @@
 ﻿Public Class Add_Supplies
+
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         If Not String.IsNullOrEmpty(sup_name.Text) Then
             sup_name.Text = String.Empty
