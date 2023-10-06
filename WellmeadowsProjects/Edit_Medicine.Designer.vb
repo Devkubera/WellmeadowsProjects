@@ -46,8 +46,11 @@ Partial Class Edit_Medicine
         Me.Med_MedicinesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Med_MedicinesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Med_MedicinesTableAdapter()
         Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
+        Me.SuppilersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SuppilersTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.SuppilersTableAdapter()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Med_MedicinesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SuppilersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -73,7 +76,7 @@ Partial Class Edit_Medicine
         '
         'm_sup
         '
-        Me.m_sup.Location = New System.Drawing.Point(513, 161)
+        Me.m_sup.Location = New System.Drawing.Point(289, 156)
         Me.m_sup.Name = "m_sup"
         Me.m_sup.Size = New System.Drawing.Size(142, 20)
         Me.m_sup.TabIndex = 166
@@ -84,16 +87,16 @@ Partial Class Edit_Medicine
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label9.Location = New System.Drawing.Point(285, 109)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(117, 24)
+        Me.Label9.Size = New System.Drawing.Size(72, 24)
         Me.Label9.TabIndex = 165
-        Me.Label9.Text = "ตรวจสอบผู้ผลิต"
+        Me.Label9.Text = "ชื่อผู้ผลิต"
         '
         'btnCheck_sup
         '
         Me.btnCheck_sup.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnCheck_sup.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheck_sup.ForeColor = System.Drawing.Color.AliceBlue
-        Me.btnCheck_sup.Location = New System.Drawing.Point(289, 154)
+        Me.btnCheck_sup.Location = New System.Drawing.Point(514, 145)
         Me.btnCheck_sup.Name = "btnCheck_sup"
         Me.btnCheck_sup.Size = New System.Drawing.Size(141, 31)
         Me.btnCheck_sup.TabIndex = 164
@@ -260,11 +263,20 @@ Partial Class Edit_Medicine
         Me.TableAdapterManager.Ward_StaffsTableAdapter = Nothing
         Me.TableAdapterManager.WardsTableAdapter = Nothing
         '
+        'SuppilersBindingSource
+        '
+        Me.SuppilersBindingSource.DataMember = "Suppilers"
+        Me.SuppilersBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'SuppilersTableAdapter
+        '
+        Me.SuppilersTableAdapter.ClearBeforeFill = True
+        '
         'Edit_Medicine
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1055, 656)
+        Me.ClientSize = New System.Drawing.Size(1142, 656)
         Me.Controls.Add(Me.m_sup)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnCheck_sup)
@@ -289,6 +301,7 @@ Partial Class Edit_Medicine
         Me.Text = "Edit_Medicine"
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Med_MedicinesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SuppilersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -316,4 +329,6 @@ Partial Class Edit_Medicine
     Friend WithEvents Med_MedicinesBindingSource As BindingSource
     Friend WithEvents Med_MedicinesTableAdapter As WellmeadowsDataSetTableAdapters.Med_MedicinesTableAdapter
     Friend WithEvents TableAdapterManager As WellmeadowsDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents SuppilersBindingSource As BindingSource
+    Friend WithEvents SuppilersTableAdapter As WellmeadowsDataSetTableAdapters.SuppilersTableAdapter
 End Class

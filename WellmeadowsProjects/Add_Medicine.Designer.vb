@@ -43,12 +43,15 @@ Partial Class Add_Medicine
         Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.Med_MedicinesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Med_MedicinesTableAdapter()
         Me.btnCheck_sup = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.m_sup = New System.Windows.Forms.TextBox()
         Me.Med_MedicinesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.SuppilersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SuppilersTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.SuppilersTableAdapter()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Med_MedicinesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SuppilersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnAdd
@@ -219,26 +222,16 @@ Partial Class Add_Medicine
         Me.btnCheck_sup.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnCheck_sup.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheck_sup.ForeColor = System.Drawing.Color.AliceBlue
-        Me.btnCheck_sup.Location = New System.Drawing.Point(327, 152)
+        Me.btnCheck_sup.Location = New System.Drawing.Point(551, 147)
         Me.btnCheck_sup.Name = "btnCheck_sup"
         Me.btnCheck_sup.Size = New System.Drawing.Size(141, 31)
         Me.btnCheck_sup.TabIndex = 147
         Me.btnCheck_sup.Text = "ตรวจสอบ"
         Me.btnCheck_sup.UseVisualStyleBackColor = False
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label9.Location = New System.Drawing.Point(323, 107)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(117, 24)
-        Me.Label9.TabIndex = 148
-        Me.Label9.Text = "ตรวจสอบผู้ผลิต"
-        '
         'm_sup
         '
-        Me.m_sup.Location = New System.Drawing.Point(551, 159)
+        Me.m_sup.Location = New System.Drawing.Point(327, 154)
         Me.m_sup.Name = "m_sup"
         Me.m_sup.Size = New System.Drawing.Size(142, 20)
         Me.m_sup.TabIndex = 149
@@ -273,13 +266,32 @@ Partial Class Add_Medicine
         Me.TableAdapterManager.Ward_StaffsTableAdapter = Nothing
         Me.TableAdapterManager.WardsTableAdapter = Nothing
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.Label10.Location = New System.Drawing.Point(323, 102)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(72, 24)
+        Me.Label10.TabIndex = 150
+        Me.Label10.Text = "ชื่อผู้ผลิต"
+        '
+        'SuppilersBindingSource
+        '
+        Me.SuppilersBindingSource.DataMember = "Suppilers"
+        Me.SuppilersBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'SuppilersTableAdapter
+        '
+        Me.SuppilersTableAdapter.ClearBeforeFill = True
+        '
         'Add_Medicine
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1098, 720)
+        Me.ClientSize = New System.Drawing.Size(1125, 720)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.m_sup)
-        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnCheck_sup)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.m_dosage)
@@ -302,6 +314,7 @@ Partial Class Add_Medicine
         Me.Text = "Add_Medicine"
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Med_MedicinesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SuppilersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -328,6 +341,8 @@ Partial Class Add_Medicine
     Friend WithEvents Med_MedicinesTableAdapter As WellmeadowsDataSetTableAdapters.Med_MedicinesTableAdapter
     Friend WithEvents TableAdapterManager As WellmeadowsDataSetTableAdapters.TableAdapterManager
     Friend WithEvents btnCheck_sup As Button
-    Friend WithEvents Label9 As Label
     Friend WithEvents m_sup As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents SuppilersBindingSource As BindingSource
+    Friend WithEvents SuppilersTableAdapter As WellmeadowsDataSetTableAdapters.SuppilersTableAdapter
 End Class

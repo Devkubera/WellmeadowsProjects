@@ -39,14 +39,17 @@ Partial Class Medicine
         Me.MedMedicinesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnSearch = New System.Windows.Forms.Button()
         Me.lableSearch = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Med_MedicinesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Med_MedicinesTableAdapter()
+        Me.SuppilersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SuppilersTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.SuppilersTableAdapter()
+        Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
         CType(Me.ViewMedi, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MedMedicinesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SuppilersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnVisit
@@ -102,14 +105,14 @@ Partial Class Medicine
         'MmIDDataGridViewTextBoxColumn
         '
         Me.MmIDDataGridViewTextBoxColumn.DataPropertyName = "mmID"
-        Me.MmIDDataGridViewTextBoxColumn.HeaderText = "รหัสยา"
+        Me.MmIDDataGridViewTextBoxColumn.HeaderText = "หมายเลขยา"
         Me.MmIDDataGridViewTextBoxColumn.Name = "MmIDDataGridViewTextBoxColumn"
         Me.MmIDDataGridViewTextBoxColumn.ReadOnly = True
         '
         'SupplierIDDataGridViewTextBoxColumn
         '
         Me.SupplierIDDataGridViewTextBoxColumn.DataPropertyName = "supplierID"
-        Me.SupplierIDDataGridViewTextBoxColumn.HeaderText = "รหัสผู้ผลิต"
+        Me.SupplierIDDataGridViewTextBoxColumn.HeaderText = "หมายเลขผู้ผลิต"
         Me.SupplierIDDataGridViewTextBoxColumn.Name = "SupplierIDDataGridViewTextBoxColumn"
         Me.SupplierIDDataGridViewTextBoxColumn.ReadOnly = True
         '
@@ -182,30 +185,21 @@ Partial Class Medicine
         Me.btnAdd.Text = "เพิ่ม"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
-        'btnSearch
-        '
-        Me.btnSearch.Location = New System.Drawing.Point(772, 90)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(75, 37)
-        Me.btnSearch.TabIndex = 25
-        Me.btnSearch.Text = "ค้นหา"
-        Me.btnSearch.UseVisualStyleBackColor = True
-        '
         'lableSearch
         '
         Me.lableSearch.AutoSize = True
         Me.lableSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lableSearch.Location = New System.Drawing.Point(610, 83)
         Me.lableSearch.Name = "lableSearch"
-        Me.lableSearch.Size = New System.Drawing.Size(155, 20)
+        Me.lableSearch.Size = New System.Drawing.Size(75, 20)
         Me.lableSearch.TabIndex = 24
-        Me.lableSearch.Text = "ค้นหาหมายเลขเวชภัณฑ์"
+        Me.lableSearch.Text = "ค้นหาชื่อยา"
         '
         'txtSearch
         '
         Me.txtSearch.Location = New System.Drawing.Point(614, 107)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(142, 20)
+        Me.txtSearch.Size = New System.Drawing.Size(228, 20)
         Me.txtSearch.TabIndex = 23
         '
         'Label1
@@ -222,6 +216,39 @@ Partial Class Medicine
         '
         Me.Med_MedicinesTableAdapter.ClearBeforeFill = True
         '
+        'SuppilersBindingSource
+        '
+        Me.SuppilersBindingSource.DataMember = "Suppilers"
+        Me.SuppilersBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'SuppilersTableAdapter
+        '
+        Me.SuppilersTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BedsTableAdapter = Nothing
+        Me.TableAdapterManager.In_PatientsTableAdapter = Nothing
+        Me.TableAdapterManager.LocalDoctorsTableAdapter = Nothing
+        Me.TableAdapterManager.Login_logsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_EquipmentsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_MedicinesTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_kinsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_VisitsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_WardsTableAdapter = Nothing
+        Me.TableAdapterManager.PatientsTableAdapter = Nothing
+        Me.TableAdapterManager.PW_PrescriptsTableAdapter = Nothing
+        Me.TableAdapterManager.ShiftsTableAdapter = Nothing
+        Me.TableAdapterManager.Staff_ExperiencesTableAdapter = Nothing
+        Me.TableAdapterManager.Staff_QualificatesTableAdapter = Nothing
+        Me.TableAdapterManager.StaffsTableAdapter = Nothing
+        Me.TableAdapterManager.SuppilersTableAdapter = Me.SuppilersTableAdapter
+        Me.TableAdapterManager.UpdateOrder = WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.Ward_RequestsTableAdapter = Nothing
+        Me.TableAdapterManager.Ward_StaffsTableAdapter = Nothing
+        Me.TableAdapterManager.WardsTableAdapter = Nothing
+        '
         'Medicine
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -232,7 +259,6 @@ Partial Class Medicine
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.ViewMedi)
         Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.lableSearch)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Label1)
@@ -242,6 +268,7 @@ Partial Class Medicine
         CType(Me.ViewMedi, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MedMedicinesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SuppilersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -252,7 +279,6 @@ Partial Class Medicine
     Friend WithEvents btnUpdate As Button
     Friend WithEvents ViewMedi As DataGridView
     Friend WithEvents btnAdd As Button
-    Friend WithEvents btnSearch As Button
     Friend WithEvents lableSearch As Label
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents Label1 As Label
@@ -268,4 +294,7 @@ Partial Class Medicine
     Friend WithEvents StockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BuyscaleDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PriceperunitDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SuppilersBindingSource As BindingSource
+    Friend WithEvents SuppilersTableAdapter As WellmeadowsDataSetTableAdapters.SuppilersTableAdapter
+    Friend WithEvents TableAdapterManager As WellmeadowsDataSetTableAdapters.TableAdapterManager
 End Class
