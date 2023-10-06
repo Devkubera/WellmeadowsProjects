@@ -300,6 +300,12 @@
     <Compile Include="popup_patientKin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="popup_supplies.Designer.vb">
+      <DependentUpon>popup_supplies.vb</DependentUpon>
+    </Compile>
+    <Compile Include="popup_supplies.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Supplies.Designer.vb">
       <DependentUpon>Supplies.vb</DependentUpon>
     </Compile>
@@ -453,6 +459,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="popup_patientKin.resx">
       <DependentUpon>popup_patientKin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="popup_supplies.resx">
+      <DependentUpon>popup_supplies.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Supplies.resx">
       <DependentUpon>Supplies.vb</DependentUpon>

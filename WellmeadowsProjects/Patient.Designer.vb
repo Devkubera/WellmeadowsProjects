@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Patient
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Patient
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -28,19 +28,6 @@ Partial Class Patient
         Me.lableSearch = New System.Windows.Forms.Label()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.ViewPa = New System.Windows.Forms.DataGridView()
-        Me.PatientsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
-        Me.btnReport = New System.Windows.Forms.Button()
-        Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.btnVisit = New System.Windows.Forms.Button()
-        Me.PatientsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.PatientsTableAdapter()
-        Me.LocalDoctorsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.LocalDoctorsTableAdapter()
-        Me.Patient_kinsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Patient_kinsTableAdapter()
-        Me.PatientsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.LocalDoctorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
-        Me.Patient_kinsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PatientIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.KinsIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LocalDocIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,6 +39,19 @@ Partial Class Patient
         Me.TelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DobDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateregisterDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PatientsBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
+        Me.btnReport = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnVisit = New System.Windows.Forms.Button()
+        Me.PatientsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.PatientsTableAdapter()
+        Me.LocalDoctorsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.LocalDoctorsTableAdapter()
+        Me.Patient_kinsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Patient_kinsTableAdapter()
+        Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
+        Me.PatientsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.LocalDoctorsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Patient_kinsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.ViewPa, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PatientsBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,8 +64,8 @@ Partial Class Patient
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Prompt", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(115, 121)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(210, 136)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(123, 46)
         Me.Label1.TabIndex = 11
@@ -74,18 +74,18 @@ Partial Class Patient
         'txtSearch
         '
         Me.txtSearch.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(771, 121)
-        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtSearch.Location = New System.Drawing.Point(637, 136)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(380, 38)
+        Me.txtSearch.Size = New System.Drawing.Size(505, 38)
         Me.txtSearch.TabIndex = 12
         '
         'lableSearch
         '
         Me.lableSearch.AutoSize = True
         Me.lableSearch.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lableSearch.Location = New System.Drawing.Point(765, 90)
-        Me.lableSearch.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lableSearch.Location = New System.Drawing.Point(632, 105)
+        Me.lableSearch.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lableSearch.Name = "lableSearch"
         Me.lableSearch.Size = New System.Drawing.Size(292, 26)
         Me.lableSearch.TabIndex = 13
@@ -95,8 +95,8 @@ Partial Class Patient
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
         Me.btnAdd.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(1159, 112)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAdd.Location = New System.Drawing.Point(1175, 130)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(100, 46)
         Me.btnAdd.TabIndex = 15
@@ -113,128 +113,14 @@ Partial Class Patient
         Me.ViewPa.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PatientIDDataGridViewTextBoxColumn, Me.KinsIDDataGridViewTextBoxColumn, Me.LocalDocIDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.GenderDataGridViewTextBoxColumn, Me.MarryStatusDataGridViewTextBoxColumn, Me.TelDataGridViewTextBoxColumn, Me.DobDataGridViewTextBoxColumn, Me.DateregisterDataGridViewTextBoxColumn})
         Me.ViewPa.DataSource = Me.PatientsBindingSource1
         Me.ViewPa.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
-        Me.ViewPa.Location = New System.Drawing.Point(121, 194)
-        Me.ViewPa.Margin = New System.Windows.Forms.Padding(4)
+        Me.ViewPa.Location = New System.Drawing.Point(218, 187)
+        Me.ViewPa.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.ViewPa.Name = "ViewPa"
         Me.ViewPa.ReadOnly = True
         Me.ViewPa.RowHeadersWidth = 51
         Me.ViewPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ViewPa.Size = New System.Drawing.Size(1155, 404)
+        Me.ViewPa.Size = New System.Drawing.Size(1057, 497)
         Me.ViewPa.TabIndex = 16
-        '
-        'PatientsBindingSource1
-        '
-        Me.PatientsBindingSource1.DataMember = "Patients"
-        Me.PatientsBindingSource1.DataSource = Me.WellmeadowsDataSet
-        '
-        'WellmeadowsDataSet
-        '
-        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
-        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'btnReport
-        '
-        Me.btnReport.BackColor = System.Drawing.Color.RoyalBlue
-        Me.btnReport.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReport.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnReport.Location = New System.Drawing.Point(745, 635)
-        Me.btnReport.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnReport.Name = "btnReport"
-        Me.btnReport.Size = New System.Drawing.Size(160, 46)
-        Me.btnReport.TabIndex = 18
-        Me.btnReport.Text = "สร้างรายงาน"
-        Me.btnReport.UseVisualStyleBackColor = False
-        '
-        'btnUpdate
-        '
-        Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnUpdate.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUpdate.Location = New System.Drawing.Point(925, 635)
-        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(160, 46)
-        Me.btnUpdate.TabIndex = 19
-        Me.btnUpdate.Text = "แก้ไขข้อมูล"
-        Me.btnUpdate.UseVisualStyleBackColor = False
-        '
-        'btnDelete
-        '
-        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnDelete.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDelete.Location = New System.Drawing.Point(1099, 635)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(160, 46)
-        Me.btnDelete.TabIndex = 20
-        Me.btnDelete.Text = "ลบข้อมูล"
-        Me.btnDelete.UseVisualStyleBackColor = False
-        '
-        'btnVisit
-        '
-        Me.btnVisit.BackColor = System.Drawing.Color.Black
-        Me.btnVisit.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVisit.ForeColor = System.Drawing.SystemColors.Control
-        Me.btnVisit.Location = New System.Drawing.Point(1035, 25)
-        Me.btnVisit.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnVisit.Name = "btnVisit"
-        Me.btnVisit.Size = New System.Drawing.Size(224, 46)
-        Me.btnVisit.TabIndex = 21
-        Me.btnVisit.Text = "การนัดหมายผู้ป่วย"
-        Me.btnVisit.UseVisualStyleBackColor = False
-        '
-        'PatientsTableAdapter
-        '
-        Me.PatientsTableAdapter.ClearBeforeFill = True
-        '
-        'LocalDoctorsTableAdapter
-        '
-        Me.LocalDoctorsTableAdapter.ClearBeforeFill = True
-        '
-        'Patient_kinsTableAdapter
-        '
-        Me.Patient_kinsTableAdapter.ClearBeforeFill = True
-        '
-        'PatientsBindingSource
-        '
-        Me.PatientsBindingSource.DataMember = "Patients"
-        Me.PatientsBindingSource.DataSource = Me.WellmeadowsDataSet
-        '
-        'LocalDoctorsBindingSource
-        '
-        Me.LocalDoctorsBindingSource.DataMember = "LocalDoctors"
-        Me.LocalDoctorsBindingSource.DataSource = Me.WellmeadowsDataSet
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BedsTableAdapter = Nothing
-        Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.In_PatientsTableAdapter = Nothing
-        Me.TableAdapterManager.LocalDoctorsTableAdapter = Nothing
-        Me.TableAdapterManager.Login_logsTableAdapter = Nothing
-        Me.TableAdapterManager.Med_EquipmentsTableAdapter = Nothing
-        Me.TableAdapterManager.Med_MedicinesTableAdapter = Nothing
-        Me.TableAdapterManager.Patient_kinsTableAdapter = Nothing
-        Me.TableAdapterManager.Patient_VisitsTableAdapter = Nothing
-        Me.TableAdapterManager.Patient_WardsTableAdapter = Nothing
-        Me.TableAdapterManager.PatientsTableAdapter = Nothing
-        Me.TableAdapterManager.PW_PrescriptsTableAdapter = Nothing
-        Me.TableAdapterManager.ShiftsTableAdapter = Nothing
-        Me.TableAdapterManager.Staff_ExperiencesTableAdapter = Nothing
-        Me.TableAdapterManager.Staff_QualificatesTableAdapter = Nothing
-        Me.TableAdapterManager.StaffsTableAdapter = Nothing
-        Me.TableAdapterManager.SuppilersTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.Ward_RequestsTableAdapter = Nothing
-        Me.TableAdapterManager.Ward_StaffsTableAdapter = Nothing
-        Me.TableAdapterManager.WardsTableAdapter = Nothing
-        '
-        'Patient_kinsBindingSource
-        '
-        Me.Patient_kinsBindingSource.DataMember = "Patient_kins"
-        Me.Patient_kinsBindingSource.DataSource = Me.WellmeadowsDataSet
         '
         'PatientIDDataGridViewTextBoxColumn
         '
@@ -336,11 +222,125 @@ Partial Class Patient
         Me.DateregisterDataGridViewTextBoxColumn.ReadOnly = True
         Me.DateregisterDataGridViewTextBoxColumn.Width = 125
         '
+        'PatientsBindingSource1
+        '
+        Me.PatientsBindingSource1.DataMember = "Patients"
+        Me.PatientsBindingSource1.DataSource = Me.WellmeadowsDataSet
+        '
+        'WellmeadowsDataSet
+        '
+        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
+        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'btnReport
+        '
+        Me.btnReport.BackColor = System.Drawing.Color.RoyalBlue
+        Me.btnReport.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReport.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnReport.Location = New System.Drawing.Point(761, 703)
+        Me.btnReport.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnReport.Name = "btnReport"
+        Me.btnReport.Size = New System.Drawing.Size(160, 46)
+        Me.btnReport.TabIndex = 18
+        Me.btnReport.Text = "สร้างรายงาน"
+        Me.btnReport.UseVisualStyleBackColor = False
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnUpdate.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnUpdate.Location = New System.Drawing.Point(941, 703)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(160, 46)
+        Me.btnUpdate.TabIndex = 19
+        Me.btnUpdate.Text = "แก้ไขข้อมูล"
+        Me.btnUpdate.UseVisualStyleBackColor = False
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDelete.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnDelete.Location = New System.Drawing.Point(1115, 703)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(160, 46)
+        Me.btnDelete.TabIndex = 20
+        Me.btnDelete.Text = "ลบข้อมูล"
+        Me.btnDelete.UseVisualStyleBackColor = False
+        '
+        'btnVisit
+        '
+        Me.btnVisit.BackColor = System.Drawing.Color.Black
+        Me.btnVisit.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVisit.ForeColor = System.Drawing.SystemColors.Control
+        Me.btnVisit.Location = New System.Drawing.Point(1051, 46)
+        Me.btnVisit.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnVisit.Name = "btnVisit"
+        Me.btnVisit.Size = New System.Drawing.Size(224, 46)
+        Me.btnVisit.TabIndex = 21
+        Me.btnVisit.Text = "การนัดหมายผู้ป่วย"
+        Me.btnVisit.UseVisualStyleBackColor = False
+        '
+        'PatientsTableAdapter
+        '
+        Me.PatientsTableAdapter.ClearBeforeFill = True
+        '
+        'LocalDoctorsTableAdapter
+        '
+        Me.LocalDoctorsTableAdapter.ClearBeforeFill = True
+        '
+        'Patient_kinsTableAdapter
+        '
+        Me.Patient_kinsTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BedsTableAdapter = Nothing
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.In_PatientsTableAdapter = Nothing
+        Me.TableAdapterManager.LocalDoctorsTableAdapter = Nothing
+        Me.TableAdapterManager.Login_logsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_EquipmentsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_MedicinesTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_kinsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_VisitsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_WardsTableAdapter = Nothing
+        Me.TableAdapterManager.PatientsTableAdapter = Nothing
+        Me.TableAdapterManager.PW_PrescriptsTableAdapter = Nothing
+        Me.TableAdapterManager.ShiftsTableAdapter = Nothing
+        Me.TableAdapterManager.Staff_ExperiencesTableAdapter = Nothing
+        Me.TableAdapterManager.Staff_QualificatesTableAdapter = Nothing
+        Me.TableAdapterManager.StaffsTableAdapter = Nothing
+        Me.TableAdapterManager.SuppilersTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.Ward_RequestsTableAdapter = Nothing
+        Me.TableAdapterManager.Ward_StaffsTableAdapter = Nothing
+        Me.TableAdapterManager.WardsTableAdapter = Nothing
+        '
+        'PatientsBindingSource
+        '
+        Me.PatientsBindingSource.DataMember = "Patients"
+        Me.PatientsBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'LocalDoctorsBindingSource
+        '
+        Me.LocalDoctorsBindingSource.DataMember = "LocalDoctors"
+        Me.LocalDoctorsBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'Patient_kinsBindingSource
+        '
+        Me.Patient_kinsBindingSource.DataMember = "Patient_kins"
+        Me.Patient_kinsBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
         'Patient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1360, 942)
+        Me.ClientSize = New System.Drawing.Size(1537, 942)
         Me.Controls.Add(Me.btnVisit)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnUpdate)
@@ -351,7 +351,7 @@ Partial Class Patient
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Patient"
         Me.Text = "Patient"
         CType(Me.ViewPa, System.ComponentModel.ISupportInitialize).EndInit()

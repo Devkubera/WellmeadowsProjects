@@ -22,26 +22,40 @@ Partial Class Medicine
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnVisit = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.ViewMedi = New System.Windows.Forms.DataGridView()
+        Me.MmIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SupplierIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DosageDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MethodDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BuyscaleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PriceperunitDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MedMedicinesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.lableSearch = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Med_MedicinesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Med_MedicinesTableAdapter()
         CType(Me.ViewMedi, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MedMedicinesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnVisit
         '
         Me.btnVisit.BackColor = System.Drawing.Color.Black
         Me.btnVisit.ForeColor = System.Drawing.Color.Snow
-        Me.btnVisit.Location = New System.Drawing.Point(1093, 41)
-        Me.btnVisit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnVisit.Location = New System.Drawing.Point(820, 33)
         Me.btnVisit.Name = "btnVisit"
-        Me.btnVisit.Size = New System.Drawing.Size(160, 46)
+        Me.btnVisit.Size = New System.Drawing.Size(120, 37)
         Me.btnVisit.TabIndex = 31
         Me.btnVisit.Text = "การให้ยาผู้ป่วย"
         Me.btnVisit.UseVisualStyleBackColor = False
@@ -50,10 +64,9 @@ Partial Class Medicine
         '
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDelete.Location = New System.Drawing.Point(1093, 634)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDelete.Location = New System.Drawing.Point(820, 515)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(160, 46)
+        Me.btnDelete.Size = New System.Drawing.Size(120, 37)
         Me.btnDelete.TabIndex = 30
         Me.btnDelete.Text = "ลบข้อมูล"
         Me.btnDelete.UseVisualStyleBackColor = False
@@ -62,41 +75,118 @@ Partial Class Medicine
         '
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUpdate.Location = New System.Drawing.Point(920, 634)
-        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnUpdate.Location = New System.Drawing.Point(690, 515)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(160, 46)
+        Me.btnUpdate.Size = New System.Drawing.Size(120, 37)
         Me.btnUpdate.TabIndex = 29
         Me.btnUpdate.Text = "แก้ไขข้อมูล"
         Me.btnUpdate.UseVisualStyleBackColor = False
         '
         'ViewMedi
         '
+        Me.ViewMedi.AllowUserToAddRows = False
+        Me.ViewMedi.AllowUserToDeleteRows = False
+        Me.ViewMedi.AllowUserToOrderColumns = True
+        Me.ViewMedi.AutoGenerateColumns = False
         Me.ViewMedi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ViewMedi.Location = New System.Drawing.Point(116, 186)
-        Me.ViewMedi.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ViewMedi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.MmIDDataGridViewTextBoxColumn, Me.SupplierIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.DescriptionDataGridViewTextBoxColumn, Me.DosageDataGridViewTextBoxColumn, Me.MethodDataGridViewTextBoxColumn, Me.StockDataGridViewTextBoxColumn, Me.BuyscaleDataGridViewTextBoxColumn, Me.PriceperunitDataGridViewTextBoxColumn})
+        Me.ViewMedi.DataSource = Me.MedMedicinesBindingSource
+        Me.ViewMedi.Location = New System.Drawing.Point(87, 151)
         Me.ViewMedi.Name = "ViewMedi"
+        Me.ViewMedi.ReadOnly = True
         Me.ViewMedi.RowHeadersWidth = 51
-        Me.ViewMedi.Size = New System.Drawing.Size(1137, 404)
+        Me.ViewMedi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.ViewMedi.Size = New System.Drawing.Size(853, 328)
         Me.ViewMedi.TabIndex = 27
+        '
+        'MmIDDataGridViewTextBoxColumn
+        '
+        Me.MmIDDataGridViewTextBoxColumn.DataPropertyName = "mmID"
+        Me.MmIDDataGridViewTextBoxColumn.HeaderText = "รหัสยา"
+        Me.MmIDDataGridViewTextBoxColumn.Name = "MmIDDataGridViewTextBoxColumn"
+        Me.MmIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SupplierIDDataGridViewTextBoxColumn
+        '
+        Me.SupplierIDDataGridViewTextBoxColumn.DataPropertyName = "supplierID"
+        Me.SupplierIDDataGridViewTextBoxColumn.HeaderText = "รหัสผู้ผลิต"
+        Me.SupplierIDDataGridViewTextBoxColumn.Name = "SupplierIDDataGridViewTextBoxColumn"
+        Me.SupplierIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NameDataGridViewTextBoxColumn
+        '
+        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
+        Me.NameDataGridViewTextBoxColumn.HeaderText = "ชื่อยา"
+        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
+        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DescriptionDataGridViewTextBoxColumn
+        '
+        Me.DescriptionDataGridViewTextBoxColumn.DataPropertyName = "description"
+        Me.DescriptionDataGridViewTextBoxColumn.HeaderText = "รายละเอียดยา"
+        Me.DescriptionDataGridViewTextBoxColumn.Name = "DescriptionDataGridViewTextBoxColumn"
+        Me.DescriptionDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DosageDataGridViewTextBoxColumn
+        '
+        Me.DosageDataGridViewTextBoxColumn.DataPropertyName = "dosage"
+        Me.DosageDataGridViewTextBoxColumn.HeaderText = "ปริมาณ"
+        Me.DosageDataGridViewTextBoxColumn.Name = "DosageDataGridViewTextBoxColumn"
+        Me.DosageDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'MethodDataGridViewTextBoxColumn
+        '
+        Me.MethodDataGridViewTextBoxColumn.DataPropertyName = "method"
+        Me.MethodDataGridViewTextBoxColumn.HeaderText = "วิธีการให้ยา"
+        Me.MethodDataGridViewTextBoxColumn.Name = "MethodDataGridViewTextBoxColumn"
+        Me.MethodDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'StockDataGridViewTextBoxColumn
+        '
+        Me.StockDataGridViewTextBoxColumn.DataPropertyName = "stock"
+        Me.StockDataGridViewTextBoxColumn.HeaderText = "จำนวนในคลัง"
+        Me.StockDataGridViewTextBoxColumn.Name = "StockDataGridViewTextBoxColumn"
+        Me.StockDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'BuyscaleDataGridViewTextBoxColumn
+        '
+        Me.BuyscaleDataGridViewTextBoxColumn.DataPropertyName = "buy_scale"
+        Me.BuyscaleDataGridViewTextBoxColumn.HeaderText = "ปริมาณการซื้อ"
+        Me.BuyscaleDataGridViewTextBoxColumn.Name = "BuyscaleDataGridViewTextBoxColumn"
+        Me.BuyscaleDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PriceperunitDataGridViewTextBoxColumn
+        '
+        Me.PriceperunitDataGridViewTextBoxColumn.DataPropertyName = "price_per_unit"
+        Me.PriceperunitDataGridViewTextBoxColumn.HeaderText = "ราคา/หน่วย"
+        Me.PriceperunitDataGridViewTextBoxColumn.Name = "PriceperunitDataGridViewTextBoxColumn"
+        Me.PriceperunitDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'MedMedicinesBindingSource
+        '
+        Me.MedMedicinesBindingSource.DataMember = "Med_Medicines"
+        Me.MedMedicinesBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'WellmeadowsDataSet
+        '
+        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
+        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
-        Me.btnAdd.Location = New System.Drawing.Point(1153, 111)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAdd.Location = New System.Drawing.Point(865, 90)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(100, 46)
+        Me.btnAdd.Size = New System.Drawing.Size(75, 37)
         Me.btnAdd.TabIndex = 26
         Me.btnAdd.Text = "เพิ่ม"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(1029, 111)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSearch.Location = New System.Drawing.Point(772, 90)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(100, 46)
+        Me.btnSearch.Size = New System.Drawing.Size(75, 37)
         Me.btnSearch.TabIndex = 25
         Me.btnSearch.Text = "ค้นหา"
         Me.btnSearch.UseVisualStyleBackColor = True
@@ -105,37 +195,38 @@ Partial Class Medicine
         '
         Me.lableSearch.AutoSize = True
         Me.lableSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lableSearch.Location = New System.Drawing.Point(813, 102)
-        Me.lableSearch.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lableSearch.Location = New System.Drawing.Point(610, 83)
         Me.lableSearch.Name = "lableSearch"
-        Me.lableSearch.Size = New System.Drawing.Size(184, 25)
+        Me.lableSearch.Size = New System.Drawing.Size(155, 20)
         Me.lableSearch.TabIndex = 24
         Me.lableSearch.Text = "ค้นหาหมายเลขเวชภัณฑ์"
         '
         'txtSearch
         '
-        Me.txtSearch.Location = New System.Drawing.Point(819, 132)
-        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSearch.Location = New System.Drawing.Point(614, 107)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(188, 22)
+        Me.txtSearch.Size = New System.Drawing.Size(142, 20)
         Me.txtSearch.TabIndex = 23
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.25!)
-        Me.Label1.Location = New System.Drawing.Point(109, 102)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(82, 83)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(139, 35)
+        Me.Label1.Size = New System.Drawing.Size(115, 29)
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "Medicine"
         '
+        'Med_MedicinesTableAdapter
+        '
+        Me.Med_MedicinesTableAdapter.ClearBeforeFill = True
+        '
         'Medicine
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1360, 800)
+        Me.ClientSize = New System.Drawing.Size(1020, 650)
         Me.Controls.Add(Me.btnVisit)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnUpdate)
@@ -146,10 +237,11 @@ Partial Class Medicine
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Medicine"
         Me.Text = "Medicine"
         CType(Me.ViewMedi, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MedMedicinesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -164,4 +256,16 @@ Partial Class Medicine
     Friend WithEvents lableSearch As Label
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents WellmeadowsDataSet As WellmeadowsDataSet
+    Friend WithEvents MedMedicinesBindingSource As BindingSource
+    Friend WithEvents Med_MedicinesTableAdapter As WellmeadowsDataSetTableAdapters.Med_MedicinesTableAdapter
+    Friend WithEvents MmIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SupplierIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DescriptionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DosageDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MethodDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents StockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BuyscaleDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PriceperunitDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
