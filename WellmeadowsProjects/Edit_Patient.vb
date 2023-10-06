@@ -78,4 +78,5 @@ Public Class Edit_Patient
         End If
         Console.WriteLine("localDoctorID : " & localDoctorID)
     End Sub
+
 End Class

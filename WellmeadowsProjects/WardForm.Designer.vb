@@ -22,56 +22,109 @@ Partial Class WardForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.wardPanel = New System.Windows.Forms.Panel()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.Wardlb = New System.Windows.Forms.Label()
         Me.btnStaffInWard = New System.Windows.Forms.Button()
         Me.btnWaitinglist = New System.Windows.Forms.Button()
         Me.WardTable = New System.Windows.Forms.DataGridView()
+        Me.WardIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.WardNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.WardLocationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.WardTelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalBedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.WardsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.btnPInward = New System.Windows.Forms.Button()
         Me.btnMedcAndmede = New System.Windows.Forms.Button()
-        Me.btnSearch = New System.Windows.Forms.Button()
         Me.SearchWard = New System.Windows.Forms.TextBox()
         Me.placeholderlb = New System.Windows.Forms.Label()
+        Me.WardsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.WardsTableAdapter()
         Me.wardPanel.SuspendLayout()
         CType(Me.WardTable, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WardsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'wardPanel
         '
+        Me.wardPanel.Controls.Add(Me.btnAdd)
+        Me.wardPanel.Controls.Add(Me.btnDelete)
+        Me.wardPanel.Controls.Add(Me.btnUpdate)
         Me.wardPanel.Controls.Add(Me.Wardlb)
         Me.wardPanel.Controls.Add(Me.btnStaffInWard)
         Me.wardPanel.Controls.Add(Me.btnWaitinglist)
         Me.wardPanel.Controls.Add(Me.WardTable)
         Me.wardPanel.Controls.Add(Me.btnPInward)
         Me.wardPanel.Controls.Add(Me.btnMedcAndmede)
-        Me.wardPanel.Controls.Add(Me.btnSearch)
         Me.wardPanel.Controls.Add(Me.SearchWard)
         Me.wardPanel.Controls.Add(Me.placeholderlb)
         Me.wardPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.wardPanel.Location = New System.Drawing.Point(0, 0)
-        Me.wardPanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.wardPanel.Margin = New System.Windows.Forms.Padding(4)
         Me.wardPanel.Name = "wardPanel"
         Me.wardPanel.Size = New System.Drawing.Size(1360, 800)
         Me.wardPanel.TabIndex = 0
         '
+        'btnAdd
+        '
+        Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
+        Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Location = New System.Drawing.Point(1085, 157)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(100, 46)
+        Me.btnAdd.TabIndex = 33
+        Me.btnAdd.Text = "เพิ่ม"
+        Me.btnAdd.UseVisualStyleBackColor = False
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnDelete.Location = New System.Drawing.Point(1025, 663)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(160, 46)
+        Me.btnDelete.TabIndex = 32
+        Me.btnDelete.Text = "ลบข้อมูล"
+        Me.btnDelete.UseVisualStyleBackColor = False
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnUpdate.Location = New System.Drawing.Point(851, 663)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(160, 46)
+        Me.btnUpdate.TabIndex = 31
+        Me.btnUpdate.Text = "แก้ไขข้อมูล"
+        Me.btnUpdate.UseVisualStyleBackColor = False
+        '
         'Wardlb
         '
         Me.Wardlb.AutoSize = True
-        Me.Wardlb.Font = New System.Drawing.Font("Prompt", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Wardlb.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Wardlb.Location = New System.Drawing.Point(100, 142)
         Me.Wardlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Wardlb.Name = "Wardlb"
-        Me.Wardlb.Size = New System.Drawing.Size(98, 46)
+        Me.Wardlb.Size = New System.Drawing.Size(91, 36)
         Me.Wardlb.TabIndex = 15
         Me.Wardlb.Text = "Ward"
         '
         'btnStaffInWard
         '
         Me.btnStaffInWard.BackColor = System.Drawing.Color.Black
-        Me.btnStaffInWard.Font = New System.Drawing.Font("Prompt SemiBold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStaffInWard.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStaffInWard.ForeColor = System.Drawing.Color.White
-        Me.btnStaffInWard.Location = New System.Drawing.Point(1125, 28)
-        Me.btnStaffInWard.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnStaffInWard.Location = New System.Drawing.Point(1025, 35)
+        Me.btnStaffInWard.Margin = New System.Windows.Forms.Padding(4)
         Me.btnStaffInWard.Name = "btnStaffInWard"
         Me.btnStaffInWard.Size = New System.Drawing.Size(160, 46)
         Me.btnStaffInWard.TabIndex = 29
@@ -81,10 +134,10 @@ Partial Class WardForm
         'btnWaitinglist
         '
         Me.btnWaitinglist.BackColor = System.Drawing.Color.Black
-        Me.btnWaitinglist.Font = New System.Drawing.Font("Prompt SemiBold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnWaitinglist.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnWaitinglist.ForeColor = System.Drawing.Color.White
-        Me.btnWaitinglist.Location = New System.Drawing.Point(944, 28)
-        Me.btnWaitinglist.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnWaitinglist.Location = New System.Drawing.Point(844, 35)
+        Me.btnWaitinglist.Margin = New System.Windows.Forms.Padding(4)
         Me.btnWaitinglist.Name = "btnWaitinglist"
         Me.btnWaitinglist.Size = New System.Drawing.Size(160, 46)
         Me.btnWaitinglist.TabIndex = 28
@@ -93,21 +146,75 @@ Partial Class WardForm
         '
         'WardTable
         '
+        Me.WardTable.AutoGenerateColumns = False
         Me.WardTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.WardTable.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.WardIDDataGridViewTextBoxColumn, Me.WardNameDataGridViewTextBoxColumn, Me.WardLocationDataGridViewTextBoxColumn, Me.WardTelDataGridViewTextBoxColumn, Me.TotalBedDataGridViewTextBoxColumn})
+        Me.WardTable.DataSource = Me.WardsBindingSource
         Me.WardTable.Location = New System.Drawing.Point(93, 236)
-        Me.WardTable.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.WardTable.Margin = New System.Windows.Forms.Padding(4)
         Me.WardTable.Name = "WardTable"
         Me.WardTable.RowHeadersWidth = 51
-        Me.WardTable.Size = New System.Drawing.Size(1137, 404)
+        Me.WardTable.Size = New System.Drawing.Size(1087, 404)
         Me.WardTable.TabIndex = 20
+        '
+        'WardIDDataGridViewTextBoxColumn
+        '
+        Me.WardIDDataGridViewTextBoxColumn.DataPropertyName = "wardID"
+        Me.WardIDDataGridViewTextBoxColumn.HeaderText = "หมายเลขวอร์ด"
+        Me.WardIDDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.WardIDDataGridViewTextBoxColumn.Name = "WardIDDataGridViewTextBoxColumn"
+        Me.WardIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.WardIDDataGridViewTextBoxColumn.Width = 125
+        '
+        'WardNameDataGridViewTextBoxColumn
+        '
+        Me.WardNameDataGridViewTextBoxColumn.DataPropertyName = "wardName"
+        Me.WardNameDataGridViewTextBoxColumn.HeaderText = "ชื่อวอร์ด"
+        Me.WardNameDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.WardNameDataGridViewTextBoxColumn.Name = "WardNameDataGridViewTextBoxColumn"
+        Me.WardNameDataGridViewTextBoxColumn.Width = 125
+        '
+        'WardLocationDataGridViewTextBoxColumn
+        '
+        Me.WardLocationDataGridViewTextBoxColumn.DataPropertyName = "wardLocation"
+        Me.WardLocationDataGridViewTextBoxColumn.HeaderText = "ตำแหน่งที่ตั้งของวอร์ด"
+        Me.WardLocationDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.WardLocationDataGridViewTextBoxColumn.Name = "WardLocationDataGridViewTextBoxColumn"
+        Me.WardLocationDataGridViewTextBoxColumn.Width = 145
+        '
+        'WardTelDataGridViewTextBoxColumn
+        '
+        Me.WardTelDataGridViewTextBoxColumn.DataPropertyName = "wardTel"
+        Me.WardTelDataGridViewTextBoxColumn.HeaderText = "หมายเลขโทรศัพท์ประจำวอร์ด"
+        Me.WardTelDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.WardTelDataGridViewTextBoxColumn.Name = "WardTelDataGridViewTextBoxColumn"
+        Me.WardTelDataGridViewTextBoxColumn.Width = 175
+        '
+        'TotalBedDataGridViewTextBoxColumn
+        '
+        Me.TotalBedDataGridViewTextBoxColumn.DataPropertyName = "totalBed"
+        Me.TotalBedDataGridViewTextBoxColumn.HeaderText = "จำนวนเตียงทั้งหมดในแต่ละวอร์ด"
+        Me.TotalBedDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.TotalBedDataGridViewTextBoxColumn.Name = "TotalBedDataGridViewTextBoxColumn"
+        Me.TotalBedDataGridViewTextBoxColumn.Width = 195
+        '
+        'WardsBindingSource
+        '
+        Me.WardsBindingSource.DataMember = "Wards"
+        Me.WardsBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'WellmeadowsDataSet
+        '
+        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
+        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btnPInward
         '
         Me.btnPInward.BackColor = System.Drawing.Color.Black
-        Me.btnPInward.Font = New System.Drawing.Font("Prompt SemiBold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPInward.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPInward.ForeColor = System.Drawing.Color.White
-        Me.btnPInward.Location = New System.Drawing.Point(761, 28)
-        Me.btnPInward.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnPInward.Location = New System.Drawing.Point(661, 35)
+        Me.btnPInward.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPInward.Name = "btnPInward"
         Me.btnPInward.Size = New System.Drawing.Size(160, 46)
         Me.btnPInward.TabIndex = 27
@@ -117,33 +224,20 @@ Partial Class WardForm
         'btnMedcAndmede
         '
         Me.btnMedcAndmede.BackColor = System.Drawing.Color.Black
-        Me.btnMedcAndmede.Font = New System.Drawing.Font("Prompt SemiBold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMedcAndmede.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMedcAndmede.ForeColor = System.Drawing.Color.White
-        Me.btnMedcAndmede.Location = New System.Drawing.Point(580, 28)
-        Me.btnMedcAndmede.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnMedcAndmede.Location = New System.Drawing.Point(480, 35)
+        Me.btnMedcAndmede.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMedcAndmede.Name = "btnMedcAndmede"
         Me.btnMedcAndmede.Size = New System.Drawing.Size(160, 46)
         Me.btnMedcAndmede.TabIndex = 26
         Me.btnMedcAndmede.Text = "การสั่งยาและอุปกรณ์"
         Me.btnMedcAndmede.UseVisualStyleBackColor = False
         '
-        'btnSearch
-        '
-        Me.btnSearch.BackColor = System.Drawing.Color.White
-        Me.btnSearch.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.ForeColor = System.Drawing.Color.Black
-        Me.btnSearch.Location = New System.Drawing.Point(1152, 146)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(100, 46)
-        Me.btnSearch.TabIndex = 19
-        Me.btnSearch.Text = "ค้นหา"
-        Me.btnSearch.UseVisualStyleBackColor = False
-        '
         'SearchWard
         '
-        Me.SearchWard.Location = New System.Drawing.Point(944, 165)
-        Me.SearchWard.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SearchWard.Location = New System.Drawing.Point(872, 172)
+        Me.SearchWard.Margin = New System.Windows.Forms.Padding(4)
         Me.SearchWard.Name = "SearchWard"
         Me.SearchWard.Size = New System.Drawing.Size(188, 22)
         Me.SearchWard.TabIndex = 18
@@ -151,13 +245,17 @@ Partial Class WardForm
         'placeholderlb
         '
         Me.placeholderlb.AutoSize = True
-        Me.placeholderlb.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.placeholderlb.Location = New System.Drawing.Point(939, 129)
+        Me.placeholderlb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.placeholderlb.Location = New System.Drawing.Point(867, 136)
         Me.placeholderlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.placeholderlb.Name = "placeholderlb"
-        Me.placeholderlb.Size = New System.Drawing.Size(191, 30)
+        Me.placeholderlb.Size = New System.Drawing.Size(201, 25)
         Me.placeholderlb.TabIndex = 21
-        Me.placeholderlb.Text = "ค้นหาด้วยวอร์ดไอดี..."
+        Me.placeholderlb.Text = "ค้นหาด้วยหมายเลขวอร์ด..."
+        '
+        'WardsTableAdapter
+        '
+        Me.WardsTableAdapter.ClearBeforeFill = True
         '
         'WardForm
         '
@@ -166,12 +264,14 @@ Partial Class WardForm
         Me.ClientSize = New System.Drawing.Size(1360, 800)
         Me.Controls.Add(Me.wardPanel)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "WardForm"
         Me.Text = "WardForm"
         Me.wardPanel.ResumeLayout(False)
         Me.wardPanel.PerformLayout()
         CType(Me.WardTable, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WardsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -179,11 +279,21 @@ Partial Class WardForm
     Friend WithEvents wardPanel As Panel
     Friend WithEvents placeholderlb As Label
     Friend WithEvents WardTable As DataGridView
-    Friend WithEvents btnSearch As Button
     Friend WithEvents SearchWard As TextBox
     Friend WithEvents Wardlb As Label
     Friend WithEvents btnMedcAndmede As Button
     Friend WithEvents btnWaitinglist As Button
     Friend WithEvents btnPInward As Button
     Friend WithEvents btnStaffInWard As Button
+    Friend WithEvents WellmeadowsDataSet As WellmeadowsDataSet
+    Friend WithEvents WardsBindingSource As BindingSource
+    Friend WithEvents WardsTableAdapter As WellmeadowsDataSetTableAdapters.WardsTableAdapter
+    Friend WithEvents WardIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents WardNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents WardLocationDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents WardTelDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TotalBedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents btnUpdate As Button
+    Friend WithEvents btnAdd As Button
 End Class

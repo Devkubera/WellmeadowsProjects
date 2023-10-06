@@ -169,6 +169,12 @@
     <Compile Include="Add_WaitingListForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Add_Ward.Designer.vb">
+      <DependentUpon>Add_Ward.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Ward.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Edit_Medicine.Designer.vb">
       <DependentUpon>Edit_Medicine.vb</DependentUpon>
     </Compile>
@@ -215,6 +221,12 @@
       <DependentUpon>Edit_WaitingListForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Edit_WaitingListForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Ward.Designer.vb">
+      <DependentUpon>Edit_Ward.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Ward.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HomeForm.Designer.vb">
@@ -353,6 +365,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WellmeadowsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WellmeadowsDataSet.vb">
+      <DependentUpon>WellmeadowsDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Add_InPatient.resx">
@@ -373,6 +388,9 @@
     <EmbeddedResource Include="Add_Supplies.resx">
       <DependentUpon>Add_Supplies.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Add_Ward.resx">
+      <DependentUpon>Add_Ward.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Edit_InPatient.resx">
       <DependentUpon>Edit_InPatient.vb</DependentUpon>
     </EmbeddedResource>
@@ -390,6 +408,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_VisitPatient.resx">
       <DependentUpon>Edit_VisitPatient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Ward.resx">
+      <DependentUpon>Edit_Ward.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InPatient.resx">
       <DependentUpon>InPatient.vb</DependentUpon>

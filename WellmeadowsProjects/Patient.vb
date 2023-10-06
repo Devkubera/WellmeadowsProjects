@@ -90,4 +90,5 @@
             PatientsBindingSource1.Filter = $"patientID LIKE '*{searchText}*' OR firstName LIKE '*{searchText}*' OR lastName LIKE '*{searchText}*' "
         End If
     End Sub
+
 End Class

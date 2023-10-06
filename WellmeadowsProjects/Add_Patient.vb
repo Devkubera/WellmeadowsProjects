@@ -180,4 +180,5 @@ Public Class Add_Patient
     Private Sub btnCheckLocal_Click(sender As Object, e As EventArgs) Handles btnCheckLocal.Click
         popup_localDoctor.ShowDialog()
     End Sub
+
 End Class
