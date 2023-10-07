@@ -31,7 +31,7 @@ Partial Class PatientInWardForm
         Me.pateintInWardTable = New System.Windows.Forms.DataGridView()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.SearchStaff = New System.Windows.Forms.TextBox()
-        Me.cbbEduLevel = New System.Windows.Forms.ComboBox()
+        Me.cbbPtype = New System.Windows.Forms.ComboBox()
         Me.patientInWardlb = New System.Windows.Forms.Label()
         Me.patientInWardPanel.SuspendLayout()
         CType(Me.pateintInWardTable, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,7 +47,7 @@ Partial Class PatientInWardForm
         Me.patientInWardPanel.Controls.Add(Me.pateintInWardTable)
         Me.patientInWardPanel.Controls.Add(Me.btnSearch)
         Me.patientInWardPanel.Controls.Add(Me.SearchStaff)
-        Me.patientInWardPanel.Controls.Add(Me.cbbEduLevel)
+        Me.patientInWardPanel.Controls.Add(Me.cbbPtype)
         Me.patientInWardPanel.Controls.Add(Me.patientInWardlb)
         Me.patientInWardPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.patientInWardPanel.Location = New System.Drawing.Point(0, 0)
@@ -84,9 +84,9 @@ Partial Class PatientInWardForm
         Me.btnReport.BackColor = System.Drawing.Color.RoyalBlue
         Me.btnReport.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReport.ForeColor = System.Drawing.Color.White
-        Me.btnReport.Location = New System.Drawing.Point(547, 514)
+        Me.btnReport.Location = New System.Drawing.Point(452, 514)
         Me.btnReport.Name = "btnReport"
-        Me.btnReport.Size = New System.Drawing.Size(120, 37)
+        Me.btnReport.Size = New System.Drawing.Size(215, 37)
         Me.btnReport.TabIndex = 33
         Me.btnReport.Text = "สร้างรีพอร์ท"
         Me.btnReport.UseVisualStyleBackColor = False
@@ -140,14 +140,14 @@ Partial Class PatientInWardForm
         Me.SearchStaff.Size = New System.Drawing.Size(142, 20)
         Me.SearchStaff.TabIndex = 28
         '
-        'cbbEduLevel
+        'cbbPtype
         '
-        Me.cbbEduLevel.FormattingEnabled = True
-        Me.cbbEduLevel.Items.AddRange(New Object() {"In-Patient", "Out-Patient"})
-        Me.cbbEduLevel.Location = New System.Drawing.Point(416, 91)
-        Me.cbbEduLevel.Name = "cbbEduLevel"
-        Me.cbbEduLevel.Size = New System.Drawing.Size(121, 21)
-        Me.cbbEduLevel.TabIndex = 27
+        Me.cbbPtype.FormattingEnabled = True
+        Me.cbbPtype.Items.AddRange(New Object() {"In-Patient", "Out-Patient"})
+        Me.cbbPtype.Location = New System.Drawing.Point(416, 91)
+        Me.cbbPtype.Name = "cbbPtype"
+        Me.cbbPtype.Size = New System.Drawing.Size(121, 21)
+        Me.cbbPtype.TabIndex = 27
         '
         'patientInWardlb
         '
@@ -183,6 +183,6 @@ Partial Class PatientInWardForm
     Friend WithEvents pateintInWardTable As DataGridView
     Friend WithEvents btnSearch As Button
     Friend WithEvents SearchStaff As TextBox
-    Friend WithEvents cbbEduLevel As ComboBox
+    Friend WithEvents cbbPtype As ComboBox
     Friend WithEvents patientInWardlb As Label
 End Class
