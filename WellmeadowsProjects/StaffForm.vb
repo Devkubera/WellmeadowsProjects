@@ -7,7 +7,6 @@
 
     End Sub
 
-
     Private Sub btnAdd_Click_1(sender As Object, e As EventArgs) Handles btnAdd.Click
         Add_StaffForm.Show()
     End Sub
