@@ -177,11 +177,14 @@ Partial Class Add_Ward
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.BedsTableAdapter = Nothing
+        Me.TableAdapterManager.ChargeNursesTableAdapter = Nothing
+        Me.TableAdapterManager.DoctorsTableAdapter = Nothing
         Me.TableAdapterManager.In_PatientsTableAdapter = Nothing
         Me.TableAdapterManager.LocalDoctorsTableAdapter = Nothing
         Me.TableAdapterManager.Login_logsTableAdapter = Nothing
         Me.TableAdapterManager.Med_EquipmentsTableAdapter = Nothing
         Me.TableAdapterManager.Med_MedicinesTableAdapter = Nothing
+        Me.TableAdapterManager.MedicalDirectorsTableAdapter = Nothing
         Me.TableAdapterManager.Patient_kinsTableAdapter = Nothing
         Me.TableAdapterManager.Patient_VisitsTableAdapter = Nothing
         Me.TableAdapterManager.Patient_WardsTableAdapter = Nothing
