@@ -22,6 +22,8 @@
         If Not String.IsNullOrEmpty(m_dosage.Text) Then
             m_dosage.Text = String.Empty
         End If
+
+
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -83,9 +85,21 @@
 
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Med_Medicines' table. You can move, or remove it, as needed.
         Me.Med_MedicinesTableAdapter.Fill(Me.WellmeadowsDataSet.Med_Medicines)
+
+        SetEnabledSuplier()
+        SetDisabledSupplier()
     End Sub
 
     Private Sub btnCheck_sup_Click(sender As Object, e As EventArgs) Handles btnCheck_sup.Click
         popup_supplies.ShowDialog()
+    End Sub
+
+    Public Sub SetDisabledSupplier()
+        m_sup.Enabled = False
+
+    End Sub
+
+    Public Sub SetEnabledSuplier()
+        m_sup.Enabled = True
     End Sub
 End Class

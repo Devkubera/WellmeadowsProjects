@@ -9,6 +9,9 @@
         Me.Med_MedicinesTableAdapter.Fill(Me.WellmeadowsDataSet.Med_Medicines)
         'Console.WriteLine(mmID)
         'Console.WriteLine(supID & "sup")
+
+        SetEnabledSuplier()
+        SetDisabledSupplier()
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -57,5 +60,14 @@
             supID = backupSupId
         End If
         Console.WriteLine("CheckID : " & supID)
+    End Sub
+
+    Public Sub SetDisabledSupplier()
+        m_sup.Enabled = False
+
+    End Sub
+
+    Public Sub SetEnabledSuplier()
+        m_sup.Enabled = True
     End Sub
 End Class

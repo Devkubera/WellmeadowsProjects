@@ -542,7 +542,17 @@ WHERE        (mmID = @mmID)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertMedicine" Modifier="Public" Name="InsertMedicine" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertMedicine">
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Med_Medicines" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getLastmmID" Modifier="Public" Name="getLastmmID" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="getLastmmID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT TOP (1) mmID
+FROM     Med_Medicines
+ORDER BY mmID DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertMedicine" Modifier="Public" Name="InsertMedicine" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertMedicine">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Med_Medicines
@@ -561,7 +571,16 @@ VALUES        (@supplierID,@name,@description,@dosage,@method,@stock,@buy_scale,
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateMedicineBymmID" Modifier="Public" Name="UpdateMedicineBymmID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateMedicineBymmID">
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Med_Medicines" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="SelectMedicinePresscript" GetMethodModifier="Public" GetMethodName="SelectMedicinePresscript" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SelectMedicinePresscript" UserSourceName="SelectMedicinePresscript">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT      mmID, name, method
+FROM          Med_Medicines</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateMedicineBymmID" Modifier="Public" Name="UpdateMedicineBymmID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateMedicineBymmID">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       Med_Medicines
@@ -581,6 +600,16 @@ WHERE        (mmID = @mmID);
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Med_Medicines" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="UpdatePresscript" GetMethodModifier="Public" GetMethodName="UpdatePresscript" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="UpdatePresscript" UserSourceName="UpdatePresscript">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT      m.mmID, m.name, m.method
+FROM          Med_Medicines AS m INNER JOIN
+                      PW_Prescripts AS pw ON m.mmID = pw.mmID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -921,7 +950,17 @@ SELECT ID, patientID, visitID, doctorID, cnID, pwID, wardID, patientType, on_war
               <Mapping SourceColumn="symptom" DataSetColumn="symptom" />
               <Mapping SourceColumn="updateAt" DataSetColumn="updateAt" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Patient_Wards" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="SelectPwTOPresscript" GetMethodModifier="Public" GetMethodName="SelectPwTOPresscript" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SelectPwTOPresscript" UserSourceName="SelectPwTOPresscript">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT      pwID, cnID, patientID
+FROM          Patient_Wards</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PatientsTableAdapter" GeneratorDataComponentClassName="PatientsTableAdapter" Name="Patients" UserDataComponentName="PatientsTableAdapter">
             <MainSource>
@@ -1074,7 +1113,17 @@ WHERE  (patientID LIKE @inputValue) OR
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertPatient" Modifier="Public" Name="InsertPatient" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertPatient">
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Patients" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getLastPatientID" Modifier="Public" Name="getLastPatientID" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="getLastPatientID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT      TOP (1) patientID
+FROM          Patients
+ORDER BY ID DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertPatient" Modifier="Public" Name="InsertPatient" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertPatient">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Patients
@@ -1095,7 +1144,16 @@ VALUES (@firstName,@lastName,@address,@gender,@marryStatus,@tel,@dob,@date_regis
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdatePatient" Modifier="Public" Name="UpdatePatient" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdatePatient">
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Patients" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="SelectPatientPresscript" GeneratorSourceName="InsertPresscript" GetMethodModifier="Public" GetMethodName="SelectPatientPresscript" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SelectPatientPresscript" UserSourceName="SelectPatientPresscript">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT      patientID, firstName, lastName
+FROM          Patients</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdatePatient" Modifier="Public" Name="UpdatePatient" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdatePatient">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE Patients
@@ -1117,6 +1175,17 @@ WHERE  (patientID = @patientID)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="UpdatePresscript" GetMethodModifier="Public" GetMethodName="UpdatePresscript" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="UpdatePresscript" UserSourceName="UpdatePresscript">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT      pw.pwID, p.patientID, p.firstName, p.lastName
+FROM          Patients AS p INNER JOIN
+                      Patient_Wards AS pw ON p.patientID = pw.patientID; 
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PW_PrescriptsTableAdapter" GeneratorDataComponentClassName="PW_PrescriptsTableAdapter" Name="PW_Prescripts" UserDataComponentName="PW_PrescriptsTableAdapter">
@@ -1124,7 +1193,7 @@ WHERE  (patientID = @patientID)</CommandText>
               <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.PW_Prescripts" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[PW_Prescripts] WHERE (([mmID] = @Original_mmID) AND ([pwID] = @Original_pwID) AND ([doctorID] = @Original_doctorID) AND ([cnID] = @Original_cnID) AND ((@IsNull_dosage = 1 AND [dosage] IS NULL) OR ([dosage] = @Original_dosage)) AND ((@IsNull_startDate = 1 AND [startDate] IS NULL) OR ([startDate] = @Original_startDate)) AND ((@IsNull_endDate = 1 AND [endDate] IS NULL) OR ([endDate] = @Original_endDate)) AND ((@IsNull_createAT = 1 AND [createAT] IS NULL) OR ([createAT] = @Original_createAT)))</CommandText>
+                    <CommandText>DELETE FROM [PW_Prescripts] WHERE (([mmID] = @Original_mmID) AND ([pwID] = @Original_pwID) AND ([doctorID] = @Original_doctorID) AND ([cnID] = @Original_cnID) AND ((@IsNull_dosage = 1 AND [dosage] IS NULL) OR ([dosage] = @Original_dosage)) AND ((@IsNull_startDate = 1 AND [startDate] IS NULL) OR ([startDate] = @Original_startDate)) AND ((@IsNull_endDate = 1 AND [endDate] IS NULL) OR ([endDate] = @Original_endDate)) AND ([createAT] = @Original_createAT) AND ([ID] = @Original_ID) AND ((@IsNull_descript = 1 AND [descript] IS NULL) OR ([descript] = @Original_descript)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_mmID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mmID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_pwID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="pwID" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -1136,15 +1205,17 @@ WHERE  (patientID = @patientID)</CommandText>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_startDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="startDate" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_endDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="endDate" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_endDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="endDate" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_createAT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="createAT" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_createAT" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="createAT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_createAT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="createAT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_descript" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="descript" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_descript" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="descript" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[PW_Prescripts] ([mmID], [pwID], [doctorID], [cnID], [dosage], [startDate], [endDate], [createAT]) VALUES (@mmID, @pwID, @doctorID, @cnID, @dosage, @startDate, @endDate, @createAT);
-SELECT mmID, pwID, doctorID, cnID, dosage, startDate, endDate, createAT FROM PW_Prescripts WHERE (cnID = @cnID) AND (doctorID = @doctorID) AND (mmID = @mmID) AND (pwID = @pwID)</CommandText>
+                    <CommandText>INSERT INTO [PW_Prescripts] ([mmID], [pwID], [doctorID], [cnID], [dosage], [startDate], [endDate], [createAT], [ID], [descript]) VALUES (@mmID, @pwID, @doctorID, @cnID, @dosage, @startDate, @endDate, @createAT, @ID, @descript);
+SELECT mmID, pwID, doctorID, cnID, dosage, startDate, endDate, createAT, ID, descript FROM PW_Prescripts WHERE (ID = @ID)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@mmID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mmID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@pwID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="pwID" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1153,20 +1224,22 @@ SELECT mmID, pwID, doctorID, cnID, dosage, startDate, endDate, createAT FROM PW_
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@dosage" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="dosage" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@startDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="startDate" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@endDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="endDate" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@createAT" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="createAT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@createAT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="createAT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@descript" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="descript" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT mmID, pwID, doctorID, cnID, dosage, startDate, endDate, createAT FROM dbo.PW_Prescripts</CommandText>
+                    <CommandText>SELECT mmID, pwID, doctorID, cnID, dosage, startDate, endDate, createAT, ID, descript FROM PW_Prescripts</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[PW_Prescripts] SET [mmID] = @mmID, [pwID] = @pwID, [doctorID] = @doctorID, [cnID] = @cnID, [dosage] = @dosage, [startDate] = @startDate, [endDate] = @endDate, [createAT] = @createAT WHERE (([mmID] = @Original_mmID) AND ([pwID] = @Original_pwID) AND ([doctorID] = @Original_doctorID) AND ([cnID] = @Original_cnID) AND ((@IsNull_dosage = 1 AND [dosage] IS NULL) OR ([dosage] = @Original_dosage)) AND ((@IsNull_startDate = 1 AND [startDate] IS NULL) OR ([startDate] = @Original_startDate)) AND ((@IsNull_endDate = 1 AND [endDate] IS NULL) OR ([endDate] = @Original_endDate)) AND ((@IsNull_createAT = 1 AND [createAT] IS NULL) OR ([createAT] = @Original_createAT)));
-SELECT mmID, pwID, doctorID, cnID, dosage, startDate, endDate, createAT FROM PW_Prescripts WHERE (cnID = @cnID) AND (doctorID = @doctorID) AND (mmID = @mmID) AND (pwID = @pwID)</CommandText>
+                    <CommandText>UPDATE [PW_Prescripts] SET [mmID] = @mmID, [pwID] = @pwID, [doctorID] = @doctorID, [cnID] = @cnID, [dosage] = @dosage, [startDate] = @startDate, [endDate] = @endDate, [createAT] = @createAT, [ID] = @ID, [descript] = @descript WHERE (([mmID] = @Original_mmID) AND ([pwID] = @Original_pwID) AND ([doctorID] = @Original_doctorID) AND ([cnID] = @Original_cnID) AND ((@IsNull_dosage = 1 AND [dosage] IS NULL) OR ([dosage] = @Original_dosage)) AND ((@IsNull_startDate = 1 AND [startDate] IS NULL) OR ([startDate] = @Original_startDate)) AND ((@IsNull_endDate = 1 AND [endDate] IS NULL) OR ([endDate] = @Original_endDate)) AND ([createAT] = @Original_createAT) AND ([ID] = @Original_ID) AND ((@IsNull_descript = 1 AND [descript] IS NULL) OR ([descript] = @Original_descript)));
+SELECT mmID, pwID, doctorID, cnID, dosage, startDate, endDate, createAT, ID, descript FROM PW_Prescripts WHERE (ID = @ID)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@mmID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mmID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@pwID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="pwID" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1175,7 +1248,9 @@ SELECT mmID, pwID, doctorID, cnID, dosage, startDate, endDate, createAT FROM PW_
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@dosage" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="dosage" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@startDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="startDate" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@endDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="endDate" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@createAT" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="createAT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@createAT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="createAT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@descript" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="descript" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_mmID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mmID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_pwID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="pwID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_doctorID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="doctorID" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -1186,8 +1261,10 @@ SELECT mmID, pwID, doctorID, cnID, dosage, startDate, endDate, createAT FROM PW_
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_startDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="startDate" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_endDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="endDate" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_endDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="endDate" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_createAT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="createAT" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_createAT" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="createAT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_createAT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="createAT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_descript" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="descript" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_descript" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="descript" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -1202,8 +1279,63 @@ SELECT mmID, pwID, doctorID, cnID, dosage, startDate, endDate, createAT FROM PW_
               <Mapping SourceColumn="startDate" DataSetColumn="startDate" />
               <Mapping SourceColumn="endDate" DataSetColumn="endDate" />
               <Mapping SourceColumn="createAT" DataSetColumn="createAT" />
+              <Mapping SourceColumn="descript" DataSetColumn="descript" />
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeletePresscriptBycreateAt" Modifier="Public" Name="DeletePresscriptBycreateAt" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeletePresscriptBycreateAt">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM PW_Prescripts
+WHERE      (ID= @ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertPresscript" Modifier="Public" Name="InsertPresscript" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertPresscript">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO PW_Prescripts
+                      (mmID, pwID, doctorID, cnID, dosage, startDate, endDate, descript)
+VALUES      (@mmID,@pwID,@doctorID,@cnID,@dosage,@startDate,@endDate,@descript);  
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="mmID" ColumnName="mmID" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@mmID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="mmID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="pwID" ColumnName="pwID" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@pwID" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="pwID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="doctorID" ColumnName="doctorID" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@doctorID" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="doctorID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="cnID" ColumnName="cnID" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@cnID" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="cnID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="dosage" ColumnName="dosage" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="float" DbType="Double" Direction="Input" ParameterName="@dosage" Precision="0" ProviderType="Float" Scale="0" Size="8" SourceColumn="dosage" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="startDate" ColumnName="startDate" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@startDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="startDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="endDate" ColumnName="endDate" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@endDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="endDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="descript" ColumnName="descript" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@descript" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="descript" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdatePresscript" Modifier="Public" Name="UpdatePresscript" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdatePresscript">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE     PW_Prescripts
+SET              mmID = @mmID, pwID = @pwID, doctorID = @doctorID, cnID = @cnID, dosage = @dosage, startDate = @startDate, endDate = @endDate, descript = @descript
+WHERE      (ID  = @ID );  
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="mmID" ColumnName="mmID" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@mmID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="mmID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="pwID" ColumnName="pwID" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@pwID" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="pwID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="doctorID" ColumnName="doctorID" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@doctorID" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="doctorID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="cnID" ColumnName="cnID" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@cnID" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="cnID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="dosage" ColumnName="dosage" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="float" DbType="Double" Direction="Input" ParameterName="@dosage" Precision="0" ProviderType="Float" Scale="0" Size="8" SourceColumn="dosage" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="startDate" ColumnName="startDate" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@startDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="startDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="endDate" ColumnName="endDate" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@endDate" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="endDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="descript" ColumnName="descript" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@descript" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="descript" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="Wellmeadows.dbo.PW_Prescripts" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ShiftsTableAdapter" GeneratorDataComponentClassName="ShiftsTableAdapter" Name="Shifts" UserDataComponentName="ShiftsTableAdapter">
             <MainSource>
@@ -1424,17 +1556,11 @@ SELECT ID, qualID, staffID, type, dates, major FROM Staff_Qualificates WHERE (qu
               <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Staffs" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Staffs] WHERE (([ID] = @Original_ID) AND ((@IsNull_staffID = 1 AND [staffID] IS NULL) OR ([staffID] = @Original_staffID)) AND ((@IsNull_doctorID = 1 AND [doctorID] IS NULL) OR ([doctorID] = @Original_doctorID)) AND ((@IsNull_cnID = 1 AND [cnID] IS NULL) OR ([cnID] = @Original_cnID)) AND ((@IsNull_mdID = 1 AND [mdID] IS NULL) OR ([mdID] = @Original_mdID)) AND ((@IsNull_firstName = 1 AND [firstName] IS NULL) OR ([firstName] = @Original_firstName)) AND ((@IsNull_lastName = 1 AND [lastName] IS NULL) OR ([lastName] = @Original_lastName)) AND ((@IsNull_address = 1 AND [address] IS NULL) OR ([address] = @Original_address)) AND ((@IsNull_tel = 1 AND [tel] IS NULL) OR ([tel] = @Original_tel)) AND ((@IsNull_dob = 1 AND [dob] IS NULL) OR ([dob] = @Original_dob)) AND ((@IsNull_nin = 1 AND [nin] IS NULL) OR ([nin] = @Original_nin)) AND ((@IsNull_position = 1 AND [position] IS NULL) OR ([position] = @Original_position)) AND ((@IsNull_salary = 1 AND [salary] IS NULL) OR ([salary] = @Original_salary)) AND ((@IsNull_salaryScale = 1 AND [salaryScale] IS NULL) OR ([salaryScale] = @Original_salaryScale)) AND ((@IsNull_hoursWeek = 1 AND [hoursWeek] IS NULL) OR ([hoursWeek] = @Original_hoursWeek)) AND ((@IsNull_contactType = 1 AND [contactType] IS NULL) OR ([contactType] = @Original_contactType)) AND ((@IsNull_paidType = 1 AND [paidType] IS NULL) OR ([paidType] = @Original_paidType)))</CommandText>
+                    <CommandText>DELETE FROM [Staffs] WHERE (([ID] = @Original_ID) AND ((@IsNull_staffID = 1 AND [staffID] IS NULL) OR ([staffID] = @Original_staffID)) AND ((@IsNull_firstName = 1 AND [firstName] IS NULL) OR ([firstName] = @Original_firstName)) AND ((@IsNull_lastName = 1 AND [lastName] IS NULL) OR ([lastName] = @Original_lastName)) AND ((@IsNull_address = 1 AND [address] IS NULL) OR ([address] = @Original_address)) AND ((@IsNull_tel = 1 AND [tel] IS NULL) OR ([tel] = @Original_tel)) AND ((@IsNull_dob = 1 AND [dob] IS NULL) OR ([dob] = @Original_dob)) AND ((@IsNull_nin = 1 AND [nin] IS NULL) OR ([nin] = @Original_nin)) AND ((@IsNull_position = 1 AND [position] IS NULL) OR ([position] = @Original_position)) AND ((@IsNull_salary = 1 AND [salary] IS NULL) OR ([salary] = @Original_salary)) AND ((@IsNull_salaryScale = 1 AND [salaryScale] IS NULL) OR ([salaryScale] = @Original_salaryScale)) AND ((@IsNull_hoursWeek = 1 AND [hoursWeek] IS NULL) OR ([hoursWeek] = @Original_hoursWeek)) AND ((@IsNull_contactType = 1 AND [contactType] IS NULL) OR ([contactType] = @Original_contactType)) AND ((@IsNull_paidType = 1 AND [paidType] IS NULL) OR ([paidType] = @Original_paidType)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_staffID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_staffID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_doctorID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="doctorID" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_doctorID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="doctorID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cnID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cnID" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_cnID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="cnID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_mdID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mdID" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_mdID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="mdID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_firstName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="firstName" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_firstName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="firstName" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_lastName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="lastName" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -1442,7 +1568,7 @@ SELECT ID, qualID, staffID, type, dates, major FROM Staff_Qualificates WHERE (qu
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_address" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="address" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_address" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="address" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tel" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tel" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_tel" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tel" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_tel" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tel" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_dob" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="dob" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_dob" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dob" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nin" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -1464,16 +1590,13 @@ SELECT ID, qualID, staffID, type, dates, major FROM Staff_Qualificates WHERE (qu
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[Staffs] ([doctorID], [cnID], [mdID], [firstName], [lastName], [address], [tel], [dob], [nin], [position], [salary], [salaryScale], [hoursWeek], [contactType], [paidType]) VALUES (@doctorID, @cnID, @mdID, @firstName, @lastName, @address, @tel, @dob, @nin, @position, @salary, @salaryScale, @hoursWeek, @contactType, @paidType);
-SELECT ID, staffID, doctorID, cnID, mdID, firstName, lastName, address, tel, dob, nin, position, salary, salaryScale, hoursWeek, contactType, paidType FROM Staffs WHERE (staffID = @staffID)</CommandText>
+                    <CommandText>INSERT INTO [Staffs] ([firstName], [lastName], [address], [tel], [dob], [nin], [position], [salary], [salaryScale], [hoursWeek], [contactType], [paidType]) VALUES (@firstName, @lastName, @address, @tel, @dob, @nin, @position, @salary, @salaryScale, @hoursWeek, @contactType, @paidType);
+SELECT ID, staffID, firstName, lastName, address, tel, dob, nin, position, salary, salaryScale, hoursWeek, contactType, paidType FROM Staffs WHERE (staffID = @staffID)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@doctorID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="doctorID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@cnID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="cnID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@mdID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="mdID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@firstName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="firstName" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@lastName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="lastName" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@address" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="address" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@tel" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tel" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tel" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tel" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@dob" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dob" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@nin" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nin" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@position" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="position" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1488,22 +1611,19 @@ SELECT ID, staffID, doctorID, cnID, mdID, firstName, lastName, address, tel, dob
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT ID, staffID, doctorID, cnID, mdID, firstName, lastName, address, tel, dob, nin, position, salary, salaryScale, hoursWeek, contactType, paidType FROM dbo.Staffs</CommandText>
+                    <CommandText>SELECT ID, staffID, firstName, lastName, address, tel, dob, nin, position, salary, salaryScale, hoursWeek, contactType, paidType FROM Staffs</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Staffs] SET [doctorID] = @doctorID, [cnID] = @cnID, [mdID] = @mdID, [firstName] = @firstName, [lastName] = @lastName, [address] = @address, [tel] = @tel, [dob] = @dob, [nin] = @nin, [position] = @position, [salary] = @salary, [salaryScale] = @salaryScale, [hoursWeek] = @hoursWeek, [contactType] = @contactType, [paidType] = @paidType WHERE (([ID] = @Original_ID) AND ((@IsNull_staffID = 1 AND [staffID] IS NULL) OR ([staffID] = @Original_staffID)) AND ((@IsNull_doctorID = 1 AND [doctorID] IS NULL) OR ([doctorID] = @Original_doctorID)) AND ((@IsNull_cnID = 1 AND [cnID] IS NULL) OR ([cnID] = @Original_cnID)) AND ((@IsNull_mdID = 1 AND [mdID] IS NULL) OR ([mdID] = @Original_mdID)) AND ((@IsNull_firstName = 1 AND [firstName] IS NULL) OR ([firstName] = @Original_firstName)) AND ((@IsNull_lastName = 1 AND [lastName] IS NULL) OR ([lastName] = @Original_lastName)) AND ((@IsNull_address = 1 AND [address] IS NULL) OR ([address] = @Original_address)) AND ((@IsNull_tel = 1 AND [tel] IS NULL) OR ([tel] = @Original_tel)) AND ((@IsNull_dob = 1 AND [dob] IS NULL) OR ([dob] = @Original_dob)) AND ((@IsNull_nin = 1 AND [nin] IS NULL) OR ([nin] = @Original_nin)) AND ((@IsNull_position = 1 AND [position] IS NULL) OR ([position] = @Original_position)) AND ((@IsNull_salary = 1 AND [salary] IS NULL) OR ([salary] = @Original_salary)) AND ((@IsNull_salaryScale = 1 AND [salaryScale] IS NULL) OR ([salaryScale] = @Original_salaryScale)) AND ((@IsNull_hoursWeek = 1 AND [hoursWeek] IS NULL) OR ([hoursWeek] = @Original_hoursWeek)) AND ((@IsNull_contactType = 1 AND [contactType] IS NULL) OR ([contactType] = @Original_contactType)) AND ((@IsNull_paidType = 1 AND [paidType] IS NULL) OR ([paidType] = @Original_paidType)));
-SELECT ID, staffID, doctorID, cnID, mdID, firstName, lastName, address, tel, dob, nin, position, salary, salaryScale, hoursWeek, contactType, paidType FROM Staffs WHERE (staffID = @staffID)</CommandText>
+                    <CommandText>UPDATE [Staffs] SET [firstName] = @firstName, [lastName] = @lastName, [address] = @address, [tel] = @tel, [dob] = @dob, [nin] = @nin, [position] = @position, [salary] = @salary, [salaryScale] = @salaryScale, [hoursWeek] = @hoursWeek, [contactType] = @contactType, [paidType] = @paidType WHERE (([ID] = @Original_ID) AND ((@IsNull_staffID = 1 AND [staffID] IS NULL) OR ([staffID] = @Original_staffID)) AND ((@IsNull_firstName = 1 AND [firstName] IS NULL) OR ([firstName] = @Original_firstName)) AND ((@IsNull_lastName = 1 AND [lastName] IS NULL) OR ([lastName] = @Original_lastName)) AND ((@IsNull_address = 1 AND [address] IS NULL) OR ([address] = @Original_address)) AND ((@IsNull_tel = 1 AND [tel] IS NULL) OR ([tel] = @Original_tel)) AND ((@IsNull_dob = 1 AND [dob] IS NULL) OR ([dob] = @Original_dob)) AND ((@IsNull_nin = 1 AND [nin] IS NULL) OR ([nin] = @Original_nin)) AND ((@IsNull_position = 1 AND [position] IS NULL) OR ([position] = @Original_position)) AND ((@IsNull_salary = 1 AND [salary] IS NULL) OR ([salary] = @Original_salary)) AND ((@IsNull_salaryScale = 1 AND [salaryScale] IS NULL) OR ([salaryScale] = @Original_salaryScale)) AND ((@IsNull_hoursWeek = 1 AND [hoursWeek] IS NULL) OR ([hoursWeek] = @Original_hoursWeek)) AND ((@IsNull_contactType = 1 AND [contactType] IS NULL) OR ([contactType] = @Original_contactType)) AND ((@IsNull_paidType = 1 AND [paidType] IS NULL) OR ([paidType] = @Original_paidType)));
+SELECT ID, staffID, firstName, lastName, address, tel, dob, nin, position, salary, salaryScale, hoursWeek, contactType, paidType FROM Staffs WHERE (staffID = @staffID)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@doctorID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="doctorID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@cnID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="cnID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@mdID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="mdID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@firstName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="firstName" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@lastName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="lastName" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@address" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="address" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@tel" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tel" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tel" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tel" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@dob" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dob" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@nin" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nin" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@position" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="position" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1515,12 +1635,6 @@ SELECT ID, staffID, doctorID, cnID, mdID, firstName, lastName, address, tel, dob
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_staffID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_staffID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_doctorID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="doctorID" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_doctorID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="doctorID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cnID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cnID" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_cnID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="cnID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_mdID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mdID" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_mdID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="mdID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_firstName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="firstName" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_firstName" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="firstName" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_lastName" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="lastName" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -1528,7 +1642,7 @@ SELECT ID, staffID, doctorID, cnID, mdID, firstName, lastName, address, tel, dob
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_address" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="address" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_address" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="address" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tel" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tel" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_tel" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tel" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_tel" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tel" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_dob" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="dob" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_dob" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="dob" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nin" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nin" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -1554,9 +1668,6 @@ SELECT ID, staffID, doctorID, cnID, mdID, firstName, lastName, address, tel, dob
             <Mappings>
               <Mapping SourceColumn="ID" DataSetColumn="ID" />
               <Mapping SourceColumn="staffID" DataSetColumn="staffID" />
-              <Mapping SourceColumn="doctorID" DataSetColumn="doctorID" />
-              <Mapping SourceColumn="cnID" DataSetColumn="cnID" />
-              <Mapping SourceColumn="mdID" DataSetColumn="mdID" />
               <Mapping SourceColumn="firstName" DataSetColumn="firstName" />
               <Mapping SourceColumn="lastName" DataSetColumn="lastName" />
               <Mapping SourceColumn="address" DataSetColumn="address" />
@@ -1571,7 +1682,17 @@ SELECT ID, staffID, doctorID, cnID, mdID, firstName, lastName, address, tel, dob
               <Mapping SourceColumn="paidType" DataSetColumn="paidType" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertStaff" Modifier="Public" Name="InsertStaff" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertStaff">
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Doctors" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getLastDoctorID" Modifier="Public" Name="getLastDoctorID" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="getLastDoctorID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT      TOP (1) StaffID
+FROM          Doctors 
+ORDER BY ID DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertStaff" Modifier="Public" Name="InsertStaff" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertStaff">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Staffs
@@ -1596,6 +1717,35 @@ VALUES (@doctorID,@cnID,@mdID,@firstName,@lastName,@address,@tel,@dob,@nin,@posi
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Staffs" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="SelectDocPresscript" GetMethodModifier="Public" GetMethodName="SelectDocPresscript" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SelectDocPresscript" UserSourceName="SelectDocPresscript">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT      staffID, firstName, lastName
+FROM          Staffs</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="SelectDocterStaff" GetMethodModifier="Public" GetMethodName="SelectDocterStaff" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SelectDocterStaff" UserSourceName="SelectDocterStaff">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT      Staffs.ID, Staffs.staffID, Doctors.doctorID, Staffs.firstName, Staffs.lastName, Staffs.address, Staffs.tel, Staffs.dob, Staffs.nin, Staffs.position, Staffs.salary, Staffs.salaryScale, Staffs.hoursWeek, Staffs.contactType, Staffs.paidType
+FROM          Staffs INNER JOIN
+                      Doctors ON Staffs.staffID = Doctors.staffID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Staffs" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="ค้นหาหมอ" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="ค้นหาหมอ" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ค้นหาหมอ">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT      Staffs.ID, Staffs.staffID, Staffs.firstName, Staffs.lastName, Staffs.address, Staffs.tel, Staffs.dob, Staffs.nin, Staffs.position, Staffs.salary, Staffs.salaryScale, Staffs.hoursWeek, Staffs.contactType, Staffs.paidType
+FROM          Staffs INNER JOIN
+                      Doctors ON Staffs.staffID = Doctors.staffID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -1694,7 +1844,7 @@ WHERE        (supplierID = @supplierID)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Suppilers" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getLastSupID" Modifier="Public" Name="getLastSupID" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="getLastSupID">
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Suppilers" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getLastSupID" Modifier="Public" Name="getLastSupID" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="getLastSupID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        TOP (1) supplierID
@@ -1703,7 +1853,7 @@ FROM            Suppilers</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertSupID" Modifier="Public" Name="InsertSupID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertSupID">
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertSupID" Modifier="Public" Name="InsertSupID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertSupID">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Suppilers
@@ -1975,6 +2125,192 @@ SELECT ID, wardID, wardName, wardLocation, wardTel, totalBed FROM Wards WHERE (w
               <Mapping SourceColumn="wardLocation" DataSetColumn="wardLocation" />
               <Mapping SourceColumn="wardTel" DataSetColumn="wardTel" />
               <Mapping SourceColumn="totalBed" DataSetColumn="totalBed" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ChargeNursesTableAdapter" GeneratorDataComponentClassName="ChargeNursesTableAdapter" Name="ChargeNurses" UserDataComponentName="ChargeNursesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.ChargeNurses" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[ChargeNurses] WHERE (([ID] = @Original_ID) AND ((@IsNull_cnID = 1 AND [cnID] IS NULL) OR ([cnID] = @Original_cnID)) AND ((@IsNull_staffID = 1 AND [staffID] IS NULL) OR ([staffID] = @Original_staffID)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cnID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cnID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_cnID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="cnID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_staffID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_staffID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[ChargeNurses] ([staffID]) VALUES (@staffID);
+SELECT ID, cnID, staffID FROM ChargeNurses WHERE (cnID = @cnID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@staffID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="cnID" ColumnName="cnID" DataSourceName="Wellmeadows.dbo.ChargeNurses" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@cnID" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="cnID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, cnID, staffID FROM dbo.ChargeNurses</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[ChargeNurses] SET [staffID] = @staffID WHERE (([ID] = @Original_ID) AND ((@IsNull_cnID = 1 AND [cnID] IS NULL) OR ([cnID] = @Original_cnID)) AND ((@IsNull_staffID = 1 AND [staffID] IS NULL) OR ([staffID] = @Original_staffID)));
+SELECT ID, cnID, staffID FROM ChargeNurses WHERE (cnID = @cnID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@staffID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_cnID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="cnID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_cnID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="cnID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_staffID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_staffID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="cnID" ColumnName="cnID" DataSourceName="Wellmeadows.dbo.ChargeNurses" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@cnID" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="cnID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="cnID" DataSetColumn="cnID" />
+              <Mapping SourceColumn="staffID" DataSetColumn="staffID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DoctorsTableAdapter" GeneratorDataComponentClassName="DoctorsTableAdapter" Name="Doctors" UserDataComponentName="DoctorsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Doctors" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Doctors] WHERE (([ID] = @Original_ID) AND ((@IsNull_doctorID = 1 AND [doctorID] IS NULL) OR ([doctorID] = @Original_doctorID)) AND ((@IsNull_staffID = 1 AND [staffID] IS NULL) OR ([staffID] = @Original_staffID)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_doctorID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="doctorID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_doctorID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="doctorID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_staffID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_staffID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Doctors] ([staffID]) VALUES (@staffID);
+SELECT ID, doctorID, staffID FROM Doctors WHERE (doctorID = @doctorID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@staffID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="doctorID" ColumnName="doctorID" DataSourceName="Wellmeadows.dbo.Doctors" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@doctorID" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="doctorID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, doctorID, staffID FROM dbo.Doctors</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Doctors] SET [staffID] = @staffID WHERE (([ID] = @Original_ID) AND ((@IsNull_doctorID = 1 AND [doctorID] IS NULL) OR ([doctorID] = @Original_doctorID)) AND ((@IsNull_staffID = 1 AND [staffID] IS NULL) OR ([staffID] = @Original_staffID)));
+SELECT ID, doctorID, staffID FROM Doctors WHERE (doctorID = @doctorID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@staffID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_doctorID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="doctorID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_doctorID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="doctorID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_staffID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_staffID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="doctorID" ColumnName="doctorID" DataSourceName="Wellmeadows.dbo.Doctors" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@doctorID" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="doctorID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="doctorID" DataSetColumn="doctorID" />
+              <Mapping SourceColumn="staffID" DataSetColumn="staffID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Doctors" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getLastDocID" Modifier="Public" Name="getLastDocID" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="getLastDocID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT      TOP (1) doctorID
+FROM          Doctors
+ORDER BY ID DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="SelectDortor" GetMethodModifier="Public" GetMethodName="SelectDortor" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="SelectDortor" UserSourceName="SelectDortor">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT      D.doctorID, S.firstName, S.lastName
+FROM          Doctors AS D INNER JOIN
+                      Staffs AS S ON D.staffID = S.staffID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MedicalDirectorsTableAdapter" GeneratorDataComponentClassName="MedicalDirectorsTableAdapter" Name="MedicalDirectors" UserDataComponentName="MedicalDirectorsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.MedicalDirectors" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[MedicalDirectors] WHERE (([ID] = @Original_ID) AND ((@IsNull_mdID = 1 AND [mdID] IS NULL) OR ([mdID] = @Original_mdID)) AND ((@IsNull_staffID = 1 AND [staffID] IS NULL) OR ([staffID] = @Original_staffID)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_mdID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mdID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_mdID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="mdID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_staffID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_staffID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[MedicalDirectors] ([staffID]) VALUES (@staffID);
+SELECT ID, mdID, staffID FROM MedicalDirectors WHERE (mdID = @mdID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@staffID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="mdID" ColumnName="mdID" DataSourceName="Wellmeadows.dbo.MedicalDirectors" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@mdID" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="mdID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, mdID, staffID FROM dbo.MedicalDirectors</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[MedicalDirectors] SET [staffID] = @staffID WHERE (([ID] = @Original_ID) AND ((@IsNull_mdID = 1 AND [mdID] IS NULL) OR ([mdID] = @Original_mdID)) AND ((@IsNull_staffID = 1 AND [staffID] IS NULL) OR ([staffID] = @Original_staffID)));
+SELECT ID, mdID, staffID FROM MedicalDirectors WHERE (mdID = @mdID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@staffID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_mdID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="mdID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_mdID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="mdID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_staffID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_staffID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="staffID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="mdID" ColumnName="mdID" DataSourceName="Wellmeadows.dbo.MedicalDirectors" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@mdID" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="mdID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="mdID" DataSetColumn="mdID" />
+              <Mapping SourceColumn="staffID" DataSetColumn="staffID" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -2381,7 +2717,15 @@ SELECT ID, wardID, wardName, wardLocation, wardTel, totalBed FROM Wards WHERE (w
               <xs:element name="dosage" msprop:Generator_ColumnPropNameInTable="dosageColumn" msprop:Generator_ColumnPropNameInRow="dosage" msprop:Generator_UserColumnName="dosage" msprop:Generator_ColumnVarNameInTable="columndosage" type="xs:double" minOccurs="0" />
               <xs:element name="startDate" msprop:Generator_ColumnPropNameInTable="startDateColumn" msprop:Generator_ColumnPropNameInRow="startDate" msprop:Generator_UserColumnName="startDate" msprop:Generator_ColumnVarNameInTable="columnstartDate" type="xs:dateTime" minOccurs="0" />
               <xs:element name="endDate" msprop:Generator_ColumnPropNameInTable="endDateColumn" msprop:Generator_ColumnPropNameInRow="endDate" msprop:Generator_UserColumnName="endDate" msprop:Generator_ColumnVarNameInTable="columnendDate" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="createAT" msprop:Generator_ColumnPropNameInTable="createATColumn" msprop:Generator_ColumnPropNameInRow="createAT" msprop:Generator_UserColumnName="createAT" msprop:Generator_ColumnVarNameInTable="columncreateAT" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="createAT" msprop:Generator_ColumnPropNameInTable="createATColumn" msprop:Generator_ColumnPropNameInRow="createAT" msprop:Generator_UserColumnName="createAT" msprop:Generator_ColumnVarNameInTable="columncreateAT" type="xs:dateTime" />
+              <xs:element name="descript" msprop:Generator_ColumnPropNameInRow="descript" msprop:Generator_ColumnPropNameInTable="descriptColumn" msprop:Generator_ColumnVarNameInTable="columndescript" msprop:Generator_UserColumnName="descript" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2485,27 +2829,6 @@ SELECT ID, wardID, wardName, wardLocation, wardTel, totalBed FROM Wards WHERE (w
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="doctorID" msprop:Generator_ColumnPropNameInTable="doctorIDColumn" msprop:Generator_ColumnPropNameInRow="doctorID" msprop:Generator_UserColumnName="doctorID" msprop:Generator_ColumnVarNameInTable="columndoctorID" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="cnID" msprop:Generator_ColumnPropNameInTable="cnIDColumn" msprop:Generator_ColumnPropNameInRow="cnID" msprop:Generator_UserColumnName="cnID" msprop:Generator_ColumnVarNameInTable="columncnID" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="mdID" msprop:Generator_ColumnPropNameInTable="mdIDColumn" msprop:Generator_ColumnPropNameInRow="mdID" msprop:Generator_UserColumnName="mdID" msprop:Generator_ColumnVarNameInTable="columnmdID" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="firstName" msprop:Generator_ColumnPropNameInTable="firstNameColumn" msprop:Generator_ColumnPropNameInRow="firstName" msprop:Generator_UserColumnName="firstName" msprop:Generator_ColumnVarNameInTable="columnfirstName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -2545,7 +2868,7 @@ SELECT ID, wardID, wardName, wardLocation, wardTel, totalBed FROM Wards WHERE (w
               </xs:element>
               <xs:element name="salary" msprop:Generator_ColumnPropNameInTable="salaryColumn" msprop:Generator_ColumnPropNameInRow="salary" msprop:Generator_UserColumnName="salary" msprop:Generator_ColumnVarNameInTable="columnsalary" type="xs:double" minOccurs="0" />
               <xs:element name="salaryScale" msprop:Generator_ColumnPropNameInTable="salaryScaleColumn" msprop:Generator_ColumnPropNameInRow="salaryScale" msprop:Generator_UserColumnName="salaryScale" msprop:Generator_ColumnVarNameInTable="columnsalaryScale" type="xs:double" minOccurs="0" />
-              <xs:element name="hoursWeek" msprop:Generator_ColumnPropNameInTable="hoursWeekColumn" msprop:Generator_ColumnPropNameInRow="hoursWeek" msprop:Generator_UserColumnName="hoursWeek" msprop:Generator_ColumnVarNameInTable="columnhoursWeek" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="hoursWeek" msprop:Generator_ColumnPropNameInTable="hoursWeekColumn" msprop:Generator_ColumnPropNameInRow="hoursWeek" msprop:Generator_UserColumnName="hoursWeek" msprop:Generator_ColumnVarNameInTable="columnhoursWeek" type="xs:int" minOccurs="0" />
               <xs:element name="contactType" msprop:Generator_ColumnPropNameInTable="contactTypeColumn" msprop:Generator_ColumnPropNameInRow="contactType" msprop:Generator_UserColumnName="contactType" msprop:Generator_ColumnVarNameInTable="columncontactType" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -2692,6 +3015,69 @@ SELECT ID, wardID, wardName, wardLocation, wardTel, totalBed FROM Wards WHERE (w
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ChargeNurses" msprop:Generator_RowEvHandlerName="ChargeNursesRowChangeEventHandler" msprop:Generator_RowDeletedName="ChargeNursesRowDeleted" msprop:Generator_RowDeletingName="ChargeNursesRowDeleting" msprop:Generator_RowEvArgName="ChargeNursesRowChangeEvent" msprop:Generator_TablePropName="ChargeNurses" msprop:Generator_RowChangedName="ChargeNursesRowChanged" msprop:Generator_UserTableName="ChargeNurses" msprop:Generator_RowChangingName="ChargeNursesRowChanging" msprop:Generator_RowClassName="ChargeNursesRow" msprop:Generator_TableClassName="ChargeNursesDataTable" msprop:Generator_TableVarName="tableChargeNurses">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="cnID" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="cnIDColumn" msprop:Generator_ColumnPropNameInRow="cnID" msprop:Generator_UserColumnName="cnID" msprop:Generator_ColumnVarNameInTable="columncnID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="staffID" msprop:Generator_ColumnPropNameInTable="staffIDColumn" msprop:Generator_ColumnPropNameInRow="staffID" msprop:Generator_UserColumnName="staffID" msprop:Generator_ColumnVarNameInTable="columnstaffID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Doctors" msprop:Generator_RowEvHandlerName="DoctorsRowChangeEventHandler" msprop:Generator_RowDeletedName="DoctorsRowDeleted" msprop:Generator_RowDeletingName="DoctorsRowDeleting" msprop:Generator_RowEvArgName="DoctorsRowChangeEvent" msprop:Generator_TablePropName="Doctors" msprop:Generator_RowChangedName="DoctorsRowChanged" msprop:Generator_UserTableName="Doctors" msprop:Generator_RowChangingName="DoctorsRowChanging" msprop:Generator_RowClassName="DoctorsRow" msprop:Generator_TableClassName="DoctorsDataTable" msprop:Generator_TableVarName="tableDoctors">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="doctorID" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="doctorIDColumn" msprop:Generator_ColumnPropNameInRow="doctorID" msprop:Generator_UserColumnName="doctorID" msprop:Generator_ColumnVarNameInTable="columndoctorID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="staffID" msprop:Generator_ColumnPropNameInTable="staffIDColumn" msprop:Generator_ColumnPropNameInRow="staffID" msprop:Generator_UserColumnName="staffID" msprop:Generator_ColumnVarNameInTable="columnstaffID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MedicalDirectors" msprop:Generator_RowEvHandlerName="MedicalDirectorsRowChangeEventHandler" msprop:Generator_RowDeletedName="MedicalDirectorsRowDeleted" msprop:Generator_RowDeletingName="MedicalDirectorsRowDeleting" msprop:Generator_RowEvArgName="MedicalDirectorsRowChangeEvent" msprop:Generator_TablePropName="MedicalDirectors" msprop:Generator_RowChangedName="MedicalDirectorsRowChanged" msprop:Generator_UserTableName="MedicalDirectors" msprop:Generator_RowChangingName="MedicalDirectorsRowChanging" msprop:Generator_RowClassName="MedicalDirectorsRow" msprop:Generator_TableClassName="MedicalDirectorsDataTable" msprop:Generator_TableVarName="tableMedicalDirectors">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="mdID" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="mdIDColumn" msprop:Generator_ColumnPropNameInRow="mdID" msprop:Generator_UserColumnName="mdID" msprop:Generator_ColumnVarNameInTable="columnmdID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="staffID" msprop:Generator_ColumnPropNameInTable="staffIDColumn" msprop:Generator_ColumnPropNameInRow="staffID" msprop:Generator_UserColumnName="staffID" msprop:Generator_ColumnVarNameInTable="columnstaffID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -2734,12 +3120,9 @@ SELECT ID, wardID, wardName, wardLocation, wardTel, totalBed FROM Wards WHERE (w
       <xs:selector xpath=".//mstns:Patients" />
       <xs:field xpath="mstns:patientID" />
     </xs:unique>
-    <xs:unique name="PW_Prescripts_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+    <xs:unique name="Constraint2">
       <xs:selector xpath=".//mstns:PW_Prescripts" />
-      <xs:field xpath="mstns:mmID" />
-      <xs:field xpath="mstns:pwID" />
-      <xs:field xpath="mstns:doctorID" />
-      <xs:field xpath="mstns:cnID" />
+      <xs:field xpath="mstns:ID" />
     </xs:unique>
     <xs:unique name="Shifts_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Shifts" />
@@ -2775,42 +3158,57 @@ SELECT ID, wardID, wardName, wardLocation, wardTel, totalBed FROM Wards WHERE (w
       <xs:selector xpath=".//mstns:Wards" />
       <xs:field xpath="mstns:wardID" />
     </xs:unique>
+    <xs:unique name="ChargeNurses_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:ChargeNurses" />
+      <xs:field xpath="mstns:cnID" />
+    </xs:unique>
+    <xs:unique name="Doctors_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:Doctors" />
+      <xs:field xpath="mstns:doctorID" />
+    </xs:unique>
+    <xs:unique name="MedicalDirectors_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:MedicalDirectors" />
+      <xs:field xpath="mstns:mdID" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Beds_Wards" msdata:parent="Wards" msdata:child="Beds" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Beds" msprop:Generator_RelationVarName="relationFK_Beds_Wards" msprop:Generator_ChildPropName="GetBedsRows" msprop:Generator_UserRelationName="FK_Beds_Wards" msprop:Generator_ParentPropName="WardsRow" />
-      <msdata:Relationship name="FK_In_Patients_Beds" msdata:parent="Beds" msdata:child="In_Patients" msdata:parentkey="bedID" msdata:childkey="bedID" msprop:Generator_UserParentTable="Beds" msprop:Generator_UserChildTable="In_Patients" msprop:Generator_RelationVarName="relationFK_In_Patients_Beds" msprop:Generator_ChildPropName="GetIn_PatientsRows" msprop:Generator_ParentPropName="BedsRow" msprop:Generator_UserRelationName="FK_In_Patients_Beds" />
-      <msdata:Relationship name="FK_In_Patients_Patient_Wards" msdata:parent="Patient_Wards" msdata:child="In_Patients" msdata:parentkey="pwID" msdata:childkey="pwID" msprop:Generator_UserParentTable="Patient_Wards" msprop:Generator_UserChildTable="In_Patients" msprop:Generator_RelationVarName="relationFK_In_Patients_Patient_Wards" msprop:Generator_ChildPropName="GetIn_PatientsRows" msprop:Generator_UserRelationName="FK_In_Patients_Patient_Wards" msprop:Generator_ParentPropName="Patient_WardsRow" />
-      <msdata:Relationship name="FK_In_Patients_Wards" msdata:parent="Wards" msdata:child="In_Patients" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="In_Patients" msprop:Generator_RelationVarName="relationFK_In_Patients_Wards" msprop:Generator_ChildPropName="GetIn_PatientsRows" msprop:Generator_UserRelationName="FK_In_Patients_Wards" msprop:Generator_ParentPropName="WardsRow" />
-      <msdata:Relationship name="FK_Login_logs_Staffs" msdata:parent="Staffs" msdata:child="Login_logs" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Login_logs" msprop:Generator_RelationVarName="relationFK_Login_logs_Staffs" msprop:Generator_ChildPropName="GetLogin_logsRows" msprop:Generator_UserRelationName="FK_Login_logs_Staffs" msprop:Generator_ParentPropName="StaffsRow" />
-      <msdata:Relationship name="FK_Med_Equipments_Suppilers" msdata:parent="Suppilers" msdata:child="Med_Equipments" msdata:parentkey="supplierID" msdata:childkey="supplierID" msprop:Generator_UserParentTable="Suppilers" msprop:Generator_UserChildTable="Med_Equipments" msprop:Generator_RelationVarName="relationFK_Med_Equipments_Suppilers" msprop:Generator_ChildPropName="GetMed_EquipmentsRows" msprop:Generator_UserRelationName="FK_Med_Equipments_Suppilers" msprop:Generator_ParentPropName="SuppilersRow" />
-      <msdata:Relationship name="FK_Med_Medicines_Suppilers" msdata:parent="Suppilers" msdata:child="Med_Medicines" msdata:parentkey="supplierID" msdata:childkey="supplierID" msprop:Generator_UserParentTable="Suppilers" msprop:Generator_UserChildTable="Med_Medicines" msprop:Generator_RelationVarName="relationFK_Med_Medicines_Suppilers" msprop:Generator_ChildPropName="GetMed_MedicinesRows" msprop:Generator_UserRelationName="FK_Med_Medicines_Suppilers" msprop:Generator_ParentPropName="SuppilersRow" />
-      <msdata:Relationship name="FK_Patient_Visits_Patients" msdata:parent="Patients" msdata:child="Patient_Visits" msdata:parentkey="patientID" msdata:childkey="patientID" msprop:Generator_UserParentTable="Patients" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Patients" msprop:Generator_ChildPropName="GetPatient_VisitsRows" msprop:Generator_UserRelationName="FK_Patient_Visits_Patients" msprop:Generator_ParentPropName="PatientsRow" />
-      <msdata:Relationship name="FK_Patient_Visits_Staffs" msdata:parent="Staffs" msdata:child="Patient_Visits" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Staffs" msprop:Generator_ChildPropName="GetPatient_VisitsRowsByFK_Patient_Visits_Staffs" msprop:Generator_UserRelationName="FK_Patient_Visits_Staffs" msprop:Generator_ParentPropName="StaffsRowByFK_Patient_Visits_Staffs" />
-      <msdata:Relationship name="FK_Patient_Visits_Staffs_Doctor" msdata:parent="Staffs" msdata:child="Patient_Visits" msdata:parentkey="doctorID" msdata:childkey="doctorID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Staffs_Doctor" msprop:Generator_ChildPropName="GetPatient_VisitsRowsByFK_Patient_Visits_Staffs_Doctor" msprop:Generator_UserRelationName="FK_Patient_Visits_Staffs_Doctor" msprop:Generator_ParentPropName="StaffsRowByFK_Patient_Visits_Staffs_Doctor" />
-      <msdata:Relationship name="FK_Patient_Visits_Wards" msdata:parent="Wards" msdata:child="Patient_Visits" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Wards" msprop:Generator_ChildPropName="GetPatient_VisitsRows" msprop:Generator_UserRelationName="FK_Patient_Visits_Wards" msprop:Generator_ParentPropName="WardsRow" />
-      <msdata:Relationship name="FK_Patient_Wards_Patient_Visits" msdata:parent="Patient_Visits" msdata:child="Patient_Wards" msdata:parentkey="visitID" msdata:childkey="visitID" msprop:Generator_UserParentTable="Patient_Visits" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Patient_Visits" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_ParentPropName="Patient_VisitsRow" msprop:Generator_UserRelationName="FK_Patient_Wards_Patient_Visits" />
-      <msdata:Relationship name="FK_Patient_Wards_Patients" msdata:parent="Patients" msdata:child="Patient_Wards" msdata:parentkey="patientID" msdata:childkey="patientID" msprop:Generator_UserParentTable="Patients" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Patients" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_UserRelationName="FK_Patient_Wards_Patients" msprop:Generator_ParentPropName="PatientsRow" />
-      <msdata:Relationship name="FK_Patient_Wards_Staffs_cnID" msdata:parent="Staffs" msdata:child="Patient_Wards" msdata:parentkey="cnID" msdata:childkey="cnID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Staffs_cnID" msprop:Generator_ChildPropName="GetPatient_WardsRowsByFK_Patient_Wards_Staffs_cnID" msprop:Generator_UserRelationName="FK_Patient_Wards_Staffs_cnID" msprop:Generator_ParentPropName="StaffsRowByFK_Patient_Wards_Staffs_cnID" />
-      <msdata:Relationship name="FK_Patient_Wards_Staffs_Doctor" msdata:parent="Staffs" msdata:child="Patient_Wards" msdata:parentkey="doctorID" msdata:childkey="doctorID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Staffs_Doctor" msprop:Generator_ChildPropName="GetPatient_WardsRowsByFK_Patient_Wards_Staffs_Doctor" msprop:Generator_UserRelationName="FK_Patient_Wards_Staffs_Doctor" msprop:Generator_ParentPropName="StaffsRowByFK_Patient_Wards_Staffs_Doctor" />
-      <msdata:Relationship name="FK_Patient_Wards_Wards" msdata:parent="Wards" msdata:child="Patient_Wards" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Wards" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_UserRelationName="FK_Patient_Wards_Wards" msprop:Generator_ParentPropName="WardsRow" />
-      <msdata:Relationship name="FK_Patients_LocalDoctors" msdata:parent="LocalDoctors" msdata:child="Patients" msdata:parentkey="localDocID" msdata:childkey="localDocID" msprop:Generator_UserParentTable="LocalDoctors" msprop:Generator_UserChildTable="Patients" msprop:Generator_RelationVarName="relationFK_Patients_LocalDoctors" msprop:Generator_ChildPropName="GetPatientsRows" msprop:Generator_ParentPropName="LocalDoctorsRow" msprop:Generator_UserRelationName="FK_Patients_LocalDoctors" />
-      <msdata:Relationship name="FK_Patients_Patient_kins" msdata:parent="Patient_kins" msdata:child="Patients" msdata:parentkey="kinsID" msdata:childkey="kinsID" msprop:Generator_UserParentTable="Patient_kins" msprop:Generator_UserChildTable="Patients" msprop:Generator_RelationVarName="relationFK_Patients_Patient_kins" msprop:Generator_ChildPropName="GetPatientsRows" msprop:Generator_ParentPropName="Patient_kinsRow" msprop:Generator_UserRelationName="FK_Patients_Patient_kins" />
-      <msdata:Relationship name="FK_PW_Prescripts_Med_Medicines" msdata:parent="Med_Medicines" msdata:child="PW_Prescripts" msdata:parentkey="mmID" msdata:childkey="mmID" msprop:Generator_UserParentTable="Med_Medicines" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Med_Medicines" msprop:Generator_ChildPropName="GetPW_PrescriptsRows" msprop:Generator_ParentPropName="Med_MedicinesRow" msprop:Generator_UserRelationName="FK_PW_Prescripts_Med_Medicines" />
-      <msdata:Relationship name="FK_PW_Prescripts_Patient_Wards" msdata:parent="Patient_Wards" msdata:child="PW_Prescripts" msdata:parentkey="pwID" msdata:childkey="pwID" msprop:Generator_UserParentTable="Patient_Wards" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Patient_Wards" msprop:Generator_ChildPropName="GetPW_PrescriptsRows" msprop:Generator_ParentPropName="Patient_WardsRow" msprop:Generator_UserRelationName="FK_PW_Prescripts_Patient_Wards" />
-      <msdata:Relationship name="FK_PW_Prescripts_Staffs_cnID" msdata:parent="Staffs" msdata:child="PW_Prescripts" msdata:parentkey="cnID" msdata:childkey="cnID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Staffs_cnID" msprop:Generator_ChildPropName="GetPW_PrescriptsRowsByFK_PW_Prescripts_Staffs_cnID" msprop:Generator_UserRelationName="FK_PW_Prescripts_Staffs_cnID" msprop:Generator_ParentPropName="StaffsRowByFK_PW_Prescripts_Staffs_cnID" />
-      <msdata:Relationship name="FK_PW_Prescripts_Staffs_Doctor" msdata:parent="Staffs" msdata:child="PW_Prescripts" msdata:parentkey="doctorID" msdata:childkey="doctorID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Staffs_Doctor" msprop:Generator_ChildPropName="GetPW_PrescriptsRowsByFK_PW_Prescripts_Staffs_Doctor" msprop:Generator_UserRelationName="FK_PW_Prescripts_Staffs_Doctor" msprop:Generator_ParentPropName="StaffsRowByFK_PW_Prescripts_Staffs_Doctor" />
-      <msdata:Relationship name="FK_Staff_Experiences_Staffs" msdata:parent="Staffs" msdata:child="Staff_Experiences" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Staff_Experiences" msprop:Generator_RelationVarName="relationFK_Staff_Experiences_Staffs" msprop:Generator_ChildPropName="GetStaff_ExperiencesRows" msprop:Generator_UserRelationName="FK_Staff_Experiences_Staffs" msprop:Generator_ParentPropName="StaffsRow" />
-      <msdata:Relationship name="FK_Staff_Qualificates_Staffs" msdata:parent="Staffs" msdata:child="Staff_Qualificates" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Staff_Qualificates" msprop:Generator_RelationVarName="relationFK_Staff_Qualificates_Staffs" msprop:Generator_ChildPropName="GetStaff_QualificatesRows" msprop:Generator_UserRelationName="FK_Staff_Qualificates_Staffs" msprop:Generator_ParentPropName="StaffsRow" />
-      <msdata:Relationship name="FK_Suppilers_Staffs_mdID" msdata:parent="Staffs" msdata:child="Suppilers" msdata:parentkey="mdID" msdata:childkey="mdID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Suppilers" msprop:Generator_RelationVarName="relationFK_Suppilers_Staffs_mdID" msprop:Generator_ChildPropName="GetSuppilersRows" msprop:Generator_ParentPropName="StaffsRow" msprop:Generator_UserRelationName="FK_Suppilers_Staffs_mdID" />
-      <msdata:Relationship name="FK_Ward_Requests_Med_Equipments" msdata:parent="Med_Equipments" msdata:child="Ward_Requests" msdata:parentkey="meID" msdata:childkey="meID" msprop:Generator_UserParentTable="Med_Equipments" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Med_Equipments" msprop:Generator_ChildPropName="GetWard_RequestsRows" msprop:Generator_ParentPropName="Med_EquipmentsRow" msprop:Generator_UserRelationName="FK_Ward_Requests_Med_Equipments" />
-      <msdata:Relationship name="FK_Ward_Requests_Med_Medicines" msdata:parent="Med_Medicines" msdata:child="Ward_Requests" msdata:parentkey="mmID" msdata:childkey="mmID" msprop:Generator_UserParentTable="Med_Medicines" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Med_Medicines" msprop:Generator_ChildPropName="GetWard_RequestsRows" msprop:Generator_ParentPropName="Med_MedicinesRow" msprop:Generator_UserRelationName="FK_Ward_Requests_Med_Medicines" />
-      <msdata:Relationship name="FK_Ward_Requests_Staffs" msdata:parent="Staffs" msdata:child="Ward_Requests" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Staffs" msprop:Generator_ChildPropName="GetWard_RequestsRowsByFK_Ward_Requests_Staffs" msprop:Generator_ParentPropName="StaffsRowByFK_Ward_Requests_Staffs" msprop:Generator_UserRelationName="FK_Ward_Requests_Staffs" />
-      <msdata:Relationship name="FK_Ward_Requests_Staffs_cnID" msdata:parent="Staffs" msdata:child="Ward_Requests" msdata:parentkey="cnID" msdata:childkey="cnID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Staffs_cnID" msprop:Generator_ChildPropName="GetWard_RequestsRowsByFK_Ward_Requests_Staffs_cnID" msprop:Generator_ParentPropName="StaffsRowByFK_Ward_Requests_Staffs_cnID" msprop:Generator_UserRelationName="FK_Ward_Requests_Staffs_cnID" />
-      <msdata:Relationship name="FK_Ward_Requests_Wards" msdata:parent="Wards" msdata:child="Ward_Requests" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Wards" msprop:Generator_ChildPropName="GetWard_RequestsRows" msprop:Generator_UserRelationName="FK_Ward_Requests_Wards" msprop:Generator_ParentPropName="WardsRow" />
-      <msdata:Relationship name="FK_Ward_Staffs_Shifts" msdata:parent="Shifts" msdata:child="Ward_Staffs" msdata:parentkey="shiftID" msdata:childkey="shiftID" msprop:Generator_UserParentTable="Shifts" msprop:Generator_UserChildTable="Ward_Staffs" msprop:Generator_RelationVarName="relationFK_Ward_Staffs_Shifts" msprop:Generator_ChildPropName="GetWard_StaffsRows" msprop:Generator_ParentPropName="ShiftsRow" msprop:Generator_UserRelationName="FK_Ward_Staffs_Shifts" />
-      <msdata:Relationship name="FK_Ward_Staffs_Staffs" msdata:parent="Staffs" msdata:child="Ward_Staffs" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Ward_Staffs" msprop:Generator_RelationVarName="relationFK_Ward_Staffs_Staffs" msprop:Generator_ChildPropName="GetWard_StaffsRows" msprop:Generator_ParentPropName="StaffsRow" msprop:Generator_UserRelationName="FK_Ward_Staffs_Staffs" />
-      <msdata:Relationship name="FK_Ward_Staffs_Wards" msdata:parent="Wards" msdata:child="Ward_Staffs" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Ward_Staffs" msprop:Generator_RelationVarName="relationFK_Ward_Staffs_Wards" msprop:Generator_ChildPropName="GetWard_StaffsRows" msprop:Generator_UserRelationName="FK_Ward_Staffs_Wards" msprop:Generator_ParentPropName="WardsRow" />
+      <msdata:Relationship name="FK_Beds_Wards" msdata:parent="Wards" msdata:child="Beds" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Beds" msprop:Generator_RelationVarName="relationFK_Beds_Wards" msprop:Generator_ChildPropName="GetBedsRows" msprop:Generator_ParentPropName="WardsRow" msprop:Generator_UserRelationName="FK_Beds_Wards" />
+      <msdata:Relationship name="FK_In_Patients_Beds" msdata:parent="Beds" msdata:child="In_Patients" msdata:parentkey="bedID" msdata:childkey="bedID" msprop:Generator_UserParentTable="Beds" msprop:Generator_UserChildTable="In_Patients" msprop:Generator_RelationVarName="relationFK_In_Patients_Beds" msprop:Generator_ChildPropName="GetIn_PatientsRows" msprop:Generator_UserRelationName="FK_In_Patients_Beds" msprop:Generator_ParentPropName="BedsRow" />
+      <msdata:Relationship name="FK_In_Patients_Patient_Wards" msdata:parent="Patient_Wards" msdata:child="In_Patients" msdata:parentkey="pwID" msdata:childkey="pwID" msprop:Generator_UserParentTable="Patient_Wards" msprop:Generator_UserChildTable="In_Patients" msprop:Generator_RelationVarName="relationFK_In_Patients_Patient_Wards" msprop:Generator_ChildPropName="GetIn_PatientsRows" msprop:Generator_ParentPropName="Patient_WardsRow" msprop:Generator_UserRelationName="FK_In_Patients_Patient_Wards" />
+      <msdata:Relationship name="FK_In_Patients_Wards" msdata:parent="Wards" msdata:child="In_Patients" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="In_Patients" msprop:Generator_RelationVarName="relationFK_In_Patients_Wards" msprop:Generator_ChildPropName="GetIn_PatientsRows" msprop:Generator_ParentPropName="WardsRow" msprop:Generator_UserRelationName="FK_In_Patients_Wards" />
+      <msdata:Relationship name="FK_Login_logs_Staffs" msdata:parent="Staffs" msdata:child="Login_logs" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Login_logs" msprop:Generator_RelationVarName="relationFK_Login_logs_Staffs" msprop:Generator_ChildPropName="GetLogin_logsRows" msprop:Generator_ParentPropName="StaffsRow" msprop:Generator_UserRelationName="FK_Login_logs_Staffs" />
+      <msdata:Relationship name="FK_Med_Equipments_Suppilers" msdata:parent="Suppilers" msdata:child="Med_Equipments" msdata:parentkey="supplierID" msdata:childkey="supplierID" msprop:Generator_UserParentTable="Suppilers" msprop:Generator_UserChildTable="Med_Equipments" msprop:Generator_RelationVarName="relationFK_Med_Equipments_Suppilers" msprop:Generator_ChildPropName="GetMed_EquipmentsRows" msprop:Generator_ParentPropName="SuppilersRow" msprop:Generator_UserRelationName="FK_Med_Equipments_Suppilers" />
+      <msdata:Relationship name="FK_Med_Medicines_Suppilers" msdata:parent="Suppilers" msdata:child="Med_Medicines" msdata:parentkey="supplierID" msdata:childkey="supplierID" msprop:Generator_UserParentTable="Suppilers" msprop:Generator_UserChildTable="Med_Medicines" msprop:Generator_RelationVarName="relationFK_Med_Medicines_Suppilers" msprop:Generator_ChildPropName="GetMed_MedicinesRows" msprop:Generator_ParentPropName="SuppilersRow" msprop:Generator_UserRelationName="FK_Med_Medicines_Suppilers" />
+      <msdata:Relationship name="FK_Patient_Visits_Patients" msdata:parent="Patients" msdata:child="Patient_Visits" msdata:parentkey="patientID" msdata:childkey="patientID" msprop:Generator_UserParentTable="Patients" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Patients" msprop:Generator_ChildPropName="GetPatient_VisitsRows" msprop:Generator_ParentPropName="PatientsRow" msprop:Generator_UserRelationName="FK_Patient_Visits_Patients" />
+      <msdata:Relationship name="FK_Patient_Visits_Staffs" msdata:parent="Staffs" msdata:child="Patient_Visits" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Staffs" msprop:Generator_ChildPropName="GetPatient_VisitsRowsByFK_Patient_Visits_Staffs" msprop:Generator_ParentPropName="StaffsRowByFK_Patient_Visits_Staffs" msprop:Generator_UserRelationName="FK_Patient_Visits_Staffs" />
+      <msdata:Relationship name="FK_Patient_Visits_Wards" msdata:parent="Wards" msdata:child="Patient_Visits" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Wards" msprop:Generator_ChildPropName="GetPatient_VisitsRows" msprop:Generator_ParentPropName="WardsRow" msprop:Generator_UserRelationName="FK_Patient_Visits_Wards" />
+      <msdata:Relationship name="FK_Patient_Wards_Patient_Visits" msdata:parent="Patient_Visits" msdata:child="Patient_Wards" msdata:parentkey="visitID" msdata:childkey="visitID" msprop:Generator_UserParentTable="Patient_Visits" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Patient_Visits" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_UserRelationName="FK_Patient_Wards_Patient_Visits" msprop:Generator_ParentPropName="Patient_VisitsRow" />
+      <msdata:Relationship name="FK_Patient_Wards_Patients" msdata:parent="Patients" msdata:child="Patient_Wards" msdata:parentkey="patientID" msdata:childkey="patientID" msprop:Generator_UserParentTable="Patients" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Patients" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_ParentPropName="PatientsRow" msprop:Generator_UserRelationName="FK_Patient_Wards_Patients" />
+      <msdata:Relationship name="FK_Patient_Wards_Wards" msdata:parent="Wards" msdata:child="Patient_Wards" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Wards" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_ParentPropName="WardsRow" msprop:Generator_UserRelationName="FK_Patient_Wards_Wards" />
+      <msdata:Relationship name="FK_Patients_LocalDoctors" msdata:parent="LocalDoctors" msdata:child="Patients" msdata:parentkey="localDocID" msdata:childkey="localDocID" msprop:Generator_UserParentTable="LocalDoctors" msprop:Generator_UserChildTable="Patients" msprop:Generator_RelationVarName="relationFK_Patients_LocalDoctors" msprop:Generator_ChildPropName="GetPatientsRows" msprop:Generator_UserRelationName="FK_Patients_LocalDoctors" msprop:Generator_ParentPropName="LocalDoctorsRow" />
+      <msdata:Relationship name="FK_Patients_Patient_kins" msdata:parent="Patient_kins" msdata:child="Patients" msdata:parentkey="kinsID" msdata:childkey="kinsID" msprop:Generator_UserParentTable="Patient_kins" msprop:Generator_UserChildTable="Patients" msprop:Generator_RelationVarName="relationFK_Patients_Patient_kins" msprop:Generator_ChildPropName="GetPatientsRows" msprop:Generator_UserRelationName="FK_Patients_Patient_kins" msprop:Generator_ParentPropName="Patient_kinsRow" />
+      <msdata:Relationship name="FK_Staff_Experiences_Staffs" msdata:parent="Staffs" msdata:child="Staff_Experiences" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Staff_Experiences" msprop:Generator_RelationVarName="relationFK_Staff_Experiences_Staffs" msprop:Generator_ChildPropName="GetStaff_ExperiencesRows" msprop:Generator_ParentPropName="StaffsRow" msprop:Generator_UserRelationName="FK_Staff_Experiences_Staffs" />
+      <msdata:Relationship name="FK_Staff_Qualificates_Staffs" msdata:parent="Staffs" msdata:child="Staff_Qualificates" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Staff_Qualificates" msprop:Generator_RelationVarName="relationFK_Staff_Qualificates_Staffs" msprop:Generator_ChildPropName="GetStaff_QualificatesRows" msprop:Generator_ParentPropName="StaffsRow" msprop:Generator_UserRelationName="FK_Staff_Qualificates_Staffs" />
+      <msdata:Relationship name="FK_Ward_Requests_Med_Equipments" msdata:parent="Med_Equipments" msdata:child="Ward_Requests" msdata:parentkey="meID" msdata:childkey="meID" msprop:Generator_UserParentTable="Med_Equipments" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Med_Equipments" msprop:Generator_ChildPropName="GetWard_RequestsRows" msprop:Generator_UserRelationName="FK_Ward_Requests_Med_Equipments" msprop:Generator_ParentPropName="Med_EquipmentsRow" />
+      <msdata:Relationship name="FK_Ward_Requests_Med_Medicines" msdata:parent="Med_Medicines" msdata:child="Ward_Requests" msdata:parentkey="mmID" msdata:childkey="mmID" msprop:Generator_UserParentTable="Med_Medicines" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Med_Medicines" msprop:Generator_ChildPropName="GetWard_RequestsRows" msprop:Generator_UserRelationName="FK_Ward_Requests_Med_Medicines" msprop:Generator_ParentPropName="Med_MedicinesRow" />
+      <msdata:Relationship name="FK_Ward_Requests_Staffs" msdata:parent="Staffs" msdata:child="Ward_Requests" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Staffs" msprop:Generator_ChildPropName="GetWard_RequestsRowsByFK_Ward_Requests_Staffs" msprop:Generator_UserRelationName="FK_Ward_Requests_Staffs" msprop:Generator_ParentPropName="StaffsRowByFK_Ward_Requests_Staffs" />
+      <msdata:Relationship name="FK_Ward_Requests_Wards" msdata:parent="Wards" msdata:child="Ward_Requests" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Wards" msprop:Generator_ChildPropName="GetWard_RequestsRows" msprop:Generator_ParentPropName="WardsRow" msprop:Generator_UserRelationName="FK_Ward_Requests_Wards" />
+      <msdata:Relationship name="FK_Ward_Staffs_Shifts" msdata:parent="Shifts" msdata:child="Ward_Staffs" msdata:parentkey="shiftID" msdata:childkey="shiftID" msprop:Generator_UserParentTable="Shifts" msprop:Generator_UserChildTable="Ward_Staffs" msprop:Generator_RelationVarName="relationFK_Ward_Staffs_Shifts" msprop:Generator_ChildPropName="GetWard_StaffsRows" msprop:Generator_UserRelationName="FK_Ward_Staffs_Shifts" msprop:Generator_ParentPropName="ShiftsRow" />
+      <msdata:Relationship name="FK_Ward_Staffs_Staffs" msdata:parent="Staffs" msdata:child="Ward_Staffs" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Ward_Staffs" msprop:Generator_RelationVarName="relationFK_Ward_Staffs_Staffs" msprop:Generator_ChildPropName="GetWard_StaffsRows" msprop:Generator_UserRelationName="FK_Ward_Staffs_Staffs" msprop:Generator_ParentPropName="StaffsRow" />
+      <msdata:Relationship name="FK_Ward_Staffs_Wards" msdata:parent="Wards" msdata:child="Ward_Staffs" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Ward_Staffs" msprop:Generator_RelationVarName="relationFK_Ward_Staffs_Wards" msprop:Generator_ChildPropName="GetWard_StaffsRows" msprop:Generator_ParentPropName="WardsRow" msprop:Generator_UserRelationName="FK_Ward_Staffs_Wards" />
+      <msdata:Relationship name="FK_Patient_Visits_Staffs_Doctor" msdata:parent="Doctors" msdata:child="Patient_Visits" msdata:parentkey="doctorID" msdata:childkey="doctorID" msprop:Generator_UserParentTable="Doctors" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Staffs_Doctor" msprop:Generator_ChildPropName="GetPatient_VisitsRows" msprop:Generator_UserRelationName="FK_Patient_Visits_Staffs_Doctor" msprop:Generator_ParentPropName="DoctorsRow" />
+      <msdata:Relationship name="FK_Patient_Wards_Staffs_cnID" msdata:parent="ChargeNurses" msdata:child="Patient_Wards" msdata:parentkey="cnID" msdata:childkey="cnID" msprop:Generator_UserParentTable="ChargeNurses" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Staffs_cnID" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_UserRelationName="FK_Patient_Wards_Staffs_cnID" msprop:Generator_ParentPropName="ChargeNursesRow" />
+      <msdata:Relationship name="FK_Patient_Wards_Staffs_Doctor" msdata:parent="Doctors" msdata:child="Patient_Wards" msdata:parentkey="doctorID" msdata:childkey="doctorID" msprop:Generator_UserParentTable="Doctors" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Staffs_Doctor" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_UserRelationName="FK_Patient_Wards_Staffs_Doctor" msprop:Generator_ParentPropName="DoctorsRow" />
+      <msdata:Relationship name="FK_Suppilers_Staffs_mdID" msdata:parent="MedicalDirectors" msdata:child="Suppilers" msdata:parentkey="mdID" msdata:childkey="mdID" msprop:Generator_UserParentTable="MedicalDirectors" msprop:Generator_UserChildTable="Suppilers" msprop:Generator_RelationVarName="relationFK_Suppilers_Staffs_mdID" msprop:Generator_ChildPropName="GetSuppilersRows" msprop:Generator_UserRelationName="FK_Suppilers_Staffs_mdID" msprop:Generator_ParentPropName="MedicalDirectorsRow" />
+      <msdata:Relationship name="FK_Ward_Requests_Staffs_cnID" msdata:parent="ChargeNurses" msdata:child="Ward_Requests" msdata:parentkey="cnID" msdata:childkey="cnID" msprop:Generator_UserParentTable="ChargeNurses" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Staffs_cnID" msprop:Generator_ChildPropName="GetWard_RequestsRows" msprop:Generator_UserRelationName="FK_Ward_Requests_Staffs_cnID" msprop:Generator_ParentPropName="ChargeNursesRow" />
+      <msdata:Relationship name="FK_ChargeNurses_Staffs" msdata:parent="Staffs" msdata:child="ChargeNurses" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="ChargeNurses" msprop:Generator_RelationVarName="relationFK_ChargeNurses_Staffs" msprop:Generator_ChildPropName="GetChargeNursesRows" msprop:Generator_ParentPropName="StaffsRow" msprop:Generator_UserRelationName="FK_ChargeNurses_Staffs" />
+      <msdata:Relationship name="FK_Doctors_Staffs" msdata:parent="Staffs" msdata:child="Doctors" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Doctors" msprop:Generator_RelationVarName="relationFK_Doctors_Staffs" msprop:Generator_ChildPropName="GetDoctorsRows" msprop:Generator_ParentPropName="StaffsRow" msprop:Generator_UserRelationName="FK_Doctors_Staffs" />
+      <msdata:Relationship name="FK_MedicalDirectors_Staffs" msdata:parent="Staffs" msdata:child="MedicalDirectors" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="MedicalDirectors" msprop:Generator_RelationVarName="relationFK_MedicalDirectors_Staffs" msprop:Generator_ChildPropName="GetMedicalDirectorsRows" msprop:Generator_ParentPropName="StaffsRow" msprop:Generator_UserRelationName="FK_MedicalDirectors_Staffs" />
+      <msdata:Relationship name="FK_PW_Prescripts_Med_Medicines" msdata:parent="Med_Medicines" msdata:child="PW_Prescripts" msdata:parentkey="mmID" msdata:childkey="mmID" msprop:Generator_UserParentTable="Med_Medicines" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Med_Medicines" msprop:Generator_ChildPropName="GetPW_PrescriptsRows" msprop:Generator_UserRelationName="FK_PW_Prescripts_Med_Medicines" msprop:Generator_ParentPropName="Med_MedicinesRow" />
+      <msdata:Relationship name="FK_PW_Prescripts_Patient_Wards" msdata:parent="Patient_Wards" msdata:child="PW_Prescripts" msdata:parentkey="pwID" msdata:childkey="pwID" msprop:Generator_UserParentTable="Patient_Wards" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Patient_Wards" msprop:Generator_ChildPropName="GetPW_PrescriptsRows" msprop:Generator_UserRelationName="FK_PW_Prescripts_Patient_Wards" msprop:Generator_ParentPropName="Patient_WardsRow" />
+      <msdata:Relationship name="FK_PW_Prescripts_Staffs_cnID" msdata:parent="ChargeNurses" msdata:child="PW_Prescripts" msdata:parentkey="cnID" msdata:childkey="cnID" msprop:Generator_UserParentTable="ChargeNurses" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Staffs_cnID" msprop:Generator_ChildPropName="GetPW_PrescriptsRows" msprop:Generator_UserRelationName="FK_PW_Prescripts_Staffs_cnID" msprop:Generator_ParentPropName="ChargeNursesRow" />
+      <msdata:Relationship name="FK_PW_Prescripts_Staffs_Doctor" msdata:parent="Doctors" msdata:child="PW_Prescripts" msdata:parentkey="doctorID" msdata:childkey="doctorID" msprop:Generator_UserParentTable="Doctors" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Staffs_Doctor" msprop:Generator_ChildPropName="GetPW_PrescriptsRows" msprop:Generator_UserRelationName="FK_PW_Prescripts_Staffs_Doctor" msprop:Generator_ParentPropName="DoctorsRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
