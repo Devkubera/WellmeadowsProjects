@@ -1,8 +1,6 @@
-﻿Imports WellmeadowsProjects.WellmeadowsDataSetTableAdapters
-
-Public Class Add_StaffForm
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+﻿Public Class Edit_Staff
+    Public StaffObject
+    Private Sub Edit_Staff_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Experiences' table. You can move, or remove it, as needed.
         Me.Staff_ExperiencesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Experiences)
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staffs' table. You can move, or remove it, as needed.
@@ -10,6 +8,7 @@ Public Class Add_StaffForm
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Qualificates' table. You can move, or remove it, as needed.
         Me.Staff_QualificatesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Qualificates)
     End Sub
+
     Private Sub ResetForm()
 
         Staff_firstName.Text = ""
@@ -197,6 +196,5 @@ Public Class Add_StaffForm
             'MessageBox.Show("ไม่")
         End Try
     End Sub
-
 
 End Class

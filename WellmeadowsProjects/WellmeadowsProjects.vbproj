@@ -193,6 +193,12 @@
     <Compile Include="Edit_Presscript.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Edit_Staff.Designer.vb">
+      <DependentUpon>Edit_Staff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Staff.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Edit_StaffInWardForm.Designer.vb">
       <DependentUpon>Edit_StaffInWardForm.vb</DependentUpon>
     </Compile>
@@ -393,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_Presscript.resx">
       <DependentUpon>Edit_Presscript.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Staff.resx">
+      <DependentUpon>Edit_Staff.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_Supplies.resx">
       <DependentUpon>Edit_Supplies.vb</DependentUpon>

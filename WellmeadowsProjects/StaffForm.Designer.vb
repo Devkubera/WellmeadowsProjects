@@ -31,13 +31,6 @@ Partial Class StaffForm
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.searchlb = New System.Windows.Forms.Label()
         Me.StaffTable = New System.Windows.Forms.DataGridView()
-        Me.StaffsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
-        Me.SearchStaff = New System.Windows.Forms.TextBox()
-        Me.cbbEduLevel = New System.Windows.Forms.ComboBox()
-        Me.Stafflabel = New System.Windows.Forms.Label()
-        Me.cbbEduOrExp = New System.Windows.Forms.ComboBox()
-        Me.StaffsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.StaffsTableAdapter()
         Me.StaffIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,6 +43,13 @@ Partial Class StaffForm
         Me.HoursWeekDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContactTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PaidTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StaffsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
+        Me.SearchStaff = New System.Windows.Forms.TextBox()
+        Me.cbbEduLevel = New System.Windows.Forms.ComboBox()
+        Me.Stafflabel = New System.Windows.Forms.Label()
+        Me.cbbEduOrExp = New System.Windows.Forms.ComboBox()
+        Me.StaffsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.StaffsTableAdapter()
         Me.StaffPanel.SuspendLayout()
         CType(Me.StaffTable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaffsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -156,58 +156,6 @@ Partial Class StaffForm
         Me.StaffTable.RowHeadersWidth = 51
         Me.StaffTable.Size = New System.Drawing.Size(853, 328)
         Me.StaffTable.TabIndex = 20
-        '
-        'StaffsBindingSource
-        '
-        Me.StaffsBindingSource.DataMember = "Staffs"
-        Me.StaffsBindingSource.DataSource = Me.WellmeadowsDataSet
-        '
-        'WellmeadowsDataSet
-        '
-        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
-        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'SearchStaff
-        '
-        Me.SearchStaff.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SearchStaff.Location = New System.Drawing.Point(622, 113)
-        Me.SearchStaff.Name = "SearchStaff"
-        Me.SearchStaff.Size = New System.Drawing.Size(219, 33)
-        Me.SearchStaff.TabIndex = 18
-        '
-        'cbbEduLevel
-        '
-        Me.cbbEduLevel.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbbEduLevel.FormattingEnabled = True
-        Me.cbbEduLevel.Items.AddRange(New Object() {"ปริญญาตรี", "ปริญญาโท", "ปริญญาเอก"})
-        Me.cbbEduLevel.Location = New System.Drawing.Point(414, 112)
-        Me.cbbEduLevel.Name = "cbbEduLevel"
-        Me.cbbEduLevel.Size = New System.Drawing.Size(176, 34)
-        Me.cbbEduLevel.TabIndex = 17
-        '
-        'Stafflabel
-        '
-        Me.Stafflabel.AutoSize = True
-        Me.Stafflabel.Font = New System.Drawing.Font("Prompt", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Stafflabel.Location = New System.Drawing.Point(81, 103)
-        Me.Stafflabel.Name = "Stafflabel"
-        Me.Stafflabel.Size = New System.Drawing.Size(87, 46)
-        Me.Stafflabel.TabIndex = 15
-        Me.Stafflabel.Text = "Staff"
-        '
-        'cbbEduOrExp
-        '
-        Me.cbbEduOrExp.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbbEduOrExp.FormattingEnabled = True
-        Me.cbbEduOrExp.Items.AddRange(New Object() {"เจ้าหน้าที่", "ประวัติการศึกษา", "ประวัติการทำงาน"})
-        Me.cbbEduOrExp.Location = New System.Drawing.Point(198, 112)
-        Me.cbbEduOrExp.Name = "cbbEduOrExp"
-        Me.cbbEduOrExp.Size = New System.Drawing.Size(183, 34)
-        Me.cbbEduOrExp.TabIndex = 16
-        '
-        'StaffsTableAdapter
-        '
-        Me.StaffsTableAdapter.ClearBeforeFill = True
         '
         'StaffIDDataGridViewTextBoxColumn
         '
@@ -317,6 +265,58 @@ Partial Class StaffForm
         Me.PaidTypeDataGridViewTextBoxColumn.Name = "PaidTypeDataGridViewTextBoxColumn"
         Me.PaidTypeDataGridViewTextBoxColumn.ReadOnly = True
         Me.PaidTypeDataGridViewTextBoxColumn.Width = 125
+        '
+        'StaffsBindingSource
+        '
+        Me.StaffsBindingSource.DataMember = "Staffs"
+        Me.StaffsBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'WellmeadowsDataSet
+        '
+        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
+        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SearchStaff
+        '
+        Me.SearchStaff.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SearchStaff.Location = New System.Drawing.Point(622, 113)
+        Me.SearchStaff.Name = "SearchStaff"
+        Me.SearchStaff.Size = New System.Drawing.Size(219, 33)
+        Me.SearchStaff.TabIndex = 18
+        '
+        'cbbEduLevel
+        '
+        Me.cbbEduLevel.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbbEduLevel.FormattingEnabled = True
+        Me.cbbEduLevel.Items.AddRange(New Object() {"ปริญญาตรี", "ปริญญาโท", "ปริญญาเอก"})
+        Me.cbbEduLevel.Location = New System.Drawing.Point(414, 112)
+        Me.cbbEduLevel.Name = "cbbEduLevel"
+        Me.cbbEduLevel.Size = New System.Drawing.Size(176, 34)
+        Me.cbbEduLevel.TabIndex = 17
+        '
+        'Stafflabel
+        '
+        Me.Stafflabel.AutoSize = True
+        Me.Stafflabel.Font = New System.Drawing.Font("Prompt", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Stafflabel.Location = New System.Drawing.Point(81, 103)
+        Me.Stafflabel.Name = "Stafflabel"
+        Me.Stafflabel.Size = New System.Drawing.Size(87, 46)
+        Me.Stafflabel.TabIndex = 15
+        Me.Stafflabel.Text = "Staff"
+        '
+        'cbbEduOrExp
+        '
+        Me.cbbEduOrExp.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbbEduOrExp.FormattingEnabled = True
+        Me.cbbEduOrExp.Items.AddRange(New Object() {"เจ้าหน้าที่", "ประวัติการศึกษา", "ประวัติการทำงาน"})
+        Me.cbbEduOrExp.Location = New System.Drawing.Point(198, 112)
+        Me.cbbEduOrExp.Name = "cbbEduOrExp"
+        Me.cbbEduOrExp.Size = New System.Drawing.Size(183, 34)
+        Me.cbbEduOrExp.TabIndex = 16
+        '
+        'StaffsTableAdapter
+        '
+        Me.StaffsTableAdapter.ClearBeforeFill = True
         '
         'StaffForm
         '

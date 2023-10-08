@@ -4905,8 +4905,8 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function FindBymmIDpwIDdoctorIDcnID(ByVal mmID As Integer, ByVal pwID As String, ByVal doctorID As String, ByVal cnID As String) As PW_PrescriptsRow
-            Return CType(Me.Rows.Find(New Object() {mmID, pwID, doctorID, cnID}),PW_PrescriptsRow)
+        Public Function FindBycreateAT(ByVal createAT As Date) As PW_PrescriptsRow
+            Return CType(Me.Rows.Find(New Object() {createAT}),PW_PrescriptsRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4955,7 +4955,7 @@ Partial Public Class WellmeadowsDataSet
             MyBase.Columns.Add(Me.columnendDate)
             Me.columncreateAT = New Global.System.Data.DataColumn("createAT", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncreateAT)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnmmID, Me.columnpwID, Me.columndoctorID, Me.columncnID}, true))
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncreateAT}, true))
             Me.columnmmID.AllowDBNull = false
             Me.columnpwID.AllowDBNull = false
             Me.columnpwID.MaxLength = 12
@@ -4963,6 +4963,8 @@ Partial Public Class WellmeadowsDataSet
             Me.columndoctorID.MaxLength = 10
             Me.columncnID.AllowDBNull = false
             Me.columncnID.MaxLength = 10
+            Me.columncreateAT.AllowDBNull = false
+            Me.columncreateAT.Unique = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5560,8 +5562,8 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function FindByexpIDstaffID(ByVal expID As String, ByVal staffID As String) As Staff_ExperiencesRow
-            Return CType(Me.Rows.Find(New Object() {expID, staffID}),Staff_ExperiencesRow)
+        Public Function FindByexpID(ByVal expID As String) As Staff_ExperiencesRow
+            Return CType(Me.Rows.Find(New Object() {expID}),Staff_ExperiencesRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5607,13 +5609,14 @@ Partial Public Class WellmeadowsDataSet
             MyBase.Columns.Add(Me.columnstartDate)
             Me.columnendDate = New Global.System.Data.DataColumn("endDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnendDate)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnexpID, Me.columnstaffID}, true))
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnexpID}, true))
             Me.columnID.AutoIncrement = true
             Me.columnID.AutoIncrementSeed = -1
             Me.columnID.AutoIncrementStep = -1
             Me.columnID.AllowDBNull = false
             Me.columnID.ReadOnly = true
             Me.columnexpID.AllowDBNull = false
+            Me.columnexpID.Unique = true
             Me.columnexpID.MaxLength = 10
             Me.columnstaffID.AllowDBNull = false
             Me.columnstaffID.MaxLength = 11
@@ -5888,9 +5891,9 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddStaff_QualificatesRow(ByVal parentStaffsRowByFK_Staff_Qualificates_Staffs As StaffsRow, ByVal type As String, ByVal dates As Date, ByVal major As String) As Staff_QualificatesRow
+        Public Overloads Function AddStaff_QualificatesRow(ByVal qualID As String, ByVal parentStaffsRowByFK_Staff_Qualificates_Staffs As StaffsRow, ByVal type As String, ByVal dates As Date, ByVal major As String) As Staff_QualificatesRow
             Dim rowStaff_QualificatesRow As Staff_QualificatesRow = CType(Me.NewRow,Staff_QualificatesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Nothing, type, dates, major}
+            Dim columnValuesArray() As Object = New Object() {Nothing, qualID, Nothing, type, dates, major}
             If (Not (parentStaffsRowByFK_Staff_Qualificates_Staffs) Is Nothing) Then
                 columnValuesArray(2) = parentStaffsRowByFK_Staff_Qualificates_Staffs(1)
             End If
@@ -5901,8 +5904,8 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function FindByqualIDstaffID(ByVal qualID As Integer, ByVal staffID As String) As Staff_QualificatesRow
-            Return CType(Me.Rows.Find(New Object() {qualID, staffID}),Staff_QualificatesRow)
+        Public Function FindByqualID(ByVal qualID As String) As Staff_QualificatesRow
+            Return CType(Me.Rows.Find(New Object() {qualID}),Staff_QualificatesRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5935,7 +5938,7 @@ Partial Public Class WellmeadowsDataSet
         Private Sub InitClass()
             Me.columnID = New Global.System.Data.DataColumn("ID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnID)
-            Me.columnqualID = New Global.System.Data.DataColumn("qualID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnqualID = New Global.System.Data.DataColumn("qualID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnqualID)
             Me.columnstaffID = New Global.System.Data.DataColumn("staffID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnstaffID)
@@ -5945,15 +5948,15 @@ Partial Public Class WellmeadowsDataSet
             MyBase.Columns.Add(Me.columndates)
             Me.columnmajor = New Global.System.Data.DataColumn("major", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmajor)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnqualID, Me.columnstaffID}, true))
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnqualID}, true))
             Me.columnID.AutoIncrement = true
             Me.columnID.AutoIncrementSeed = -1
             Me.columnID.AutoIncrementStep = -1
             Me.columnID.AllowDBNull = false
             Me.columnID.ReadOnly = true
-            Me.columnqualID.AutoIncrement = true
             Me.columnqualID.AutoIncrementSeed = 1
             Me.columnqualID.AllowDBNull = false
+            Me.columnqualID.Unique = true
             Me.columnstaffID.AllowDBNull = false
             Me.columnstaffID.MaxLength = 11
             Me.columntype.MaxLength = 50
@@ -11174,11 +11177,7 @@ Partial Public Class WellmeadowsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property createAT() As Date
             Get
-                Try 
-                    Return CType(Me(Me.tablePW_Prescripts.createATColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'createAT' in table 'PW_Prescripts' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tablePW_Prescripts.createATColumn),Date)
             End Get
             Set
                 Me(Me.tablePW_Prescripts.createATColumn) = value
@@ -11263,18 +11262,6 @@ Partial Public Class WellmeadowsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetendDateNull()
             Me(Me.tablePW_Prescripts.endDateColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IscreateATNull() As Boolean
-            Return Me.IsNull(Me.tablePW_Prescripts.createATColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetcreateATNull()
-            Me(Me.tablePW_Prescripts.createATColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -11592,9 +11579,9 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property qualID() As Integer
+        Public Property qualID() As String
             Get
-                Return CType(Me(Me.tableStaff_Qualificates.qualIDColumn),Integer)
+                Return CType(Me(Me.tableStaff_Qualificates.qualIDColumn),String)
             End Get
             Set
                 Me(Me.tableStaff_Qualificates.qualIDColumn) = value
@@ -20469,7 +20456,7 @@ Namespace WellmeadowsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_mmID As Integer, ByVal Original_pwID As String, ByVal Original_doctorID As String, ByVal Original_cnID As String, ByVal Original_dosage As Global.System.Nullable(Of Double), ByVal Original_startDate As Global.System.Nullable(Of Date), ByVal Original_endDate As Global.System.Nullable(Of Date), ByVal Original_createAT As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_mmID As Integer, ByVal Original_pwID As String, ByVal Original_doctorID As String, ByVal Original_cnID As String, ByVal Original_dosage As Global.System.Nullable(Of Double), ByVal Original_startDate As Global.System.Nullable(Of Date), ByVal Original_endDate As Global.System.Nullable(Of Date), ByVal Original_createAT As Date) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_mmID,Integer)
             If (Original_pwID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_pwID")
@@ -20507,13 +20494,8 @@ Namespace WellmeadowsDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
-            If (Original_createAT.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_createAT.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(11).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.DeleteCommand.Parameters(10).Value = CType(0,Object)
+            Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_createAT,Date)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -20533,7 +20515,7 @@ Namespace WellmeadowsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal mmID As Integer, ByVal pwID As String, ByVal doctorID As String, ByVal cnID As String, ByVal dosage As Global.System.Nullable(Of Double), ByVal startDate As Global.System.Nullable(Of Date), ByVal endDate As Global.System.Nullable(Of Date), ByVal createAT As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function Insert(ByVal mmID As Integer, ByVal pwID As String, ByVal doctorID As String, ByVal cnID As String, ByVal dosage As Global.System.Nullable(Of Double), ByVal startDate As Global.System.Nullable(Of Date), ByVal endDate As Global.System.Nullable(Of Date), ByVal createAT As Date) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(mmID,Integer)
             If (pwID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("pwID")
@@ -20565,11 +20547,7 @@ Namespace WellmeadowsDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            If (createAT.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(createAT.Value,Date)
-            Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.InsertCommand.Parameters(7).Value = CType(createAT,Date)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -20597,7 +20575,7 @@ Namespace WellmeadowsDataSetTableAdapters
                     ByVal dosage As Global.System.Nullable(Of Double),  _
                     ByVal startDate As Global.System.Nullable(Of Date),  _
                     ByVal endDate As Global.System.Nullable(Of Date),  _
-                    ByVal createAT As Global.System.Nullable(Of Date),  _
+                    ByVal createAT As Date,  _
                     ByVal Original_mmID As Integer,  _
                     ByVal Original_pwID As String,  _
                     ByVal Original_doctorID As String,  _
@@ -20605,7 +20583,7 @@ Namespace WellmeadowsDataSetTableAdapters
                     ByVal Original_dosage As Global.System.Nullable(Of Double),  _
                     ByVal Original_startDate As Global.System.Nullable(Of Date),  _
                     ByVal Original_endDate As Global.System.Nullable(Of Date),  _
-                    ByVal Original_createAT As Global.System.Nullable(Of Date)) As Integer
+                    ByVal Original_createAT As Date) As Integer
             Me.Adapter.UpdateCommand.Parameters(0).Value = CType(mmID,Integer)
             If (pwID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("pwID")
@@ -20637,11 +20615,7 @@ Namespace WellmeadowsDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             End If
-            If (createAT.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(createAT.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(createAT,Date)
             Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_mmID,Integer)
             If (Original_pwID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_pwID")
@@ -20679,13 +20653,8 @@ Namespace WellmeadowsDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             End If
-            If (Original_createAT.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_createAT.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
-            End If
+            Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_createAT,Date)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -20705,8 +20674,8 @@ Namespace WellmeadowsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal dosage As Global.System.Nullable(Of Double), ByVal startDate As Global.System.Nullable(Of Date), ByVal endDate As Global.System.Nullable(Of Date), ByVal createAT As Global.System.Nullable(Of Date), ByVal Original_mmID As Integer, ByVal Original_pwID As String, ByVal Original_doctorID As String, ByVal Original_cnID As String, ByVal Original_dosage As Global.System.Nullable(Of Double), ByVal Original_startDate As Global.System.Nullable(Of Date), ByVal Original_endDate As Global.System.Nullable(Of Date), ByVal Original_createAT As Global.System.Nullable(Of Date)) As Integer
-            Return Me.Update(Original_mmID, Original_pwID, Original_doctorID, Original_cnID, dosage, startDate, endDate, createAT, Original_mmID, Original_pwID, Original_doctorID, Original_cnID, Original_dosage, Original_startDate, Original_endDate, Original_createAT)
+        Public Overloads Overridable Function Update(ByVal mmID As Integer, ByVal pwID As String, ByVal doctorID As String, ByVal cnID As String, ByVal dosage As Global.System.Nullable(Of Double), ByVal startDate As Global.System.Nullable(Of Date), ByVal endDate As Global.System.Nullable(Of Date), ByVal Original_mmID As Integer, ByVal Original_pwID As String, ByVal Original_doctorID As String, ByVal Original_cnID As String, ByVal Original_dosage As Global.System.Nullable(Of Double), ByVal Original_startDate As Global.System.Nullable(Of Date), ByVal Original_endDate As Global.System.Nullable(Of Date), ByVal Original_createAT As Date) As Integer
+            Return Me.Update(mmID, pwID, doctorID, cnID, dosage, startDate, endDate, Original_createAT, Original_mmID, Original_pwID, Original_doctorID, Original_cnID, Original_dosage, Original_startDate, Original_endDate, Original_createAT)
         End Function
     End Class
     
@@ -21326,11 +21295,10 @@ Namespace WellmeadowsDataSetTableAdapters
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "INSERT INTO Staff_Experiences"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  (expID, organization, position, "& _ 
-                "startDate, endDate, staffID)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES (@expID,@organization,@position,@startDate,"& _ 
-                "@endDate,@staffID)"
+            Me._commandCollection(2).CommandText = "INSERT INTO Staff_Experiences"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  (organization, position, startDa"& _ 
+                "te, endDate, staffID)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES (@organization,@position,@startDate,@endDate,@staf"& _ 
+                "fID)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@expID", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "expID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@organization", Global.System.Data.SqlDbType.VarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "organization", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@position", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "position", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@startDate", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "startDate", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -21592,8 +21560,8 @@ Namespace WellmeadowsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal organization As String, ByVal position As String, ByVal startDate As Global.System.Nullable(Of Date), ByVal endDate As Global.System.Nullable(Of Date), ByVal Original_ID As Integer, ByVal Original_expID As String, ByVal Original_staffID As String, ByVal Original_organization As String, ByVal Original_position As String, ByVal Original_startDate As Global.System.Nullable(Of Date), ByVal Original_endDate As Global.System.Nullable(Of Date)) As Integer
-            Return Me.Update(Original_expID, Original_staffID, organization, position, startDate, endDate, Original_ID, Original_expID, Original_staffID, Original_organization, Original_position, Original_startDate, Original_endDate)
+        Public Overloads Overridable Function Update(ByVal staffID As String, ByVal organization As String, ByVal position As String, ByVal startDate As Global.System.Nullable(Of Date), ByVal endDate As Global.System.Nullable(Of Date), ByVal Original_ID As Integer, ByVal Original_expID As String, ByVal Original_staffID As String, ByVal Original_organization As String, ByVal Original_position As String, ByVal Original_startDate As Global.System.Nullable(Of Date), ByVal Original_endDate As Global.System.Nullable(Of Date)) As Integer
+            Return Me.Update(Original_expID, staffID, organization, position, startDate, endDate, Original_ID, Original_expID, Original_staffID, Original_organization, Original_position, Original_startDate, Original_endDate)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -21626,37 +21594,32 @@ Namespace WellmeadowsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function insertExp(ByVal expID As String, ByVal organization As String, ByVal position As String, ByVal startDate As String, ByVal endDate As String, ByVal staffID As String) As Integer
+        Public Overloads Overridable Function insertExp(ByVal organization As String, ByVal position As String, ByVal startDate As String, ByVal endDate As String, ByVal staffID As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
-            If (expID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("expID")
-            Else
-                command.Parameters(0).Value = CType(expID,String)
-            End If
             If (organization Is Nothing) Then
-                command.Parameters(1).Value = Global.System.DBNull.Value
+                command.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(1).Value = CType(organization,String)
+                command.Parameters(0).Value = CType(organization,String)
             End If
             If (position Is Nothing) Then
-                command.Parameters(2).Value = Global.System.DBNull.Value
+                command.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(position,String)
+                command.Parameters(1).Value = CType(position,String)
             End If
             If (startDate Is Nothing) Then
-                command.Parameters(3).Value = Global.System.DBNull.Value
+                command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(3).Value = CType(startDate,String)
+                command.Parameters(2).Value = CType(startDate,String)
             End If
             If (endDate Is Nothing) Then
-                command.Parameters(4).Value = Global.System.DBNull.Value
+                command.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(4).Value = CType(endDate,String)
+                command.Parameters(3).Value = CType(endDate,String)
             End If
             If (staffID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("staffID")
             Else
-                command.Parameters(5).Value = CType(staffID,String)
+                command.Parameters(4).Value = CType(staffID,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -21886,10 +21849,9 @@ Namespace WellmeadowsDataSetTableAdapters
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "INSERT INTO Staff_Qualificates"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  (qualID, staffID, type, major, "& _ 
-                "dates)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES (@qualID,@staffID,@type,@major,@dates)"
+            Me._commandCollection(2).CommandText = "INSERT INTO Staff_Qualificates"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  (staffID, type, major, dates)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "VALUES (@staffID,@type,@major,@dates)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@qualID", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "qualID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@staffID", Global.System.Data.SqlDbType.VarChar, 11, Global.System.Data.ParameterDirection.Input, 0, 0, "staffID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@type", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "type", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@major", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "major", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -22126,8 +22088,8 @@ Namespace WellmeadowsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal type As String, ByVal dates As Global.System.Nullable(Of Date), ByVal major As String, ByVal Original_ID As Integer, ByVal Original_qualID As String, ByVal Original_staffID As String, ByVal Original_type As String, ByVal Original_dates As Global.System.Nullable(Of Date), ByVal Original_major As String) As Integer
-            Return Me.Update(Original_qualID, Original_staffID, type, dates, major, Original_ID, Original_qualID, Original_staffID, Original_type, Original_dates, Original_major)
+        Public Overloads Overridable Function Update(ByVal staffID As String, ByVal type As String, ByVal dates As Global.System.Nullable(Of Date), ByVal major As String, ByVal Original_ID As Integer, ByVal Original_qualID As String, ByVal Original_staffID As String, ByVal Original_type As String, ByVal Original_dates As Global.System.Nullable(Of Date), ByVal Original_major As String) As Integer
+            Return Me.Update(Original_qualID, staffID, type, dates, major, Original_ID, Original_qualID, Original_staffID, Original_type, Original_dates, Original_major)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -22160,32 +22122,27 @@ Namespace WellmeadowsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function InsertQualification(ByVal qualID As String, ByVal staffID As String, ByVal type As String, ByVal major As String, ByVal dates As String) As Integer
+        Public Overloads Overridable Function InsertQualification(ByVal staffID As String, ByVal type As String, ByVal major As String, ByVal dates As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
-            If (qualID Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("qualID")
-            Else
-                command.Parameters(0).Value = CType(qualID,String)
-            End If
             If (staffID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("staffID")
             Else
-                command.Parameters(1).Value = CType(staffID,String)
+                command.Parameters(0).Value = CType(staffID,String)
             End If
             If (type Is Nothing) Then
-                command.Parameters(2).Value = Global.System.DBNull.Value
+                command.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(type,String)
+                command.Parameters(1).Value = CType(type,String)
             End If
             If (major Is Nothing) Then
-                command.Parameters(3).Value = Global.System.DBNull.Value
+                command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(3).Value = CType(major,String)
+                command.Parameters(2).Value = CType(major,String)
             End If
             If (dates Is Nothing) Then
-                command.Parameters(4).Value = Global.System.DBNull.Value
+                command.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(4).Value = CType(dates,String)
+                command.Parameters(3).Value = CType(dates,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -22488,7 +22445,7 @@ Namespace WellmeadowsDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT ID, staffID, firstName, lastName, address, tel, dob, nin, position, salary"& _ 
@@ -22496,27 +22453,54 @@ Namespace WellmeadowsDataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT TOP (1) staffID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Staffs"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY ID DESC"
+            Me._commandCollection(1).CommandText = "SELECT staffID, firstName, lastName, address, tel, dob, nin, position, salary, sa"& _ 
+                "laryScale, hoursWeek, contactType, paidType"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Staffs"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (staffID = "& _ 
+                "@staffID)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@staffID", Global.System.Data.SqlDbType.VarChar, 11, Global.System.Data.ParameterDirection.Input, 0, 0, "staffID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "INSERT INTO Staffs"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  (firstName, lastName, address, tel, nin, po"& _ 
+            Me._commandCollection(2).CommandText = "SELECT TOP (1) staffID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Staffs"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY ID DESC"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "INSERT INTO Staffs"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  (firstName, lastName, address, tel, nin, po"& _ 
                 "sition, salary, salaryScale, hoursWeek, contactType, paidType, dob)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES (@fi"& _ 
                 "rstName,@lastName,@address,@tel,@nin,@position,@salary,@salaryScale,@hoursWeek,@"& _ 
                 "contactType,@paidType,@dob)"
-            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@firstName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "firstName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lastName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "lastName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@address", Global.System.Data.SqlDbType.VarChar, 256, Global.System.Data.ParameterDirection.Input, 0, 0, "address", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tel", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "tel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nin", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "nin", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@position", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "position", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salary", Global.System.Data.SqlDbType.Float, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "salary", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salaryScale", Global.System.Data.SqlDbType.Float, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "salaryScale", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@hoursWeek", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "hoursWeek", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@contactType", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "contactType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@paidType", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "paidType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@dob", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "dob", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@firstName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "firstName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lastName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "lastName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@address", Global.System.Data.SqlDbType.VarChar, 256, Global.System.Data.ParameterDirection.Input, 0, 0, "address", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tel", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "tel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nin", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "nin", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@position", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "position", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salary", Global.System.Data.SqlDbType.Float, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "salary", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salaryScale", Global.System.Data.SqlDbType.Float, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "salaryScale", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@hoursWeek", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "hoursWeek", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@contactType", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "contactType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@paidType", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "paidType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@dob", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "dob", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "UPDATE Staffs"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET          firstName = @firstName, lastName = @lastName, address"& _ 
+                " = @address, tel = @tel, dob = @dob, nin = @nin, position = @position, salary = "& _ 
+                "@salary, salaryScale = @salaryScale, hoursWeek = @hoursWeek, contactType = @cont"& _ 
+                "actType, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  paidType = @paidType"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (staffID = @staffID)"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@firstName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "firstName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lastName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "lastName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@address", Global.System.Data.SqlDbType.VarChar, 256, Global.System.Data.ParameterDirection.Input, 0, 0, "address", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tel", Global.System.Data.SqlDbType.VarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "tel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@dob", Global.System.Data.SqlDbType.[Date], 3, Global.System.Data.ParameterDirection.Input, 0, 0, "dob", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nin", Global.System.Data.SqlDbType.VarChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "nin", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@position", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "position", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salary", Global.System.Data.SqlDbType.Float, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "salary", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@salaryScale", Global.System.Data.SqlDbType.Float, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "salaryScale", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@hoursWeek", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "hoursWeek", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@contactType", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "contactType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@paidType", Global.System.Data.SqlDbType.VarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "paidType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@staffID", Global.System.Data.SqlDbType.VarChar, 11, Global.System.Data.ParameterDirection.Input, 0, 0, "staffID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -22538,6 +22522,22 @@ Namespace WellmeadowsDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As WellmeadowsDataSet.StaffsDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As WellmeadowsDataSet.StaffsDataTable = New WellmeadowsDataSet.StaffsDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByStaffID(ByVal staffID As String) As WellmeadowsDataSet.StaffsDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (staffID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("staffID")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(staffID,String)
+            End If
             Dim dataTable As WellmeadowsDataSet.StaffsDataTable = New WellmeadowsDataSet.StaffsDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -22974,7 +22974,7 @@ Namespace WellmeadowsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function getLatestStaffID() As String
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -23001,7 +23001,7 @@ Namespace WellmeadowsDataSetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
         Public Overloads Overridable Function InsertStaff(ByVal firstName As String, ByVal lastName As String, ByVal address As String, ByVal tel As String, ByVal nin As String, ByVal position As String, ByVal salary As Global.System.Nullable(Of Double), ByVal salaryScale As Global.System.Nullable(Of Double), ByVal hoursWeek As Global.System.Nullable(Of Integer), ByVal contactType As String, ByVal paidType As String, ByVal dob As String) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
             If (firstName Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -23061,6 +23061,93 @@ Namespace WellmeadowsDataSetTableAdapters
                 command.Parameters(11).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(11).Value = CType(dob,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function UpdateStaff(ByVal firstName As String, ByVal lastName As String, ByVal address As String, ByVal tel As String, ByVal dob As String, ByVal nin As String, ByVal position As String, ByVal salary As Global.System.Nullable(Of Double), ByVal salaryScale As Global.System.Nullable(Of Double), ByVal hoursWeek As Global.System.Nullable(Of Integer), ByVal contactType As String, ByVal paidType As String, ByVal staffID As String) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
+            If (firstName Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(firstName,String)
+            End If
+            If (lastName Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(lastName,String)
+            End If
+            If (address Is Nothing) Then
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(2).Value = CType(address,String)
+            End If
+            If (tel Is Nothing) Then
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(3).Value = CType(tel,String)
+            End If
+            If (dob Is Nothing) Then
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(4).Value = CType(dob,String)
+            End If
+            If (nin Is Nothing) Then
+                command.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(5).Value = CType(nin,String)
+            End If
+            If (position Is Nothing) Then
+                command.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(6).Value = CType(position,String)
+            End If
+            If (salary.HasValue = true) Then
+                command.Parameters(7).Value = CType(salary.Value,Double)
+            Else
+                command.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (salaryScale.HasValue = true) Then
+                command.Parameters(8).Value = CType(salaryScale.Value,Double)
+            Else
+                command.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (hoursWeek.HasValue = true) Then
+                command.Parameters(9).Value = CType(hoursWeek.Value,Integer)
+            Else
+                command.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            If (contactType Is Nothing) Then
+                command.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(10).Value = CType(contactType,String)
+            End If
+            If (paidType Is Nothing) Then
+                command.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(11).Value = CType(paidType,String)
+            End If
+            If (staffID Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("staffID")
+            Else
+                command.Parameters(12).Value = CType(staffID,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
