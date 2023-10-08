@@ -21,4 +21,12 @@ Public Class Add_InPatient
             ip_expect.Text = String.Empty
         End If
     End Sub
+
+    Private Sub Add_InPatient_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Patients' table. You can move, or remove it, as needed.
+        Me.PatientsTableAdapter.Fill(Me.WellmeadowsDataSet.Patients)
+        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Beds' table. You can move, or remove it, as needed.
+        Me.BedsTableAdapter.Fill(Me.WellmeadowsDataSet.Beds)
+
+    End Sub
 End Class

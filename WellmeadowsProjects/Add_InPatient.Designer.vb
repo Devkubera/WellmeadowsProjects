@@ -22,6 +22,7 @@ Partial Class Add_InPatient
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lableSearch = New System.Windows.Forms.Label()
         Me.ip_id = New System.Windows.Forms.TextBox()
@@ -37,6 +38,17 @@ Partial Class Add_InPatient
         Me.btnClear = New System.Windows.Forms.Button()
         Me.ip_date = New System.Windows.Forms.DateTimePicker()
         Me.ipw_id = New System.Windows.Forms.ComboBox()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
+        Me.BedsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BedsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.BedsTableAdapter()
+        Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
+        Me.PatientsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PatientsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.PatientsTableAdapter()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BedsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PatientsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -65,7 +77,7 @@ Partial Class Add_InPatient
         '
         Me.ip_id.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ip_id.Location = New System.Drawing.Point(402, 253)
-        Me.ip_id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ip_id.Margin = New System.Windows.Forms.Padding(4)
         Me.ip_id.Name = "ip_id"
         Me.ip_id.Size = New System.Drawing.Size(240, 38)
         Me.ip_id.TabIndex = 3
@@ -96,7 +108,7 @@ Partial Class Add_InPatient
         '
         Me.ips_id.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ips_id.Location = New System.Drawing.Point(765, 388)
-        Me.ips_id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ips_id.Margin = New System.Windows.Forms.Padding(4)
         Me.ips_id.Name = "ips_id"
         Me.ips_id.Size = New System.Drawing.Size(265, 38)
         Me.ips_id.TabIndex = 9
@@ -127,7 +139,7 @@ Partial Class Add_InPatient
         '
         Me.ip_expect.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ip_expect.Location = New System.Drawing.Point(765, 513)
-        Me.ip_expect.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ip_expect.Margin = New System.Windows.Forms.Padding(4)
         Me.ip_expect.Name = "ip_expect"
         Me.ip_expect.Size = New System.Drawing.Size(265, 38)
         Me.ip_expect.TabIndex = 13
@@ -147,7 +159,7 @@ Partial Class Add_InPatient
         '
         Me.ipb_id.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ipb_id.Location = New System.Drawing.Point(402, 513)
-        Me.ipb_id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ipb_id.Margin = New System.Windows.Forms.Padding(4)
         Me.ipb_id.Name = "ipb_id"
         Me.ipb_id.Size = New System.Drawing.Size(240, 38)
         Me.ipb_id.TabIndex = 11
@@ -158,7 +170,7 @@ Partial Class Add_InPatient
         Me.btnAdd.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.btnAdd.Location = New System.Drawing.Point(1132, 44)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(160, 46)
         Me.btnAdd.TabIndex = 16
@@ -171,7 +183,7 @@ Partial Class Add_InPatient
         Me.btnClear.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.ForeColor = System.Drawing.Color.Snow
         Me.btnClear.Location = New System.Drawing.Point(1011, 44)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(100, 46)
         Me.btnClear.TabIndex = 15
@@ -182,7 +194,7 @@ Partial Class Add_InPatient
         '
         Me.ip_date.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ip_date.Location = New System.Drawing.Point(765, 253)
-        Me.ip_date.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ip_date.Margin = New System.Windows.Forms.Padding(4)
         Me.ip_date.Name = "ip_date"
         Me.ip_date.Size = New System.Drawing.Size(265, 38)
         Me.ip_date.TabIndex = 34
@@ -193,10 +205,60 @@ Partial Class Add_InPatient
         Me.ipw_id.FormattingEnabled = True
         Me.ipw_id.Items.AddRange(New Object() {"W1", "W2", "W3", "W4", "W5", "W6", "W7", "W8", "W9", "W10"})
         Me.ipw_id.Location = New System.Drawing.Point(402, 387)
-        Me.ipw_id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ipw_id.Margin = New System.Windows.Forms.Padding(4)
         Me.ipw_id.Name = "ipw_id"
         Me.ipw_id.Size = New System.Drawing.Size(240, 38)
         Me.ipw_id.TabIndex = 35
+        '
+        'WellmeadowsDataSet
+        '
+        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
+        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BedsBindingSource
+        '
+        Me.BedsBindingSource.DataMember = "Beds"
+        Me.BedsBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'BedsTableAdapter
+        '
+        Me.BedsTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BedsTableAdapter = Me.BedsTableAdapter
+        Me.TableAdapterManager.ChargeNursesTableAdapter = Nothing
+        Me.TableAdapterManager.DoctorsTableAdapter = Nothing
+        Me.TableAdapterManager.In_PatientsTableAdapter = Nothing
+        Me.TableAdapterManager.LocalDoctorsTableAdapter = Nothing
+        Me.TableAdapterManager.Login_logsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_EquipmentsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_MedicinesTableAdapter = Nothing
+        Me.TableAdapterManager.MedicalDirectorsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_kinsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_VisitsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_WardsTableAdapter = Nothing
+        Me.TableAdapterManager.PatientsTableAdapter = Me.PatientsTableAdapter
+        Me.TableAdapterManager.PW_PrescriptsTableAdapter = Nothing
+        Me.TableAdapterManager.ShiftsTableAdapter = Nothing
+        Me.TableAdapterManager.Staff_ExperiencesTableAdapter = Nothing
+        Me.TableAdapterManager.Staff_QualificatesTableAdapter = Nothing
+        Me.TableAdapterManager.StaffsTableAdapter = Nothing
+        Me.TableAdapterManager.SuppilersTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.Ward_RequestsTableAdapter = Nothing
+        Me.TableAdapterManager.Ward_StaffsTableAdapter = Nothing
+        Me.TableAdapterManager.WardsTableAdapter = Nothing
+        '
+        'PatientsBindingSource
+        '
+        Me.PatientsBindingSource.DataMember = "Patients"
+        Me.PatientsBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'PatientsTableAdapter
+        '
+        Me.PatientsTableAdapter.ClearBeforeFill = True
         '
         'Add_InPatient
         '
@@ -219,10 +281,14 @@ Partial Class Add_InPatient
         Me.Controls.Add(Me.ip_id)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Add_InPatient"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add_InPatient"
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BedsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PatientsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -243,4 +309,11 @@ Partial Class Add_InPatient
     Friend WithEvents btnClear As Button
     Friend WithEvents ip_date As DateTimePicker
     Friend WithEvents ipw_id As ComboBox
+    Friend WithEvents BindingSource1 As BindingSource
+    Friend WithEvents WellmeadowsDataSet As WellmeadowsDataSet
+    Friend WithEvents BedsBindingSource As BindingSource
+    Friend WithEvents BedsTableAdapter As WellmeadowsDataSetTableAdapters.BedsTableAdapter
+    Friend WithEvents TableAdapterManager As WellmeadowsDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents PatientsTableAdapter As WellmeadowsDataSetTableAdapters.PatientsTableAdapter
+    Friend WithEvents PatientsBindingSource As BindingSource
 End Class
