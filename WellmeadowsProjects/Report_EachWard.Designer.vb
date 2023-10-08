@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Report_Out_PatientForm
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class Report_EachWard
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()>
+    <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,22 +20,23 @@ Partial Class Report_Out_PatientForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()>
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.OutPatientsReportViewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WardReportViewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.Out_Patients_Report_ViewTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Out_Patients_Report_ViewTableAdapter()
-        CType(Me.OutPatientsReportViewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Ward_Report_ViewTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Ward_Report_ViewTableAdapter()
+        CType(Me.WardReportViewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'OutPatientsReportViewBindingSource
+        'WardReportViewBindingSource
         '
-        Me.OutPatientsReportViewBindingSource.DataMember = "Out_Patients_Report_View"
-        Me.OutPatientsReportViewBindingSource.DataSource = Me.WellmeadowsDataSet
+        Me.WardReportViewBindingSource.DataMember = "Ward_Report_View"
+        Me.WardReportViewBindingSource.DataSource = Me.WellmeadowsDataSet
         '
         'WellmeadowsDataSet
         '
@@ -45,36 +46,44 @@ Partial Class Report_Out_PatientForm
         'ReportViewer1
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource1.Name = "OutPT_Dataset"
-        ReportDataSource1.Value = Me.OutPatientsReportViewBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "WellmeadowsProjects.Report_OutPatient.rdlc"
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "WellmeadowsProjects.Report_Ward.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(985, 861)
+        Me.ReportViewer1.Size = New System.Drawing.Size(925, 605)
         Me.ReportViewer1.TabIndex = 0
         '
-        'Out_Patients_Report_ViewTableAdapter
+        'Panel2
         '
-        Me.Out_Patients_Report_ViewTableAdapter.ClearBeforeFill = True
+        Me.Panel2.Controls.Add(Me.ReportViewer1)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(925, 605)
+        Me.Panel2.TabIndex = 2
         '
-        'Report_Out_PatientForm
+        'Ward_Report_ViewTableAdapter
+        '
+        Me.Ward_Report_ViewTableAdapter.ClearBeforeFill = True
+        '
+        'Report_EachWard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(985, 861)
-        Me.Controls.Add(Me.ReportViewer1)
-        Me.Name = "Report_Out_PatientForm"
-        Me.Text = "Report_Out_PatientForm"
-        CType(Me.OutPatientsReportViewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ClientSize = New System.Drawing.Size(925, 605)
+        Me.Controls.Add(Me.Panel2)
+        Me.Name = "Report_EachWard"
+        Me.Text = "Report_EachWard"
+        CType(Me.WardReportViewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents WellmeadowsDataSet As WellmeadowsDataSet
-    Friend WithEvents OutPatientsReportViewBindingSource As BindingSource
-    Friend WithEvents Out_Patients_Report_ViewTableAdapter As WellmeadowsDataSetTableAdapters.Out_Patients_Report_ViewTableAdapter
+    Friend WithEvents WardReportViewBindingSource As BindingSource
+    Friend WithEvents Ward_Report_ViewTableAdapter As WellmeadowsDataSetTableAdapters.Ward_Report_ViewTableAdapter
+    Friend WithEvents Panel2 As Panel
 End Class

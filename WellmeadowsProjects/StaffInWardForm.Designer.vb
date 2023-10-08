@@ -84,9 +84,9 @@ Partial Class StaffInWardForm
         Me.btnReport.BackColor = System.Drawing.Color.RoyalBlue
         Me.btnReport.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReport.ForeColor = System.Drawing.Color.White
-        Me.btnReport.Location = New System.Drawing.Point(546, 514)
+        Me.btnReport.Location = New System.Drawing.Point(477, 514)
         Me.btnReport.Name = "btnReport"
-        Me.btnReport.Size = New System.Drawing.Size(120, 37)
+        Me.btnReport.Size = New System.Drawing.Size(189, 37)
         Me.btnReport.TabIndex = 33
         Me.btnReport.Text = "สร้างราบงาน"
         Me.btnReport.UseVisualStyleBackColor = False
@@ -143,7 +143,7 @@ Partial Class StaffInWardForm
         'cbbWardId
         '
         Me.cbbWardId.FormattingEnabled = True
-        Me.cbbWardId.Items.AddRange(New Object() {"ward1", "ward2", "ward3", "ward4", "ward5", "ward6", "ward7", "ward8", "ward9", "ward10", "ward11", "ward12", "ward13", "ward14", "ward15", "ward16", "ward17"})
+        Me.cbbWardId.Items.AddRange(New Object() {"W1", "W2", "W3", "W4", "W5", "W6", "W7", "W8", "W9", "W10", "W11", "W12", "W13", "W14", "W15", "W16", "W17"})
         Me.cbbWardId.Location = New System.Drawing.Point(415, 91)
         Me.cbbWardId.Name = "cbbWardId"
         Me.cbbWardId.Size = New System.Drawing.Size(121, 21)

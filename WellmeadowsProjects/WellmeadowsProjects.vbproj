@@ -318,6 +318,12 @@
     <Compile Include="popup_patientKin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Report_EachWard.Designer.vb">
+      <DependentUpon>Report_EachWard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report_EachWard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Report_Out_PatientForm.Designer.vb">
       <DependentUpon>Report_Out_PatientForm.vb</DependentUpon>
     </Compile>
@@ -375,6 +381,9 @@
     <Compile Include="WellmeadowsDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>WellmeadowsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WellmeadowsDataSet.vb">
       <DependentUpon>WellmeadowsDataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -475,10 +484,14 @@
     <EmbeddedResource Include="popup_patientKin.resx">
       <DependentUpon>popup_patientKin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report_EachWard.resx">
+      <DependentUpon>Report_EachWard.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report_OutPatient.rdlc" />
     <EmbeddedResource Include="Report_Out_PatientForm.resx">
       <DependentUpon>Report_Out_PatientForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report_Ward.rdlc" />
     <EmbeddedResource Include="Supplies.resx">
       <DependentUpon>Supplies.vb</DependentUpon>
     </EmbeddedResource>
