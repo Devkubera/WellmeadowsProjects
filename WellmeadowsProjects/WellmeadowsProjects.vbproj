@@ -324,10 +324,28 @@
     <Compile Include="Report_EachWard.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Report_In_PatientForm.Designer.vb">
+      <DependentUpon>Report_In_PatientForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report_In_PatientForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Report_Out_PatientForm.Designer.vb">
       <DependentUpon>Report_Out_PatientForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Report_Out_PatientForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report_PrescriptForm.Designer.vb">
+      <DependentUpon>Report_PrescriptForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report_PrescriptForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report_WaitinglistForm.Designer.vb">
+      <DependentUpon>Report_WaitinglistForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report_WaitinglistForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Supplies.Designer.vb">
@@ -487,9 +505,21 @@
     <EmbeddedResource Include="Report_EachWard.resx">
       <DependentUpon>Report_EachWard.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report_In-PatientForm.rdlc" />
+    <EmbeddedResource Include="Report_In_PatientForm.resx">
+      <DependentUpon>Report_In_PatientForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report_OutPatient.rdlc" />
     <EmbeddedResource Include="Report_Out_PatientForm.resx">
       <DependentUpon>Report_Out_PatientForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report_Prescript.rdlc" />
+    <EmbeddedResource Include="Report_PrescriptForm.resx">
+      <DependentUpon>Report_PrescriptForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report_Waitinglist.rdlc" />
+    <EmbeddedResource Include="Report_WaitinglistForm.resx">
+      <DependentUpon>Report_WaitinglistForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report_Ward.rdlc" />
     <EmbeddedResource Include="Supplies.resx">

@@ -11,7 +11,9 @@
         WaitingListForm.Show()
     End Sub
 
-    Private Sub btnMedcAndmede_Click(sender As Object, e As EventArgs) Handles btnMedcAndmede.Click
-        Supplies.Show()
+
+
+    Private Sub wardPanel_Paint(sender As Object, e As PaintEventArgs)
+
     End Sub
 End Class

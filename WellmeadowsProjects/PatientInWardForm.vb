@@ -23,11 +23,11 @@
 
     Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
         If cbbPtype.SelectedIndex = 0 Then
-            Console.WriteLine("สร้างรายงานผู้ป่วยใน")
+            Report_In_PatientForm.Show()
         ElseIf cbbPtype.SelectedIndex = 1 Then
             Report_Out_PatientForm.Show()
         Else
-            btnReport.Enabled = False
+
         End If
     End Sub
 End Class

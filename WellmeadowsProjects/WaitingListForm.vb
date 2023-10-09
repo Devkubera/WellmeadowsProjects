@@ -6,4 +6,8 @@
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         Edit_WaitingListForm.Show()
     End Sub
+
+    Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
+        Report_WaitinglistForm.Show()
+    End Sub
 End Class
