@@ -24,47 +24,43 @@ Partial Class StaffForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.StaffPanel = New System.Windows.Forms.Panel()
+        Me.DataGridV1 = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnDel = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.searchlb = New System.Windows.Forms.Label()
-        Me.StaffTable = New System.Windows.Forms.DataGridView()
-        Me.StaffIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DobDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NinDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PositionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SalaryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HoursWeekDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ContactTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PaidTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StaffsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.SearchStaff = New System.Windows.Forms.TextBox()
         Me.cbbEduLevel = New System.Windows.Forms.ComboBox()
         Me.Stafflabel = New System.Windows.Forms.Label()
         Me.cbbEduOrExp = New System.Windows.Forms.ComboBox()
+        Me.StaffsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.StaffsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.StaffsTableAdapter()
+        Me.Staff_ExperiencesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Staff_ExperiencesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Staff_ExperiencesTableAdapter()
+        Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
+        Me.Staff_QualificatesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Staff_QualificatesTableAdapter()
+        Me.Staff_QualificatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.StaffPanel.SuspendLayout()
-        CType(Me.StaffTable, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridV1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaffsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Staff_ExperiencesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Staff_QualificatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StaffPanel
         '
+        Me.StaffPanel.Controls.Add(Me.DataGridV1)
         Me.StaffPanel.Controls.Add(Me.Label2)
         Me.StaffPanel.Controls.Add(Me.Label1)
         Me.StaffPanel.Controls.Add(Me.btnDel)
         Me.StaffPanel.Controls.Add(Me.btnEdit)
         Me.StaffPanel.Controls.Add(Me.btnAdd)
         Me.StaffPanel.Controls.Add(Me.searchlb)
-        Me.StaffPanel.Controls.Add(Me.StaffTable)
         Me.StaffPanel.Controls.Add(Me.SearchStaff)
         Me.StaffPanel.Controls.Add(Me.cbbEduLevel)
         Me.StaffPanel.Controls.Add(Me.Stafflabel)
@@ -72,8 +68,18 @@ Partial Class StaffForm
         Me.StaffPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.StaffPanel.Location = New System.Drawing.Point(0, 0)
         Me.StaffPanel.Name = "StaffPanel"
-        Me.StaffPanel.Size = New System.Drawing.Size(1041, 749)
+        Me.StaffPanel.Size = New System.Drawing.Size(1041, 811)
         Me.StaffPanel.TabIndex = 0
+        '
+        'DataGridV1
+        '
+        Me.DataGridV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridV1.Location = New System.Drawing.Point(89, 195)
+        Me.DataGridV1.Name = "DataGridV1"
+        Me.DataGridV1.RowHeadersWidth = 51
+        Me.DataGridV1.RowTemplate.Height = 24
+        Me.DataGridV1.Size = New System.Drawing.Size(850, 284)
+        Me.DataGridV1.TabIndex = 27
         '
         'Label2
         '
@@ -137,144 +143,9 @@ Partial Class StaffForm
         Me.searchlb.Font = New System.Drawing.Font("Prompt", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.searchlb.Location = New System.Drawing.Point(618, 91)
         Me.searchlb.Name = "searchlb"
-        Me.searchlb.Size = New System.Drawing.Size(194, 22)
+        Me.searchlb.Size = New System.Drawing.Size(188, 22)
         Me.searchlb.TabIndex = 21
-        Me.searchlb.Text = "ค้นหาเจ้าหน้าที่ด้วยชื่อองค์กร.."
-        '
-        'StaffTable
-        '
-        Me.StaffTable.AllowUserToAddRows = False
-        Me.StaffTable.AllowUserToDeleteRows = False
-        Me.StaffTable.AllowUserToOrderColumns = True
-        Me.StaffTable.AutoGenerateColumns = False
-        Me.StaffTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.StaffTable.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.StaffIDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.TelDataGridViewTextBoxColumn, Me.DobDataGridViewTextBoxColumn, Me.NinDataGridViewTextBoxColumn, Me.PositionDataGridViewTextBoxColumn, Me.SalaryDataGridViewTextBoxColumn, Me.HoursWeekDataGridViewTextBoxColumn, Me.ContactTypeDataGridViewTextBoxColumn, Me.PaidTypeDataGridViewTextBoxColumn})
-        Me.StaffTable.DataSource = Me.StaffsBindingSource
-        Me.StaffTable.Location = New System.Drawing.Point(86, 170)
-        Me.StaffTable.Name = "StaffTable"
-        Me.StaffTable.ReadOnly = True
-        Me.StaffTable.RowHeadersWidth = 51
-        Me.StaffTable.Size = New System.Drawing.Size(853, 328)
-        Me.StaffTable.TabIndex = 20
-        '
-        'StaffIDDataGridViewTextBoxColumn
-        '
-        Me.StaffIDDataGridViewTextBoxColumn.DataPropertyName = "staffID"
-        Me.StaffIDDataGridViewTextBoxColumn.Frozen = True
-        Me.StaffIDDataGridViewTextBoxColumn.HeaderText = "รหัสเจ้าหน้าที่"
-        Me.StaffIDDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.StaffIDDataGridViewTextBoxColumn.Name = "StaffIDDataGridViewTextBoxColumn"
-        Me.StaffIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.StaffIDDataGridViewTextBoxColumn.Width = 125
-        '
-        'FirstNameDataGridViewTextBoxColumn
-        '
-        Me.FirstNameDataGridViewTextBoxColumn.DataPropertyName = "firstName"
-        Me.FirstNameDataGridViewTextBoxColumn.HeaderText = "ชื่อ"
-        Me.FirstNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.FirstNameDataGridViewTextBoxColumn.Name = "FirstNameDataGridViewTextBoxColumn"
-        Me.FirstNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.FirstNameDataGridViewTextBoxColumn.Width = 125
-        '
-        'LastNameDataGridViewTextBoxColumn
-        '
-        Me.LastNameDataGridViewTextBoxColumn.DataPropertyName = "lastName"
-        Me.LastNameDataGridViewTextBoxColumn.HeaderText = "สกุล"
-        Me.LastNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.LastNameDataGridViewTextBoxColumn.Name = "LastNameDataGridViewTextBoxColumn"
-        Me.LastNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.LastNameDataGridViewTextBoxColumn.Width = 125
-        '
-        'AddressDataGridViewTextBoxColumn
-        '
-        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "address"
-        Me.AddressDataGridViewTextBoxColumn.HeaderText = "ที่อยู่"
-        Me.AddressDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
-        Me.AddressDataGridViewTextBoxColumn.ReadOnly = True
-        Me.AddressDataGridViewTextBoxColumn.Width = 125
-        '
-        'TelDataGridViewTextBoxColumn
-        '
-        Me.TelDataGridViewTextBoxColumn.DataPropertyName = "tel"
-        Me.TelDataGridViewTextBoxColumn.HeaderText = "เบอร์โทรศัพท์"
-        Me.TelDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.TelDataGridViewTextBoxColumn.Name = "TelDataGridViewTextBoxColumn"
-        Me.TelDataGridViewTextBoxColumn.ReadOnly = True
-        Me.TelDataGridViewTextBoxColumn.Width = 125
-        '
-        'DobDataGridViewTextBoxColumn
-        '
-        Me.DobDataGridViewTextBoxColumn.DataPropertyName = "dob"
-        Me.DobDataGridViewTextBoxColumn.HeaderText = "วันเกิด"
-        Me.DobDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.DobDataGridViewTextBoxColumn.Name = "DobDataGridViewTextBoxColumn"
-        Me.DobDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DobDataGridViewTextBoxColumn.Width = 125
-        '
-        'NinDataGridViewTextBoxColumn
-        '
-        Me.NinDataGridViewTextBoxColumn.DataPropertyName = "nin"
-        Me.NinDataGridViewTextBoxColumn.HeaderText = "หมายเลขประกันสังคม"
-        Me.NinDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.NinDataGridViewTextBoxColumn.Name = "NinDataGridViewTextBoxColumn"
-        Me.NinDataGridViewTextBoxColumn.ReadOnly = True
-        Me.NinDataGridViewTextBoxColumn.Width = 125
-        '
-        'PositionDataGridViewTextBoxColumn
-        '
-        Me.PositionDataGridViewTextBoxColumn.DataPropertyName = "position"
-        Me.PositionDataGridViewTextBoxColumn.HeaderText = "ตำแหน่ง"
-        Me.PositionDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PositionDataGridViewTextBoxColumn.Name = "PositionDataGridViewTextBoxColumn"
-        Me.PositionDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PositionDataGridViewTextBoxColumn.Width = 125
-        '
-        'SalaryDataGridViewTextBoxColumn
-        '
-        Me.SalaryDataGridViewTextBoxColumn.DataPropertyName = "salary"
-        Me.SalaryDataGridViewTextBoxColumn.HeaderText = "เงินเดือน"
-        Me.SalaryDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.SalaryDataGridViewTextBoxColumn.Name = "SalaryDataGridViewTextBoxColumn"
-        Me.SalaryDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SalaryDataGridViewTextBoxColumn.Width = 125
-        '
-        'HoursWeekDataGridViewTextBoxColumn
-        '
-        Me.HoursWeekDataGridViewTextBoxColumn.DataPropertyName = "hoursWeek"
-        Me.HoursWeekDataGridViewTextBoxColumn.HeaderText = "จำนวนชั่วโมงทำงานต่อสัปดาห์"
-        Me.HoursWeekDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.HoursWeekDataGridViewTextBoxColumn.Name = "HoursWeekDataGridViewTextBoxColumn"
-        Me.HoursWeekDataGridViewTextBoxColumn.ReadOnly = True
-        Me.HoursWeekDataGridViewTextBoxColumn.Width = 125
-        '
-        'ContactTypeDataGridViewTextBoxColumn
-        '
-        Me.ContactTypeDataGridViewTextBoxColumn.DataPropertyName = "contactType"
-        Me.ContactTypeDataGridViewTextBoxColumn.HeaderText = "ประเภทสัญญาจ้าง"
-        Me.ContactTypeDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.ContactTypeDataGridViewTextBoxColumn.Name = "ContactTypeDataGridViewTextBoxColumn"
-        Me.ContactTypeDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ContactTypeDataGridViewTextBoxColumn.Width = 125
-        '
-        'PaidTypeDataGridViewTextBoxColumn
-        '
-        Me.PaidTypeDataGridViewTextBoxColumn.DataPropertyName = "paidType"
-        Me.PaidTypeDataGridViewTextBoxColumn.HeaderText = "วิธีรับเงินเดือน"
-        Me.PaidTypeDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PaidTypeDataGridViewTextBoxColumn.Name = "PaidTypeDataGridViewTextBoxColumn"
-        Me.PaidTypeDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PaidTypeDataGridViewTextBoxColumn.Width = 125
-        '
-        'StaffsBindingSource
-        '
-        Me.StaffsBindingSource.DataMember = "Staffs"
-        Me.StaffsBindingSource.DataSource = Me.WellmeadowsDataSet
-        '
-        'WellmeadowsDataSet
-        '
-        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
-        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.searchlb.Text = "ค้นหาเจ้าหน้าที่ด้วยชื่อองค์กร"
         '
         'SearchStaff
         '
@@ -288,7 +159,6 @@ Partial Class StaffForm
         '
         Me.cbbEduLevel.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbbEduLevel.FormattingEnabled = True
-        Me.cbbEduLevel.Items.AddRange(New Object() {"ปริญญาตรี", "ปริญญาโท", "ปริญญาเอก"})
         Me.cbbEduLevel.Location = New System.Drawing.Point(414, 112)
         Me.cbbEduLevel.Name = "cbbEduLevel"
         Me.cbbEduLevel.Size = New System.Drawing.Size(176, 34)
@@ -308,21 +178,80 @@ Partial Class StaffForm
         '
         Me.cbbEduOrExp.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbbEduOrExp.FormattingEnabled = True
-        Me.cbbEduOrExp.Items.AddRange(New Object() {"เจ้าหน้าที่", "ประวัติการศึกษา", "ประวัติการทำงาน"})
+        Me.cbbEduOrExp.Items.AddRange(New Object() {"เจ้าหน้าที่", "ประวัติการทำงาน", "ประวัติการศึกษา"})
         Me.cbbEduOrExp.Location = New System.Drawing.Point(198, 112)
         Me.cbbEduOrExp.Name = "cbbEduOrExp"
         Me.cbbEduOrExp.Size = New System.Drawing.Size(183, 34)
         Me.cbbEduOrExp.TabIndex = 16
         '
+        'StaffsBindingSource
+        '
+        Me.StaffsBindingSource.DataMember = "Staffs"
+        Me.StaffsBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'WellmeadowsDataSet
+        '
+        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
+        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'StaffsTableAdapter
         '
         Me.StaffsTableAdapter.ClearBeforeFill = True
+        '
+        'Staff_ExperiencesBindingSource
+        '
+        Me.Staff_ExperiencesBindingSource.DataMember = "Staff_Experiences"
+        Me.Staff_ExperiencesBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'Staff_ExperiencesTableAdapter
+        '
+        Me.Staff_ExperiencesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BedsTableAdapter = Nothing
+        Me.TableAdapterManager.ChargeNursesTableAdapter = Nothing
+        Me.TableAdapterManager.DoctorsTableAdapter = Nothing
+        Me.TableAdapterManager.In_PatientsTableAdapter = Nothing
+        Me.TableAdapterManager.LocalDoctorsTableAdapter = Nothing
+        Me.TableAdapterManager.Login_logsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_EquipmentsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_MedicinesTableAdapter = Nothing
+        Me.TableAdapterManager.MedicalDirectorsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_kinsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_VisitsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_WardsTableAdapter = Nothing
+        Me.TableAdapterManager.PatientsTableAdapter = Nothing
+        Me.TableAdapterManager.PW_PrescriptsTableAdapter = Nothing
+        Me.TableAdapterManager.ShiftsTableAdapter = Nothing
+        Me.TableAdapterManager.Staff_ExperiencesTableAdapter = Me.Staff_ExperiencesTableAdapter
+        Me.TableAdapterManager.Staff_QualificatesTableAdapter = Me.Staff_QualificatesTableAdapter
+        Me.TableAdapterManager.StaffsTableAdapter = Me.StaffsTableAdapter
+        Me.TableAdapterManager.SuppilersTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.Ward_RequestsTableAdapter = Nothing
+        Me.TableAdapterManager.Ward_StaffsTableAdapter = Nothing
+        Me.TableAdapterManager.WardsTableAdapter = Nothing
+        '
+        'Staff_QualificatesTableAdapter
+        '
+        Me.Staff_QualificatesTableAdapter.ClearBeforeFill = True
+        '
+        'Staff_QualificatesBindingSource
+        '
+        Me.Staff_QualificatesBindingSource.DataMember = "Staff_Qualificates"
+        Me.Staff_QualificatesBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 300
         '
         'StaffForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1041, 749)
+        Me.ClientSize = New System.Drawing.Size(1041, 811)
         Me.Controls.Add(Me.StaffPanel)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -331,9 +260,11 @@ Partial Class StaffForm
         Me.Text = "StaffForm"
         Me.StaffPanel.ResumeLayout(False)
         Me.StaffPanel.PerformLayout()
-        CType(Me.StaffTable, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridV1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaffsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Staff_ExperiencesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Staff_QualificatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -343,7 +274,6 @@ Partial Class StaffForm
     Friend WithEvents btnEdit As Button
     Friend WithEvents btnAdd As Button
     Friend WithEvents searchlb As Label
-    Friend WithEvents StaffTable As DataGridView
     Friend WithEvents SearchStaff As TextBox
     Friend WithEvents cbbEduLevel As ComboBox
     Friend WithEvents Stafflabel As Label
@@ -353,16 +283,11 @@ Partial Class StaffForm
     Friend WithEvents WellmeadowsDataSet As WellmeadowsDataSet
     Friend WithEvents StaffsBindingSource As BindingSource
     Friend WithEvents StaffsTableAdapter As WellmeadowsDataSetTableAdapters.StaffsTableAdapter
-    Friend WithEvents StaffIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents FirstNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents LastNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents AddressDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents TelDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DobDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NinDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PositionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SalaryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents HoursWeekDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ContactTypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PaidTypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Staff_ExperiencesBindingSource As BindingSource
+    Friend WithEvents Staff_ExperiencesTableAdapter As WellmeadowsDataSetTableAdapters.Staff_ExperiencesTableAdapter
+    Friend WithEvents TableAdapterManager As WellmeadowsDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents Staff_QualificatesTableAdapter As WellmeadowsDataSetTableAdapters.Staff_QualificatesTableAdapter
+    Friend WithEvents Staff_QualificatesBindingSource As BindingSource
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents DataGridV1 As DataGridView
 End Class

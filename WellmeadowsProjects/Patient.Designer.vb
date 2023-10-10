@@ -75,7 +75,7 @@ Partial Class Patient
         '
         Me.txtSearch.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSearch.Location = New System.Drawing.Point(637, 136)
-        Me.txtSearch.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(5)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(505, 38)
         Me.txtSearch.TabIndex = 12
@@ -96,7 +96,7 @@ Partial Class Patient
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
         Me.btnAdd.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.Location = New System.Drawing.Point(1175, 130)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(100, 46)
         Me.btnAdd.TabIndex = 15
@@ -114,7 +114,7 @@ Partial Class Patient
         Me.ViewPa.DataSource = Me.PatientsBindingSource1
         Me.ViewPa.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.ViewPa.Location = New System.Drawing.Point(218, 187)
-        Me.ViewPa.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.ViewPa.Margin = New System.Windows.Forms.Padding(5)
         Me.ViewPa.Name = "ViewPa"
         Me.ViewPa.ReadOnly = True
         Me.ViewPa.RowHeadersWidth = 51
@@ -238,7 +238,7 @@ Partial Class Patient
         Me.btnReport.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReport.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnReport.Location = New System.Drawing.Point(761, 703)
-        Me.btnReport.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnReport.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReport.Name = "btnReport"
         Me.btnReport.Size = New System.Drawing.Size(160, 46)
         Me.btnReport.TabIndex = 18
@@ -251,7 +251,7 @@ Partial Class Patient
         Me.btnUpdate.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnUpdate.Location = New System.Drawing.Point(941, 703)
-        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(160, 46)
         Me.btnUpdate.TabIndex = 19
@@ -264,7 +264,7 @@ Partial Class Patient
         Me.btnDelete.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnDelete.Location = New System.Drawing.Point(1115, 703)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(160, 46)
         Me.btnDelete.TabIndex = 20
@@ -277,7 +277,7 @@ Partial Class Patient
         Me.btnVisit.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnVisit.ForeColor = System.Drawing.SystemColors.Control
         Me.btnVisit.Location = New System.Drawing.Point(1051, 46)
-        Me.btnVisit.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.btnVisit.Margin = New System.Windows.Forms.Padding(5)
         Me.btnVisit.Name = "btnVisit"
         Me.btnVisit.Size = New System.Drawing.Size(224, 46)
         Me.btnVisit.TabIndex = 21
@@ -300,12 +300,15 @@ Partial Class Patient
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.BedsTableAdapter = Nothing
+        Me.TableAdapterManager.ChargeNursesTableAdapter = Nothing
         Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.DoctorsTableAdapter = Nothing
         Me.TableAdapterManager.In_PatientsTableAdapter = Nothing
         Me.TableAdapterManager.LocalDoctorsTableAdapter = Nothing
         Me.TableAdapterManager.Login_logsTableAdapter = Nothing
         Me.TableAdapterManager.Med_EquipmentsTableAdapter = Nothing
         Me.TableAdapterManager.Med_MedicinesTableAdapter = Nothing
+        Me.TableAdapterManager.MedicalDirectorsTableAdapter = Nothing
         Me.TableAdapterManager.Patient_kinsTableAdapter = Nothing
         Me.TableAdapterManager.Patient_VisitsTableAdapter = Nothing
         Me.TableAdapterManager.Patient_WardsTableAdapter = Nothing
@@ -351,7 +354,7 @@ Partial Class Patient
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Patient"
         Me.Text = "Patient"
         CType(Me.ViewPa, System.ComponentModel.ISupportInitialize).EndInit()

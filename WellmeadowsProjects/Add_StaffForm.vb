@@ -78,7 +78,8 @@ Public Class Add_StaffForm
             hoursWeek,
             contactType,
             paidType,
-            dob
+            dob,
+            Staff_gender.Text
         )
 
         ' code get latest staff_id here

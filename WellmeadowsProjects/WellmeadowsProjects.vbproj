@@ -211,6 +211,18 @@
     <Compile Include="Edit_StaffInWardForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Edit_Staff_Experiences.Designer.vb">
+      <DependentUpon>Edit_Staff_Experiences.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Staff_Experiences.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Staff_Qualificates.Designer.vb">
+      <DependentUpon>Edit_Staff_Qualificates.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Staff_Qualificates.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Edit_Supplies.Designer.vb">
       <DependentUpon>Edit_Supplies.vb</DependentUpon>
     </Compile>
@@ -417,6 +429,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_Staff.resx">
       <DependentUpon>Edit_Staff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Staff_Experiences.resx">
+      <DependentUpon>Edit_Staff_Experiences.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Staff_Qualificates.resx">
+      <DependentUpon>Edit_Staff_Qualificates.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_Supplies.resx">
       <DependentUpon>Edit_Supplies.vb</DependentUpon>

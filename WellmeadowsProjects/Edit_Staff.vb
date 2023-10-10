@@ -1,5 +1,6 @@
 ﻿Public Class Edit_Staff
-    Public StaffObject
+    Public staffID As String
+    Public backupPosition As String
     Private Sub Edit_Staff_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Experiences' table. You can move, or remove it, as needed.
         Me.Staff_ExperiencesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Experiences)
@@ -7,6 +8,9 @@
         Me.StaffsTableAdapter.Fill(Me.WellmeadowsDataSet.Staffs)
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Qualificates' table. You can move, or remove it, as needed.
         Me.Staff_QualificatesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Qualificates)
+
+        Console.WriteLine("Current Staff ID: " & staffID)
+        backupPosition = Staff_position.Text
     End Sub
 
     Private Sub ResetForm()
@@ -25,17 +29,6 @@
         Staff_paidType.SelectedIndex = -1
         Staff_hoursWeek.Text = ""
         Staff_contactType.SelectedIndex = -1
-
-        study_cer.Text = ""
-        study_endDate.Value = DateTime.Now
-        study_major.Text = ""
-        study_table.Rows.Clear()
-
-        old_company.Text = ""
-        old_endDate.Value = DateTime.Now
-        old_startDate.Value = DateTime.Now
-        old_position.Text = ""
-        old_table.Rows.Clear()
 
     End Sub
 
@@ -56,105 +49,79 @@
         Dim contactType = Staff_contactType.Text
 
         Dim position = Staff_position.Text
-        Dim realPostion = Split(position, ".")
 
-        realPostion(1) = realPostion(1).Trim()
-        realPostion(0) = realPostion(0).Trim()
-
-        Console.WriteLine(realPostion(1))
-        Console.WriteLine("postion index: " & Staff_position.SelectedIndex)
-
-        'Insert Staff Data
-        StaffsTableAdapter.InsertStaff(
-            firstName,
-            lastName,
-            address,
-            tel,
-            nin,
-            realPostion(0),
-            Double.Parse(salary),
-            Double.Parse(salaryScale),
-            hoursWeek,
-            contactType,
-            paidType,
-            dob
-        )
-
-        ' code get latest staff_id here
-        Dim staffID = StaffsTableAdapter.getLatestStaffID()
-
-        ' insert data to table doctors, md, CN
-        If Staff_position.SelectedIndex = 0 Then
-            ChargeNursesTableAdapter1.InsertCN(staffID)
-
-        ElseIf Staff_position.SelectedIndex = 1 Then
-            MedicalDirectorsTableAdapter1.InsertMD(staffID)
-
-        ElseIf Staff_position.SelectedIndex = 2 Then
-            DoctorsTableAdapter1.InsertDoctor(staffID)
+        Dim realPostion As String()
+        ' check if position contains "."
+        If position.Contains(".") Then
+            realPostion = Split(position, ".")
+            realPostion(1) = realPostion(1).Trim()
+            realPostion(0) = realPostion(0).Trim()
+            position = realPostion(0)
         End If
 
-        ' Staff Qualification insert
+        Console.WriteLine(position)
+        Console.WriteLine("postion index: " & Staff_position.SelectedIndex)
 
-        For Each row As DataGridViewRow In study_table.Rows
+        'Update Staff Data
+        Try
 
-            If Not row.IsNewRow Then
-                Dim rowData As New List(Of String)
-                rowData.Add(staffID)
-                For Each cell As DataGridViewCell In row.Cells
-                    Dim cellData = cell.Value
-                    rowData.Add(cellData)
+            ' check if position is changed
+            ' if changed delete data from table doctors, md, CN
+            'If Staff_position.SelectedText <> backupPosition Then
+            '    If Staff_position.SelectedIndex = 0 Then
+            '        Console.WriteLine("Delete CN")
+            '        ChargeNursesTableAdapter1.DeleteCN(staffID)
+            '    End If
+            '    If Staff_position.SelectedIndex = 1 Then
+            '        Console.WriteLine("Delete MD")
+            '        MedicalDirectorsTableAdapter1.DeleteMD(staffID)
+            '    End If
+            '    If Staff_position.SelectedIndex = 2 Then
+            '        Console.WriteLine("Delete Doctors")
+            '        DoctorsTableAdapter1.DeleteDoctor(staffID)
+            '    End If
+            'End If
 
-                Next
-                Dim dates = CDate(rowData(3))
-
-                Console.WriteLine("qual data: " & rowData(0))
-                Console.WriteLine("qual data: " & rowData(1))
-                Console.WriteLine("qual data: " & rowData(2))
-                Console.WriteLine(dates.GetType())
-
-                Staff_QualificatesTableAdapter.InsertQualification(
-                    rowData(0),
-                    rowData(1),
-                    rowData(2),
-                    dates
-                )
-
+            ' insert data to table doctors, md, CN
+            If Staff_position.SelectedIndex = 0 Then
+                ' check it charge nurse table has staff id
+                Dim cn = StaffForm.sqlQueryDataTable($"SELECT * FROM ChargeNurses WHERE staffID =  {staffID}")
+                ChargeNursesTableAdapter1.InsertCN(staffID)
             End If
-        Next
 
-        ' Staff Experiences insert
-
-        For Each row As DataGridViewRow In old_table.Rows
-            If Not row.IsNewRow Then
-                Dim rowdata As New List(Of String)
-                rowdata.Add(staffID)
-
-                For Each cell As DataGridViewCell In row.Cells
-                    Dim celldata As String = cell.Value.ToString()
-                    rowdata.Add(celldata)
-                Next
-
-                Dim startDates = CDate(rowdata(3))
-                Dim endDates = CDate(rowdata(4))
-
-                Console.WriteLine("exp data: " & rowdata(0))
-                Console.WriteLine("exp data: " & rowdata(1))
-                Console.WriteLine("exp data: " & rowdata(2))
-                Console.WriteLine(startDates.GetType())
-                Console.WriteLine(endDates.GetType())
-
-                Staff_ExperiencesTableAdapter.insertExp(
-                    rowdata(1),
-                    rowdata(2),
-                    startDates,
-                    endDates,
-                    rowdata(0)
-                )
-
+            If Staff_position.SelectedIndex = 1 Then
+                ' check it staff id is in medical director table
+                Dim md = StaffForm.sqlQueryDataTable($"SELECT * FROM MedicalDirectors WHERE staffID = {staffID}")
+                MedicalDirectorsTableAdapter1.InsertMD(staffID)
             End If
-        Next
 
+            If Staff_position.SelectedIndex = 2 Then
+                ' check it staff id is in doctors table
+                Dim doctor = StaffForm.sqlQueryDataTable("SELECT * FROM Doctors WHERE staffID = " & staffID)
+                DoctorsTableAdapter1.InsertDoctor(staffID)
+            End If
+
+            StaffsTableAdapter.UpdateStaff(
+                firstName,
+                lastName,
+                address,
+                tel,
+                dob,
+                nin,
+                position,
+                Double.Parse(salary),
+                Double.Parse(salaryScale),
+                hoursWeek,
+                contactType,
+                paidType,
+                Staff_gender.Text,
+                staffID
+            )
+
+        Catch ex As Exception
+            MessageBox.Show("แก้ไขข้อมูลผิดพลาด กรุณาเช็คข้อมูลของท่าน" & ex.Message, "แก้ไขข้อมูลผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Console.WriteLine("Error to update staff data: " & ex.Message)
+        End Try
 
     End Sub
 
@@ -162,39 +129,7 @@
         ResetForm()
     End Sub
 
-    Private Sub btnAddRow_Click(sender As Object, e As EventArgs) Handles btnAddRow.Click
-        Dim name = study_cer.Text
-        Dim major = study_major.Text
-        Dim congratDate = study_endDate.Text
-        study_table.Rows.Add(name, major, congratDate)
+    Private Sub Staff_position_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Staff_position.SelectedIndexChanged
+
     End Sub
-
-    Private Sub btnAddRow2_Click_1(sender As Object, e As EventArgs) Handles btnAddRow2.Click
-        Dim name = old_company.Text
-        Dim position = old_position.Text
-        Dim startDate = old_startDate.Text
-        Dim endDate = old_endDate.Text
-        old_table.Rows.Add(name, position, startDate, endDate)
-    End Sub
-
-    Private Sub study_delete_Click(sender As Object, e As EventArgs) Handles study_delete.Click
-        Try
-            If study_table.CurrentRow IsNot Nothing Then
-                study_table.Rows.RemoveAt(study_table.CurrentRow.Index)
-            End If
-        Catch ex As Exception
-
-        End Try
-    End Sub
-
-    Private Sub old_delete_Click(sender As Object, e As EventArgs) Handles old_delete.Click
-        Try
-            If old_table.CurrentRow IsNot Nothing Then
-                old_table.Rows.RemoveAt(old_table.CurrentRow.Index)
-            End If
-        Catch ex As Exception
-            'MessageBox.Show("ไม่")
-        End Try
-    End Sub
-
 End Class
