@@ -85,9 +85,9 @@ Partial Class Patient_Presscipt
         Me.lableSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lableSearch.Location = New System.Drawing.Point(622, 63)
         Me.lableSearch.Name = "lableSearch"
-        Me.lableSearch.Size = New System.Drawing.Size(116, 16)
+        Me.lableSearch.Size = New System.Drawing.Size(73, 16)
         Me.lableSearch.TabIndex = 23
-        Me.lableSearch.Text = "ค้นหาหมายเลขใบจ่ายยา"
+        Me.lableSearch.Text = "ค้นหาชื่อผู้ป่วย"
         '
         'Label1
         '
