@@ -38,6 +38,7 @@ Partial Class Patient_Presscipt
         Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
         Me.Med_MedicinesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Med_MedicinesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Med_MedicinesTableAdapter()
+        Me.btnAdd = New System.Windows.Forms.Button()
         CType(Me.ViewPress, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PWPrescriptsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,9 +117,9 @@ Partial Class Patient_Presscipt
         '
         Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSearch.Location = New System.Drawing.Point(626, 91)
-        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(305, 26)
+        Me.txtSearch.Size = New System.Drawing.Size(219, 26)
         Me.txtSearch.TabIndex = 30
         '
         'PWPrescriptsBindingSource
@@ -180,11 +181,23 @@ Partial Class Patient_Presscipt
         '
         Me.Med_MedicinesTableAdapter.ClearBeforeFill = True
         '
+        'btnAdd
+        '
+        Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
+        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Location = New System.Drawing.Point(856, 80)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(75, 37)
+        Me.btnAdd.TabIndex = 31
+        Me.btnAdd.Text = "เพิ่ม"
+        Me.btnAdd.UseVisualStyleBackColor = False
+        '
         'Patient_Presscipt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1004, 611)
+        Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnUpdate)
@@ -219,4 +232,5 @@ Partial Class Patient_Presscipt
     Friend WithEvents Med_MedicinesBindingSource As BindingSource
     Friend WithEvents Med_MedicinesTableAdapter As WellmeadowsDataSetTableAdapters.Med_MedicinesTableAdapter
     Friend WithEvents txtSearch As TextBox
+    Friend WithEvents btnAdd As Button
 End Class

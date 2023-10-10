@@ -4,9 +4,7 @@ Imports WellmeadowsProjects.WellmeadowsDataSetTableAdapters
 Public Class Patient_Presscipt
     Public psData As New Dictionary(Of String, String)
     Public sqlConn As String = "Data Source=BOB1EE\SQLEXPRESS;Initial Catalog=Wellmeadows;Integrated Security=True"
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs)
-        Add_Presscipt.Show()
-    End Sub
+
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
 
@@ -321,7 +319,7 @@ Public Class Patient_Presscipt
         ViewPress.DataSource = dataTable
     End Sub
 
-
-
-
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        Add_Presscipt.Show()
+    End Sub
 End Class

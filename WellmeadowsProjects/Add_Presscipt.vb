@@ -104,7 +104,7 @@ Public Class Add_Presscipt
         Me.PW_PrescriptsTableAdapter.InsertPresscript(medicineID, pwID, doctorID, cnID, Mdosage, MstartDate, MendDate, Mdesc)
 
         Me.PW_PrescriptsTableAdapter.Fill(Me.WellmeadowsDataSet.PW_Prescripts)
-        MessageBox.Show("ข้อมูลได้ถูกแก้ไขแล้ว", "แก้ไขข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("ข้อมูลได้ถูกเพิ่มแล้ว", "บันทึกข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Me.Close()
 
     End Sub
