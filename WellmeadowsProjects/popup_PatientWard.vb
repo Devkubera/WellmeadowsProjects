@@ -3,7 +3,7 @@
 Public Class popup_PatientWard
     Public pwData As New Dictionary(Of String, String)
     Private Sub popup_PatientWard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Using connection As New SqlConnection("Data Source=BOB1EE\PROJECTSQL;Initial Catalog=Wellmeadows;Integrated Security=True") ' แทนที่ Your_Connection_String ด้วยข้อมูลการเชื่อมต่อฐานข้อมูลของคุณ
+        Using connection As New SqlConnection("Data Source=BOB1EE\SQLEXPRESS;Initial Catalog=Wellmeadows;Integrated Security=True") ' แทนที่ Your_Connection_String ด้วยข้อมูลการเชื่อมต่อฐานข้อมูลของคุณ
             connection.Open()
 
             ' คำสั่ง SQL สำหรับรวมข้อมูลจากตาราง Doctors และ Staffs
@@ -52,6 +52,13 @@ Public Class popup_PatientWard
             Add_Presscipt.pt_id.Text = pwData("patientID")
             Add_Presscipt.pt_firstName.Text = pwData("firstname")
             Add_Presscipt.pt_lastName.Text = pwData("lastname")
+
+
+            Edit_Presscript.pwID = pwData("pwID")
+            Edit_Presscript.cnID = pwData("cnID")
+            Edit_Presscript.pt_id.Text = pwData("patientID")
+            Edit_Presscript.pt_firstName.Text = pwData("firstname")
+            Edit_Presscript.pt_lastName.Text = pwData("lastname")
 
             Add_Presscipt.SetDisabledPW()
             Me.Close()

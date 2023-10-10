@@ -6,17 +6,17 @@
     Public ID As String = ""
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        'Console.WriteLine("ID : " & ID)
-        'Console.WriteLine("medicineID : " & medicineID)
-        'Console.WriteLine("pwID : " & pwID)
-        'Console.WriteLine("doctorID : " & doctorID)
-        'Console.WriteLine("cnID : " & cnID)
-        'Console.WriteLine("m_dosage.Text : " & m_dosage.Text)
-        'Console.WriteLine("m_startDate.Value : " & m_startDate.Value)
-        'Console.WriteLine("m_endDate.Value : " & m_endDate.Value)
-        'Console.WriteLine("m_desc.Text : " & m_desc.Text)
-        'Dim m_dosageAsString As String = m_dosage.ToString()
-        PW_PrescriptsTableAdapter.UpdatePresscript(medicineID, pwID, doctorID, cnID, m_dosage.Text, m_startDate.Value, m_endDate.Value, m_desc.Text, ID)
+        Console.WriteLine("ID : " & ID)
+        Console.WriteLine("medicineID : " & medicineID)
+        Console.WriteLine("pwID : " & pwID)
+        Console.WriteLine("doctorID : " & doctorID)
+        Console.WriteLine("cnID : " & cnID)
+        Console.WriteLine("m_dosage.Text : " & m_dosage.Text)
+        Console.WriteLine("m_startDate.Value : " & m_startDate.Value)
+        Console.WriteLine("m_endDate.Value : " & m_endDate.Value)
+        Console.WriteLine("m_desc.Text : " & m_desc.Text)
+
+        PW_PrescriptsTableAdapter.UpdatePresscript(m_id.Text, pwID, doctorID, cnID, m_dosage.Text, m_startDate.Value, m_endDate.Value, m_desc.Text, ID)
         MessageBox.Show("ข้อมูลได้ถูกแก้ไขแล้ว", "แก้ไขข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Me.Close()
     End Sub
@@ -25,8 +25,8 @@
         Dim backuppwID = pwID
         popup_PatientWard.ShowDialog()
 
-        If popup_PatientWard.pwData("id") IsNot Nothing Then
-            pwID = popup_PatientWard.pwData("id")
+        If popup_PatientWard.pwData("pwID") IsNot Nothing Then
+            pwID = popup_PatientWard.pwData("pwID")
         Else
             pwID = backuppwID
         End If

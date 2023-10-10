@@ -20,12 +20,17 @@ Public Class Medicine
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        If ViewMedi.CurrentRow IsNot Nothing Then
-            Dim ID = ViewMedi.SelectedRows(0).Cells(0).Value.ToString
-            Console.WriteLine(ID)
-            ViewMedi.Rows.RemoveAt(ViewMedi.CurrentRow.Index)
-            Med_MedicinesTableAdapter.DeleteBymmID(ID)
-        End If
+        Try
+            If ViewMedi.CurrentRow IsNot Nothing Then
+                Dim ID = ViewMedi.SelectedRows(0).Cells(0).Value.ToString
+                Console.WriteLine(ID)
+                Med_MedicinesTableAdapter.DeleteBymmID(ID)
+                ViewMedi.Rows.RemoveAt(ViewMedi.CurrentRow.Index)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("กรุณาลบข้อมูลภายในตารางอื่นๆก่อน ถึงจะสามารถลบข้อมูลนี้ได้", "เกิดข้อผิดพลาดในการลบข้อมูล", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click

@@ -78,9 +78,9 @@ Public Class Add_Presscipt
                 Dim Mid = m_id.Text
                 Dim Mname = m_name.Text
                 Dim Mmethod = m_method.Text
-            Console.WriteLine(Mid & " Mid")
-            Console.WriteLine(Mname & " Mname")
-            Console.WriteLine(Mmethod & " Mmethod")
+            'Console.WriteLine(Mid & " Mid")
+            'Console.WriteLine(Mname & " Mname")
+            'Console.WriteLine(Mmethod & " Mmethod")
             Med_MedicinesTableAdapter.SelectMedicinePresscript()
             'medicineID = Med_MedicinesTableAdapter.getLastmmID()
         End If
@@ -92,8 +92,8 @@ Public Class Add_Presscipt
 
         Dim MstartDate = m_startDate.Text
         Dim MendDate = m_endDate.Text
-            Dim Mdosage = m_dosage.Text
-            Dim Mdesc = m_desc.Text
+        Dim Mdosage = m_dosage.Text
+        Dim Mdesc = m_desc.Text
 
 
         'Console.WriteLine(MstartDate & " MstartDate")
@@ -104,6 +104,7 @@ Public Class Add_Presscipt
         Me.PW_PrescriptsTableAdapter.InsertPresscript(medicineID, pwID, doctorID, cnID, Mdosage, MstartDate, MendDate, Mdesc)
 
         Me.PW_PrescriptsTableAdapter.Fill(Me.WellmeadowsDataSet.PW_Prescripts)
+        MessageBox.Show("ข้อมูลได้ถูกแก้ไขแล้ว", "แก้ไขข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Me.Close()
 
     End Sub

@@ -22,6 +22,12 @@
             Add_Presscipt.m_name.Text = MedicinePressData("name")
             Add_Presscipt.m_method.Text = MedicinePressData("method")
 
+
+            Edit_Presscript.medicineID = MedicinePressData("id")
+            Edit_Presscript.m_id.Text = MedicinePressData("id")
+            Edit_Presscript.m_name.Text = MedicinePressData("name")
+            Edit_Presscript.m_method.Text = MedicinePressData("method")
+
             Add_Presscipt.SetDisabledMedicine()
             Me.Close()
         End If
