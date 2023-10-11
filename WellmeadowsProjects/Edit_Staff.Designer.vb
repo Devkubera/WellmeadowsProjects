@@ -23,25 +23,15 @@ Partial Class Edit_Staff
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.Staff_gender = New System.Windows.Forms.ComboBox()
         Me.Staff_position = New System.Windows.Forms.ComboBox()
-        Me.StaffQualificatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.MedicalDirectorsTableAdapter1 = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.MedicalDirectorsTableAdapter()
-        Me.Staff_QualificatesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Staff_QualificatesTableAdapter()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.statuslb2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.StaffsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DoctorsTableAdapter1 = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.DoctorsTableAdapter()
-        Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
-        Me.Staff_ExperiencesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Staff_ExperiencesTableAdapter()
-        Me.StaffsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.StaffsTableAdapter()
         Me.addresslb = New System.Windows.Forms.Label()
-        Me.Staff_ExperiencesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Staff_address = New System.Windows.Forms.RichTextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Staff_contactType = New System.Windows.Forms.ComboBox()
@@ -69,18 +59,23 @@ Partial Class Edit_Staff
         Me.fnamelb = New System.Windows.Forms.Label()
         Me.Staff_firstName = New System.Windows.Forms.TextBox()
         Me.subheaderlb1 = New System.Windows.Forms.Label()
+        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
+        Me.StaffQualificatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MedicalDirectorsTableAdapter1 = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.MedicalDirectorsTableAdapter()
+        Me.Staff_QualificatesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Staff_QualificatesTableAdapter()
+        Me.StaffsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DoctorsTableAdapter1 = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.DoctorsTableAdapter()
+        Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
+        Me.Staff_ExperiencesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Staff_ExperiencesTableAdapter()
+        Me.StaffsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.StaffsTableAdapter()
+        Me.Staff_ExperiencesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ChargeNursesTableAdapter1 = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.ChargeNursesTableAdapter()
+        Me.Panel1.SuspendLayout()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaffQualificatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StaffsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Staff_ExperiencesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'WellmeadowsDataSet
-        '
-        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
-        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Staff_gender
         '
@@ -103,11 +98,6 @@ Partial Class Edit_Staff
         Me.Staff_position.TabIndex = 185
         Me.Staff_position.Tag = ""
         '
-        'StaffQualificatesBindingSource
-        '
-        Me.StaffQualificatesBindingSource.DataMember = "Staff_Qualificates"
-        Me.StaffQualificatesBindingSource.DataSource = Me.WellmeadowsDataSet
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -119,14 +109,6 @@ Partial Class Edit_Staff
         Me.Label2.Size = New System.Drawing.Size(83, 30)
         Me.Label2.TabIndex = 179
         Me.Label2.Text = "ตำแหน่ง"
-        '
-        'MedicalDirectorsTableAdapter1
-        '
-        Me.MedicalDirectorsTableAdapter1.ClearBeforeFill = True
-        '
-        'Staff_QualificatesTableAdapter
-        '
-        Me.Staff_QualificatesTableAdapter.ClearBeforeFill = True
         '
         'Label1
         '
@@ -188,50 +170,6 @@ Partial Class Edit_Staff
         Me.Label4.TabIndex = 173
         Me.Label4.Text = "วันทำงานวันแรก"
         '
-        'StaffsBindingSource
-        '
-        Me.StaffsBindingSource.DataMember = "Staffs"
-        Me.StaffsBindingSource.DataSource = Me.WellmeadowsDataSet
-        '
-        'DoctorsTableAdapter1
-        '
-        Me.DoctorsTableAdapter1.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BedsTableAdapter = Nothing
-        Me.TableAdapterManager.ChargeNursesTableAdapter = Nothing
-        Me.TableAdapterManager.DoctorsTableAdapter = Nothing
-        Me.TableAdapterManager.In_PatientsTableAdapter = Nothing
-        Me.TableAdapterManager.LocalDoctorsTableAdapter = Nothing
-        Me.TableAdapterManager.Login_logsTableAdapter = Nothing
-        Me.TableAdapterManager.Med_EquipmentsTableAdapter = Nothing
-        Me.TableAdapterManager.Med_MedicinesTableAdapter = Nothing
-        Me.TableAdapterManager.MedicalDirectorsTableAdapter = Nothing
-        Me.TableAdapterManager.Patient_kinsTableAdapter = Nothing
-        Me.TableAdapterManager.Patient_VisitsTableAdapter = Nothing
-        Me.TableAdapterManager.Patient_WardsTableAdapter = Nothing
-        Me.TableAdapterManager.PatientsTableAdapter = Nothing
-        Me.TableAdapterManager.PW_PrescriptsTableAdapter = Nothing
-        Me.TableAdapterManager.ShiftsTableAdapter = Nothing
-        Me.TableAdapterManager.Staff_ExperiencesTableAdapter = Me.Staff_ExperiencesTableAdapter
-        Me.TableAdapterManager.Staff_QualificatesTableAdapter = Me.Staff_QualificatesTableAdapter
-        Me.TableAdapterManager.StaffsTableAdapter = Me.StaffsTableAdapter
-        Me.TableAdapterManager.SuppilersTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.Ward_RequestsTableAdapter = Nothing
-        Me.TableAdapterManager.Ward_StaffsTableAdapter = Nothing
-        Me.TableAdapterManager.WardsTableAdapter = Nothing
-        '
-        'Staff_ExperiencesTableAdapter
-        '
-        Me.Staff_ExperiencesTableAdapter.ClearBeforeFill = True
-        '
-        'StaffsTableAdapter
-        '
-        Me.StaffsTableAdapter.ClearBeforeFill = True
-        '
         'addresslb
         '
         Me.addresslb.AutoSize = True
@@ -242,11 +180,6 @@ Partial Class Edit_Staff
         Me.addresslb.Size = New System.Drawing.Size(51, 30)
         Me.addresslb.TabIndex = 158
         Me.addresslb.Text = "ที่อยู่"
-        '
-        'Staff_ExperiencesBindingSource
-        '
-        Me.Staff_ExperiencesBindingSource.DataMember = "Staff_Experiences"
-        Me.Staff_ExperiencesBindingSource.DataSource = Me.WellmeadowsDataSet
         '
         'Staff_address
         '
@@ -564,6 +497,73 @@ Partial Class Edit_Staff
         Me.subheaderlb1.TabIndex = 130
         Me.subheaderlb1.Text = "ประวัติส่วนตัว"
         '
+        'WellmeadowsDataSet
+        '
+        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
+        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'StaffQualificatesBindingSource
+        '
+        Me.StaffQualificatesBindingSource.DataMember = "Staff_Qualificates"
+        Me.StaffQualificatesBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'MedicalDirectorsTableAdapter1
+        '
+        Me.MedicalDirectorsTableAdapter1.ClearBeforeFill = True
+        '
+        'Staff_QualificatesTableAdapter
+        '
+        Me.Staff_QualificatesTableAdapter.ClearBeforeFill = True
+        '
+        'StaffsBindingSource
+        '
+        Me.StaffsBindingSource.DataMember = "Staffs"
+        Me.StaffsBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'DoctorsTableAdapter1
+        '
+        Me.DoctorsTableAdapter1.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BedsTableAdapter = Nothing
+        Me.TableAdapterManager.ChargeNursesTableAdapter = Nothing
+        Me.TableAdapterManager.DoctorsTableAdapter = Nothing
+        Me.TableAdapterManager.In_PatientsTableAdapter = Nothing
+        Me.TableAdapterManager.LocalDoctorsTableAdapter = Nothing
+        Me.TableAdapterManager.Login_logsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_EquipmentsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_MedicinesTableAdapter = Nothing
+        Me.TableAdapterManager.MedicalDirectorsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_kinsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_VisitsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_WardsTableAdapter = Nothing
+        Me.TableAdapterManager.PatientsTableAdapter = Nothing
+        Me.TableAdapterManager.PW_PrescriptsTableAdapter = Nothing
+        Me.TableAdapterManager.ShiftsTableAdapter = Nothing
+        Me.TableAdapterManager.Staff_ExperiencesTableAdapter = Me.Staff_ExperiencesTableAdapter
+        Me.TableAdapterManager.Staff_QualificatesTableAdapter = Me.Staff_QualificatesTableAdapter
+        Me.TableAdapterManager.StaffsTableAdapter = Me.StaffsTableAdapter
+        Me.TableAdapterManager.SuppilersTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.Ward_RequestsTableAdapter = Nothing
+        Me.TableAdapterManager.Ward_StaffsTableAdapter = Nothing
+        Me.TableAdapterManager.WardsTableAdapter = Nothing
+        '
+        'Staff_ExperiencesTableAdapter
+        '
+        Me.Staff_ExperiencesTableAdapter.ClearBeforeFill = True
+        '
+        'StaffsTableAdapter
+        '
+        Me.StaffsTableAdapter.ClearBeforeFill = True
+        '
+        'Staff_ExperiencesBindingSource
+        '
+        Me.Staff_ExperiencesBindingSource.DataMember = "Staff_Experiences"
+        Me.Staff_ExperiencesBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
         'ChargeNursesTableAdapter1
         '
         Me.ChargeNursesTableAdapter1.ClearBeforeFill = True
@@ -576,12 +576,12 @@ Partial Class Edit_Staff
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Edit_Staff"
         Me.Text = "Edit_Staff"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaffQualificatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaffsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Staff_ExperiencesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

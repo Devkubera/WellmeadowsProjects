@@ -1,6 +1,6 @@
 ﻿Public Class Edit_Staff
     Public staffID As String
-    Public backupPosition As String
+    Public staffPosition As String
     Private Sub Edit_Staff_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Experiences' table. You can move, or remove it, as needed.
         Me.Staff_ExperiencesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Experiences)
@@ -10,7 +10,26 @@
         Me.Staff_QualificatesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Qualificates)
 
         Console.WriteLine("Current Staff ID: " & staffID)
-        backupPosition = Staff_position.Text
+
+        ' try to check position of staff and fill data to staff_position combobox with selected index
+        Dim index As Integer = -1
+
+        For i As Integer = 0 To Staff_position.Items.Count - 1
+            Dim itemText As String = Staff_position.Items(i).ToString()
+            If itemText.Contains(staffPosition) Then
+                index = i ' Set the index when a match is found
+                Exit For ' Exit the loop once a match is found
+            End If
+        Next
+
+        If index <> -1 Then
+            Staff_position.SelectedIndex = index ' Set the ComboBox selected index
+            ' Call the SelectedIndexChanged event if needed
+            Staff_position_SelectedIndexChanged(sender, e)
+        Else
+            Console.WriteLine("Staff position not found.")
+        End If
+
     End Sub
 
     Private Sub ResetForm()
@@ -26,9 +45,9 @@
         Staff_position.Text = ""
         Staff_salary.Text = ""
         Staff_salaryScale.Text = ""
-        Staff_paidType.SelectedIndex = -1
+        Staff_paidType.SelectedIndex = 0
         Staff_hoursWeek.Text = ""
-        Staff_contactType.SelectedIndex = -1
+        Staff_contactType.SelectedIndex = 0
 
     End Sub
 
@@ -65,40 +84,44 @@
         'Update Staff Data
         Try
 
-            ' check if position is changed
-            ' if changed delete data from table doctors, md, CN
-            'If Staff_position.SelectedText <> backupPosition Then
-            '    If Staff_position.SelectedIndex = 0 Then
-            '        Console.WriteLine("Delete CN")
-            '        ChargeNursesTableAdapter1.DeleteCN(staffID)
-            '    End If
-            '    If Staff_position.SelectedIndex = 1 Then
-            '        Console.WriteLine("Delete MD")
-            '        MedicalDirectorsTableAdapter1.DeleteMD(staffID)
-            '    End If
-            '    If Staff_position.SelectedIndex = 2 Then
-            '        Console.WriteLine("Delete Doctors")
-            '        DoctorsTableAdapter1.DeleteDoctor(staffID)
-            '    End If
-            'End If
-
             ' insert data to table doctors, md, CN
             If Staff_position.SelectedIndex = 0 Then
                 ' check it charge nurse table has staff id
-                Dim cn = StaffForm.sqlQueryDataTable($"SELECT * FROM ChargeNurses WHERE staffID =  {staffID}")
-                ChargeNursesTableAdapter1.InsertCN(staffID)
-            End If
+                Dim cn = StaffForm.sqlQueryDataTable($"SELECT cnID FROM ChargeNurses WHERE staffID =  {staffID}")
+                If cn Is Nothing Then
+                    ' If already have, update it
+                    ChargeNursesTableAdapter1.UpdateQuery("YES", staffID)
+                End If
 
-            If Staff_position.SelectedIndex = 1 Then
+                MedicalDirectorsTableAdapter1.UpdateMD("NO", staffID)
+                DoctorsTableAdapter1.UpdateDoctors("NO", staffID)
+
+            ElseIf Staff_position.SelectedIndex = 1 Then
                 ' check it staff id is in medical director table
-                Dim md = StaffForm.sqlQueryDataTable($"SELECT * FROM MedicalDirectors WHERE staffID = {staffID}")
-                MedicalDirectorsTableAdapter1.InsertMD(staffID)
-            End If
+                Dim md = StaffForm.sqlQueryDataTable($"SELECT mdID FROM MedicalDirectors WHERE staffID = {staffID}")
+                If md Is Nothing Then
+                    ' If is already have, active it
+                    MedicalDirectorsTableAdapter1.UpdateMD("YES", staffID)
+                End If
 
-            If Staff_position.SelectedIndex = 2 Then
+                ChargeNursesTableAdapter1.UpdateQuery("NO", staffID)
+                DoctorsTableAdapter1.UpdateDoctors("NO", staffID)
+
+            ElseIf Staff_position.SelectedIndex = 2 Then
                 ' check it staff id is in doctors table
-                Dim doctor = StaffForm.sqlQueryDataTable("SELECT * FROM Doctors WHERE staffID = " & staffID)
-                DoctorsTableAdapter1.InsertDoctor(staffID)
+                Dim doctor = StaffForm.sqlQueryDataTable("SELECT doctorID FROM Doctors WHERE staffID = " & staffID)
+                If doctor Is Nothing Then
+                    ' If is already have, active it
+                    DoctorsTableAdapter1.UpdateDoctors("YES", staffID)
+                End If
+
+                ChargeNursesTableAdapter1.UpdateQuery("NO", staffID)
+                MedicalDirectorsTableAdapter1.UpdateMD("NO", staffID)
+            Else
+                ChargeNursesTableAdapter1.UpdateQuery("NO", staffID)
+                MedicalDirectorsTableAdapter1.UpdateMD("NO", staffID)
+                DoctorsTableAdapter1.UpdateDoctors("NO", staffID)
+                Console.WriteLine("Check else case : " & Staff_position.SelectedIndex)
             End If
 
             StaffsTableAdapter.UpdateStaff(
@@ -119,7 +142,7 @@
             )
 
         Catch ex As Exception
-            MessageBox.Show("แก้ไขข้อมูลผิดพลาด กรุณาเช็คข้อมูลของท่าน" & ex.Message, "แก้ไขข้อมูลผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("แก้ไขข้อมูลผิดพลาด กรุณาเช็คข้อมูลของท่าน" & Environment.NewLine & ex.Message, "แก้ไขข้อมูลผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Console.WriteLine("Error to update staff data: " & ex.Message)
         End Try
 

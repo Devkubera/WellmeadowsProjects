@@ -152,6 +152,7 @@ Partial Class WardForm
         Me.WardTable.Margin = New System.Windows.Forms.Padding(4)
         Me.WardTable.Name = "WardTable"
         Me.WardTable.RowHeadersWidth = 51
+        Me.WardTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.WardTable.Size = New System.Drawing.Size(1087, 404)
         Me.WardTable.TabIndex = 20
         '

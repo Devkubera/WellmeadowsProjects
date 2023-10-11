@@ -58,42 +58,51 @@ Public Class StaffForm
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        Dim staffID = DataGridV1.SelectedRows(0).Cells(0).Value.ToString()
-        ' cut first name and last name
-        Dim firstName = DataGridV1.SelectedRows(0).Cells(1).Value.ToString().Split(" ")(0)
-        Dim lastName = DataGridV1.SelectedRows(0).Cells(1).Value.ToString().Split(" ")(1)
-        Dim gender = DataGridV1.SelectedRows(0).Cells(2).Value.ToString()
-        Dim address = DataGridV1.SelectedRows(0).Cells(3).Value.ToString()
-        Dim tel = DataGridV1.SelectedRows(0).Cells(4).Value.ToString()
-        Dim dob = DataGridV1.SelectedRows(0).Cells(5).Value.ToString()
-        Dim nin = DataGridV1.SelectedRows(0).Cells(6).Value.ToString()
-        Dim position = DataGridV1.SelectedRows(0).Cells(7).Value.ToString()
-        Dim salary = DataGridV1.SelectedRows(0).Cells(8).Value.ToString()
-        Dim salaryScale = DataGridV1.SelectedRows(0).Cells(9).Value.ToString()
-        Dim hoursWeek = DataGridV1.SelectedRows(0).Cells(10).Value.ToString()
-        Dim contactType = DataGridV1.SelectedRows(0).Cells(11).Value.ToString()
-        Dim paidType = DataGridV1.SelectedRows(0).Cells(12).Value.ToString()
 
-        ' Initialize Edit_Staff form
-        Edit_Staff.staffID = staffID
-        Edit_Staff.Staff_firstName.Text = firstName
-        Edit_Staff.Staff_lastName.Text = lastName
-        Edit_Staff.Staff_dob.Value = dob
-        Edit_Staff.Staff_tel.Text = tel
-        Edit_Staff.Staff_nin.Text = nin
-        Edit_Staff.Staff_address.Text = address
-        Edit_Staff.Staff_position.Text = position
-        Edit_Staff.Staff_salary.Text = salary
-        Edit_Staff.Staff_salaryScale.Text = salaryScale
-        Edit_Staff.Staff_hoursWeek.Text = hoursWeek
-        Edit_Staff.Staff_contactType.Text = contactType
-        Edit_Staff.Staff_paidType.Text = paidType
+        If cbbEduOrExp.SelectedIndex = 0 Then
+            Dim staffID = DataGridV1.SelectedRows(0).Cells(0).Value.ToString()
+            ' cut first name and last name
+            Dim firstName = DataGridV1.SelectedRows(0).Cells(1).Value.ToString().Split(" ")(0)
+            Dim lastName = DataGridV1.SelectedRows(0).Cells(1).Value.ToString().Split(" ")(1)
+            Dim gender = DataGridV1.SelectedRows(0).Cells(2).Value.ToString()
+            Dim address = DataGridV1.SelectedRows(0).Cells(3).Value.ToString()
+            Dim tel = DataGridV1.SelectedRows(0).Cells(4).Value.ToString()
+            Dim dob = DataGridV1.SelectedRows(0).Cells(5).Value.ToString()
+            Dim nin = DataGridV1.SelectedRows(0).Cells(6).Value.ToString()
+            Dim position = DataGridV1.SelectedRows(0).Cells(7).Value.ToString()
+            Dim salary = DataGridV1.SelectedRows(0).Cells(8).Value.ToString()
+            Dim salaryScale = DataGridV1.SelectedRows(0).Cells(9).Value.ToString()
+            Dim hoursWeek = DataGridV1.SelectedRows(0).Cells(10).Value.ToString()
+            Dim contactType = DataGridV1.SelectedRows(0).Cells(11).Value.ToString()
+            Dim paidType = DataGridV1.SelectedRows(0).Cells(12).Value.ToString()
 
-        If gender IsNot Nothing Then
-            Edit_Staff.Staff_gender.SelectedItem = gender
+            ' Initialize Edit_Staff form
+            Edit_Staff.staffID = staffID
+            Edit_Staff.Staff_firstName.Text = firstName
+            Edit_Staff.Staff_lastName.Text = lastName
+            Edit_Staff.Staff_dob.Value = dob
+            Edit_Staff.Staff_tel.Text = tel
+            Edit_Staff.Staff_nin.Text = nin
+            Edit_Staff.Staff_address.Text = address
+            Edit_Staff.staffPosition = position
+            Edit_Staff.Staff_salary.Text = salary
+            Edit_Staff.Staff_salaryScale.Text = salaryScale
+            Edit_Staff.Staff_hoursWeek.Text = hoursWeek
+            Edit_Staff.Staff_contactType.Text = contactType
+            Edit_Staff.Staff_paidType.Text = paidType
+
+            If gender IsNot Nothing Then
+                Edit_Staff.Staff_gender.SelectedItem = gender
+            End If
+
+            Edit_Staff.Show()
+        ElseIf cbbEduOrExp.SelectedIndex = 1 Then
+
+
+            Edit_Staff_Experiences.Show()
+        Else
+            Edit_Staff_Qualificates.Show()
         End If
-
-        Edit_Staff.Show()
     End Sub
 
     Private Sub SearchStaff_TextChanged_1(sender As Object, e As EventArgs) Handles SearchStaff.TextChanged
@@ -324,5 +333,9 @@ Public Class StaffForm
             Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
             DataGridV1.DataSource = dataTable
         End If
+    End Sub
+
+    Private Sub StaffPanel_Paint(sender As Object, e As PaintEventArgs) Handles StaffPanel.Paint
+
     End Sub
 End Class

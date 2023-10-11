@@ -49,8 +49,9 @@ Partial Class WaitingListForm
         Me.waitingListPanel.Controls.Add(Me.waitingListlb)
         Me.waitingListPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.waitingListPanel.Location = New System.Drawing.Point(0, 0)
+        Me.waitingListPanel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.waitingListPanel.Name = "waitingListPanel"
-        Me.waitingListPanel.Size = New System.Drawing.Size(1004, 611)
+        Me.waitingListPanel.Size = New System.Drawing.Size(1339, 752)
         Me.waitingListPanel.TabIndex = 0
         '
         'btnDel
@@ -58,9 +59,10 @@ Partial Class WaitingListForm
         Me.btnDel.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnDel.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDel.ForeColor = System.Drawing.Color.White
-        Me.btnDel.Location = New System.Drawing.Point(812, 514)
+        Me.btnDel.Location = New System.Drawing.Point(1083, 633)
+        Me.btnDel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnDel.Name = "btnDel"
-        Me.btnDel.Size = New System.Drawing.Size(120, 37)
+        Me.btnDel.Size = New System.Drawing.Size(160, 46)
         Me.btnDel.TabIndex = 54
         Me.btnDel.Text = "ลบ"
         Me.btnDel.UseVisualStyleBackColor = False
@@ -70,9 +72,10 @@ Partial Class WaitingListForm
         Me.btnEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnEdit.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEdit.ForeColor = System.Drawing.Color.White
-        Me.btnEdit.Location = New System.Drawing.Point(682, 514)
+        Me.btnEdit.Location = New System.Drawing.Point(909, 633)
+        Me.btnEdit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(120, 37)
+        Me.btnEdit.Size = New System.Drawing.Size(160, 46)
         Me.btnEdit.TabIndex = 53
         Me.btnEdit.Text = "แก้ไข"
         Me.btnEdit.UseVisualStyleBackColor = False
@@ -82,9 +85,10 @@ Partial Class WaitingListForm
         Me.btnReport.BackColor = System.Drawing.Color.RoyalBlue
         Me.btnReport.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReport.ForeColor = System.Drawing.Color.White
-        Me.btnReport.Location = New System.Drawing.Point(547, 514)
+        Me.btnReport.Location = New System.Drawing.Point(729, 633)
+        Me.btnReport.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnReport.Name = "btnReport"
-        Me.btnReport.Size = New System.Drawing.Size(120, 37)
+        Me.btnReport.Size = New System.Drawing.Size(160, 46)
         Me.btnReport.TabIndex = 52
         Me.btnReport.Text = "สร้างรีพอร์ท"
         Me.btnReport.UseVisualStyleBackColor = False
@@ -94,9 +98,10 @@ Partial Class WaitingListForm
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
         Me.btnAdd.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.Black
-        Me.btnAdd.Location = New System.Drawing.Point(857, 89)
+        Me.btnAdd.Location = New System.Drawing.Point(1143, 110)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(75, 37)
+        Me.btnAdd.Size = New System.Drawing.Size(100, 46)
         Me.btnAdd.TabIndex = 51
         Me.btnAdd.Text = "เพิ่ม"
         Me.btnAdd.UseVisualStyleBackColor = False
@@ -105,18 +110,21 @@ Partial Class WaitingListForm
         '
         Me.placeholderlb.AutoSize = True
         Me.placeholderlb.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.placeholderlb.Location = New System.Drawing.Point(577, 60)
+        Me.placeholderlb.Location = New System.Drawing.Point(769, 74)
+        Me.placeholderlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.placeholderlb.Name = "placeholderlb"
-        Me.placeholderlb.Size = New System.Drawing.Size(202, 24)
+        Me.placeholderlb.Size = New System.Drawing.Size(257, 30)
         Me.placeholderlb.TabIndex = 50
         Me.placeholderlb.Text = "ค้นหาผู้ป่วยรอเตียงด้วยไอดี.."
         '
         'waitingListTable
         '
         Me.waitingListTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.waitingListTable.Location = New System.Drawing.Point(79, 150)
+        Me.waitingListTable.Location = New System.Drawing.Point(105, 185)
+        Me.waitingListTable.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.waitingListTable.Name = "waitingListTable"
-        Me.waitingListTable.Size = New System.Drawing.Size(853, 328)
+        Me.waitingListTable.RowHeadersWidth = 51
+        Me.waitingListTable.Size = New System.Drawing.Size(1137, 404)
         Me.waitingListTable.TabIndex = 49
         '
         'btnSearch
@@ -124,36 +132,40 @@ Partial Class WaitingListForm
         Me.btnSearch.BackColor = System.Drawing.Color.White
         Me.btnSearch.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearch.ForeColor = System.Drawing.Color.Black
-        Me.btnSearch.Location = New System.Drawing.Point(764, 89)
+        Me.btnSearch.Location = New System.Drawing.Point(1019, 110)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(75, 37)
+        Me.btnSearch.Size = New System.Drawing.Size(100, 46)
         Me.btnSearch.TabIndex = 48
         Me.btnSearch.Text = "ค้นหา"
         Me.btnSearch.UseVisualStyleBackColor = False
         '
         'SearchStaff
         '
-        Me.SearchStaff.Location = New System.Drawing.Point(581, 89)
+        Me.SearchStaff.Location = New System.Drawing.Point(775, 110)
+        Me.SearchStaff.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.SearchStaff.Name = "SearchStaff"
-        Me.SearchStaff.Size = New System.Drawing.Size(142, 20)
+        Me.SearchStaff.Size = New System.Drawing.Size(188, 22)
         Me.SearchStaff.TabIndex = 47
         '
         'waitingListlb
         '
         Me.waitingListlb.AutoSize = True
         Me.waitingListlb.Font = New System.Drawing.Font("Prompt", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.waitingListlb.Location = New System.Drawing.Point(73, 85)
+        Me.waitingListlb.Location = New System.Drawing.Point(97, 105)
+        Me.waitingListlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.waitingListlb.Name = "waitingListlb"
-        Me.waitingListlb.Size = New System.Drawing.Size(154, 36)
+        Me.waitingListlb.Size = New System.Drawing.Size(194, 46)
         Me.waitingListlb.TabIndex = 46
         Me.waitingListlb.Text = "Waiting List"
         '
         'WaitingListForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1004, 611)
+        Me.ClientSize = New System.Drawing.Size(1339, 752)
         Me.Controls.Add(Me.waitingListPanel)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "WaitingListForm"
         Me.Text = "WaitingListForm"
         Me.waitingListPanel.ResumeLayout(False)

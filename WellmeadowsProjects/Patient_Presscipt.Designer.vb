@@ -39,7 +39,7 @@ Partial Class Patient_Presscipt
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnDelete.Location = New System.Drawing.Point(1081, 619)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(160, 46)
         Me.btnDelete.TabIndex = 29
@@ -51,7 +51,7 @@ Partial Class Patient_Presscipt
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnUpdate.Location = New System.Drawing.Point(908, 619)
-        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(160, 46)
         Me.btnUpdate.TabIndex = 28
@@ -63,7 +63,7 @@ Partial Class Patient_Presscipt
         Me.btnReport.BackColor = System.Drawing.Color.RoyalBlue
         Me.btnReport.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnReport.Location = New System.Drawing.Point(728, 619)
-        Me.btnReport.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnReport.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReport.Name = "btnReport"
         Me.btnReport.Size = New System.Drawing.Size(160, 46)
         Me.btnReport.TabIndex = 27
@@ -74,7 +74,7 @@ Partial Class Patient_Presscipt
         '
         Me.ViewPress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ViewPress.Location = New System.Drawing.Point(104, 171)
-        Me.ViewPress.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ViewPress.Margin = New System.Windows.Forms.Padding(4)
         Me.ViewPress.Name = "ViewPress"
         Me.ViewPress.RowHeadersWidth = 51
         Me.ViewPress.Size = New System.Drawing.Size(1137, 404)
@@ -84,7 +84,7 @@ Partial Class Patient_Presscipt
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
         Me.btnAdd.Location = New System.Drawing.Point(1141, 96)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(100, 46)
         Me.btnAdd.TabIndex = 25
@@ -94,7 +94,7 @@ Partial Class Patient_Presscipt
         'btnSearch
         '
         Me.btnSearch.Location = New System.Drawing.Point(1017, 96)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(100, 46)
         Me.btnSearch.TabIndex = 24
@@ -115,7 +115,7 @@ Partial Class Patient_Presscipt
         'txtSearch
         '
         Me.txtSearch.Location = New System.Drawing.Point(807, 117)
-        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(188, 22)
         Me.txtSearch.TabIndex = 22
@@ -145,7 +145,7 @@ Partial Class Patient_Presscipt
         Me.Controls.Add(Me.lableSearch)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Patient_Presscipt"
         Me.Text = "Patient_Presscipt"
         CType(Me.ViewPress, System.ComponentModel.ISupportInitialize).EndInit()
