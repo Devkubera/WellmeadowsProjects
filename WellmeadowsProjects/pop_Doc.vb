@@ -3,9 +3,10 @@
 Public Class pop_Doc
 
     Public DocsData As New Dictionary(Of String, String)
+    Public sqlConn As String = "Data Source=BOB1EE\PROJECTSQL;Initial Catalog=Wellmeadows;Integrated Security=True"
 
     Private Sub pop_Doc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Using connection As New SqlConnection("Data Source=BOB1EE\SQLEXPRESS;Initial Catalog=Wellmeadows;Integrated Security=True") ' แทนที่ Your_Connection_String ด้วยข้อมูลการเชื่อมต่อฐานข้อมูลของคุณ
+        Using connection As New SqlConnection(sqlConn) ' แทนที่ Your_Connection_String ด้วยข้อมูลการเชื่อมต่อฐานข้อมูลของคุณ
             connection.Open()
 
             ' คำสั่ง SQL สำหรับรวมข้อมูลจากตาราง Doctors และ Staffs
