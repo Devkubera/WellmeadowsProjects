@@ -25,6 +25,7 @@ Public Class pop_Doc
 
             ' ปิดการเชื่อมต่อ
             connection.Close()
+            Console.WriteLine(MainForm.staffID)
 
         End Using
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Doctors' table. You can move, or remove it, as needed.

@@ -1,4 +1,5 @@
-﻿Imports WellmeadowsProjects.WellmeadowsDataSetTableAdapters
+﻿Imports System.Reflection
+Imports WellmeadowsProjects.WellmeadowsDataSetTableAdapters
 
 Public Class Medicine
     Public MedicineData As New Dictionary(Of String, String)
@@ -16,7 +17,18 @@ Public Class Medicine
         Me.SuppilersTableAdapter.Fill(Me.WellmeadowsDataSet.Suppilers)
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Med_Medicines' table. You can move, or remove it, as needed.
         Me.Med_MedicinesTableAdapter.Fill(Me.WellmeadowsDataSet.Med_Medicines)
+        If MainForm.cnID <> "" Then
+            Console.WriteLine("if")
+            btnAdd.Visible = True
+            btnUpdate.Visible = True
+            btnDelete.Visible = True
 
+        Else
+            Console.WriteLine("else")
+            btnAdd.Visible = False
+            btnUpdate.Visible = False
+            btnDelete.Visible = False
+        End If
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
