@@ -14,6 +14,10 @@ Public Class Add_Ward
             Me.WardsTableAdapter.Fill(Me.WellmeadowsDataSet.Wards)
             Me.Close()
 
+            'INSERT INTO Wards
+            '      (wardName, wardLocation, wardTel, totalBed)
+            'VALUES(@wardName,@wardLocation,@wardTel,@totalBed)
+
         Catch ex As Exception
             MessageBox.Show("Error. please check your data fill", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information)
 

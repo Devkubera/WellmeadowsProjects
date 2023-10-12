@@ -69,4 +69,5 @@ Public Class WardForm
             WardsBindingSource.Filter = $"wardID LIKE '%{searchText}%' OR wardName LIKE '%{searchText}%' "
         End If
     End Sub
+
 End Class

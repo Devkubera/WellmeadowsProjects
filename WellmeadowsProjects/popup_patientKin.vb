@@ -18,7 +18,6 @@ Public Class popup_patientKin
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
         Dim selected As New List(Of String)
         If pateintKinDG.CurrentRow IsNot Nothing Then
             kinsData("id") = pateintKinDG.SelectedRows(0).Cells(0).Value.ToString
@@ -52,4 +51,5 @@ Public Class popup_patientKin
 
 
     End Sub
+
 End Class
