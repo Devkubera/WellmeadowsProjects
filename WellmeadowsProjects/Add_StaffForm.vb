@@ -85,15 +85,15 @@ Public Class Add_StaffForm
         Dim staffID = StaffsTableAdapter.getLatestStaffID()
 
         ' insert data to table doctors, md, CN
-        If Staff_position.SelectedIndex = 0 Then
-            ChargeNursesTableAdapter1.InsertCN(staffID)
+        'If Staff_position.SelectedIndex = 0 Then
+        '    ChargeNursesTableAdapter1.InsertCN(staffID)
 
-        ElseIf Staff_position.SelectedIndex = 1 Then
-            MedicalDirectorsTableAdapter1.InsertMD(staffID)
+        'ElseIf Staff_position.SelectedIndex = 1 Then
+        '    MedicalDirectorsTableAdapter1.InsertMD(staffID)
 
-        ElseIf Staff_position.SelectedIndex = 2 Then
-            DoctorsTableAdapter1.InsertDoctor(staffID)
-        End If
+        'ElseIf Staff_position.SelectedIndex = 2 Then
+        '    DoctorsTableAdapter1.InsertDoctor(staffID)
+        'End If
 
         ' Staff Qualification insert
 

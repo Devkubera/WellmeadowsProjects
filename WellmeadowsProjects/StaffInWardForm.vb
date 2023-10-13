@@ -404,4 +404,7 @@ Public Class StaffInWardForm
 
     End Function
 
+    Private Sub staffInWardPanel_Paint(sender As Object, e As PaintEventArgs) Handles staffInWardPanel.Paint
+
+    End Sub
 End Class

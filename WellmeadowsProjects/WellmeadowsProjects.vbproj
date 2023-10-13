@@ -440,6 +440,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Add_Ward.resx">
       <DependentUpon>Add_Ward.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_InPatient.resx">
       <DependentUpon>Edit_InPatient.vb</DependentUpon>
@@ -558,6 +559,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WardForm.resx">
       <DependentUpon>WardForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Edit_OutPantientToWardForm.resx">
       <DependentUpon>Edit_OutPantientToWardForm.vb</DependentUpon>
