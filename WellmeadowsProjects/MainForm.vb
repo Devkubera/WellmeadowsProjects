@@ -44,6 +44,7 @@
     End Sub
 
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
-
+        Dim dash = New DashbordForm()
+        switchForm(dash)
     End Sub
 End Class

@@ -2114,6 +2114,138 @@ WHERE        (หมายเลขวอร์ด = @wardId)</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="count_InPatient_viewTableAdapter" GeneratorDataComponentClassName="count_InPatient_viewTableAdapter" Name="count_InPatient_view" UserDataComponentName="count_InPatient_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.count_InPatient_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TotalInpatients FROM dbo.count_InPatient_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TotalInpatients" DataSetColumn="TotalInpatients" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Count_PatientAgeTableAdapter" GeneratorDataComponentClassName="Count_PatientAgeTableAdapter" Name="Count_PatientAge" UserDataComponentName="Count_PatientAgeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Count_PatientAge" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT age_range, TotalPatients FROM dbo.Count_PatientAge</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="age_range" DataSetColumn="age_range" />
+              <Mapping SourceColumn="TotalPatients" DataSetColumn="TotalPatients" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Count_PatientInWardTableAdapter" GeneratorDataComponentClassName="Count_PatientInWardTableAdapter" Name="Count_PatientInWard" UserDataComponentName="Count_PatientInWardTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Count_PatientInWard" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TotalPatients, wardName FROM dbo.Count_PatientInWard</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TotalPatients" DataSetColumn="TotalPatients" />
+              <Mapping SourceColumn="wardName" DataSetColumn="wardName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="count_staff_viewTableAdapter" GeneratorDataComponentClassName="count_staff_viewTableAdapter" Name="count_staff_view" UserDataComponentName="count_staff_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.count_staff_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TotalStaffs FROM dbo.count_staff_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TotalStaffs" DataSetColumn="TotalStaffs" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Count_StaffInWardTableAdapter" GeneratorDataComponentClassName="Count_StaffInWardTableAdapter" Name="Count_StaffInWard" UserDataComponentName="Count_StaffInWardTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Count_StaffInWard" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TotalStaffs, wardName FROM dbo.Count_StaffInWard</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TotalStaffs" DataSetColumn="TotalStaffs" />
+              <Mapping SourceColumn="wardName" DataSetColumn="wardName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="count_totalBed_viewTableAdapter" GeneratorDataComponentClassName="count_totalBed_viewTableAdapter" Name="count_totalBed_view" UserDataComponentName="count_totalBed_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.count_totalBed_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TotalBeds FROM dbo.count_totalBed_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TotalBeds" DataSetColumn="TotalBeds" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="count_ward_viewTableAdapter" GeneratorDataComponentClassName="count_ward_viewTableAdapter" Name="count_ward_view" UserDataComponentName="count_ward_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.count_ward_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TotalWards FROM dbo.count_ward_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TotalWards" DataSetColumn="TotalWards" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Count_PatientTypeTableAdapter" GeneratorDataComponentClassName="Count_PatientTypeTableAdapter" Name="Count_PatientType" UserDataComponentName="Count_PatientTypeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WellmeadowsConnectionString (MySettings)" DbObjectName="Wellmeadows.dbo.Count_PatientType" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT PatientType, TotalPatients FROM dbo.Count_PatientType</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PatientType" DataSetColumn="PatientType" />
+              <Mapping SourceColumn="TotalPatients" DataSetColumn="TotalPatients" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -2948,14 +3080,43 @@ WHERE        (หมายเลขวอร์ด = @wardId)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Waitinglist_Report_View" msprop:Generator_RowClassName="Waitinglist_Report_ViewRow" msprop:Generator_RowEvHandlerName="Waitinglist_Report_ViewRowChangeEventHandler" msprop:Generator_RowDeletedName="Waitinglist_Report_ViewRowDeleted" msprop:Generator_RowDeletingName="Waitinglist_Report_ViewRowDeleting" msprop:Generator_RowEvArgName="Waitinglist_Report_ViewRowChangeEvent" msprop:Generator_TablePropName="Waitinglist_Report_View" msprop:Generator_RowChangedName="Waitinglist_Report_ViewRowChanged" msprop:Generator_UserTableName="Waitinglist_Report_View" msprop:Generator_RowChangingName="Waitinglist_Report_ViewRowChanging" msprop:Generator_TableClassName="Waitinglist_Report_ViewDataTable" msprop:Generator_TableVarName="tableWaitinglist_Report_View">
+        <xs:element name="Waitinglist_Report_View" msprop:Generator_RowEvHandlerName="Waitinglist_Report_ViewRowChangeEventHandler" msprop:Generator_RowDeletedName="Waitinglist_Report_ViewRowDeleted" msprop:Generator_RowDeletingName="Waitinglist_Report_ViewRowDeleting" msprop:Generator_RowEvArgName="Waitinglist_Report_ViewRowChangeEvent" msprop:Generator_TablePropName="Waitinglist_Report_View" msprop:Generator_RowChangedName="Waitinglist_Report_ViewRowChanged" msprop:Generator_UserTableName="Waitinglist_Report_View" msprop:Generator_RowChangingName="Waitinglist_Report_ViewRowChanging" msprop:Generator_RowClassName="Waitinglist_Report_ViewRow" msprop:Generator_TableClassName="Waitinglist_Report_ViewDataTable" msprop:Generator_TableVarName="tableWaitinglist_Report_View">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ลำดับ" msprop:Generator_UserColumnName="ลำดับ" msprop:Generator_ColumnPropNameInTable="ลำดับColumn" msprop:Generator_ColumnPropNameInRow="ลำดับ" msprop:Generator_ColumnVarNameInTable="columnลำดับ" type="xs:long" minOccurs="0" />
-              <xs:element name="หมายเลขผู้ป่วย" msprop:Generator_UserColumnName="หมายเลขผู้ป่วย" msprop:Generator_ColumnPropNameInTable="หมายเลขผู้ป่วยColumn" msprop:Generator_ColumnPropNameInRow="หมายเลขผู้ป่วย" msprop:Generator_ColumnVarNameInTable="columnหมายเลขผู้ป่วย">
+              <xs:element name="ลำดับ" msprop:Generator_ColumnPropNameInTable="ลำดับColumn" msprop:Generator_ColumnPropNameInRow="ลำดับ" msprop:Generator_UserColumnName="ลำดับ" msprop:Generator_ColumnVarNameInTable="columnลำดับ" type="xs:long" minOccurs="0" />
+              <xs:element name="หมายเลขผู้ป่วย" msprop:Generator_ColumnPropNameInTable="หมายเลขผู้ป่วยColumn" msprop:Generator_ColumnPropNameInRow="หมายเลขผู้ป่วย" msprop:Generator_UserColumnName="หมายเลขผู้ป่วย" msprop:Generator_ColumnVarNameInTable="columnหมายเลขผู้ป่วย">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ชื่อ_นามสกุล" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="ชื่อ_นามสกุลColumn" msprop:Generator_ColumnPropNameInRow="ชื่อ_นามสกุล" msprop:Generator_UserColumnName="ชื่อ_นามสกุล" msprop:Generator_ColumnVarNameInTable="columnชื่อ_นามสกุล" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="วอร์ด" msprop:Generator_ColumnPropNameInTable="วอร์ดColumn" msprop:Generator_ColumnPropNameInRow="วอร์ด" msprop:Generator_UserColumnName="วอร์ด" msprop:Generator_ColumnVarNameInTable="columnวอร์ด" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="วันที่เข้ามารอ" msprop:Generator_ColumnPropNameInTable="วันที่เข้ามารอColumn" msprop:Generator_ColumnPropNameInRow="วันที่เข้ามารอ" msprop:Generator_UserColumnName="วันที่เข้ามารอ" msprop:Generator_ColumnVarNameInTable="columnวันที่เข้ามารอ" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="IN_Patients_Report_View" msprop:Generator_RowClassName="IN_Patients_Report_ViewRow" msprop:Generator_RowEvHandlerName="IN_Patients_Report_ViewRowChangeEventHandler" msprop:Generator_RowDeletedName="IN_Patients_Report_ViewRowDeleted" msprop:Generator_RowDeletingName="IN_Patients_Report_ViewRowDeleting" msprop:Generator_RowEvArgName="IN_Patients_Report_ViewRowChangeEvent" msprop:Generator_TablePropName="IN_Patients_Report_View" msprop:Generator_RowChangedName="IN_Patients_Report_ViewRowChanged" msprop:Generator_UserTableName="IN_Patients_Report_View" msprop:Generator_RowChangingName="IN_Patients_Report_ViewRowChanging" msprop:Generator_TableClassName="IN_Patients_Report_ViewDataTable" msprop:Generator_TableVarName="tableIN_Patients_Report_View">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ลำดับ" msprop:Generator_UserColumnName="ลำดับ" msprop:Generator_ColumnPropNameInTable="ลำดับColumn" msprop:Generator_ColumnPropNameInRow="ลำดับ" msprop:Generator_ColumnVarNameInTable="columnลำดับ" type="xs:long" minOccurs="0" />
+              <xs:element name="หมายเลขผู้ป่วย" msprop:Generator_UserColumnName="หมายเลขผู้ป่วย" msprop:Generator_ColumnPropNameInTable="หมายเลขผู้ป่วยColumn" msprop:Generator_ColumnPropNameInRow="หมายเลขผู้ป่วย" msprop:Generator_ColumnVarNameInTable="columnหมายเลขผู้ป่วย" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -2973,83 +3134,138 @@ WHERE        (หมายเลขวอร์ด = @wardId)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="วันที่เข้ามารอ" msprop:Generator_UserColumnName="วันที่เข้ามารอ" msprop:Generator_ColumnPropNameInTable="วันที่เข้ามารอColumn" msprop:Generator_ColumnPropNameInRow="วันที่เข้ามารอ" msprop:Generator_ColumnVarNameInTable="columnวันที่เข้ามารอ" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="หมายเลขเตียง" msprop:Generator_UserColumnName="หมายเลขเตียง" msprop:Generator_ColumnPropNameInTable="หมายเลขเตียงColumn" msprop:Generator_ColumnPropNameInRow="หมายเลขเตียง" msprop:Generator_ColumnVarNameInTable="columnหมายเลขเตียง" type="xs:int" />
+              <xs:element name="จำนวนวันที่อยู" msprop:Generator_UserColumnName="จำนวนวันที่อยู" msprop:Generator_ColumnPropNameInTable="จำนวนวันที่อยูColumn" msprop:Generator_ColumnPropNameInRow="จำนวนวันที่อยู" msprop:Generator_ColumnVarNameInTable="columnจำนวนวันที่อยู" type="xs:int" minOccurs="0" />
+              <xs:element name="วันที่เข้าพักอยู่" msprop:Generator_UserColumnName="วันที่เข้าพักอยู่" msprop:Generator_ColumnPropNameInTable="วันที่เข้าพักอยู่Column" msprop:Generator_ColumnPropNameInRow="วันที่เข้าพักอยู่" msprop:Generator_ColumnVarNameInTable="columnวันที่เข้าพักอยู่" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="วันที่ออก" msprop:Generator_UserColumnName="วันที่ออก" msprop:Generator_ColumnPropNameInTable="วันที่ออกColumn" msprop:Generator_ColumnPropNameInRow="วันที่ออก" msprop:Generator_ColumnVarNameInTable="columnวันที่ออก" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="IN_Patients_Report_View" msprop:Generator_RowEvHandlerName="IN_Patients_Report_ViewRowChangeEventHandler" msprop:Generator_RowDeletedName="IN_Patients_Report_ViewRowDeleted" msprop:Generator_RowDeletingName="IN_Patients_Report_ViewRowDeleting" msprop:Generator_RowEvArgName="IN_Patients_Report_ViewRowChangeEvent" msprop:Generator_TablePropName="IN_Patients_Report_View" msprop:Generator_RowChangedName="IN_Patients_Report_ViewRowChanged" msprop:Generator_RowChangingName="IN_Patients_Report_ViewRowChanging" msprop:Generator_TableClassName="IN_Patients_Report_ViewDataTable" msprop:Generator_RowClassName="IN_Patients_Report_ViewRow" msprop:Generator_TableVarName="tableIN_Patients_Report_View" msprop:Generator_UserTableName="IN_Patients_Report_View">
+        <xs:element name="Prescript_Report_View" msprop:Generator_RowClassName="Prescript_Report_ViewRow" msprop:Generator_RowEvHandlerName="Prescript_Report_ViewRowChangeEventHandler" msprop:Generator_RowDeletedName="Prescript_Report_ViewRowDeleted" msprop:Generator_RowDeletingName="Prescript_Report_ViewRowDeleting" msprop:Generator_RowEvArgName="Prescript_Report_ViewRowChangeEvent" msprop:Generator_TablePropName="Prescript_Report_View" msprop:Generator_RowChangedName="Prescript_Report_ViewRowChanged" msprop:Generator_UserTableName="Prescript_Report_View" msprop:Generator_RowChangingName="Prescript_Report_ViewRowChanging" msprop:Generator_TableClassName="Prescript_Report_ViewDataTable" msprop:Generator_TableVarName="tablePrescript_Report_View">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ลำดับ" msprop:Generator_ColumnPropNameInRow="ลำดับ" msprop:Generator_ColumnPropNameInTable="ลำดับColumn" msprop:Generator_ColumnVarNameInTable="columnลำดับ" msprop:Generator_UserColumnName="ลำดับ" type="xs:long" minOccurs="0" />
-              <xs:element name="หมายเลขผู้ป่วย" msprop:Generator_ColumnPropNameInRow="หมายเลขผู้ป่วย" msprop:Generator_ColumnPropNameInTable="หมายเลขผู้ป่วยColumn" msprop:Generator_ColumnVarNameInTable="columnหมายเลขผู้ป่วย" msprop:Generator_UserColumnName="หมายเลขผู้ป่วย" minOccurs="0">
+              <xs:element name="ลำดับ" msprop:Generator_UserColumnName="ลำดับ" msprop:Generator_ColumnPropNameInTable="ลำดับColumn" msprop:Generator_ColumnPropNameInRow="ลำดับ" msprop:Generator_ColumnVarNameInTable="columnลำดับ" type="xs:long" minOccurs="0" />
+              <xs:element name="หมายเลขผู้ป่วย" msprop:Generator_UserColumnName="หมายเลขผู้ป่วย" msprop:Generator_ColumnPropNameInTable="หมายเลขผู้ป่วยColumn" msprop:Generator_ColumnPropNameInRow="หมายเลขผู้ป่วย" msprop:Generator_ColumnVarNameInTable="columnหมายเลขผู้ป่วย" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="11" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ชื่อ_นามสกุล" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="ชื่อ_นามสกุล" msprop:Generator_ColumnPropNameInTable="ชื่อ_นามสกุลColumn" msprop:Generator_ColumnVarNameInTable="columnชื่อ_นามสกุล" msprop:Generator_UserColumnName="ชื่อ_นามสกุล" minOccurs="0">
+              <xs:element name="ชื่อ_นามสกุล" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ชื่อ_นามสกุล" msprop:Generator_ColumnPropNameInTable="ชื่อ_นามสกุลColumn" msprop:Generator_ColumnPropNameInRow="ชื่อ_นามสกุล" msprop:Generator_ColumnVarNameInTable="columnชื่อ_นามสกุล" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="101" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="วอร์ด" msprop:Generator_ColumnPropNameInRow="วอร์ด" msprop:Generator_ColumnPropNameInTable="วอร์ดColumn" msprop:Generator_ColumnVarNameInTable="columnวอร์ด" msprop:Generator_UserColumnName="วอร์ด" minOccurs="0">
+              <xs:element name="วอร์ด" msprop:Generator_UserColumnName="วอร์ด" msprop:Generator_ColumnPropNameInTable="วอร์ดColumn" msprop:Generator_ColumnPropNameInRow="วอร์ด" msprop:Generator_ColumnVarNameInTable="columnวอร์ด" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="หมายเลขเตียง" msprop:Generator_ColumnPropNameInRow="หมายเลขเตียง" msprop:Generator_ColumnPropNameInTable="หมายเลขเตียงColumn" msprop:Generator_ColumnVarNameInTable="columnหมายเลขเตียง" msprop:Generator_UserColumnName="หมายเลขเตียง" type="xs:int" />
-              <xs:element name="จำนวนวันที่อยู" msprop:Generator_ColumnPropNameInRow="จำนวนวันที่อยู" msprop:Generator_ColumnPropNameInTable="จำนวนวันที่อยูColumn" msprop:Generator_ColumnVarNameInTable="columnจำนวนวันที่อยู" msprop:Generator_UserColumnName="จำนวนวันที่อยู" type="xs:int" minOccurs="0" />
-              <xs:element name="วันที่เข้าพักอยู่" msprop:Generator_ColumnPropNameInRow="วันที่เข้าพักอยู่" msprop:Generator_ColumnPropNameInTable="วันที่เข้าพักอยู่Column" msprop:Generator_ColumnVarNameInTable="columnวันที่เข้าพักอยู่" msprop:Generator_UserColumnName="วันที่เข้าพักอยู่" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="วันที่ออก" msprop:Generator_ColumnPropNameInRow="วันที่ออก" msprop:Generator_ColumnPropNameInTable="วันที่ออกColumn" msprop:Generator_ColumnVarNameInTable="columnวันที่ออก" msprop:Generator_UserColumnName="วันที่ออก" type="xs:dateTime" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="Prescript_Report_View" msprop:Generator_RowEvHandlerName="Prescript_Report_ViewRowChangeEventHandler" msprop:Generator_RowDeletedName="Prescript_Report_ViewRowDeleted" msprop:Generator_RowDeletingName="Prescript_Report_ViewRowDeleting" msprop:Generator_RowEvArgName="Prescript_Report_ViewRowChangeEvent" msprop:Generator_TablePropName="Prescript_Report_View" msprop:Generator_RowChangedName="Prescript_Report_ViewRowChanged" msprop:Generator_RowChangingName="Prescript_Report_ViewRowChanging" msprop:Generator_TableClassName="Prescript_Report_ViewDataTable" msprop:Generator_RowClassName="Prescript_Report_ViewRow" msprop:Generator_TableVarName="tablePrescript_Report_View" msprop:Generator_UserTableName="Prescript_Report_View">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="ลำดับ" msprop:Generator_ColumnPropNameInRow="ลำดับ" msprop:Generator_ColumnPropNameInTable="ลำดับColumn" msprop:Generator_ColumnVarNameInTable="columnลำดับ" msprop:Generator_UserColumnName="ลำดับ" type="xs:long" minOccurs="0" />
-              <xs:element name="หมายเลขผู้ป่วย" msprop:Generator_ColumnPropNameInRow="หมายเลขผู้ป่วย" msprop:Generator_ColumnPropNameInTable="หมายเลขผู้ป่วยColumn" msprop:Generator_ColumnVarNameInTable="columnหมายเลขผู้ป่วย" msprop:Generator_UserColumnName="หมายเลขผู้ป่วย" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="11" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ชื่อ_นามสกุล" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="ชื่อ_นามสกุล" msprop:Generator_ColumnPropNameInTable="ชื่อ_นามสกุลColumn" msprop:Generator_ColumnVarNameInTable="columnชื่อ_นามสกุล" msprop:Generator_UserColumnName="ชื่อ_นามสกุล" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="101" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="วอร์ด" msprop:Generator_ColumnPropNameInRow="วอร์ด" msprop:Generator_ColumnPropNameInTable="วอร์ดColumn" msprop:Generator_ColumnVarNameInTable="columnวอร์ด" msprop:Generator_UserColumnName="วอร์ด" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ชื่อยาและปริมาณ" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="ชื่อยาและปริมาณ" msprop:Generator_ColumnPropNameInTable="ชื่อยาและปริมาณColumn" msprop:Generator_ColumnVarNameInTable="columnชื่อยาและปริมาณ" msprop:Generator_UserColumnName="ชื่อยาและปริมาณ" minOccurs="0">
+              <xs:element name="ชื่อยาและปริมาณ" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ชื่อยาและปริมาณ" msprop:Generator_ColumnPropNameInTable="ชื่อยาและปริมาณColumn" msprop:Generator_ColumnPropNameInRow="ชื่อยาและปริมาณ" msprop:Generator_ColumnVarNameInTable="columnชื่อยาและปริมาณ" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="76" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="วิธีการใช้" msprop:Generator_ColumnPropNameInRow="วิธีการใช้" msprop:Generator_ColumnPropNameInTable="วิธีการใช้Column" msprop:Generator_ColumnVarNameInTable="columnวิธีการใช้" msprop:Generator_UserColumnName="วิธีการใช้" minOccurs="0">
+              <xs:element name="วิธีการใช้" msprop:Generator_UserColumnName="วิธีการใช้" msprop:Generator_ColumnPropNameInTable="วิธีการใช้Column" msprop:Generator_ColumnPropNameInRow="วิธีการใช้" msprop:Generator_ColumnVarNameInTable="columnวิธีการใช้" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="วันที่เริ่มให้ยา" msprop:Generator_ColumnPropNameInRow="วันที่เริ่มให้ยา" msprop:Generator_ColumnPropNameInTable="วันที่เริ่มให้ยาColumn" msprop:Generator_ColumnVarNameInTable="columnวันที่เริ่มให้ยา" msprop:Generator_UserColumnName="วันที่เริ่มให้ยา" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="วันที่หยุดให้ยา" msprop:Generator_ColumnPropNameInRow="วันที่หยุดให้ยา" msprop:Generator_ColumnPropNameInTable="วันที่หยุดให้ยาColumn" msprop:Generator_ColumnVarNameInTable="columnวันที่หยุดให้ยา" msprop:Generator_UserColumnName="วันที่หยุดให้ยา" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="วันที่เริ่มให้ยา" msprop:Generator_UserColumnName="วันที่เริ่มให้ยา" msprop:Generator_ColumnPropNameInTable="วันที่เริ่มให้ยาColumn" msprop:Generator_ColumnPropNameInRow="วันที่เริ่มให้ยา" msprop:Generator_ColumnVarNameInTable="columnวันที่เริ่มให้ยา" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="วันที่หยุดให้ยา" msprop:Generator_UserColumnName="วันที่หยุดให้ยา" msprop:Generator_ColumnPropNameInTable="วันที่หยุดให้ยาColumn" msprop:Generator_ColumnPropNameInRow="วันที่หยุดให้ยา" msprop:Generator_ColumnVarNameInTable="columnวันที่หยุดให้ยา" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="count_InPatient_view" msprop:Generator_RowEvHandlerName="count_InPatient_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="count_InPatient_viewRowDeleted" msprop:Generator_RowDeletingName="count_InPatient_viewRowDeleting" msprop:Generator_RowEvArgName="count_InPatient_viewRowChangeEvent" msprop:Generator_TablePropName="count_InPatient_view" msprop:Generator_RowChangedName="count_InPatient_viewRowChanged" msprop:Generator_RowChangingName="count_InPatient_viewRowChanging" msprop:Generator_TableClassName="count_InPatient_viewDataTable" msprop:Generator_RowClassName="count_InPatient_viewRow" msprop:Generator_TableVarName="tablecount_InPatient_view" msprop:Generator_UserTableName="count_InPatient_view">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TotalInpatients" msprop:Generator_ColumnPropNameInRow="TotalInpatients" msprop:Generator_ColumnPropNameInTable="TotalInpatientsColumn" msprop:Generator_ColumnVarNameInTable="columnTotalInpatients" msprop:Generator_UserColumnName="TotalInpatients" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Count_PatientAge" msprop:Generator_RowEvHandlerName="Count_PatientAgeRowChangeEventHandler" msprop:Generator_RowDeletedName="Count_PatientAgeRowDeleted" msprop:Generator_RowDeletingName="Count_PatientAgeRowDeleting" msprop:Generator_RowEvArgName="Count_PatientAgeRowChangeEvent" msprop:Generator_TablePropName="Count_PatientAge" msprop:Generator_RowChangedName="Count_PatientAgeRowChanged" msprop:Generator_RowChangingName="Count_PatientAgeRowChanging" msprop:Generator_TableClassName="Count_PatientAgeDataTable" msprop:Generator_RowClassName="Count_PatientAgeRow" msprop:Generator_TableVarName="tableCount_PatientAge" msprop:Generator_UserTableName="Count_PatientAge">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="age_range" msprop:Generator_ColumnPropNameInRow="age_range" msprop:Generator_ColumnPropNameInTable="age_rangeColumn" msprop:Generator_ColumnVarNameInTable="columnage_range" msprop:Generator_UserColumnName="age_range">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalPatients" msprop:Generator_ColumnPropNameInRow="TotalPatients" msprop:Generator_ColumnPropNameInTable="TotalPatientsColumn" msprop:Generator_ColumnVarNameInTable="columnTotalPatients" msprop:Generator_UserColumnName="TotalPatients" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Count_PatientInWard" msprop:Generator_RowEvHandlerName="Count_PatientInWardRowChangeEventHandler" msprop:Generator_RowDeletedName="Count_PatientInWardRowDeleted" msprop:Generator_RowDeletingName="Count_PatientInWardRowDeleting" msprop:Generator_RowEvArgName="Count_PatientInWardRowChangeEvent" msprop:Generator_TablePropName="Count_PatientInWard" msprop:Generator_RowChangedName="Count_PatientInWardRowChanged" msprop:Generator_RowChangingName="Count_PatientInWardRowChanging" msprop:Generator_TableClassName="Count_PatientInWardDataTable" msprop:Generator_RowClassName="Count_PatientInWardRow" msprop:Generator_TableVarName="tableCount_PatientInWard" msprop:Generator_UserTableName="Count_PatientInWard">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TotalPatients" msprop:Generator_ColumnPropNameInRow="TotalPatients" msprop:Generator_ColumnPropNameInTable="TotalPatientsColumn" msprop:Generator_ColumnVarNameInTable="columnTotalPatients" msprop:Generator_UserColumnName="TotalPatients" type="xs:int" minOccurs="0" />
+              <xs:element name="wardName" msprop:Generator_ColumnPropNameInRow="wardName" msprop:Generator_ColumnPropNameInTable="wardNameColumn" msprop:Generator_ColumnVarNameInTable="columnwardName" msprop:Generator_UserColumnName="wardName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="count_staff_view" msprop:Generator_RowEvHandlerName="count_staff_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="count_staff_viewRowDeleted" msprop:Generator_RowDeletingName="count_staff_viewRowDeleting" msprop:Generator_RowEvArgName="count_staff_viewRowChangeEvent" msprop:Generator_TablePropName="count_staff_view" msprop:Generator_RowChangedName="count_staff_viewRowChanged" msprop:Generator_RowChangingName="count_staff_viewRowChanging" msprop:Generator_TableClassName="count_staff_viewDataTable" msprop:Generator_RowClassName="count_staff_viewRow" msprop:Generator_TableVarName="tablecount_staff_view" msprop:Generator_UserTableName="count_staff_view">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TotalStaffs" msprop:Generator_ColumnPropNameInRow="TotalStaffs" msprop:Generator_ColumnPropNameInTable="TotalStaffsColumn" msprop:Generator_ColumnVarNameInTable="columnTotalStaffs" msprop:Generator_UserColumnName="TotalStaffs" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Count_StaffInWard" msprop:Generator_RowEvHandlerName="Count_StaffInWardRowChangeEventHandler" msprop:Generator_RowDeletedName="Count_StaffInWardRowDeleted" msprop:Generator_RowDeletingName="Count_StaffInWardRowDeleting" msprop:Generator_RowEvArgName="Count_StaffInWardRowChangeEvent" msprop:Generator_TablePropName="Count_StaffInWard" msprop:Generator_RowChangedName="Count_StaffInWardRowChanged" msprop:Generator_RowChangingName="Count_StaffInWardRowChanging" msprop:Generator_TableClassName="Count_StaffInWardDataTable" msprop:Generator_RowClassName="Count_StaffInWardRow" msprop:Generator_TableVarName="tableCount_StaffInWard" msprop:Generator_UserTableName="Count_StaffInWard">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TotalStaffs" msprop:Generator_ColumnPropNameInRow="TotalStaffs" msprop:Generator_ColumnPropNameInTable="TotalStaffsColumn" msprop:Generator_ColumnVarNameInTable="columnTotalStaffs" msprop:Generator_UserColumnName="TotalStaffs" type="xs:int" minOccurs="0" />
+              <xs:element name="wardName" msprop:Generator_ColumnPropNameInRow="wardName" msprop:Generator_ColumnPropNameInTable="wardNameColumn" msprop:Generator_ColumnVarNameInTable="columnwardName" msprop:Generator_UserColumnName="wardName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="count_totalBed_view" msprop:Generator_RowEvHandlerName="count_totalBed_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="count_totalBed_viewRowDeleted" msprop:Generator_RowDeletingName="count_totalBed_viewRowDeleting" msprop:Generator_RowEvArgName="count_totalBed_viewRowChangeEvent" msprop:Generator_TablePropName="count_totalBed_view" msprop:Generator_RowChangedName="count_totalBed_viewRowChanged" msprop:Generator_RowChangingName="count_totalBed_viewRowChanging" msprop:Generator_TableClassName="count_totalBed_viewDataTable" msprop:Generator_RowClassName="count_totalBed_viewRow" msprop:Generator_TableVarName="tablecount_totalBed_view" msprop:Generator_UserTableName="count_totalBed_view">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TotalBeds" msprop:Generator_ColumnPropNameInRow="TotalBeds" msprop:Generator_ColumnPropNameInTable="TotalBedsColumn" msprop:Generator_ColumnVarNameInTable="columnTotalBeds" msprop:Generator_UserColumnName="TotalBeds" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="count_ward_view" msprop:Generator_RowEvHandlerName="count_ward_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="count_ward_viewRowDeleted" msprop:Generator_RowDeletingName="count_ward_viewRowDeleting" msprop:Generator_RowEvArgName="count_ward_viewRowChangeEvent" msprop:Generator_TablePropName="count_ward_view" msprop:Generator_RowChangedName="count_ward_viewRowChanged" msprop:Generator_RowChangingName="count_ward_viewRowChanging" msprop:Generator_TableClassName="count_ward_viewDataTable" msprop:Generator_RowClassName="count_ward_viewRow" msprop:Generator_TableVarName="tablecount_ward_view" msprop:Generator_UserTableName="count_ward_view">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TotalWards" msprop:Generator_ColumnPropNameInRow="TotalWards" msprop:Generator_ColumnPropNameInTable="TotalWardsColumn" msprop:Generator_ColumnVarNameInTable="columnTotalWards" msprop:Generator_UserColumnName="TotalWards" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Count_PatientType" msprop:Generator_RowEvHandlerName="Count_PatientTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="Count_PatientTypeRowDeleted" msprop:Generator_RowDeletingName="Count_PatientTypeRowDeleting" msprop:Generator_RowEvArgName="Count_PatientTypeRowChangeEvent" msprop:Generator_TablePropName="Count_PatientType" msprop:Generator_RowChangedName="Count_PatientTypeRowChanged" msprop:Generator_RowChangingName="Count_PatientTypeRowChanging" msprop:Generator_TableClassName="Count_PatientTypeDataTable" msprop:Generator_RowClassName="Count_PatientTypeRow" msprop:Generator_TableVarName="tableCount_PatientType" msprop:Generator_UserTableName="Count_PatientType">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PatientType" msprop:Generator_ColumnPropNameInRow="PatientType" msprop:Generator_ColumnPropNameInTable="PatientTypeColumn" msprop:Generator_ColumnVarNameInTable="columnPatientType" msprop:Generator_UserColumnName="PatientType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TotalPatients" msprop:Generator_ColumnPropNameInRow="TotalPatients" msprop:Generator_ColumnPropNameInTable="TotalPatientsColumn" msprop:Generator_ColumnVarNameInTable="columnTotalPatients" msprop:Generator_UserColumnName="TotalPatients" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -3163,42 +3379,42 @@ WHERE        (หมายเลขวอร์ด = @wardId)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Beds_Wards" msdata:parent="Wards" msdata:child="Beds" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Beds" msprop:Generator_RelationVarName="relationFK_Beds_Wards" msprop:Generator_ChildPropName="GetBedsRows" msprop:Generator_ParentPropName="WardsRow" msprop:Generator_UserRelationName="FK_Beds_Wards" />
-      <msdata:Relationship name="FK_In_Patients_Beds" msdata:parent="Beds" msdata:child="In_Patients" msdata:parentkey="bedID" msdata:childkey="bedID" msprop:Generator_UserParentTable="Beds" msprop:Generator_UserChildTable="In_Patients" msprop:Generator_RelationVarName="relationFK_In_Patients_Beds" msprop:Generator_ChildPropName="GetIn_PatientsRows" msprop:Generator_UserRelationName="FK_In_Patients_Beds" msprop:Generator_ParentPropName="BedsRow" />
-      <msdata:Relationship name="FK_In_Patients_Patient_Wards" msdata:parent="Patient_Wards" msdata:child="In_Patients" msdata:parentkey="pwID" msdata:childkey="pwID" msprop:Generator_UserParentTable="Patient_Wards" msprop:Generator_UserChildTable="In_Patients" msprop:Generator_RelationVarName="relationFK_In_Patients_Patient_Wards" msprop:Generator_ChildPropName="GetIn_PatientsRows" msprop:Generator_ParentPropName="Patient_WardsRow" msprop:Generator_UserRelationName="FK_In_Patients_Patient_Wards" />
-      <msdata:Relationship name="FK_In_Patients_Wards" msdata:parent="Wards" msdata:child="In_Patients" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="In_Patients" msprop:Generator_RelationVarName="relationFK_In_Patients_Wards" msprop:Generator_ChildPropName="GetIn_PatientsRows" msprop:Generator_ParentPropName="WardsRow" msprop:Generator_UserRelationName="FK_In_Patients_Wards" />
-      <msdata:Relationship name="FK_Login_logs_Staffs" msdata:parent="Staffs" msdata:child="Login_logs" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Login_logs" msprop:Generator_RelationVarName="relationFK_Login_logs_Staffs" msprop:Generator_ChildPropName="GetLogin_logsRows" msprop:Generator_ParentPropName="StaffsRow" msprop:Generator_UserRelationName="FK_Login_logs_Staffs" />
-      <msdata:Relationship name="FK_Med_Equipments_Suppilers" msdata:parent="Suppilers" msdata:child="Med_Equipments" msdata:parentkey="supplierID" msdata:childkey="supplierID" msprop:Generator_UserParentTable="Suppilers" msprop:Generator_UserChildTable="Med_Equipments" msprop:Generator_RelationVarName="relationFK_Med_Equipments_Suppilers" msprop:Generator_ChildPropName="GetMed_EquipmentsRows" msprop:Generator_ParentPropName="SuppilersRow" msprop:Generator_UserRelationName="FK_Med_Equipments_Suppilers" />
-      <msdata:Relationship name="FK_Med_Medicines_Suppilers" msdata:parent="Suppilers" msdata:child="Med_Medicines" msdata:parentkey="supplierID" msdata:childkey="supplierID" msprop:Generator_UserParentTable="Suppilers" msprop:Generator_UserChildTable="Med_Medicines" msprop:Generator_RelationVarName="relationFK_Med_Medicines_Suppilers" msprop:Generator_ChildPropName="GetMed_MedicinesRows" msprop:Generator_ParentPropName="SuppilersRow" msprop:Generator_UserRelationName="FK_Med_Medicines_Suppilers" />
-      <msdata:Relationship name="FK_Patient_Visits_Patients" msdata:parent="Patients" msdata:child="Patient_Visits" msdata:parentkey="patientID" msdata:childkey="patientID" msprop:Generator_UserParentTable="Patients" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Patients" msprop:Generator_ChildPropName="GetPatient_VisitsRows" msprop:Generator_ParentPropName="PatientsRow" msprop:Generator_UserRelationName="FK_Patient_Visits_Patients" />
-      <msdata:Relationship name="FK_Patient_Visits_Staffs" msdata:parent="Staffs" msdata:child="Patient_Visits" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Staffs" msprop:Generator_ChildPropName="GetPatient_VisitsRowsByFK_Patient_Visits_Staffs" msprop:Generator_ParentPropName="StaffsRowByFK_Patient_Visits_Staffs" msprop:Generator_UserRelationName="FK_Patient_Visits_Staffs" />
-      <msdata:Relationship name="FK_Patient_Visits_Wards" msdata:parent="Wards" msdata:child="Patient_Visits" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Wards" msprop:Generator_ChildPropName="GetPatient_VisitsRows" msprop:Generator_ParentPropName="WardsRow" msprop:Generator_UserRelationName="FK_Patient_Visits_Wards" />
-      <msdata:Relationship name="FK_Patient_Wards_Patient_Visits" msdata:parent="Patient_Visits" msdata:child="Patient_Wards" msdata:parentkey="visitID" msdata:childkey="visitID" msprop:Generator_UserParentTable="Patient_Visits" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Patient_Visits" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_UserRelationName="FK_Patient_Wards_Patient_Visits" msprop:Generator_ParentPropName="Patient_VisitsRow" />
-      <msdata:Relationship name="FK_Patient_Wards_Patients" msdata:parent="Patients" msdata:child="Patient_Wards" msdata:parentkey="patientID" msdata:childkey="patientID" msprop:Generator_UserParentTable="Patients" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Patients" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_ParentPropName="PatientsRow" msprop:Generator_UserRelationName="FK_Patient_Wards_Patients" />
-      <msdata:Relationship name="FK_Patient_Wards_Wards" msdata:parent="Wards" msdata:child="Patient_Wards" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Wards" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_ParentPropName="WardsRow" msprop:Generator_UserRelationName="FK_Patient_Wards_Wards" />
-      <msdata:Relationship name="FK_Patients_LocalDoctors" msdata:parent="LocalDoctors" msdata:child="Patients" msdata:parentkey="localDocID" msdata:childkey="localDocID" msprop:Generator_UserParentTable="LocalDoctors" msprop:Generator_UserChildTable="Patients" msprop:Generator_RelationVarName="relationFK_Patients_LocalDoctors" msprop:Generator_ChildPropName="GetPatientsRows" msprop:Generator_UserRelationName="FK_Patients_LocalDoctors" msprop:Generator_ParentPropName="LocalDoctorsRow" />
-      <msdata:Relationship name="FK_Patients_Patient_kins" msdata:parent="Patient_kins" msdata:child="Patients" msdata:parentkey="kinsID" msdata:childkey="kinsID" msprop:Generator_UserParentTable="Patient_kins" msprop:Generator_UserChildTable="Patients" msprop:Generator_RelationVarName="relationFK_Patients_Patient_kins" msprop:Generator_ChildPropName="GetPatientsRows" msprop:Generator_UserRelationName="FK_Patients_Patient_kins" msprop:Generator_ParentPropName="Patient_kinsRow" />
-      <msdata:Relationship name="FK_PW_Prescripts_Med_Medicines" msdata:parent="Med_Medicines" msdata:child="PW_Prescripts" msdata:parentkey="mmID" msdata:childkey="mmID" msprop:Generator_UserParentTable="Med_Medicines" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Med_Medicines" msprop:Generator_ChildPropName="GetPW_PrescriptsRows" msprop:Generator_UserRelationName="FK_PW_Prescripts_Med_Medicines" msprop:Generator_ParentPropName="Med_MedicinesRow" />
-      <msdata:Relationship name="FK_PW_Prescripts_Patient_Wards" msdata:parent="Patient_Wards" msdata:child="PW_Prescripts" msdata:parentkey="pwID" msdata:childkey="pwID" msprop:Generator_UserParentTable="Patient_Wards" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Patient_Wards" msprop:Generator_ChildPropName="GetPW_PrescriptsRows" msprop:Generator_UserRelationName="FK_PW_Prescripts_Patient_Wards" msprop:Generator_ParentPropName="Patient_WardsRow" />
-      <msdata:Relationship name="FK_Staff_Experiences_Staffs" msdata:parent="Staffs" msdata:child="Staff_Experiences" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Staff_Experiences" msprop:Generator_RelationVarName="relationFK_Staff_Experiences_Staffs" msprop:Generator_ChildPropName="GetStaff_ExperiencesRows" msprop:Generator_ParentPropName="StaffsRow" msprop:Generator_UserRelationName="FK_Staff_Experiences_Staffs" />
-      <msdata:Relationship name="FK_Staff_Qualificates_Staffs" msdata:parent="Staffs" msdata:child="Staff_Qualificates" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Staff_Qualificates" msprop:Generator_RelationVarName="relationFK_Staff_Qualificates_Staffs" msprop:Generator_ChildPropName="GetStaff_QualificatesRows" msprop:Generator_ParentPropName="StaffsRow" msprop:Generator_UserRelationName="FK_Staff_Qualificates_Staffs" />
-      <msdata:Relationship name="FK_Ward_Requests_Med_Equipments" msdata:parent="Med_Equipments" msdata:child="Ward_Requests" msdata:parentkey="meID" msdata:childkey="meID" msprop:Generator_UserParentTable="Med_Equipments" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Med_Equipments" msprop:Generator_ChildPropName="GetWard_RequestsRows" msprop:Generator_UserRelationName="FK_Ward_Requests_Med_Equipments" msprop:Generator_ParentPropName="Med_EquipmentsRow" />
-      <msdata:Relationship name="FK_Ward_Requests_Med_Medicines" msdata:parent="Med_Medicines" msdata:child="Ward_Requests" msdata:parentkey="mmID" msdata:childkey="mmID" msprop:Generator_UserParentTable="Med_Medicines" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Med_Medicines" msprop:Generator_ChildPropName="GetWard_RequestsRows" msprop:Generator_UserRelationName="FK_Ward_Requests_Med_Medicines" msprop:Generator_ParentPropName="Med_MedicinesRow" />
-      <msdata:Relationship name="FK_Ward_Requests_Staffs" msdata:parent="Staffs" msdata:child="Ward_Requests" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Staffs" msprop:Generator_ChildPropName="GetWard_RequestsRowsByFK_Ward_Requests_Staffs" msprop:Generator_UserRelationName="FK_Ward_Requests_Staffs" msprop:Generator_ParentPropName="StaffsRowByFK_Ward_Requests_Staffs" />
-      <msdata:Relationship name="FK_Ward_Requests_Wards" msdata:parent="Wards" msdata:child="Ward_Requests" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Wards" msprop:Generator_ChildPropName="GetWard_RequestsRows" msprop:Generator_ParentPropName="WardsRow" msprop:Generator_UserRelationName="FK_Ward_Requests_Wards" />
-      <msdata:Relationship name="FK_Ward_Staffs_Shifts" msdata:parent="Shifts" msdata:child="Ward_Staffs" msdata:parentkey="shiftID" msdata:childkey="shiftID" msprop:Generator_UserParentTable="Shifts" msprop:Generator_UserChildTable="Ward_Staffs" msprop:Generator_RelationVarName="relationFK_Ward_Staffs_Shifts" msprop:Generator_ChildPropName="GetWard_StaffsRows" msprop:Generator_UserRelationName="FK_Ward_Staffs_Shifts" msprop:Generator_ParentPropName="ShiftsRow" />
-      <msdata:Relationship name="FK_Ward_Staffs_Staffs" msdata:parent="Staffs" msdata:child="Ward_Staffs" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Ward_Staffs" msprop:Generator_RelationVarName="relationFK_Ward_Staffs_Staffs" msprop:Generator_ChildPropName="GetWard_StaffsRows" msprop:Generator_UserRelationName="FK_Ward_Staffs_Staffs" msprop:Generator_ParentPropName="StaffsRow" />
-      <msdata:Relationship name="FK_Ward_Staffs_Wards" msdata:parent="Wards" msdata:child="Ward_Staffs" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Ward_Staffs" msprop:Generator_RelationVarName="relationFK_Ward_Staffs_Wards" msprop:Generator_ChildPropName="GetWard_StaffsRows" msprop:Generator_ParentPropName="WardsRow" msprop:Generator_UserRelationName="FK_Ward_Staffs_Wards" />
-      <msdata:Relationship name="FK_Patient_Visits_Doctors_Doctor" msdata:parent="Doctors" msdata:child="Patient_Visits" msdata:parentkey="doctorID" msdata:childkey="doctorID" msprop:Generator_UserParentTable="Doctors" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Doctors_Doctor" msprop:Generator_ChildPropName="GetPatient_VisitsRows" msprop:Generator_UserRelationName="FK_Patient_Visits_Doctors_Doctor" msprop:Generator_ParentPropName="DoctorsRow" />
-      <msdata:Relationship name="FK_Patient_Wards_Staffs_cnID" msdata:parent="ChargeNurses" msdata:child="Patient_Wards" msdata:parentkey="cnID" msdata:childkey="cnID" msprop:Generator_UserParentTable="ChargeNurses" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Staffs_cnID" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_UserRelationName="FK_Patient_Wards_Staffs_cnID" msprop:Generator_ParentPropName="ChargeNursesRow" />
-      <msdata:Relationship name="FK_Patient_Wards_Staffs_Doctor" msdata:parent="Doctors" msdata:child="Patient_Wards" msdata:parentkey="doctorID" msdata:childkey="doctorID" msprop:Generator_UserParentTable="Doctors" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Staffs_Doctor" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_UserRelationName="FK_Patient_Wards_Staffs_Doctor" msprop:Generator_ParentPropName="DoctorsRow" />
-      <msdata:Relationship name="FK_PW_Prescripts_Staffs_cnID" msdata:parent="ChargeNurses" msdata:child="PW_Prescripts" msdata:parentkey="cnID" msdata:childkey="cnID" msprop:Generator_UserParentTable="ChargeNurses" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Staffs_cnID" msprop:Generator_ChildPropName="GetPW_PrescriptsRows" msprop:Generator_UserRelationName="FK_PW_Prescripts_Staffs_cnID" msprop:Generator_ParentPropName="ChargeNursesRow" />
-      <msdata:Relationship name="FK_PW_Prescripts_Staffs_Doctor" msdata:parent="Doctors" msdata:child="PW_Prescripts" msdata:parentkey="doctorID" msdata:childkey="doctorID" msprop:Generator_UserParentTable="Doctors" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Staffs_Doctor" msprop:Generator_ChildPropName="GetPW_PrescriptsRows" msprop:Generator_UserRelationName="FK_PW_Prescripts_Staffs_Doctor" msprop:Generator_ParentPropName="DoctorsRow" />
-      <msdata:Relationship name="FK_Suppilers_Staffs_mdID" msdata:parent="MedicalDirectors" msdata:child="Suppilers" msdata:parentkey="mdID" msdata:childkey="mdID" msprop:Generator_UserParentTable="MedicalDirectors" msprop:Generator_UserChildTable="Suppilers" msprop:Generator_RelationVarName="relationFK_Suppilers_Staffs_mdID" msprop:Generator_ChildPropName="GetSuppilersRows" msprop:Generator_UserRelationName="FK_Suppilers_Staffs_mdID" msprop:Generator_ParentPropName="MedicalDirectorsRow" />
-      <msdata:Relationship name="FK_Ward_Requests_Staffs_cnID" msdata:parent="ChargeNurses" msdata:child="Ward_Requests" msdata:parentkey="cnID" msdata:childkey="cnID" msprop:Generator_UserParentTable="ChargeNurses" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Staffs_cnID" msprop:Generator_ChildPropName="GetWard_RequestsRows" msprop:Generator_UserRelationName="FK_Ward_Requests_Staffs_cnID" msprop:Generator_ParentPropName="ChargeNursesRow" />
-      <msdata:Relationship name="FK_ChargeNurses_Staffs" msdata:parent="Staffs" msdata:child="ChargeNurses" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="ChargeNurses" msprop:Generator_RelationVarName="relationFK_ChargeNurses_Staffs" msprop:Generator_ChildPropName="GetChargeNursesRows" msprop:Generator_ParentPropName="StaffsRow" msprop:Generator_UserRelationName="FK_ChargeNurses_Staffs" />
-      <msdata:Relationship name="FK_Doctors_Staffs" msdata:parent="Staffs" msdata:child="Doctors" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Doctors" msprop:Generator_RelationVarName="relationFK_Doctors_Staffs" msprop:Generator_ChildPropName="GetDoctorsRows" msprop:Generator_ParentPropName="StaffsRow" msprop:Generator_UserRelationName="FK_Doctors_Staffs" />
-      <msdata:Relationship name="FK_MedicalDirectors_Staffs" msdata:parent="Staffs" msdata:child="MedicalDirectors" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="MedicalDirectors" msprop:Generator_RelationVarName="relationFK_MedicalDirectors_Staffs" msprop:Generator_ChildPropName="GetMedicalDirectorsRows" msprop:Generator_ParentPropName="StaffsRow" msprop:Generator_UserRelationName="FK_MedicalDirectors_Staffs" />
+      <msdata:Relationship name="FK_Beds_Wards" msdata:parent="Wards" msdata:child="Beds" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Beds" msprop:Generator_RelationVarName="relationFK_Beds_Wards" msprop:Generator_ChildPropName="GetBedsRows" msprop:Generator_UserRelationName="FK_Beds_Wards" msprop:Generator_ParentPropName="WardsRow" />
+      <msdata:Relationship name="FK_In_Patients_Beds" msdata:parent="Beds" msdata:child="In_Patients" msdata:parentkey="bedID" msdata:childkey="bedID" msprop:Generator_UserParentTable="Beds" msprop:Generator_UserChildTable="In_Patients" msprop:Generator_RelationVarName="relationFK_In_Patients_Beds" msprop:Generator_ChildPropName="GetIn_PatientsRows" msprop:Generator_ParentPropName="BedsRow" msprop:Generator_UserRelationName="FK_In_Patients_Beds" />
+      <msdata:Relationship name="FK_In_Patients_Patient_Wards" msdata:parent="Patient_Wards" msdata:child="In_Patients" msdata:parentkey="pwID" msdata:childkey="pwID" msprop:Generator_UserParentTable="Patient_Wards" msprop:Generator_UserChildTable="In_Patients" msprop:Generator_RelationVarName="relationFK_In_Patients_Patient_Wards" msprop:Generator_ChildPropName="GetIn_PatientsRows" msprop:Generator_UserRelationName="FK_In_Patients_Patient_Wards" msprop:Generator_ParentPropName="Patient_WardsRow" />
+      <msdata:Relationship name="FK_In_Patients_Wards" msdata:parent="Wards" msdata:child="In_Patients" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="In_Patients" msprop:Generator_RelationVarName="relationFK_In_Patients_Wards" msprop:Generator_ChildPropName="GetIn_PatientsRows" msprop:Generator_UserRelationName="FK_In_Patients_Wards" msprop:Generator_ParentPropName="WardsRow" />
+      <msdata:Relationship name="FK_Login_logs_Staffs" msdata:parent="Staffs" msdata:child="Login_logs" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Login_logs" msprop:Generator_RelationVarName="relationFK_Login_logs_Staffs" msprop:Generator_ChildPropName="GetLogin_logsRows" msprop:Generator_UserRelationName="FK_Login_logs_Staffs" msprop:Generator_ParentPropName="StaffsRow" />
+      <msdata:Relationship name="FK_Med_Equipments_Suppilers" msdata:parent="Suppilers" msdata:child="Med_Equipments" msdata:parentkey="supplierID" msdata:childkey="supplierID" msprop:Generator_UserParentTable="Suppilers" msprop:Generator_UserChildTable="Med_Equipments" msprop:Generator_RelationVarName="relationFK_Med_Equipments_Suppilers" msprop:Generator_ChildPropName="GetMed_EquipmentsRows" msprop:Generator_UserRelationName="FK_Med_Equipments_Suppilers" msprop:Generator_ParentPropName="SuppilersRow" />
+      <msdata:Relationship name="FK_Med_Medicines_Suppilers" msdata:parent="Suppilers" msdata:child="Med_Medicines" msdata:parentkey="supplierID" msdata:childkey="supplierID" msprop:Generator_UserParentTable="Suppilers" msprop:Generator_UserChildTable="Med_Medicines" msprop:Generator_RelationVarName="relationFK_Med_Medicines_Suppilers" msprop:Generator_ChildPropName="GetMed_MedicinesRows" msprop:Generator_UserRelationName="FK_Med_Medicines_Suppilers" msprop:Generator_ParentPropName="SuppilersRow" />
+      <msdata:Relationship name="FK_Patient_Visits_Patients" msdata:parent="Patients" msdata:child="Patient_Visits" msdata:parentkey="patientID" msdata:childkey="patientID" msprop:Generator_UserParentTable="Patients" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Patients" msprop:Generator_ChildPropName="GetPatient_VisitsRows" msprop:Generator_UserRelationName="FK_Patient_Visits_Patients" msprop:Generator_ParentPropName="PatientsRow" />
+      <msdata:Relationship name="FK_Patient_Visits_Staffs" msdata:parent="Staffs" msdata:child="Patient_Visits" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Staffs" msprop:Generator_ChildPropName="GetPatient_VisitsRowsByFK_Patient_Visits_Staffs" msprop:Generator_UserRelationName="FK_Patient_Visits_Staffs" msprop:Generator_ParentPropName="StaffsRowByFK_Patient_Visits_Staffs" />
+      <msdata:Relationship name="FK_Patient_Visits_Wards" msdata:parent="Wards" msdata:child="Patient_Visits" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Wards" msprop:Generator_ChildPropName="GetPatient_VisitsRows" msprop:Generator_UserRelationName="FK_Patient_Visits_Wards" msprop:Generator_ParentPropName="WardsRow" />
+      <msdata:Relationship name="FK_Patient_Wards_Patient_Visits" msdata:parent="Patient_Visits" msdata:child="Patient_Wards" msdata:parentkey="visitID" msdata:childkey="visitID" msprop:Generator_UserParentTable="Patient_Visits" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Patient_Visits" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_ParentPropName="Patient_VisitsRow" msprop:Generator_UserRelationName="FK_Patient_Wards_Patient_Visits" />
+      <msdata:Relationship name="FK_Patient_Wards_Patients" msdata:parent="Patients" msdata:child="Patient_Wards" msdata:parentkey="patientID" msdata:childkey="patientID" msprop:Generator_UserParentTable="Patients" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Patients" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_UserRelationName="FK_Patient_Wards_Patients" msprop:Generator_ParentPropName="PatientsRow" />
+      <msdata:Relationship name="FK_Patient_Wards_Wards" msdata:parent="Wards" msdata:child="Patient_Wards" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Wards" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_UserRelationName="FK_Patient_Wards_Wards" msprop:Generator_ParentPropName="WardsRow" />
+      <msdata:Relationship name="FK_Patients_LocalDoctors" msdata:parent="LocalDoctors" msdata:child="Patients" msdata:parentkey="localDocID" msdata:childkey="localDocID" msprop:Generator_UserParentTable="LocalDoctors" msprop:Generator_UserChildTable="Patients" msprop:Generator_RelationVarName="relationFK_Patients_LocalDoctors" msprop:Generator_ChildPropName="GetPatientsRows" msprop:Generator_ParentPropName="LocalDoctorsRow" msprop:Generator_UserRelationName="FK_Patients_LocalDoctors" />
+      <msdata:Relationship name="FK_Patients_Patient_kins" msdata:parent="Patient_kins" msdata:child="Patients" msdata:parentkey="kinsID" msdata:childkey="kinsID" msprop:Generator_UserParentTable="Patient_kins" msprop:Generator_UserChildTable="Patients" msprop:Generator_RelationVarName="relationFK_Patients_Patient_kins" msprop:Generator_ChildPropName="GetPatientsRows" msprop:Generator_ParentPropName="Patient_kinsRow" msprop:Generator_UserRelationName="FK_Patients_Patient_kins" />
+      <msdata:Relationship name="FK_PW_Prescripts_Med_Medicines" msdata:parent="Med_Medicines" msdata:child="PW_Prescripts" msdata:parentkey="mmID" msdata:childkey="mmID" msprop:Generator_UserParentTable="Med_Medicines" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Med_Medicines" msprop:Generator_ChildPropName="GetPW_PrescriptsRows" msprop:Generator_ParentPropName="Med_MedicinesRow" msprop:Generator_UserRelationName="FK_PW_Prescripts_Med_Medicines" />
+      <msdata:Relationship name="FK_PW_Prescripts_Patient_Wards" msdata:parent="Patient_Wards" msdata:child="PW_Prescripts" msdata:parentkey="pwID" msdata:childkey="pwID" msprop:Generator_UserParentTable="Patient_Wards" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Patient_Wards" msprop:Generator_ChildPropName="GetPW_PrescriptsRows" msprop:Generator_ParentPropName="Patient_WardsRow" msprop:Generator_UserRelationName="FK_PW_Prescripts_Patient_Wards" />
+      <msdata:Relationship name="FK_Staff_Experiences_Staffs" msdata:parent="Staffs" msdata:child="Staff_Experiences" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Staff_Experiences" msprop:Generator_RelationVarName="relationFK_Staff_Experiences_Staffs" msprop:Generator_ChildPropName="GetStaff_ExperiencesRows" msprop:Generator_UserRelationName="FK_Staff_Experiences_Staffs" msprop:Generator_ParentPropName="StaffsRow" />
+      <msdata:Relationship name="FK_Staff_Qualificates_Staffs" msdata:parent="Staffs" msdata:child="Staff_Qualificates" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Staff_Qualificates" msprop:Generator_RelationVarName="relationFK_Staff_Qualificates_Staffs" msprop:Generator_ChildPropName="GetStaff_QualificatesRows" msprop:Generator_UserRelationName="FK_Staff_Qualificates_Staffs" msprop:Generator_ParentPropName="StaffsRow" />
+      <msdata:Relationship name="FK_Ward_Requests_Med_Equipments" msdata:parent="Med_Equipments" msdata:child="Ward_Requests" msdata:parentkey="meID" msdata:childkey="meID" msprop:Generator_UserParentTable="Med_Equipments" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Med_Equipments" msprop:Generator_ChildPropName="GetWard_RequestsRows" msprop:Generator_ParentPropName="Med_EquipmentsRow" msprop:Generator_UserRelationName="FK_Ward_Requests_Med_Equipments" />
+      <msdata:Relationship name="FK_Ward_Requests_Med_Medicines" msdata:parent="Med_Medicines" msdata:child="Ward_Requests" msdata:parentkey="mmID" msdata:childkey="mmID" msprop:Generator_UserParentTable="Med_Medicines" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Med_Medicines" msprop:Generator_ChildPropName="GetWard_RequestsRows" msprop:Generator_ParentPropName="Med_MedicinesRow" msprop:Generator_UserRelationName="FK_Ward_Requests_Med_Medicines" />
+      <msdata:Relationship name="FK_Ward_Requests_Staffs" msdata:parent="Staffs" msdata:child="Ward_Requests" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Staffs" msprop:Generator_ChildPropName="GetWard_RequestsRowsByFK_Ward_Requests_Staffs" msprop:Generator_ParentPropName="StaffsRowByFK_Ward_Requests_Staffs" msprop:Generator_UserRelationName="FK_Ward_Requests_Staffs" />
+      <msdata:Relationship name="FK_Ward_Requests_Wards" msdata:parent="Wards" msdata:child="Ward_Requests" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Wards" msprop:Generator_ChildPropName="GetWard_RequestsRows" msprop:Generator_UserRelationName="FK_Ward_Requests_Wards" msprop:Generator_ParentPropName="WardsRow" />
+      <msdata:Relationship name="FK_Ward_Staffs_Shifts" msdata:parent="Shifts" msdata:child="Ward_Staffs" msdata:parentkey="shiftID" msdata:childkey="shiftID" msprop:Generator_UserParentTable="Shifts" msprop:Generator_UserChildTable="Ward_Staffs" msprop:Generator_RelationVarName="relationFK_Ward_Staffs_Shifts" msprop:Generator_ChildPropName="GetWard_StaffsRows" msprop:Generator_ParentPropName="ShiftsRow" msprop:Generator_UserRelationName="FK_Ward_Staffs_Shifts" />
+      <msdata:Relationship name="FK_Ward_Staffs_Staffs" msdata:parent="Staffs" msdata:child="Ward_Staffs" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Ward_Staffs" msprop:Generator_RelationVarName="relationFK_Ward_Staffs_Staffs" msprop:Generator_ChildPropName="GetWard_StaffsRows" msprop:Generator_ParentPropName="StaffsRow" msprop:Generator_UserRelationName="FK_Ward_Staffs_Staffs" />
+      <msdata:Relationship name="FK_Ward_Staffs_Wards" msdata:parent="Wards" msdata:child="Ward_Staffs" msdata:parentkey="wardID" msdata:childkey="wardID" msprop:Generator_UserParentTable="Wards" msprop:Generator_UserChildTable="Ward_Staffs" msprop:Generator_RelationVarName="relationFK_Ward_Staffs_Wards" msprop:Generator_ChildPropName="GetWard_StaffsRows" msprop:Generator_UserRelationName="FK_Ward_Staffs_Wards" msprop:Generator_ParentPropName="WardsRow" />
+      <msdata:Relationship name="FK_Patient_Visits_Doctors_Doctor" msdata:parent="Doctors" msdata:child="Patient_Visits" msdata:parentkey="doctorID" msdata:childkey="doctorID" msprop:Generator_UserParentTable="Doctors" msprop:Generator_UserChildTable="Patient_Visits" msprop:Generator_RelationVarName="relationFK_Patient_Visits_Doctors_Doctor" msprop:Generator_ChildPropName="GetPatient_VisitsRows" msprop:Generator_ParentPropName="DoctorsRow" msprop:Generator_UserRelationName="FK_Patient_Visits_Doctors_Doctor" />
+      <msdata:Relationship name="FK_Patient_Wards_Staffs_cnID" msdata:parent="ChargeNurses" msdata:child="Patient_Wards" msdata:parentkey="cnID" msdata:childkey="cnID" msprop:Generator_UserParentTable="ChargeNurses" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Staffs_cnID" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_ParentPropName="ChargeNursesRow" msprop:Generator_UserRelationName="FK_Patient_Wards_Staffs_cnID" />
+      <msdata:Relationship name="FK_Patient_Wards_Staffs_Doctor" msdata:parent="Doctors" msdata:child="Patient_Wards" msdata:parentkey="doctorID" msdata:childkey="doctorID" msprop:Generator_UserParentTable="Doctors" msprop:Generator_UserChildTable="Patient_Wards" msprop:Generator_RelationVarName="relationFK_Patient_Wards_Staffs_Doctor" msprop:Generator_ChildPropName="GetPatient_WardsRows" msprop:Generator_ParentPropName="DoctorsRow" msprop:Generator_UserRelationName="FK_Patient_Wards_Staffs_Doctor" />
+      <msdata:Relationship name="FK_PW_Prescripts_Staffs_cnID" msdata:parent="ChargeNurses" msdata:child="PW_Prescripts" msdata:parentkey="cnID" msdata:childkey="cnID" msprop:Generator_UserParentTable="ChargeNurses" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Staffs_cnID" msprop:Generator_ChildPropName="GetPW_PrescriptsRows" msprop:Generator_ParentPropName="ChargeNursesRow" msprop:Generator_UserRelationName="FK_PW_Prescripts_Staffs_cnID" />
+      <msdata:Relationship name="FK_PW_Prescripts_Staffs_Doctor" msdata:parent="Doctors" msdata:child="PW_Prescripts" msdata:parentkey="doctorID" msdata:childkey="doctorID" msprop:Generator_UserParentTable="Doctors" msprop:Generator_UserChildTable="PW_Prescripts" msprop:Generator_RelationVarName="relationFK_PW_Prescripts_Staffs_Doctor" msprop:Generator_ChildPropName="GetPW_PrescriptsRows" msprop:Generator_ParentPropName="DoctorsRow" msprop:Generator_UserRelationName="FK_PW_Prescripts_Staffs_Doctor" />
+      <msdata:Relationship name="FK_Suppilers_Staffs_mdID" msdata:parent="MedicalDirectors" msdata:child="Suppilers" msdata:parentkey="mdID" msdata:childkey="mdID" msprop:Generator_UserParentTable="MedicalDirectors" msprop:Generator_UserChildTable="Suppilers" msprop:Generator_RelationVarName="relationFK_Suppilers_Staffs_mdID" msprop:Generator_ChildPropName="GetSuppilersRows" msprop:Generator_ParentPropName="MedicalDirectorsRow" msprop:Generator_UserRelationName="FK_Suppilers_Staffs_mdID" />
+      <msdata:Relationship name="FK_Ward_Requests_Staffs_cnID" msdata:parent="ChargeNurses" msdata:child="Ward_Requests" msdata:parentkey="cnID" msdata:childkey="cnID" msprop:Generator_UserParentTable="ChargeNurses" msprop:Generator_UserChildTable="Ward_Requests" msprop:Generator_RelationVarName="relationFK_Ward_Requests_Staffs_cnID" msprop:Generator_ChildPropName="GetWard_RequestsRows" msprop:Generator_ParentPropName="ChargeNursesRow" msprop:Generator_UserRelationName="FK_Ward_Requests_Staffs_cnID" />
+      <msdata:Relationship name="FK_ChargeNurses_Staffs" msdata:parent="Staffs" msdata:child="ChargeNurses" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="ChargeNurses" msprop:Generator_RelationVarName="relationFK_ChargeNurses_Staffs" msprop:Generator_ChildPropName="GetChargeNursesRows" msprop:Generator_UserRelationName="FK_ChargeNurses_Staffs" msprop:Generator_ParentPropName="StaffsRow" />
+      <msdata:Relationship name="FK_Doctors_Staffs" msdata:parent="Staffs" msdata:child="Doctors" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="Doctors" msprop:Generator_RelationVarName="relationFK_Doctors_Staffs" msprop:Generator_ChildPropName="GetDoctorsRows" msprop:Generator_UserRelationName="FK_Doctors_Staffs" msprop:Generator_ParentPropName="StaffsRow" />
+      <msdata:Relationship name="FK_MedicalDirectors_Staffs" msdata:parent="Staffs" msdata:child="MedicalDirectors" msdata:parentkey="staffID" msdata:childkey="staffID" msprop:Generator_UserParentTable="Staffs" msprop:Generator_UserChildTable="MedicalDirectors" msprop:Generator_RelationVarName="relationFK_MedicalDirectors_Staffs" msprop:Generator_ChildPropName="GetMedicalDirectorsRows" msprop:Generator_UserRelationName="FK_MedicalDirectors_Staffs" msprop:Generator_ParentPropName="StaffsRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

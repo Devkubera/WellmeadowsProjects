@@ -28,6 +28,7 @@ Partial Class Report_EachWard
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Ward_Report_ViewTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Ward_Report_ViewTableAdapter()
+        Me.Count_StaffInWardTableAdapter1 = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Count_StaffInWardTableAdapter()
         CType(Me.WardReportViewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -66,6 +67,10 @@ Partial Class Report_EachWard
         '
         Me.Ward_Report_ViewTableAdapter.ClearBeforeFill = True
         '
+        'Count_StaffInWardTableAdapter1
+        '
+        Me.Count_StaffInWardTableAdapter1.ClearBeforeFill = True
+        '
         'Report_EachWard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -86,4 +91,5 @@ Partial Class Report_EachWard
     Friend WithEvents WardReportViewBindingSource As BindingSource
     Friend WithEvents Ward_Report_ViewTableAdapter As WellmeadowsDataSetTableAdapters.Ward_Report_ViewTableAdapter
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents Count_StaffInWardTableAdapter1 As WellmeadowsDataSetTableAdapters.Count_StaffInWardTableAdapter
 End Class

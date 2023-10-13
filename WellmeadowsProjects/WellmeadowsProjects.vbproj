@@ -187,6 +187,12 @@
     <Compile Include="Add_WaitingListForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DashbordForm.Designer.vb">
+      <DependentUpon>DashbordForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DashbordForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Edit_Medicine.Designer.vb">
       <DependentUpon>Edit_Medicine.vb</DependentUpon>
     </Compile>
@@ -424,6 +430,11 @@
     <EmbeddedResource Include="Add_Supplies.resx">
       <DependentUpon>Add_Supplies.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.rdlc" />
+    <EmbeddedResource Include="DashboardData.rdlc" />
+    <EmbeddedResource Include="DashbordForm.resx">
+      <DependentUpon>DashbordForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Edit_InPatient.resx">
       <DependentUpon>Edit_InPatient.vb</DependentUpon>
     </EmbeddedResource>
@@ -548,6 +559,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -558,7 +570,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="WellmeadowsDataSet.xsc">
       <DependentUpon>WellmeadowsDataSet.xsd</DependentUpon>
