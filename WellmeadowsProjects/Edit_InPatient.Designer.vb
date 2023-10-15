@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Edit_InPatient
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,215 +20,303 @@ Partial Class Edit_InPatient
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.components = New System.ComponentModel.Container()
+        Me.ipb_id = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.expect = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.bad_Id = New System.Windows.Forms.TextBox()
+        Me.ip_expect = New System.Windows.Forms.TextBox()
+        Me.ippw_id = New System.Windows.Forms.TextBox()
+        Me.PatientsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
+        Me.PatientsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.PatientsTableAdapter()
+        Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
+        Me.BedsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.BedsTableAdapter()
+        Me.BedsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.s_Id = New System.Windows.Forms.TextBox()
+        Me.ipw_id = New System.Windows.Forms.ComboBox()
+        Me.ip_date = New System.Windows.Forms.DateTimePicker()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.w_Id = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lableSearch = New System.Windows.Forms.Label()
-        Me.p_Id = New System.Windows.Forms.TextBox()
+        Me.ip_id = New System.Windows.Forms.TextBox()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.View_Edit_Inpa = New System.Windows.Forms.DataGridView()
-        Me.start_Date = New System.Windows.Forms.DateTimePicker()
-        CType(Me.View_Edit_Inpa, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PatientsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BedsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'btnAdd
+        'ipb_id
         '
-        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnAdd.Location = New System.Drawing.Point(1129, 38)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(160, 46)
-        Me.btnAdd.TabIndex = 31
-        Me.btnAdd.Text = "แก้ไขข้อมูล"
-        Me.btnAdd.UseVisualStyleBackColor = False
+        Me.ipb_id.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ipb_id.FormattingEnabled = True
+        Me.ipb_id.Location = New System.Drawing.Point(729, 329)
+        Me.ipb_id.Margin = New System.Windows.Forms.Padding(4)
+        Me.ipb_id.Name = "ipb_id"
+        Me.ipb_id.Size = New System.Drawing.Size(240, 38)
+        Me.ipb_id.TabIndex = 129
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label5.Location = New System.Drawing.Point(347, 389)
+        Me.Label5.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(361, 407)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(145, 29)
-        Me.Label5.TabIndex = 29
+        Me.Label5.Size = New System.Drawing.Size(134, 30)
+        Me.Label5.TabIndex = 124
         Me.Label5.Text = "จำนวนวันที่อยู่"
         '
-        'expect
+        'ip_expect
         '
-        Me.expect.Location = New System.Drawing.Point(352, 436)
-        Me.expect.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.expect.Name = "expect"
-        Me.expect.Size = New System.Drawing.Size(188, 22)
-        Me.expect.TabIndex = 28
+        Me.ip_expect.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ip_expect.Location = New System.Drawing.Point(366, 454)
+        Me.ip_expect.Margin = New System.Windows.Forms.Padding(4)
+        Me.ip_expect.Name = "ip_expect"
+        Me.ip_expect.Size = New System.Drawing.Size(265, 38)
+        Me.ip_expect.TabIndex = 123
         '
-        'Label6
+        'ippw_id
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label6.Location = New System.Drawing.Point(77, 389)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(142, 29)
-        Me.Label6.TabIndex = 27
-        Me.Label6.Text = "หมายเลขเตียง"
+        Me.ippw_id.Enabled = False
+        Me.ippw_id.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ippw_id.Location = New System.Drawing.Point(729, 195)
+        Me.ippw_id.Margin = New System.Windows.Forms.Padding(4)
+        Me.ippw_id.Name = "ippw_id"
+        Me.ippw_id.Size = New System.Drawing.Size(240, 38)
+        Me.ippw_id.TabIndex = 116
         '
-        'bad_Id
+        'PatientsBindingSource
         '
-        Me.bad_Id.Location = New System.Drawing.Point(83, 436)
-        Me.bad_Id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.bad_Id.Name = "bad_Id"
-        Me.bad_Id.Size = New System.Drawing.Size(188, 22)
-        Me.bad_Id.TabIndex = 26
+        Me.PatientsBindingSource.DataMember = "Patients"
+        Me.PatientsBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'WellmeadowsDataSet
+        '
+        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
+        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PatientsTableAdapter
+        '
+        Me.PatientsTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BedsTableAdapter = Me.BedsTableAdapter
+        Me.TableAdapterManager.ChargeNursesTableAdapter = Nothing
+        Me.TableAdapterManager.DoctorsTableAdapter = Nothing
+        Me.TableAdapterManager.In_PatientsTableAdapter = Nothing
+        Me.TableAdapterManager.LocalDoctorsTableAdapter = Nothing
+        Me.TableAdapterManager.Login_logsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_EquipmentsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_MedicinesTableAdapter = Nothing
+        Me.TableAdapterManager.MedicalDirectorsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_kinsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_VisitsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_WardsTableAdapter = Nothing
+        Me.TableAdapterManager.PatientsTableAdapter = Me.PatientsTableAdapter
+        Me.TableAdapterManager.PW_PrescriptsTableAdapter = Nothing
+        Me.TableAdapterManager.ShiftsTableAdapter = Nothing
+        Me.TableAdapterManager.Staff_ExperiencesTableAdapter = Nothing
+        Me.TableAdapterManager.Staff_QualificatesTableAdapter = Nothing
+        Me.TableAdapterManager.StaffsTableAdapter = Nothing
+        Me.TableAdapterManager.SuppilersTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.Ward_RequestsTableAdapter = Nothing
+        Me.TableAdapterManager.Ward_StaffsTableAdapter = Nothing
+        Me.TableAdapterManager.WardsTableAdapter = Nothing
+        '
+        'BedsTableAdapter
+        '
+        Me.BedsTableAdapter.ClearBeforeFill = True
+        '
+        'BedsBindingSource
+        '
+        Me.BedsBindingSource.DataMember = "Beds"
+        Me.BedsBindingSource.DataSource = Me.WellmeadowsDataSet
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label3.Location = New System.Drawing.Point(347, 265)
+        Me.Label3.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(724, 148)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(179, 29)
-        Me.Label3.TabIndex = 25
-        Me.Label3.Text = "หมายเลขพนักงาน"
+        Me.Label3.Size = New System.Drawing.Size(220, 30)
+        Me.Label3.TabIndex = 119
+        Me.Label3.Text = "หมายเลขประวัติการรักษา"
         '
-        's_Id
+        'ipw_id
         '
-        Me.s_Id.Location = New System.Drawing.Point(352, 311)
-        Me.s_Id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.s_Id.Name = "s_Id"
-        Me.s_Id.Size = New System.Drawing.Size(188, 22)
-        Me.s_Id.TabIndex = 24
+        Me.ipw_id.Enabled = False
+        Me.ipw_id.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ipw_id.FormattingEnabled = True
+        Me.ipw_id.Items.AddRange(New Object() {"W1", "W2", "W3", "W4", "W5", "W6", "W7", "W8", "W9", "W10"})
+        Me.ipw_id.Location = New System.Drawing.Point(366, 329)
+        Me.ipw_id.Margin = New System.Windows.Forms.Padding(4)
+        Me.ipw_id.Name = "ipw_id"
+        Me.ipw_id.Size = New System.Drawing.Size(240, 38)
+        Me.ipw_id.TabIndex = 128
+        '
+        'ip_date
+        '
+        Me.ip_date.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ip_date.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.ip_date.Location = New System.Drawing.Point(729, 451)
+        Me.ip_date.Margin = New System.Windows.Forms.Padding(4)
+        Me.ip_date.Name = "ip_date"
+        Me.ip_date.Size = New System.Drawing.Size(265, 38)
+        Me.ip_date.TabIndex = 127
+        '
+        'btnAdd
+        '
+        Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
+        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnAdd.Location = New System.Drawing.Point(1052, 54)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(160, 46)
+        Me.btnAdd.TabIndex = 126
+        Me.btnAdd.Text = "เพิ่มข้อมูล"
+        Me.btnAdd.UseVisualStyleBackColor = False
+        '
+        'btnClear
+        '
+        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnClear.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.btnClear.ForeColor = System.Drawing.Color.Snow
+        Me.btnClear.Location = New System.Drawing.Point(931, 54)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(100, 46)
+        Me.btnClear.TabIndex = 125
+        Me.btnClear.Text = "ล้างค่า"
+        Me.btnClear.UseVisualStyleBackColor = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(724, 286)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(134, 30)
+        Me.Label6.TabIndex = 122
+        Me.Label6.Text = "หมายเลขเตียง"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label4.Location = New System.Drawing.Point(77, 265)
+        Me.Label4.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(361, 284)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(149, 29)
-        Me.Label4.TabIndex = 23
+        Me.Label4.Size = New System.Drawing.Size(137, 30)
+        Me.Label4.TabIndex = 121
         Me.Label4.Text = "หมายเลขวอร์ด"
-        '
-        'w_Id
-        '
-        Me.w_Id.Location = New System.Drawing.Point(83, 311)
-        Me.w_Id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.w_Id.Name = "w_Id"
-        Me.w_Id.Size = New System.Drawing.Size(188, 22)
-        Me.w_Id.TabIndex = 22
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label2.Location = New System.Drawing.Point(347, 129)
+        Me.Label2.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(724, 404)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(87, 29)
-        Me.Label2.TabIndex = 21
+        Me.Label2.Size = New System.Drawing.Size(77, 30)
+        Me.Label2.TabIndex = 120
         Me.Label2.Text = "วันที่เข้า"
         '
         'lableSearch
         '
         Me.lableSearch.AutoSize = True
-        Me.lableSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.lableSearch.Location = New System.Drawing.Point(77, 129)
+        Me.lableSearch.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lableSearch.Location = New System.Drawing.Point(361, 148)
         Me.lableSearch.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lableSearch.Name = "lableSearch"
-        Me.lableSearch.Size = New System.Drawing.Size(149, 29)
-        Me.lableSearch.TabIndex = 19
+        Me.lableSearch.Size = New System.Drawing.Size(140, 30)
+        Me.lableSearch.TabIndex = 118
         Me.lableSearch.Text = "หมายเลขผู้ป่วย"
         '
-        'p_Id
+        'ip_id
         '
-        Me.p_Id.Location = New System.Drawing.Point(83, 176)
-        Me.p_Id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.p_Id.Name = "p_Id"
-        Me.p_Id.Size = New System.Drawing.Size(188, 22)
-        Me.p_Id.TabIndex = 18
+        Me.ip_id.Enabled = False
+        Me.ip_id.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ip_id.Location = New System.Drawing.Point(366, 195)
+        Me.ip_id.Margin = New System.Windows.Forms.Padding(4)
+        Me.ip_id.Name = "ip_id"
+        Me.ip_id.Size = New System.Drawing.Size(240, 38)
+        Me.ip_id.TabIndex = 117
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(537, 48)
+        Me.Label1.Font = New System.Drawing.Font("Prompt", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Label1.Location = New System.Drawing.Point(548, 58)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(262, 36)
-        Me.Label1.TabIndex = 17
+        Me.Label1.Size = New System.Drawing.Size(213, 36)
+        Me.Label1.TabIndex = 115
         Me.Label1.Text = "แก้ไขข้อมูลผู้ป่วยใน"
-        '
-        'View_Edit_Inpa
-        '
-        Me.View_Edit_Inpa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.View_Edit_Inpa.Location = New System.Drawing.Point(652, 129)
-        Me.View_Edit_Inpa.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.View_Edit_Inpa.Name = "View_Edit_Inpa"
-        Me.View_Edit_Inpa.RowHeadersWidth = 51
-        Me.View_Edit_Inpa.Size = New System.Drawing.Size(637, 587)
-        Me.View_Edit_Inpa.TabIndex = 32
-        '
-        'start_Date
-        '
-        Me.start_Date.Location = New System.Drawing.Point(352, 176)
-        Me.start_Date.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.start_Date.Name = "start_Date"
-        Me.start_Date.Size = New System.Drawing.Size(265, 22)
-        Me.start_Date.TabIndex = 33
         '
         'Edit_InPatient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1360, 800)
-        Me.Controls.Add(Me.start_Date)
-        Me.Controls.Add(Me.View_Edit_Inpa)
-        Me.Controls.Add(Me.btnAdd)
+        Me.Controls.Add(Me.ipb_id)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.expect)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.bad_Id)
+        Me.Controls.Add(Me.ip_expect)
+        Me.Controls.Add(Me.ippw_id)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.s_Id)
+        Me.Controls.Add(Me.ipw_id)
+        Me.Controls.Add(Me.ip_date)
+        Me.Controls.Add(Me.btnAdd)
+        Me.Controls.Add(Me.btnClear)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.w_Id)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lableSearch)
-        Me.Controls.Add(Me.p_Id)
+        Me.Controls.Add(Me.ip_id)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Edit_InPatient"
         Me.Text = "Edit_InPatient"
-        CType(Me.View_Edit_Inpa, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PatientsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BedsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents btnAdd As Button
+    Friend WithEvents ipb_id As ComboBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents expect As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents bad_Id As TextBox
+    Friend WithEvents ip_expect As TextBox
+    Friend WithEvents ippw_id As TextBox
+    Friend WithEvents PatientsBindingSource As BindingSource
+    Friend WithEvents WellmeadowsDataSet As WellmeadowsDataSet
+    Friend WithEvents PatientsTableAdapter As WellmeadowsDataSetTableAdapters.PatientsTableAdapter
+    Friend WithEvents TableAdapterManager As WellmeadowsDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents BedsTableAdapter As WellmeadowsDataSetTableAdapters.BedsTableAdapter
+    Friend WithEvents BedsBindingSource As BindingSource
     Friend WithEvents Label3 As Label
-    Friend WithEvents s_Id As TextBox
+    Friend WithEvents ipw_id As ComboBox
+    Friend WithEvents ip_date As DateTimePicker
+    Friend WithEvents btnAdd As Button
+    Friend WithEvents btnClear As Button
+    Friend WithEvents Label6 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents w_Id As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents lableSearch As Label
-    Friend WithEvents p_Id As TextBox
+    Friend WithEvents ip_id As TextBox
+    Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents Label1 As Label
-    Friend WithEvents View_Edit_Inpa As DataGridView
-    Friend WithEvents start_Date As DateTimePicker
 End Class

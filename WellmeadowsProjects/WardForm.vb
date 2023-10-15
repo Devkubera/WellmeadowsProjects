@@ -69,4 +69,8 @@ Public Class WardForm
             WardsBindingSource.Filter = $"wardID LIKE '%{searchText}%' OR wardName LIKE '%{searchText}%' "
         End If
     End Sub
+
+    Private Sub placeholderlb_Click(sender As Object, e As EventArgs) Handles placeholderlb.Click
+
+    End Sub
 End Class

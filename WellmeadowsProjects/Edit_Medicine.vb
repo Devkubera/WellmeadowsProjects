@@ -3,27 +3,44 @@
     Public supID As String = ""
 
     Private Sub Edit_Medicine_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Suppilers' table. You can move, or remove it, as needed.
+        Me.SuppilersTableAdapter.Fill(Me.WellmeadowsDataSet.Suppilers)
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Med_Medicines' table. You can move, or remove it, as needed.
         Me.Med_MedicinesTableAdapter.Fill(Me.WellmeadowsDataSet.Med_Medicines)
-        Console.WriteLine(mmID)
-        Console.WriteLine(supID & "sup")
+        'Console.WriteLine(mmID)
+        'Console.WriteLine(supID & "sup")
+
+        SetEnabledSuplier()
+        SetDisabledSupplier()
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        Dim supID As Integer? = Nothing ' หรือค่าเริ่มต้นอื่น ๆ ที่เหมาะสม
-        Med_MedicinesTableAdapter.UpdateMedicineBymmID(
-        supID,
-        m_name.Text,
-        m_desc.Text,
-        m_dosage.Text,
-        m_method.Text,
-        m_stock.Text,
-        m_scale.Text,
-        m_unit.Text,
-        mmID
+        Try
+            Med_MedicinesTableAdapter.UpdateMedicineBymmID(
+            supID,
+            m_name.Text,
+            m_desc.Text,
+            m_dosage.Text,
+            m_method.Text,
+            m_stock.Text,
+            m_scale.Text,
+            m_unit.Text,
+            mmID
+        )
+            'Console.WriteLine("mmID : " & mmID)
+            'Console.WriteLine("PatientKins : " & m_sup.Text)
+            'Console.WriteLine("supID : " & supID)
+            SuppilersTableAdapter.UpdateBySupID(
+            mmID,
+            m_sup.Text,
+            supID
         )
 
-        Me.Close()
+
+
+        Catch ex As Exception
+            Me.Close()
+        End Try
     End Sub
 
     Private Sub Med_MedicinesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
@@ -39,6 +56,18 @@
 
         If popup_supplies.supData("id") IsNot Nothing Then
             supID = popup_supplies.supData("id")
+        Else
+            supID = backupSupId
         End If
+        Console.WriteLine("CheckID : " & supID)
+    End Sub
+
+    Public Sub SetDisabledSupplier()
+        m_sup.Enabled = False
+
+    End Sub
+
+    Public Sub SetEnabledSuplier()
+        m_sup.Enabled = True
     End Sub
 End Class

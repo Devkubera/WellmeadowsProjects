@@ -335,7 +335,42 @@ Public Class StaffForm
         End If
     End Sub
 
+    Public Sub frozenFirstColumn(dataGridView As DataGridView)
+        dataGridView.Columns(0).Frozen = True
+    End Sub
+
     Private Sub StaffPanel_Paint(sender As Object, e As PaintEventArgs) Handles StaffPanel.Paint
 
     End Sub
+
+    'create sql query to insert data to database
+    Public Function sqlExecuteNonQuery(sqlCode As String)
+        Using connection As New SqlConnection(sqlConn)
+            connection.Open()
+            Try
+                Dim sql As String = sqlCode
+
+                ' Create a command to execute the query.
+                Dim command As New SqlCommand(sql, connection)
+
+                ' Execute the query and get a SqlDataReader.
+                command.ExecuteNonQuery()
+
+            Catch ex As Exception
+                Console.WriteLine("Error to insert data : " & ex.Message)
+            End Try
+            connection.Close()
+        End Using
+    End Function
+
+    Public Function getWardIDtoCombobox(cbb As Object)
+        Dim sqlMsg = "SELECT wardID FROM Wards"
+        Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
+
+        For Each row As DataRow In dataTable.Rows
+            cbb.Items.Add(row("wardID").ToString())
+        Next
+
+        Return cbb
+    End Function
 End Class

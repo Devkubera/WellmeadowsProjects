@@ -12,18 +12,25 @@ Public Class Medicine
 
 
     Private Sub Medicine_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Suppilers' table. You can move, or remove it, as needed.
+        Me.SuppilersTableAdapter.Fill(Me.WellmeadowsDataSet.Suppilers)
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Med_Medicines' table. You can move, or remove it, as needed.
         Me.Med_MedicinesTableAdapter.Fill(Me.WellmeadowsDataSet.Med_Medicines)
 
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        If ViewMedi.CurrentRow IsNot Nothing Then
-            Dim ID = ViewMedi.SelectedRows(0).Cells(0).Value.ToString
-            Console.WriteLine(ID)
-            ViewMedi.Rows.RemoveAt(ViewMedi.CurrentRow.Index)
-            Med_MedicinesTableAdapter.DeleteBymmID(ID)
-        End If
+        Try
+            If ViewMedi.CurrentRow IsNot Nothing Then
+                Dim ID = ViewMedi.SelectedRows(0).Cells(0).Value.ToString
+                Console.WriteLine(ID)
+                Med_MedicinesTableAdapter.DeleteBymmID(ID)
+                ViewMedi.Rows.RemoveAt(ViewMedi.CurrentRow.Index)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("กรุณาลบข้อมูลภายในตารางอื่นๆก่อน ถึงจะสามารถลบข้อมูลนี้ได้", "เกิดข้อผิดพลาดในการลบข้อมูล", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
@@ -39,7 +46,6 @@ Public Class Medicine
             MedicineData("buy") = ViewMedi.SelectedRows(0).Cells(7).Value.ToString
             MedicineData("unit") = ViewMedi.SelectedRows(0).Cells(8).Value.ToString
 
-
             Edit_Medicine.mmID = MedicineData("mmID")
             Edit_Medicine.supID = MedicineData("supID")
             Edit_Medicine.m_name.Text = MedicineData("name")
@@ -49,12 +55,38 @@ Public Class Medicine
             Edit_Medicine.m_stock.Text = MedicineData("stock")
             Edit_Medicine.m_scale.Text = MedicineData("buy")
             Edit_Medicine.m_unit.Text = MedicineData("unit")
+            Console.WriteLine("mmID : " & Edit_Medicine.mmID)
+            Console.WriteLine("mmID : " & Edit_Medicine.supID)
+            Console.WriteLine("mmID : " & Edit_Medicine.m_name.Text)
+            Console.WriteLine("mmID : " & Edit_Medicine.m_desc.Text)
+            Console.WriteLine("mmID : " & Edit_Medicine.m_dosage.Text)
+            Console.WriteLine("mmID : " & Edit_Medicine.m_method.Text)
+            Console.WriteLine("mmID : " & Edit_Medicine.m_stock.Text)
+            Console.WriteLine("mmID : " & Edit_Medicine.m_scale.Text)
+            Console.WriteLine("mmID : " & Edit_Medicine.m_unit.Text)
+
+
+
+            Dim kinObject = SuppilersTableAdapter.GetDataSup(MedicineData("supID"))
+            For Each row In kinObject
+                Edit_Medicine.m_sup.Text = row.name
+
+            Next
 
         Else
             MessageBox.Show("โปรดกรอกข้อมูลให้ครบทุกช่อง", "ข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
         Edit_Medicine.Show()
+    End Sub
+
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        Dim searchText As String = txtSearch.Text.Trim()
+        If String.IsNullOrEmpty(searchText) Then
+            MedMedicinesBindingSource.RemoveFilter()
+        Else
+            MedMedicinesBindingSource.Filter = $" name LIKE '*{searchText}*'"
+        End If
     End Sub
 
 End Class

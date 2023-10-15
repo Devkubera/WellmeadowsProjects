@@ -16,17 +16,18 @@
             supData("tel") = supDG.SelectedRows(0).Cells(4).Value.ToString
             supData("fax") = supDG.SelectedRows(0).Cells(5).Value.ToString
             supData("create") = supDG.SelectedRows(0).Cells(6).Value.ToString
-            System.Console.WriteLine(supData("id"))
+
             'System.Console.WriteLine(supData("mdID"))
             'System.Console.WriteLine(supData("name"))
             'System.Console.WriteLine(supData("address"))
             'System.Console.WriteLine(supData("tel"))
             'System.Console.WriteLine(supData("fax"))
             'System.Console.WriteLine(supData("create"))
-
             Add_Medicine.supID = supData("id")
+            Add_Medicine.m_sup.Text = supData("name")
 
-
+            Edit_Medicine.supID = supData("id")
+            Edit_Medicine.m_sup.Text = supData("name")
             'Edit_Patient.kinID = supData("id")
             'Edit_Patient.kin_fullName.Text = supData("name")
             'Edit_Patient.kin_address.Text = supData("address")

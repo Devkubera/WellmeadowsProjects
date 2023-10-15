@@ -70,11 +70,11 @@ Partial Class WardForm
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
-        Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(1085, 157)
+        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Location = New System.Drawing.Point(1068, 157)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(100, 46)
+        Me.btnAdd.Size = New System.Drawing.Size(117, 46)
         Me.btnAdd.TabIndex = 33
         Me.btnAdd.Text = "เพิ่ม"
         Me.btnAdd.UseVisualStyleBackColor = False
@@ -82,7 +82,7 @@ Partial Class WardForm
         'btnDelete
         '
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnDelete.Location = New System.Drawing.Point(1025, 663)
         Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
@@ -95,7 +95,7 @@ Partial Class WardForm
         'btnUpdate
         '
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnUpdate.Location = New System.Drawing.Point(851, 663)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
@@ -108,23 +108,23 @@ Partial Class WardForm
         'Wardlb
         '
         Me.Wardlb.AutoSize = True
-        Me.Wardlb.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Wardlb.Location = New System.Drawing.Point(100, 142)
+        Me.Wardlb.Font = New System.Drawing.Font("Prompt", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Wardlb.Location = New System.Drawing.Point(86, 163)
         Me.Wardlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Wardlb.Name = "Wardlb"
-        Me.Wardlb.Size = New System.Drawing.Size(91, 36)
+        Me.Wardlb.Size = New System.Drawing.Size(87, 40)
         Me.Wardlb.TabIndex = 15
         Me.Wardlb.Text = "Ward"
         '
         'btnStaffInWard
         '
         Me.btnStaffInWard.BackColor = System.Drawing.Color.Black
-        Me.btnStaffInWard.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStaffInWard.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStaffInWard.ForeColor = System.Drawing.Color.White
-        Me.btnStaffInWard.Location = New System.Drawing.Point(1025, 35)
+        Me.btnStaffInWard.Location = New System.Drawing.Point(983, 35)
         Me.btnStaffInWard.Margin = New System.Windows.Forms.Padding(4)
         Me.btnStaffInWard.Name = "btnStaffInWard"
-        Me.btnStaffInWard.Size = New System.Drawing.Size(160, 46)
+        Me.btnStaffInWard.Size = New System.Drawing.Size(202, 46)
         Me.btnStaffInWard.TabIndex = 29
         Me.btnStaffInWard.Text = "เจ้าหน้าที่แต่ละวอร์ด"
         Me.btnStaffInWard.UseVisualStyleBackColor = False
@@ -132,9 +132,9 @@ Partial Class WardForm
         'btnWaitinglist
         '
         Me.btnWaitinglist.BackColor = System.Drawing.Color.Black
-        Me.btnWaitinglist.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnWaitinglist.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnWaitinglist.ForeColor = System.Drawing.Color.White
-        Me.btnWaitinglist.Location = New System.Drawing.Point(844, 35)
+        Me.btnWaitinglist.Location = New System.Drawing.Point(799, 35)
         Me.btnWaitinglist.Margin = New System.Windows.Forms.Padding(4)
         Me.btnWaitinglist.Name = "btnWaitinglist"
         Me.btnWaitinglist.Size = New System.Drawing.Size(160, 46)
@@ -210,9 +210,9 @@ Partial Class WardForm
         'btnPInward
         '
         Me.btnPInward.BackColor = System.Drawing.Color.Black
-        Me.btnPInward.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPInward.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPInward.ForeColor = System.Drawing.Color.White
-        Me.btnPInward.Location = New System.Drawing.Point(661, 35)
+        Me.btnPInward.Location = New System.Drawing.Point(610, 35)
         Me.btnPInward.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPInward.Name = "btnPInward"
         Me.btnPInward.Size = New System.Drawing.Size(160, 46)
@@ -222,20 +222,21 @@ Partial Class WardForm
         '
         'SearchWard
         '
-        Me.SearchWard.Location = New System.Drawing.Point(872, 172)
+        Me.SearchWard.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SearchWard.Location = New System.Drawing.Point(782, 160)
         Me.SearchWard.Margin = New System.Windows.Forms.Padding(4)
         Me.SearchWard.Name = "SearchWard"
-        Me.SearchWard.Size = New System.Drawing.Size(188, 22)
+        Me.SearchWard.Size = New System.Drawing.Size(261, 38)
         Me.SearchWard.TabIndex = 18
         '
         'placeholderlb
         '
         Me.placeholderlb.AutoSize = True
-        Me.placeholderlb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.placeholderlb.Location = New System.Drawing.Point(867, 136)
+        Me.placeholderlb.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.placeholderlb.Location = New System.Drawing.Point(777, 126)
         Me.placeholderlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.placeholderlb.Name = "placeholderlb"
-        Me.placeholderlb.Size = New System.Drawing.Size(201, 25)
+        Me.placeholderlb.Size = New System.Drawing.Size(234, 30)
         Me.placeholderlb.TabIndex = 21
         Me.placeholderlb.Text = "ค้นหาด้วยหมายเลขวอร์ด..."
         '

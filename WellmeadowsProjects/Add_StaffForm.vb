@@ -83,8 +83,8 @@ Public Class Add_StaffForm
         )
 
         ' code get latest staff_id here
-        Dim staffID = StaffsTableAdapter.getLatestStaffID()
-
+        Dim staffID = StaffsTableAdapter.getLatestStaffID().Rows(0)("StaffID").ToString()
+        Console.WriteLine(staffID)
         ' insert data to table doctors, md, CN
         If Staff_position.SelectedIndex = 0 Then
             ChargeNursesTableAdapter1.InsertCN(staffID)
