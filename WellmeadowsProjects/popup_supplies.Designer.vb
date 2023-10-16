@@ -44,7 +44,7 @@ Partial Class popup_supplies
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button2.Location = New System.Drawing.Point(883, 427)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -57,10 +57,10 @@ Partial Class popup_supplies
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Prompt", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(63, 105)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(238, 29)
+        Me.Label1.Size = New System.Drawing.Size(261, 35)
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "เลือกข้อมูลที่ท่านต้องการ"
         '
@@ -73,7 +73,7 @@ Partial Class popup_supplies
         Me.supDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.supDG.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SupplierIDDataGridViewTextBoxColumn, Me.MdIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.TelDataGridViewTextBoxColumn, Me.FaxDataGridViewTextBoxColumn, Me.CreateAtDataGridViewTextBoxColumn})
         Me.supDG.DataSource = Me.SuppilersBindingSource
-        Me.supDG.Location = New System.Drawing.Point(68, 162)
+        Me.supDG.Location = New System.Drawing.Point(68, 153)
         Me.supDG.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.supDG.Name = "supDG"
         Me.supDG.ReadOnly = True
@@ -164,7 +164,7 @@ Partial Class popup_supplies
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1067, 554)
+        Me.ClientSize = New System.Drawing.Size(1201, 534)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.supDG)

@@ -9,7 +9,7 @@ Public Class StaffForm
         Add_StaffForm.Show()
     End Sub
 
-    Private Sub StaffForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub StaffForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Qualificates' table. You can move, or remove it, as needed.
         Me.Staff_QualificatesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Qualificates)
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Experiences' table. You can move, or remove it, as needed.
@@ -49,11 +49,38 @@ Public Class StaffForm
         ' Set default data grid view to show staffs
         cbbEduOrExp.SelectedIndex = 0
 
+        Dim sqlMsg = "SELECT 
+	            staffID AS 'รหัสเจ้าหน้าที่',
+	            CONCAT(firstName, ' ', lastName) AS 'ชื่อ - สกุล',
+                gender AS 'เพศ',
+	            address AS 'ที่อยู่',
+	            tel AS 'เบอร์โทรศัพท์',
+	            dob  AS 'วันเกิด',
+	            nin AS 'หมายเลขประกันสังคม',
+	            position AS 'ตำแหน่ง',
+	            salary AS 'เงินเดือน',
+	            salaryScale AS 'ฐานเงินเดือน',
+	            hoursWeek AS 'ชั่วโมงทำงานต่อสัปดาห์',
+	            contactType AS 'สัญญาจ้าง',
+	            paidType AS 'การจ่ายเงินเดือน'
+                FROM STAFFS;"
+
+        Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
+        DataGridV1.DataSource = dataTable
+
         ' Set default combobox qualificates
         cbbEduLevel.SelectedIndex = 0
 
         ' Set DataTable Selection Mode
         DataGridV1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+
+        ' if user it's not personal department, Then hide add button and edit button
+
+        If MainForm.personalID = "" Then
+            btnAdd.Visible = False
+            btnEdit.Visible = False
+            btnDel.Visible = False
+        End If
 
     End Sub
 

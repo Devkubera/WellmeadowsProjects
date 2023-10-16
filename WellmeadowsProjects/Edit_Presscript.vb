@@ -7,17 +7,26 @@
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         Console.WriteLine("ID : " & ID)
-        Console.WriteLine("medicineID : " & medicineID)
+        Console.WriteLine("medicineID : " & m_id.Text)
         Console.WriteLine("pwID : " & pwID)
         Console.WriteLine("doctorID : " & doctorID)
-        Console.WriteLine("cnID : " & cnID)
+        Console.WriteLine("cnID : " & MainForm.cnID)
         Console.WriteLine("m_dosage.Text : " & m_dosage.Text)
         Console.WriteLine("m_startDate.Value : " & m_startDate.Value)
         Console.WriteLine("m_endDate.Value : " & m_endDate.Value)
         Console.WriteLine("m_desc.Text : " & m_desc.Text)
 
-        PW_PrescriptsTableAdapter.UpdatePresscript(m_id.Text, pwID, doctorID, cnID, m_dosage.Text, m_startDate.Value, m_endDate.Value, m_desc.Text, ID)
-        MessageBox.Show("ข้อมูลได้ถูกแก้ไขแล้ว", "แก้ไขข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Try
+            PW_PrescriptsTableAdapter.UpdatePresscript(m_id.Text, pwID, doctorID, MainForm.cnID, m_dosage.Text, m_startDate.Value, m_endDate.Value, m_desc.Text, ID)
+            MessageBox.Show("ข้อมูลได้ถูกแก้ไขแล้ว", "แก้ไขข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            ' show message box error to update
+            MessageBox.Show("ข้อมูลไม่สามารถแก้ไขได้", "แก้ไขข้อมูลไม่สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+        ' refresh data grid view
+        Patient_Presscipt.Patient_Presscipt_Load(sender, e)
+
         Me.Close()
     End Sub
 

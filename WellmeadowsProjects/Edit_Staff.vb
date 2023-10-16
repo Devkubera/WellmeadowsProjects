@@ -141,6 +141,16 @@
                 staffID
             )
 
+            ' show message box insert success with icon
+            MessageBox.Show("แก้ไขข้อมูลเรียบร้อยแล้ว", "แก้ไขข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' refresh staffForm data grid view
+            StaffForm.StaffForm_Load(sender, e)
+
+            ' close this form
+            Me.Close()
+
+
         Catch ex As Exception
             MessageBox.Show("แก้ไขข้อมูลผิดพลาด กรุณาเช็คข้อมูลของท่าน" & Environment.NewLine & ex.Message, "แก้ไขข้อมูลผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Console.WriteLine("Error to update staff data: " & ex.Message)

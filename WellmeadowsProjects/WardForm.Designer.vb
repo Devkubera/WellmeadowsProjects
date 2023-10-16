@@ -112,7 +112,7 @@ Partial Class WardForm
         Me.Wardlb.Location = New System.Drawing.Point(86, 163)
         Me.Wardlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Wardlb.Name = "Wardlb"
-        Me.Wardlb.Size = New System.Drawing.Size(87, 40)
+        Me.Wardlb.Size = New System.Drawing.Size(93, 43)
         Me.Wardlb.TabIndex = 15
         Me.Wardlb.Text = "Ward"
         '

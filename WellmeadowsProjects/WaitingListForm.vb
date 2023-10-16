@@ -59,6 +59,21 @@
 
         ' set cbb bed status default value
         cbb_bed_status.SelectedIndex = 0
+
+        ' if user it's not cn or md
+        If MainForm.cnID <> "" Or MainForm.mdID <> "" Then
+            Console.WriteLine("if")
+            btnReport.Visible = True
+            btnAdd.Visible = True
+            btnEdit.Visible = True
+            btnDel.Visible = True
+        Else
+            Console.WriteLine("else")
+            btnReport.Visible = False
+            btnAdd.Visible = False
+            btnEdit.Visible = False
+            btnDel.Visible = False
+        End If
     End Sub
 
     Private Sub SearchWaiting_TextChanged(sender As Object, e As EventArgs) Handles SearchWaiting.TextChanged

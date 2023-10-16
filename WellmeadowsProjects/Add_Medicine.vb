@@ -62,6 +62,9 @@
             Me.Med_MedicinesTableAdapter.InsertMedicine(supID, Mname, Mdesc, Mdosage, Mmethod, Mstock, Mscale, Munit)
             Me.Med_MedicinesTableAdapter.Fill(Me.WellmeadowsDataSet.Med_Medicines)
 
+            ' message box notify insert success
+            MessageBox.Show("เพิ่มข้อมูลเรียบร้อยแล้ว", "สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
             Me.Close()
         Catch ex As Exception
             MessageBox.Show("Error. please check your data fill", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information)

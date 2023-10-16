@@ -25,8 +25,7 @@
         ' frozen first column
         waitingListTable.Columns(0).Frozen = True
 
-        ' set cbb bed status default value
-        cbb_bed_status.SelectedIndex = 0
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

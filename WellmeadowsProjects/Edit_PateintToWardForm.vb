@@ -3,6 +3,16 @@
     Private Sub Edit_PateintToWardForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' get wardID combobox
         wardID_combobox = StaffForm.getWardIDtoCombobox(wardID_combobox)
+
+        ' get CNID from main form
+        If MainForm.cnID <> "" Then
+            cnID.Text = MainForm.cnID
+        Else
+            ' message box notify that not have permission to open this page
+            MsgBox("คุณไม่มีสิทธิ์เข้าถึงหน้านี้")
+
+            Me.Close()
+        End If
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs)

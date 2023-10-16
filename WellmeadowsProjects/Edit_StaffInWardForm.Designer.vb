@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Edit_StaffInWardForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,23 @@ Partial Class Edit_StaffInWardForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.editStaffInWardPanel = New System.Windows.Forms.Panel()
-        Me.Shift = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.endTime = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lastname = New System.Windows.Forms.TextBox()
+        Me.firstname = New System.Windows.Forms.TextBox()
+        Me.ShiftTime = New System.Windows.Forms.TextBox()
+        Me.btnCheck_shift = New System.Windows.Forms.Button()
+        Me.btnCheck_ward = New System.Windows.Forms.Button()
+        Me.btnCheck_staff = New System.Windows.Forms.Button()
         Me.shiftlb = New System.Windows.Forms.Label()
         Me.wardIdlb = New System.Windows.Forms.Label()
         Me.wardId = New System.Windows.Forms.TextBox()
@@ -32,12 +45,45 @@ Partial Class Edit_StaffInWardForm
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.headerlb = New System.Windows.Forms.Label()
+        Me.Ward_StaffsBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
+        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.Ward_StaffsBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.Ward_StaffsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
+        Me.Ward_StaffsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Ward_StaffsTableAdapter()
+        Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
         Me.editStaffInWardPanel.SuspendLayout()
+        CType(Me.Ward_StaffsBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Ward_StaffsBindingNavigator.SuspendLayout()
+        CType(Me.Ward_StaffsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'editStaffInWardPanel
         '
-        Me.editStaffInWardPanel.Controls.Add(Me.Shift)
+        Me.editStaffInWardPanel.Controls.Add(Me.Label6)
+        Me.editStaffInWardPanel.Controls.Add(Me.endTime)
+        Me.editStaffInWardPanel.Controls.Add(Me.Label5)
+        Me.editStaffInWardPanel.Controls.Add(Me.Label4)
+        Me.editStaffInWardPanel.Controls.Add(Me.Label3)
+        Me.editStaffInWardPanel.Controls.Add(Me.Label2)
+        Me.editStaffInWardPanel.Controls.Add(Me.Label1)
+        Me.editStaffInWardPanel.Controls.Add(Me.lastname)
+        Me.editStaffInWardPanel.Controls.Add(Me.firstname)
+        Me.editStaffInWardPanel.Controls.Add(Me.ShiftTime)
+        Me.editStaffInWardPanel.Controls.Add(Me.btnCheck_shift)
+        Me.editStaffInWardPanel.Controls.Add(Me.btnCheck_ward)
+        Me.editStaffInWardPanel.Controls.Add(Me.btnCheck_staff)
         Me.editStaffInWardPanel.Controls.Add(Me.shiftlb)
         Me.editStaffInWardPanel.Controls.Add(Me.wardIdlb)
         Me.editStaffInWardPanel.Controls.Add(Me.wardId)
@@ -48,71 +94,212 @@ Partial Class Edit_StaffInWardForm
         Me.editStaffInWardPanel.Controls.Add(Me.headerlb)
         Me.editStaffInWardPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.editStaffInWardPanel.Location = New System.Drawing.Point(0, 0)
+        Me.editStaffInWardPanel.Margin = New System.Windows.Forms.Padding(4)
         Me.editStaffInWardPanel.Name = "editStaffInWardPanel"
-        Me.editStaffInWardPanel.Size = New System.Drawing.Size(1004, 611)
+        Me.editStaffInWardPanel.Size = New System.Drawing.Size(1423, 752)
         Me.editStaffInWardPanel.TabIndex = 1
         '
-        'Shift
+        'Label6
         '
-        Me.Shift.FormattingEnabled = True
-        Me.Shift.Items.AddRange(New Object() {"เช้า", "กลางวัน", "กลางคืน"})
-        Me.Shift.Location = New System.Drawing.Point(190, 244)
-        Me.Shift.Name = "Shift"
-        Me.Shift.Size = New System.Drawing.Size(139, 21)
-        Me.Shift.TabIndex = 104
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(701, 379)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(115, 30)
+        Me.Label6.TabIndex = 177
+        Me.Label6.Text = "เวลาเลิกงาน"
+        '
+        'endTime
+        '
+        Me.endTime.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.endTime.Location = New System.Drawing.Point(706, 421)
+        Me.endTime.Margin = New System.Windows.Forms.Padding(4)
+        Me.endTime.Name = "endTime"
+        Me.endTime.Size = New System.Drawing.Size(184, 38)
+        Me.endTime.TabIndex = 176
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(486, 379)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(134, 30)
+        Me.Label5.TabIndex = 175
+        Me.Label5.Text = "เวลาเริ่มทำงาน"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(486, 279)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(137, 30)
+        Me.Label4.TabIndex = 174
+        Me.Label4.Text = "หมายเลขวอร์ด"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(923, 185)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(84, 30)
+        Me.Label3.TabIndex = 173
+        Me.Label3.Text = "นามสกุล"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(701, 185)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(37, 30)
+        Me.Label2.TabIndex = 172
+        Me.Label2.Text = "ชื่อ"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(486, 185)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(164, 30)
+        Me.Label1.TabIndex = 171
+        Me.Label1.Text = "หมายเลขพนักงาน"
+        '
+        'lastname
+        '
+        Me.lastname.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lastname.Location = New System.Drawing.Point(928, 227)
+        Me.lastname.Margin = New System.Windows.Forms.Padding(4)
+        Me.lastname.Name = "lastname"
+        Me.lastname.Size = New System.Drawing.Size(184, 38)
+        Me.lastname.TabIndex = 170
+        '
+        'firstname
+        '
+        Me.firstname.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.firstname.Location = New System.Drawing.Point(706, 227)
+        Me.firstname.Margin = New System.Windows.Forms.Padding(4)
+        Me.firstname.Name = "firstname"
+        Me.firstname.Size = New System.Drawing.Size(184, 38)
+        Me.firstname.TabIndex = 169
+        '
+        'ShiftTime
+        '
+        Me.ShiftTime.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ShiftTime.Location = New System.Drawing.Point(491, 421)
+        Me.ShiftTime.Margin = New System.Windows.Forms.Padding(4)
+        Me.ShiftTime.Name = "ShiftTime"
+        Me.ShiftTime.Size = New System.Drawing.Size(184, 38)
+        Me.ShiftTime.TabIndex = 168
+        '
+        'btnCheck_shift
+        '
+        Me.btnCheck_shift.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnCheck_shift.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheck_shift.ForeColor = System.Drawing.Color.AliceBlue
+        Me.btnCheck_shift.Location = New System.Drawing.Point(240, 421)
+        Me.btnCheck_shift.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCheck_shift.Name = "btnCheck_shift"
+        Me.btnCheck_shift.Size = New System.Drawing.Size(188, 38)
+        Me.btnCheck_shift.TabIndex = 167
+        Me.btnCheck_shift.Text = "ตรวจสอบ"
+        Me.btnCheck_shift.UseVisualStyleBackColor = False
+        '
+        'btnCheck_ward
+        '
+        Me.btnCheck_ward.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnCheck_ward.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheck_ward.ForeColor = System.Drawing.Color.AliceBlue
+        Me.btnCheck_ward.Location = New System.Drawing.Point(240, 321)
+        Me.btnCheck_ward.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCheck_ward.Name = "btnCheck_ward"
+        Me.btnCheck_ward.Size = New System.Drawing.Size(188, 38)
+        Me.btnCheck_ward.TabIndex = 166
+        Me.btnCheck_ward.Text = "ตรวจสอบ"
+        Me.btnCheck_ward.UseVisualStyleBackColor = False
+        '
+        'btnCheck_staff
+        '
+        Me.btnCheck_staff.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnCheck_staff.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheck_staff.ForeColor = System.Drawing.Color.AliceBlue
+        Me.btnCheck_staff.Location = New System.Drawing.Point(235, 227)
+        Me.btnCheck_staff.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCheck_staff.Name = "btnCheck_staff"
+        Me.btnCheck_staff.Size = New System.Drawing.Size(188, 38)
+        Me.btnCheck_staff.TabIndex = 165
+        Me.btnCheck_staff.Text = "ตรวจสอบ"
+        Me.btnCheck_staff.UseVisualStyleBackColor = False
         '
         'shiftlb
         '
         Me.shiftlb.AutoSize = True
         Me.shiftlb.Font = New System.Drawing.Font("Prompt", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.shiftlb.Location = New System.Drawing.Point(185, 212)
+        Me.shiftlb.Location = New System.Drawing.Point(233, 381)
+        Me.shiftlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.shiftlb.Name = "shiftlb"
-        Me.shiftlb.Size = New System.Drawing.Size(83, 29)
-        Me.shiftlb.TabIndex = 103
-        Me.shiftlb.Text = "กะทำงาน"
+        Me.shiftlb.Size = New System.Drawing.Size(169, 36)
+        Me.shiftlb.TabIndex = 164
+        Me.shiftlb.Text = "ช่วงเวลาทำงาน"
         '
         'wardIdlb
         '
         Me.wardIdlb.AutoSize = True
         Me.wardIdlb.Font = New System.Drawing.Font("Prompt", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.wardIdlb.Location = New System.Drawing.Point(375, 127)
+        Me.wardIdlb.Location = New System.Drawing.Point(233, 281)
+        Me.wardIdlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.wardIdlb.Name = "wardIdlb"
-        Me.wardIdlb.Size = New System.Drawing.Size(132, 29)
-        Me.wardIdlb.TabIndex = 101
-        Me.wardIdlb.Text = "หมายเลขวอร์ด"
+        Me.wardIdlb.Size = New System.Drawing.Size(131, 36)
+        Me.wardIdlb.TabIndex = 163
+        Me.wardIdlb.Text = "ข้อมูลวอร์ด"
         '
         'wardId
         '
-        Me.wardId.Location = New System.Drawing.Point(380, 159)
+        Me.wardId.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.wardId.Location = New System.Drawing.Point(491, 321)
+        Me.wardId.Margin = New System.Windows.Forms.Padding(4)
         Me.wardId.Name = "wardId"
-        Me.wardId.Size = New System.Drawing.Size(139, 20)
-        Me.wardId.TabIndex = 100
+        Me.wardId.Size = New System.Drawing.Size(184, 38)
+        Me.wardId.TabIndex = 162
         '
         'staffIdlb
         '
         Me.staffIdlb.AutoSize = True
         Me.staffIdlb.Font = New System.Drawing.Font("Prompt", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.staffIdlb.Location = New System.Drawing.Point(185, 127)
+        Me.staffIdlb.Location = New System.Drawing.Point(233, 178)
+        Me.staffIdlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.staffIdlb.Name = "staffIdlb"
-        Me.staffIdlb.Size = New System.Drawing.Size(157, 29)
-        Me.staffIdlb.TabIndex = 99
-        Me.staffIdlb.Text = "หมายเลขพนักงาน"
+        Me.staffIdlb.Size = New System.Drawing.Size(163, 36)
+        Me.staffIdlb.TabIndex = 161
+        Me.staffIdlb.Text = "ข้อมูลพนักงาน"
         '
         'staffId
         '
-        Me.staffId.Location = New System.Drawing.Point(190, 159)
+        Me.staffId.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.staffId.Location = New System.Drawing.Point(491, 227)
+        Me.staffId.Margin = New System.Windows.Forms.Padding(4)
         Me.staffId.Name = "staffId"
-        Me.staffId.Size = New System.Drawing.Size(139, 20)
-        Me.staffId.TabIndex = 98
+        Me.staffId.Size = New System.Drawing.Size(184, 38)
+        Me.staffId.TabIndex = 160
         '
         'btnEdit
         '
         Me.btnEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnEdit.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEdit.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
-        Me.btnEdit.Location = New System.Drawing.Point(850, 38)
+        Me.btnEdit.Location = New System.Drawing.Point(1133, 47)
+        Me.btnEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(120, 37)
+        Me.btnEdit.Size = New System.Drawing.Size(160, 46)
         Me.btnEdit.TabIndex = 97
         Me.btnEdit.Text = "แก้ไข"
         Me.btnEdit.UseVisualStyleBackColor = False
@@ -120,11 +307,12 @@ Partial Class Edit_StaffInWardForm
         'btnClear
         '
         Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnClear.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnClear.ForeColor = System.Drawing.Color.White
-        Me.btnClear.Location = New System.Drawing.Point(715, 38)
+        Me.btnClear.Location = New System.Drawing.Point(953, 47)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(120, 37)
+        Me.btnClear.Size = New System.Drawing.Size(160, 46)
         Me.btnClear.TabIndex = 96
         Me.btnClear.Text = "ล้างค่า"
         Me.btnClear.UseVisualStyleBackColor = False
@@ -133,35 +321,220 @@ Partial Class Edit_StaffInWardForm
         '
         Me.headerlb.AllowDrop = True
         Me.headerlb.AutoSize = True
-        Me.headerlb.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.headerlb.Location = New System.Drawing.Point(344, 38)
+        Me.headerlb.Font = New System.Drawing.Font("Prompt", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.headerlb.Location = New System.Drawing.Point(459, 47)
+        Me.headerlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.headerlb.Name = "headerlb"
-        Me.headerlb.Size = New System.Drawing.Size(307, 25)
+        Me.headerlb.Size = New System.Drawing.Size(396, 40)
         Me.headerlb.TabIndex = 95
         Me.headerlb.Text = "แก้ไขข้อมูลเจ้าหน้าที่ในแต่ละวอร์ด"
         '
+        'Ward_StaffsBindingNavigator
+        '
+        Me.Ward_StaffsBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
+        Me.Ward_StaffsBindingNavigator.BindingSource = Me.Ward_StaffsBindingSource
+        Me.Ward_StaffsBindingNavigator.CountItem = Me.BindingNavigatorCountItem
+        Me.Ward_StaffsBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
+        Me.Ward_StaffsBindingNavigator.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.Ward_StaffsBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.Ward_StaffsBindingNavigatorSaveItem})
+        Me.Ward_StaffsBindingNavigator.Location = New System.Drawing.Point(0, 0)
+        Me.Ward_StaffsBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
+        Me.Ward_StaffsBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
+        Me.Ward_StaffsBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
+        Me.Ward_StaffsBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
+        Me.Ward_StaffsBindingNavigator.Name = "Ward_StaffsBindingNavigator"
+        Me.Ward_StaffsBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
+        Me.Ward_StaffsBindingNavigator.Size = New System.Drawing.Size(1423, 27)
+        Me.Ward_StaffsBindingNavigator.TabIndex = 2
+        Me.Ward_StaffsBindingNavigator.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 24)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        '
+        'BindingNavigatorMoveFirstItem
+        '
+        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
+        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
+        '
+        'BindingNavigatorMovePreviousItem
+        '
+        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
+        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
+        '
+        'BindingNavigatorSeparator
+        '
+        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 27)
+        '
+        'BindingNavigatorPositionItem
+        '
+        Me.BindingNavigatorPositionItem.AccessibleName = "Position"
+        Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
+        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 27)
+        Me.BindingNavigatorPositionItem.Text = "0"
+        Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
+        '
+        'BindingNavigatorSeparator1
+        '
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 27)
+        '
+        'BindingNavigatorMoveNextItem
+        '
+        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
+        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveNextItem.Text = "Move next"
+        '
+        'BindingNavigatorMoveLastItem
+        '
+        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
+        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveLastItem.Text = "Move last"
+        '
+        'BindingNavigatorSeparator2
+        '
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
+        '
+        'Ward_StaffsBindingNavigatorSaveItem
+        '
+        Me.Ward_StaffsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.Ward_StaffsBindingNavigatorSaveItem.Name = "Ward_StaffsBindingNavigatorSaveItem"
+        Me.Ward_StaffsBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 24)
+        Me.Ward_StaffsBindingNavigatorSaveItem.Text = "Save Data"
+        '
+        'Ward_StaffsBindingSource
+        '
+        Me.Ward_StaffsBindingSource.DataMember = "Ward_Staffs"
+        Me.Ward_StaffsBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'WellmeadowsDataSet
+        '
+        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
+        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Ward_StaffsTableAdapter
+        '
+        Me.Ward_StaffsTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BedsTableAdapter = Nothing
+        Me.TableAdapterManager.ChargeNursesTableAdapter = Nothing
+        Me.TableAdapterManager.DoctorsTableAdapter = Nothing
+        Me.TableAdapterManager.In_PatientsTableAdapter = Nothing
+        Me.TableAdapterManager.LocalDoctorsTableAdapter = Nothing
+        Me.TableAdapterManager.Login_logsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_EquipmentsTableAdapter = Nothing
+        Me.TableAdapterManager.Med_MedicinesTableAdapter = Nothing
+        Me.TableAdapterManager.MedicalDirectorsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_kinsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_VisitsTableAdapter = Nothing
+        Me.TableAdapterManager.Patient_WardsTableAdapter = Nothing
+        Me.TableAdapterManager.PatientsTableAdapter = Nothing
+        Me.TableAdapterManager.PW_PrescriptsTableAdapter = Nothing
+        Me.TableAdapterManager.ShiftsTableAdapter = Nothing
+        Me.TableAdapterManager.Staff_ExperiencesTableAdapter = Nothing
+        Me.TableAdapterManager.Staff_QualificatesTableAdapter = Nothing
+        Me.TableAdapterManager.StaffsTableAdapter = Nothing
+        Me.TableAdapterManager.SuppilersTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.Ward_RequestsTableAdapter = Nothing
+        Me.TableAdapterManager.Ward_StaffsTableAdapter = Me.Ward_StaffsTableAdapter
+        Me.TableAdapterManager.WardsTableAdapter = Nothing
+        '
         'Edit_StaffInWardForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1004, 611)
+        Me.ClientSize = New System.Drawing.Size(1423, 752)
+        Me.Controls.Add(Me.Ward_StaffsBindingNavigator)
         Me.Controls.Add(Me.editStaffInWardPanel)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Edit_StaffInWardForm"
         Me.Text = "แก้ไขข้อมูลเจ้าหน้าที่ในแต่ละวอร์ด"
         Me.editStaffInWardPanel.ResumeLayout(False)
         Me.editStaffInWardPanel.PerformLayout()
+        CType(Me.Ward_StaffsBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Ward_StaffsBindingNavigator.ResumeLayout(False)
+        Me.Ward_StaffsBindingNavigator.PerformLayout()
+        CType(Me.Ward_StaffsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents editStaffInWardPanel As Panel
-    Friend WithEvents Shift As ComboBox
+    Friend WithEvents btnEdit As Button
+    Friend WithEvents btnClear As Button
+    Friend WithEvents headerlb As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents endTime As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lastname As TextBox
+    Friend WithEvents firstname As TextBox
+    Friend WithEvents ShiftTime As TextBox
+    Friend WithEvents btnCheck_shift As Button
+    Friend WithEvents btnCheck_ward As Button
+    Friend WithEvents btnCheck_staff As Button
     Friend WithEvents shiftlb As Label
     Friend WithEvents wardIdlb As Label
     Friend WithEvents wardId As TextBox
     Friend WithEvents staffIdlb As Label
     Friend WithEvents staffId As TextBox
-    Friend WithEvents btnEdit As Button
-    Friend WithEvents btnClear As Button
-    Friend WithEvents headerlb As Label
+    Friend WithEvents WellmeadowsDataSet As WellmeadowsDataSet
+    Friend WithEvents Ward_StaffsBindingSource As BindingSource
+    Friend WithEvents Ward_StaffsTableAdapter As WellmeadowsDataSetTableAdapters.Ward_StaffsTableAdapter
+    Friend WithEvents TableAdapterManager As WellmeadowsDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents Ward_StaffsBindingNavigator As BindingNavigator
+    Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
+    Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
+    Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMoveFirstItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMovePreviousItem As ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator As ToolStripSeparator
+    Friend WithEvents BindingNavigatorPositionItem As ToolStripTextBox
+    Friend WithEvents BindingNavigatorSeparator1 As ToolStripSeparator
+    Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
+    Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
+    Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
+    Friend WithEvents Ward_StaffsBindingNavigatorSaveItem As ToolStripButton
 End Class

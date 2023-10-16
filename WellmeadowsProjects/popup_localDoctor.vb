@@ -38,4 +38,14 @@
             Me.Close()
         End If
     End Sub
+
+    Private Sub seachbox_TextChanged(sender As Object, e As EventArgs) Handles seachbox.TextChanged
+        ' making search filter for the datagrid to search with firstname, lastname, and tel
+        Dim searchQuery As String = seachbox.Text.Trim()
+        If searchQuery IsNot "" Then
+            Me.LocalDoctorsBindingSource.Filter = "clinic_id LIKE '%" & searchQuery & "%' OR name LIKE '%" & searchQuery & "%' OR address LIKE '%" & searchQuery & "%' OR tel LIKE '%" & searchQuery & "%'"
+        Else
+            Me.LocalDoctorsBindingSource.Filter = ""
+        End If
+    End Sub
 End Class

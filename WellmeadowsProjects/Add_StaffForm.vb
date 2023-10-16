@@ -41,123 +41,135 @@ Public Class Add_StaffForm
     End Sub
 
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        'Staff Data
-        Dim firstName = Staff_firstName.Text
-        Dim lastName = Staff_lastName.Text
-        Dim dob = Staff_dob.Value
-        Dim gender = Staff_gender.Text
-        Dim tel = Staff_tel.Text
-        Dim nin = Staff_nin.Text
-        Dim address = Staff_address.Text
+        ' try cast
+        Try
+            'Staff Data
+            Dim firstName = Staff_firstName.Text
+            Dim lastName = Staff_lastName.Text
+            Dim dob = Staff_dob.Value
+            Dim gender = Staff_gender.Text
+            Dim tel = Staff_tel.Text
+            Dim nin = Staff_nin.Text
+            Dim address = Staff_address.Text
 
-        Dim salary = Staff_salary.Text
-        Dim salaryScale = Staff_salaryScale.Text
-        Dim paidType = Staff_paidType.Text
-        Dim hoursWeek = Staff_hoursWeek.Text
-        Dim contactType = Staff_contactType.Text
+            Dim salary = Staff_salary.Text
+            Dim salaryScale = Staff_salaryScale.Text
+            Dim paidType = Staff_paidType.Text
+            Dim hoursWeek = Staff_hoursWeek.Text
+            Dim contactType = Staff_contactType.Text
 
-        Dim position = Staff_position.Text
-        Dim realPostion = Split(position, ".")
+            Dim position = Staff_position.Text
+            Dim realPostion = Split(position, ".")
 
-        realPostion(1) = realPostion(1).Trim()
-        realPostion(0) = realPostion(0).Trim()
+            realPostion(1) = realPostion(1).Trim()
+            realPostion(0) = realPostion(0).Trim()
 
-        Console.WriteLine(realPostion(1))
-        Console.WriteLine("postion index: " & Staff_position.SelectedIndex)
+            Console.WriteLine(realPostion(1))
+            Console.WriteLine("postion index: " & Staff_position.SelectedIndex)
 
-        'Insert Staff Data
-        StaffsTableAdapter.InsertStaff(
-            firstName,
-            lastName,
-            address,
-            tel,
-            nin,
-            realPostion(0),
-            Double.Parse(salary),
-            Double.Parse(salaryScale),
-            hoursWeek,
-            contactType,
-            paidType,
-            dob,
-            Staff_gender.Text
-        )
+            'Insert Staff Data
+            StaffsTableAdapter.InsertStaff(
+                firstName,
+                lastName,
+                address,
+                tel,
+                nin,
+                realPostion(0),
+                Double.Parse(salary),
+                Double.Parse(salaryScale),
+                hoursWeek,
+                contactType,
+                paidType,
+                dob,
+                Staff_gender.Text
+            )
 
-        ' code get latest staff_id here
-        Dim staffID = StaffsTableAdapter.getLatestStaffID().Rows(0)("StaffID").ToString()
-        Console.WriteLine(staffID)
-        ' insert data to table doctors, md, CN
-        If Staff_position.SelectedIndex = 0 Then
-            ChargeNursesTableAdapter1.InsertCN(staffID)
+            ' code get latest staff_id here
+            Dim staffID = StaffsTableAdapter.getLatestStaffID().Rows(0)("StaffID").ToString()
+            Console.WriteLine(staffID)
+            ' insert data to table doctors, md, CN
+            If Staff_position.SelectedIndex = 0 Then
+                ChargeNursesTableAdapter1.InsertCN(staffID)
 
-        ElseIf Staff_position.SelectedIndex = 1 Then
-            MedicalDirectorsTableAdapter1.InsertMD(staffID)
+            ElseIf Staff_position.SelectedIndex = 1 Then
+                MedicalDirectorsTableAdapter1.InsertMD(staffID)
 
-        ElseIf Staff_position.SelectedIndex = 2 Then
-            DoctorsTableAdapter1.InsertDoctor(staffID)
-        End If
-
-        ' Staff Qualification insert
-
-        For Each row As DataGridViewRow In study_table.Rows
-
-            If Not row.IsNewRow Then
-                Dim rowData As New List(Of String)
-                rowData.Add(staffID)
-                For Each cell As DataGridViewCell In row.Cells
-                    Dim cellData = cell.Value
-                    rowData.Add(cellData)
-
-                Next
-                Dim dates = CDate(rowData(3))
-
-                Console.WriteLine("qual data: " & rowData(0))
-                Console.WriteLine("qual data: " & rowData(1))
-                Console.WriteLine("qual data: " & rowData(2))
-                Console.WriteLine(dates.GetType())
-
-                Staff_QualificatesTableAdapter.InsertQualification(
-                    rowData(0),
-                    rowData(1),
-                    rowData(2),
-                    dates
-                )
-
+            ElseIf Staff_position.SelectedIndex = 2 Then
+                DoctorsTableAdapter1.InsertDoctor(staffID)
             End If
-        Next
 
-        ' Staff Experiences insert
+            ' Staff Qualification insert
 
-        For Each row As DataGridViewRow In old_table.Rows
-            If Not row.IsNewRow Then
-                Dim rowdata As New List(Of String)
-                rowdata.Add(staffID)
+            For Each row As DataGridViewRow In study_table.Rows
 
-                For Each cell As DataGridViewCell In row.Cells
-                    Dim celldata As String = cell.Value.ToString()
-                    rowdata.Add(celldata)
-                Next
+                If Not row.IsNewRow Then
+                    Dim rowData As New List(Of String)
+                    rowData.Add(staffID)
+                    For Each cell As DataGridViewCell In row.Cells
+                        Dim cellData = cell.Value
+                        rowData.Add(cellData)
 
-                Dim startDates = CDate(rowdata(3))
-                Dim endDates = CDate(rowdata(4))
+                    Next
+                    Dim dates = CDate(rowData(3))
 
-                Console.WriteLine("exp data: " & rowdata(0))
-                Console.WriteLine("exp data: " & rowdata(1))
-                Console.WriteLine("exp data: " & rowdata(2))
-                Console.WriteLine(startDates.GetType())
-                Console.WriteLine(endDates.GetType())
+                    Console.WriteLine("qual data: " & rowData(0))
+                    Console.WriteLine("qual data: " & rowData(1))
+                    Console.WriteLine("qual data: " & rowData(2))
+                    Console.WriteLine(dates.GetType())
 
-                Staff_ExperiencesTableAdapter.insertExp(
-                    rowdata(1),
-                    rowdata(2),
-                    startDates,
-                    endDates,
-                    rowdata(0)
-                )
+                    Staff_QualificatesTableAdapter.InsertQualification(
+                        rowData(0),
+                        rowData(1),
+                        rowData(2),
+                        dates
+                    )
 
-            End If
-        Next
+                End If
+            Next
 
+            ' Staff Experiences insert
 
+            For Each row As DataGridViewRow In old_table.Rows
+                If Not row.IsNewRow Then
+                    Dim rowdata As New List(Of String)
+                    rowdata.Add(staffID)
+
+                    For Each cell As DataGridViewCell In row.Cells
+                        Dim celldata As String = cell.Value.ToString()
+                        rowdata.Add(celldata)
+                    Next
+
+                    Dim startDates = CDate(rowdata(3))
+                    Dim endDates = CDate(rowdata(4))
+
+                    Console.WriteLine("exp data: " & rowdata(0))
+                    Console.WriteLine("exp data: " & rowdata(1))
+                    Console.WriteLine("exp data: " & rowdata(2))
+                    Console.WriteLine(startDates.GetType())
+                    Console.WriteLine(endDates.GetType())
+
+                    Staff_ExperiencesTableAdapter.insertExp(
+                        rowdata(1),
+                        rowdata(2),
+                        startDates,
+                        endDates,
+                        rowdata(0)
+                    )
+
+                End If
+            Next
+            ' show messagebox insert success withicon
+            MessageBox.Show("เพิ่มข้อมูลเรียบร้อยแล้ว", "เพิ่มข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' refresh staff gridview
+            StaffForm.StaffForm_Load(sender, e)
+
+            ' close form
+            Me.Close()
+        Catch ex As Exception
+            ' show messagebox insert incorrect
+            MessageBox.Show("เกิดข้อผิดพลาดในการเพิ่มข้อมูล กรุณาตรวจสอบข้อมูล", "เกิดข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles Button1.Click

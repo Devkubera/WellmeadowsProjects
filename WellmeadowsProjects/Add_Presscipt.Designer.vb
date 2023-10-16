@@ -83,7 +83,7 @@ Partial Class Add_Presscipt
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label14.Location = New System.Drawing.Point(440, 552)
+        Me.Label14.Location = New System.Drawing.Point(423, 552)
         Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(276, 29)
@@ -92,7 +92,7 @@ Partial Class Add_Presscipt
         '
         'm_dosage
         '
-        Me.m_dosage.Location = New System.Drawing.Point(446, 599)
+        Me.m_dosage.Location = New System.Drawing.Point(429, 599)
         Me.m_dosage.Margin = New System.Windows.Forms.Padding(4)
         Me.m_dosage.Name = "m_dosage"
         Me.m_dosage.Size = New System.Drawing.Size(188, 22)
@@ -102,7 +102,7 @@ Partial Class Add_Presscipt
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label12.Location = New System.Drawing.Point(440, 469)
+        Me.Label12.Location = New System.Drawing.Point(423, 469)
         Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(61, 29)
@@ -111,7 +111,7 @@ Partial Class Add_Presscipt
         '
         'm_name
         '
-        Me.m_name.Location = New System.Drawing.Point(446, 516)
+        Me.m_name.Location = New System.Drawing.Point(429, 516)
         Me.m_name.Margin = New System.Windows.Forms.Padding(4)
         Me.m_name.Name = "m_name"
         Me.m_name.Size = New System.Drawing.Size(188, 22)
@@ -121,7 +121,7 @@ Partial Class Add_Presscipt
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label11.Location = New System.Drawing.Point(791, 465)
+        Me.Label11.Location = New System.Drawing.Point(774, 465)
         Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(205, 29)
@@ -130,7 +130,7 @@ Partial Class Add_Presscipt
         '
         'm_desc
         '
-        Me.m_desc.Location = New System.Drawing.Point(796, 516)
+        Me.m_desc.Location = New System.Drawing.Point(779, 516)
         Me.m_desc.Margin = New System.Windows.Forms.Padding(4)
         Me.m_desc.Name = "m_desc"
         Me.m_desc.Size = New System.Drawing.Size(416, 117)
@@ -244,7 +244,7 @@ Partial Class Add_Presscipt
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(135, 414)
+        Me.Label5.Location = New System.Drawing.Point(118, 414)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(103, 31)
@@ -255,7 +255,7 @@ Partial Class Add_Presscipt
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label6.Location = New System.Drawing.Point(136, 552)
+        Me.Label6.Location = New System.Drawing.Point(119, 552)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(198, 29)
@@ -266,7 +266,7 @@ Partial Class Add_Presscipt
         '
         Me.m_method.FormattingEnabled = True
         Me.m_method.Items.AddRange(New Object() {"Oral", "Skin"})
-        Me.m_method.Location = New System.Drawing.Point(141, 597)
+        Me.m_method.Location = New System.Drawing.Point(124, 597)
         Me.m_method.Margin = New System.Windows.Forms.Padding(4)
         Me.m_method.Name = "m_method"
         Me.m_method.Size = New System.Drawing.Size(188, 24)
@@ -276,7 +276,7 @@ Partial Class Add_Presscipt
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label7.Location = New System.Drawing.Point(442, 645)
+        Me.Label7.Location = New System.Drawing.Point(425, 645)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(273, 29)
@@ -287,7 +287,7 @@ Partial Class Add_Presscipt
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label8.Location = New System.Drawing.Point(136, 645)
+        Me.Label8.Location = New System.Drawing.Point(119, 645)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(138, 29)
@@ -312,7 +312,7 @@ Partial Class Add_Presscipt
         Me.btnCheck_medicine.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btnCheck_medicine.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheck_medicine.ForeColor = System.Drawing.Color.AliceBlue
-        Me.btnCheck_medicine.Location = New System.Drawing.Point(291, 412)
+        Me.btnCheck_medicine.Location = New System.Drawing.Point(274, 412)
         Me.btnCheck_medicine.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCheck_medicine.Name = "btnCheck_medicine"
         Me.btnCheck_medicine.Size = New System.Drawing.Size(188, 38)
@@ -384,7 +384,7 @@ Partial Class Add_Presscipt
         '
         'm_id
         '
-        Me.m_id.Location = New System.Drawing.Point(140, 516)
+        Me.m_id.Location = New System.Drawing.Point(123, 516)
         Me.m_id.Margin = New System.Windows.Forms.Padding(4)
         Me.m_id.Name = "m_id"
         Me.m_id.Size = New System.Drawing.Size(189, 22)
@@ -394,7 +394,7 @@ Partial Class Add_Presscipt
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label13.Location = New System.Drawing.Point(135, 469)
+        Me.Label13.Location = New System.Drawing.Point(118, 469)
         Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(120, 29)
@@ -413,14 +413,14 @@ Partial Class Add_Presscipt
         '
         'm_startDate
         '
-        Me.m_startDate.Location = New System.Drawing.Point(140, 692)
+        Me.m_startDate.Location = New System.Drawing.Point(123, 692)
         Me.m_startDate.Name = "m_startDate"
         Me.m_startDate.Size = New System.Drawing.Size(200, 22)
         Me.m_startDate.TabIndex = 176
         '
         'm_endDate
         '
-        Me.m_endDate.Location = New System.Drawing.Point(447, 692)
+        Me.m_endDate.Location = New System.Drawing.Point(430, 692)
         Me.m_endDate.Name = "m_endDate"
         Me.m_endDate.Size = New System.Drawing.Size(200, 22)
         Me.m_endDate.TabIndex = 177

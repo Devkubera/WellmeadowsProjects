@@ -1,4 +1,14 @@
 ﻿Partial Class WellmeadowsDataSet
+    Partial Public Class Prescript_Report_ViewDataTable
+        Private Sub Prescript_Report_ViewDataTable_ColumnChanging(sender As Object, e As DataColumnChangeEventArgs) Handles Me.ColumnChanging
+            If (e.Column.ColumnName = Me.ชื่อยาและปริมาณColumn.ColumnName) Then
+                'Add user code here
+            End If
+
+        End Sub
+
+    End Class
+
     Partial Public Class Ward_Report_ViewDataTable
         Private Sub Ward_Report_ViewDataTable_ColumnChanging(sender As Object, e As DataColumnChangeEventArgs) Handles Me.ColumnChanging
             If (e.Column.ColumnName = Me.ชื่อ_นามสกุลColumn.ColumnName) Then

@@ -20,6 +20,8 @@ Public Class pop_Doc
         Me.StaffsTableAdapter.Fill(Me.WellmeadowsDataSet.Staffs)
 
         DocsData("id") = Nothing
+
+        Console.WriteLine(MainForm.staffID)
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

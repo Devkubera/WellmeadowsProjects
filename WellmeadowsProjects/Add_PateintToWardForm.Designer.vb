@@ -23,15 +23,19 @@ Partial Class Add_PateintToWardForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.patientToWardPanel = New System.Windows.Forms.Panel()
+        Me.btnCheckDoctor = New System.Windows.Forms.Button()
         Me.symptomlb = New System.Windows.Forms.Label()
         Me.symptom = New System.Windows.Forms.RichTextBox()
         Me.patientType_combobox = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.patientTypelb = New System.Windows.Forms.Label()
         Me.wardID_combobox = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.wardlb = New System.Windows.Forms.Label()
         Me.visitDatagrid = New System.Windows.Forms.DataGridView()
+        Me.doctorID = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.cnID = New System.Windows.Forms.TextBox()
         Me.addStaffId = New System.Windows.Forms.Label()
         Me.visitlb = New System.Windows.Forms.Label()
@@ -41,10 +45,6 @@ Partial Class Add_PateintToWardForm
         Me.btnSubmit = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.headerlb = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.doctorID = New System.Windows.Forms.TextBox()
-        Me.btnCheckDoctor = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.patientToWardPanel.SuspendLayout()
         CType(Me.visitDatagrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -80,6 +80,18 @@ Partial Class Add_PateintToWardForm
         Me.patientToWardPanel.Size = New System.Drawing.Size(1838, 853)
         Me.patientToWardPanel.TabIndex = 1
         '
+        'btnCheckDoctor
+        '
+        Me.btnCheckDoctor.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnCheckDoctor.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheckDoctor.ForeColor = System.Drawing.Color.White
+        Me.btnCheckDoctor.Location = New System.Drawing.Point(197, 726)
+        Me.btnCheckDoctor.Name = "btnCheckDoctor"
+        Me.btnCheckDoctor.Size = New System.Drawing.Size(127, 78)
+        Me.btnCheckDoctor.TabIndex = 121
+        Me.btnCheckDoctor.Text = "ตรวจสอบ"
+        Me.btnCheckDoctor.UseVisualStyleBackColor = False
+        '
         'symptomlb
         '
         Me.symptomlb.AutoSize = True
@@ -111,6 +123,17 @@ Partial Class Add_PateintToWardForm
         Me.patientType_combobox.Name = "patientType_combobox"
         Me.patientType_combobox.Size = New System.Drawing.Size(217, 38)
         Me.patientType_combobox.TabIndex = 117
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(356, 405)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(140, 30)
+        Me.Label4.TabIndex = 116
+        Me.Label4.Text = "หมายเลขผู้ป่วย"
         '
         'patientTypelb
         '
@@ -180,6 +203,27 @@ Partial Class Add_PateintToWardForm
         Me.visitDatagrid.Size = New System.Drawing.Size(1224, 227)
         Me.visitDatagrid.TabIndex = 113
         '
+        'doctorID
+        '
+        Me.doctorID.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.doctorID.Location = New System.Drawing.Point(361, 766)
+        Me.doctorID.Margin = New System.Windows.Forms.Padding(4)
+        Me.doctorID.Name = "doctorID"
+        Me.doctorID.ReadOnly = True
+        Me.doctorID.Size = New System.Drawing.Size(272, 38)
+        Me.doctorID.TabIndex = 104
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(354, 726)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(142, 30)
+        Me.Label3.TabIndex = 103
+        Me.Label3.Text = "หมายเลขแพทย์"
+        '
         'cnID
         '
         Me.cnID.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -189,7 +233,6 @@ Partial Class Add_PateintToWardForm
         Me.cnID.ReadOnly = True
         Me.cnID.Size = New System.Drawing.Size(272, 38)
         Me.cnID.TabIndex = 104
-        Me.cnID.Text = "CN1"
         '
         'addStaffId
         '
@@ -281,50 +324,6 @@ Partial Class Add_PateintToWardForm
         Me.headerlb.Size = New System.Drawing.Size(340, 43)
         Me.headerlb.TabIndex = 95
         Me.headerlb.Text = "เพิ่มข้อมูลผู้ป่วยไปยังวอร์ด"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(354, 726)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(142, 30)
-        Me.Label3.TabIndex = 103
-        Me.Label3.Text = "หมายเลขแพทย์"
-        '
-        'doctorID
-        '
-        Me.doctorID.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.doctorID.Location = New System.Drawing.Point(361, 766)
-        Me.doctorID.Margin = New System.Windows.Forms.Padding(4)
-        Me.doctorID.Name = "doctorID"
-        Me.doctorID.ReadOnly = True
-        Me.doctorID.Size = New System.Drawing.Size(272, 38)
-        Me.doctorID.TabIndex = 104
-        '
-        'btnCheckDoctor
-        '
-        Me.btnCheckDoctor.BackColor = System.Drawing.SystemColors.Highlight
-        Me.btnCheckDoctor.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCheckDoctor.ForeColor = System.Drawing.Color.White
-        Me.btnCheckDoctor.Location = New System.Drawing.Point(197, 726)
-        Me.btnCheckDoctor.Name = "btnCheckDoctor"
-        Me.btnCheckDoctor.Size = New System.Drawing.Size(127, 78)
-        Me.btnCheckDoctor.TabIndex = 121
-        Me.btnCheckDoctor.Text = "ตรวจสอบ"
-        Me.btnCheckDoctor.UseVisualStyleBackColor = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(356, 405)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(140, 30)
-        Me.Label4.TabIndex = 116
-        Me.Label4.Text = "หมายเลขผู้ป่วย"
         '
         'Add_PateintToWardForm
         '

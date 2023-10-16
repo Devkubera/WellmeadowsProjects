@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class LoginPage
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class LoginPage
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.staffID = New System.Windows.Forms.TextBox()
@@ -48,17 +48,23 @@ Partial Class LoginPage
         '
         'staffID
         '
+        Me.staffID.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.staffID.Location = New System.Drawing.Point(351, 290)
+        Me.staffID.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.staffID.Name = "staffID"
-        Me.staffID.Size = New System.Drawing.Size(518, 22)
+        Me.staffID.Size = New System.Drawing.Size(519, 38)
         Me.staffID.TabIndex = 1
+        Me.staffID.Text = "S5"
         '
         'staffTel
         '
+        Me.staffTel.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.staffTel.Location = New System.Drawing.Point(351, 416)
+        Me.staffTel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.staffTel.Name = "staffTel"
-        Me.staffTel.Size = New System.Drawing.Size(518, 22)
+        Me.staffTel.Size = New System.Drawing.Size(519, 38)
         Me.staffTel.TabIndex = 2
+        Me.staffTel.Text = "0894561230"
         '
         'Label2
         '
@@ -66,7 +72,7 @@ Partial Class LoginPage
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(410, 244)
+        Me.Label2.Location = New System.Drawing.Point(411, 244)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(138, 30)
         Me.Label2.TabIndex = 3
@@ -76,6 +82,7 @@ Partial Class LoginPage
         '
         Me.PictureBox1.Image = Global.WellmeadowsProjects.My.Resources.Resources.staff_icon
         Me.PictureBox1.Location = New System.Drawing.Point(351, 233)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(53, 50)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -86,6 +93,7 @@ Partial Class LoginPage
         '
         Me.PictureBox2.Image = Global.WellmeadowsProjects.My.Resources.Resources.ic_baseline_phone
         Me.PictureBox2.Location = New System.Drawing.Point(351, 361)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(53, 50)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -98,7 +106,7 @@ Partial Class LoginPage
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(410, 372)
+        Me.Label3.Location = New System.Drawing.Point(411, 372)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(157, 30)
         Me.Label3.TabIndex = 5
@@ -109,9 +117,10 @@ Partial Class LoginPage
         Me.loginBtn.BackColor = System.Drawing.Color.DarkOrchid
         Me.loginBtn.Font = New System.Drawing.Font("Prompt", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.loginBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.loginBtn.Location = New System.Drawing.Point(496, 481)
+        Me.loginBtn.Location = New System.Drawing.Point(497, 493)
+        Me.loginBtn.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.loginBtn.Name = "loginBtn"
-        Me.loginBtn.Size = New System.Drawing.Size(222, 58)
+        Me.loginBtn.Size = New System.Drawing.Size(221, 58)
         Me.loginBtn.TabIndex = 7
         Me.loginBtn.Text = "Login"
         Me.loginBtn.UseVisualStyleBackColor = False
@@ -129,7 +138,9 @@ Partial Class LoginPage
         Me.Controls.Add(Me.staffTel)
         Me.Controls.Add(Me.staffID)
         Me.Controls.Add(Me.Label1)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "LoginPage"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LoginPage"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

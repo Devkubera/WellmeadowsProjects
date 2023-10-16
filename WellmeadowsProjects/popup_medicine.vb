@@ -32,4 +32,15 @@
             Me.Close()
         End If
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        ' make filter seacrh for the datagrid by name
+        Dim searchQuery As String = TextBox1.Text.Trim()
+        If searchQuery IsNot "" Then
+            Me.MedMedicinesBindingSource.Filter = "name LIKE '%" & searchQuery & "%'"
+        Else
+            Me.MedMedicinesBindingSource.Filter = ""
+        End If
+
+    End Sub
 End Class

@@ -133,4 +133,8 @@
         ' reload data in data grid view
         InPatient_Load(sender, e)
     End Sub
+
+    Private Sub ViewInPa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ViewInPa.CellContentClick
+
+    End Sub
 End Class

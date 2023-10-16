@@ -26,9 +26,6 @@ Partial Class popup_patient
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.patientDG = New System.Windows.Forms.DataGridView()
-        Me.PatientsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
-        Me.PatientsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.PatientsTableAdapter()
         Me.PatientIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -38,6 +35,11 @@ Partial Class popup_patient
         Me.TelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DobDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateregisterDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PatientsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
+        Me.PatientsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.PatientsTableAdapter()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.patientDG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PatientsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,7 +50,7 @@ Partial Class popup_patient
         Me.Button2.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Button2.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button2.Location = New System.Drawing.Point(1218, 378)
+        Me.Button2.Location = New System.Drawing.Point(1153, 403)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(123, 50)
@@ -60,7 +62,7 @@ Partial Class popup_patient
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Prompt", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(33, 48)
+        Me.Label1.Location = New System.Drawing.Point(33, 72)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(261, 35)
         Me.Label1.TabIndex = 14
@@ -75,29 +77,15 @@ Partial Class popup_patient
         Me.patientDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.patientDG.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PatientIDDataGridViewTextBoxColumn, Me.FirstNameDataGridViewTextBoxColumn, Me.LastNameDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.GenderDataGridViewTextBoxColumn, Me.MarryStatusDataGridViewTextBoxColumn, Me.TelDataGridViewTextBoxColumn, Me.DobDataGridViewTextBoxColumn, Me.DateregisterDataGridViewTextBoxColumn})
         Me.patientDG.DataSource = Me.PatientsBindingSource
-        Me.patientDG.Location = New System.Drawing.Point(38, 105)
+        Me.patientDG.Location = New System.Drawing.Point(38, 129)
         Me.patientDG.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.patientDG.Name = "patientDG"
         Me.patientDG.ReadOnly = True
         Me.patientDG.RowHeadersWidth = 51
         Me.patientDG.RowTemplate.Height = 24
         Me.patientDG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.patientDG.Size = New System.Drawing.Size(1303, 258)
+        Me.patientDG.Size = New System.Drawing.Size(1238, 258)
         Me.patientDG.TabIndex = 13
-        '
-        'PatientsBindingSource
-        '
-        Me.PatientsBindingSource.DataMember = "Patients"
-        Me.PatientsBindingSource.DataSource = Me.WellmeadowsDataSet
-        '
-        'WellmeadowsDataSet
-        '
-        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
-        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PatientsTableAdapter
-        '
-        Me.PatientsTableAdapter.ClearBeforeFill = True
         '
         'PatientIDDataGridViewTextBoxColumn
         '
@@ -181,11 +169,45 @@ Partial Class popup_patient
         Me.DateregisterDataGridViewTextBoxColumn.ReadOnly = True
         Me.DateregisterDataGridViewTextBoxColumn.Width = 125
         '
+        'PatientsBindingSource
+        '
+        Me.PatientsBindingSource.DataMember = "Patients"
+        Me.PatientsBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'WellmeadowsDataSet
+        '
+        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
+        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PatientsTableAdapter
+        '
+        Me.PatientsTableAdapter.ClearBeforeFill = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(949, 72)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(327, 38)
+        Me.TextBox1.TabIndex = 25
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(944, 39)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(262, 30)
+        Me.Label2.TabIndex = 24
+        Me.Label2.Text = "ค้นหาด้วยชื่อ, หมายเลขผู้ป่วย"
+        '
         'popup_patient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1353, 469)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.patientDG)
@@ -215,4 +237,6 @@ Partial Class popup_patient
     Friend WithEvents TelDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DobDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DateregisterDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label2 As Label
 End Class

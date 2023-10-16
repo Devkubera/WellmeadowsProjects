@@ -40,28 +40,28 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.44167cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.75917cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>4.64312cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.70625cm</Width>
-            </TablixColumn>
-            <TablixColumn>
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.24083cm</Width>
+              <Width>2.88893cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.24083cm</Width>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.90841cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.28317cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.897cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -70,7 +70,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox3">
+                    <Textbox Name="Textbox2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -84,7 +84,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -100,7 +100,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox5">
+                    <Textbox Name="Textbox4">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -114,7 +114,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -130,21 +130,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox7">
+                    <Textbox Name="Textbox6">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ชื่อ นามสกุล</Value>
+                              <Value>ชื่อผู้ป่วย</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox7</rd:DefaultName>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -160,7 +160,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox9">
+                    <Textbox Name="Textbox12">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -174,7 +174,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <rd:DefaultName>Textbox12</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -190,21 +190,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox11">
+                    <Textbox Name="Textbox10">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ชื่อยาและปริมาณ</Value>
+                              <Value>ชื่อยา/ปริมาณ</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -220,21 +220,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox13">
+                    <Textbox Name="Textbox8">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>วิธีการใช้</Value>
+                              <Value>วิธีใช้</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -250,7 +250,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox15">
+                    <Textbox Name="Textbox14">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -264,7 +264,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                      <rd:DefaultName>Textbox14</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -280,7 +280,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox17">
+                    <Textbox Name="Textbox16">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -294,7 +294,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox17</rd:DefaultName>
+                      <rd:DefaultName>Textbox16</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -375,21 +375,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ชื่อ_นามสกุล">
+                    <Textbox Name="ชื่อผู้ป่วย">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ชื่อ_นามสกุล.Value</Value>
+                              <Value>=Fields!ชื่อผู้ป่วย.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ชื่อ_นามสกุล</rd:DefaultName>
+                      <rd:DefaultName>ชื่อผู้ป่วย</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -465,21 +465,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="วิธีการใช้">
+                    <Textbox Name="วิธีใช้">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!วิธีการใช้.Value</Value>
+                              <Value>=Fields!วิธีใช้.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>วิธีการใช้</rd:DefaultName>
+                      <rd:DefaultName>วิธีใช้</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -525,21 +525,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="วันที่หยุดให้ยา">
+                    <Textbox Name="วันที่หยุดยา">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!วันที่หยุดให้ยา.Value</Value>
+                              <Value>=Fields!วันที่หยุดยา.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>วันที่หยุดให้ยา</rd:DefaultName>
+                      <rd:DefaultName>วันที่หยุดยา</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -579,11 +579,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>Prescript_DataSet</DataSetName>
-        <Top>5.39433cm</Top>
-        <Left>1.54292cm</Left>
+        <DataSetName>dataset_prescript_report</DataSetName>
+        <Top>4.56353cm</Top>
+        <Left>0.61329cm</Left>
         <Height>1.2cm</Height>
-        <Width>21.03187cm</Width>
+        <Width>22.9775cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -595,7 +595,7 @@
     <Height>9.19792in</Height>
     <Style />
   </Body>
-  <Width>9.02313in</Width>
+  <Width>9.48526in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -617,7 +617,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Prescript_DataSet">
+    <DataSet Name="dataset_prescript_report">
       <Query>
         <DataSourceName>WellmeadowsDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -625,40 +625,40 @@
       <Fields>
         <Field Name="ลำดับ">
           <DataField>ลำดับ</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="หมายเลขผู้ป่วย">
           <DataField>หมายเลขผู้ป่วย</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ชื่อ_นามสกุล">
-          <DataField>ชื่อ_นามสกุล</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="วอร์ด">
           <DataField>วอร์ด</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ชื่อยาและปริมาณ">
-          <DataField>ชื่อยาและปริมาณ</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="วิธีการใช้">
-          <DataField>วิธีการใช้</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="วันที่เริ่มให้ยา">
           <DataField>วันที่เริ่มให้ยา</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="วันที่หยุดให้ยา">
-          <DataField>วันที่หยุดให้ยา</DataField>
+        <Field Name="ชื่อผู้ป่วย">
+          <DataField>ชื่อผู้ป่วย</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="วิธีใช้">
+          <DataField>วิธีใช้</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="วันที่หยุดยา">
+          <DataField>วันที่หยุดยา</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ชื่อยาและปริมาณ">
+          <DataField>ชื่อยาและปริมาณ</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>WellmeadowsDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\phanu\source\repos\Lastest\WellmeadowsProjects\WellmeadowsDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\hungo\source\repos\WellmeadowsProjects\WellmeadowsProjects\WellmeadowsDataSet.xsd</rd:SchemaPath>
         <rd:TableName>Prescript_Report_View</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

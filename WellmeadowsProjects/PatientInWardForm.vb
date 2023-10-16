@@ -1,9 +1,32 @@
 ﻿Public Class PatientInWardForm
     Public backUpDataTable As DataTable
     Public Sub PatientInWardForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' if user is not md and cn
+        Console.WriteLine(MainForm.mdID & "mdID")
+        Console.WriteLine(MainForm.cnID & "cnID")
+        If MainForm.cnID <> "" Then
+            Console.WriteLine("if")
+            btnReport.Visible = True
+            btnAdd.Visible = True
+            btnEdit.Visible = True
+            btnDel.Visible = True
+        ElseIf MainForm.mdID <> "" Then
+            Console.WriteLine("else if")
+            btnReport.Visible = True
+            btnAdd.Visible = False
+            btnEdit.Visible = False
+            btnDel.Visible = False
+        Else
+            Console.WriteLine("else")
+            btnReport.Visible = False
+            btnAdd.Visible = False
+            btnEdit.Visible = False
+            btnDel.Visible = False
+        End If
+
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Patient_Wards' table. You can move, or remove it, as needed.
-        Me.Patient_WardsTableAdapter.Fill(Me.WellmeadowsDataSet.Patient_Wards)
-        cbbPtype.SelectedIndex = 0
+        ' Me.Patient_WardsTableAdapter.Fill(Me.WellmeadowsDataSet.Patient_Wards)
+
         ' query all patient in ward
         Dim sqlCode = "SELECT 
 	                    PW.pwID,
@@ -33,6 +56,9 @@
         pateintInWardTable.Columns(0).Frozen = True
 
         backUpDataTable = result
+
+        cbbPtype.SelectedIndex = 0
+        cbbPtype_SelectedIndexChanged(sender, e)
     End Sub
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Add_PateintToWardForm.Show()
@@ -81,7 +107,13 @@
 
             btnReport.Visible = False
         ElseIf cbbPtype.SelectedIndex = 1 Then
-            btnReport.Visible = True
+
+            ' check main form CN and MD is available
+            If MainForm.cnID <> "" Or MainForm.mdID <> "" Then
+                btnReport.Visible = True
+            Else
+                btnReport.Visible = False
+            End If
 
             btnReport.Text = "สร้างรายงานผู้ป่วยใน"
             ' query in-patient to ward by patient type
@@ -111,7 +143,13 @@
             ' set value to data grid view
             pateintInWardTable.DataSource = datatable
         Else
-            btnReport.Visible = True
+
+            ' check main form CN and MD is available
+            If MainForm.cnID <> "" Or MainForm.mdID <> "" Then
+                btnReport.Visible = True
+            Else
+                btnReport.Visible = False
+            End If
 
             btnReport.Text = "สร้างรายงานผู้ป่วยนอก"
             ' query out-patient to ward by patient type

@@ -22,8 +22,6 @@ Partial Class popup_waitingListForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.cbb_bed_status = New System.Windows.Forms.ComboBox()
         Me.placeholderlb = New System.Windows.Forms.Label()
         Me.waitingListTable = New System.Windows.Forms.DataGridView()
         Me.SearchWaiting = New System.Windows.Forms.TextBox()
@@ -31,27 +29,6 @@ Partial Class popup_waitingListForm
         Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.waitingListTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(555, 60)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(133, 30)
-        Me.Label1.TabIndex = 62
-        Me.Label1.Text = "สถานะรอเตียง"
-        '
-        'cbb_bed_status
-        '
-        Me.cbb_bed_status.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbb_bed_status.FormattingEnabled = True
-        Me.cbb_bed_status.Items.AddRange(New Object() {"ยังไม่ได้เตียง", "ได้รับเตียงแล้ว"})
-        Me.cbb_bed_status.Location = New System.Drawing.Point(560, 94)
-        Me.cbb_bed_status.Name = "cbb_bed_status"
-        Me.cbb_bed_status.Size = New System.Drawing.Size(206, 38)
-        Me.cbb_bed_status.TabIndex = 61
         '
         'placeholderlb
         '
@@ -116,8 +93,6 @@ Partial Class popup_waitingListForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1793, 724)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.cbb_bed_status)
         Me.Controls.Add(Me.placeholderlb)
         Me.Controls.Add(Me.waitingListTable)
         Me.Controls.Add(Me.SearchWaiting)
@@ -129,9 +104,6 @@ Partial Class popup_waitingListForm
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label1 As Label
-    Friend WithEvents cbb_bed_status As ComboBox
     Friend WithEvents placeholderlb As Label
     Friend WithEvents waitingListTable As DataGridView
     Friend WithEvents SearchWaiting As TextBox

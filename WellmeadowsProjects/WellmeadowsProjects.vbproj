@@ -193,6 +193,12 @@
     <Compile Include="Add_Ward.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DashbordForm.Designer.vb">
+      <DependentUpon>DashbordForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DashbordForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Edit_Medicine.Designer.vb">
       <DependentUpon>Edit_Medicine.vb</DependentUpon>
     </Compile>
@@ -366,6 +372,12 @@
     <Compile Include="popup_PatientWard.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="popup_shifts.Designer.vb">
+      <DependentUpon>popup_shifts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="popup_shifts.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="popup_supplies.Designer.vb">
       <DependentUpon>popup_supplies.vb</DependentUpon>
     </Compile>
@@ -376,6 +388,18 @@
       <DependentUpon>popup_waitingListForm.vb</DependentUpon>
     </Compile>
     <Compile Include="popup_waitingListForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popup_ward.Designer.vb">
+      <DependentUpon>popup_ward.vb</DependentUpon>
+    </Compile>
+    <Compile Include="popup_ward.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popup_wardstaffs.Designer.vb">
+      <DependentUpon>popup_wardstaffs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="popup_wardstaffs.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="pop_Doc.Designer.vb">
@@ -493,6 +517,10 @@
     <EmbeddedResource Include="Add_Ward.resx">
       <DependentUpon>Add_Ward.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DashboardData.rdlc" />
+    <EmbeddedResource Include="DashbordForm.resx">
+      <DependentUpon>DashbordForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Edit_InPatient.resx">
       <DependentUpon>Edit_InPatient.vb</DependentUpon>
     </EmbeddedResource>
@@ -592,11 +620,20 @@
     <EmbeddedResource Include="popup_PatientWard.resx">
       <DependentUpon>popup_PatientWard.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="popup_shifts.resx">
+      <DependentUpon>popup_shifts.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="popup_supplies.resx">
       <DependentUpon>popup_supplies.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="popup_waitingListForm.resx">
       <DependentUpon>popup_waitingListForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="popup_ward.resx">
+      <DependentUpon>popup_ward.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="popup_wardstaffs.resx">
+      <DependentUpon>popup_wardstaffs.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report_EachWard.resx">
       <DependentUpon>Report_EachWard.vb</DependentUpon>

@@ -73,4 +73,8 @@ Public Class WardForm
     Private Sub placeholderlb_Click(sender As Object, e As EventArgs) Handles placeholderlb.Click
 
     End Sub
+
+    Private Sub wardPanel_Paint(sender As Object, e As PaintEventArgs) Handles wardPanel.Paint
+
+    End Sub
 End Class

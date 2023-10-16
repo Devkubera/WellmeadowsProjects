@@ -27,6 +27,8 @@ Partial Class Edit_PateintToWardForm
         Me.symptomlb = New System.Windows.Forms.Label()
         Me.symptom = New System.Windows.Forms.RichTextBox()
         Me.patientType_combobox = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.patientTypelb = New System.Windows.Forms.Label()
         Me.wardID_combobox = New System.Windows.Forms.ComboBox()
@@ -41,13 +43,11 @@ Partial Class Edit_PateintToWardForm
         Me.addStaffId = New System.Windows.Forms.Label()
         Me.visitlb = New System.Windows.Forms.Label()
         Me.visitID = New System.Windows.Forms.TextBox()
+        Me.doctorName = New System.Windows.Forms.TextBox()
+        Me.patientName = New System.Windows.Forms.TextBox()
         Me.patientId = New System.Windows.Forms.TextBox()
         Me.btnSubmit = New System.Windows.Forms.Button()
         Me.headerlb = New System.Windows.Forms.Label()
-        Me.patientName = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.doctorName = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.editPatientToWardPanel.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -128,6 +128,28 @@ Partial Class Edit_PateintToWardForm
         Me.patientType_combobox.Name = "patientType_combobox"
         Me.patientType_combobox.Size = New System.Drawing.Size(217, 38)
         Me.patientType_combobox.TabIndex = 139
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(631, 523)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(90, 30)
+        Me.Label8.TabIndex = 138
+        Me.Label8.Text = "ชื่อแพทย์"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(631, 202)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(88, 30)
+        Me.Label7.TabIndex = 138
+        Me.Label7.Text = "ชื่อผู้ป่วย"
         '
         'Label4
         '
@@ -250,7 +272,6 @@ Partial Class Edit_PateintToWardForm
         Me.cnID.ReadOnly = True
         Me.cnID.Size = New System.Drawing.Size(272, 38)
         Me.cnID.TabIndex = 131
-        Me.cnID.Text = "CN1"
         '
         'addStaffId
         '
@@ -283,6 +304,26 @@ Partial Class Edit_PateintToWardForm
         Me.visitID.ReadOnly = True
         Me.visitID.Size = New System.Drawing.Size(274, 38)
         Me.visitID.TabIndex = 126
+        '
+        'doctorName
+        '
+        Me.doctorName.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.doctorName.Location = New System.Drawing.Point(636, 563)
+        Me.doctorName.Margin = New System.Windows.Forms.Padding(4)
+        Me.doctorName.Name = "doctorName"
+        Me.doctorName.ReadOnly = True
+        Me.doctorName.Size = New System.Drawing.Size(272, 38)
+        Me.doctorName.TabIndex = 125
+        '
+        'patientName
+        '
+        Me.patientName.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.patientName.Location = New System.Drawing.Point(636, 242)
+        Me.patientName.Margin = New System.Windows.Forms.Padding(4)
+        Me.patientName.Name = "patientName"
+        Me.patientName.ReadOnly = True
+        Me.patientName.Size = New System.Drawing.Size(272, 38)
+        Me.patientName.TabIndex = 125
         '
         'patientId
         '
@@ -318,48 +359,6 @@ Partial Class Edit_PateintToWardForm
         Me.headerlb.Size = New System.Drawing.Size(380, 43)
         Me.headerlb.TabIndex = 122
         Me.headerlb.Text = "แก้ไขข้อมูลผู้ป่วยในแต่ละวอร์ด"
-        '
-        'patientName
-        '
-        Me.patientName.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.patientName.Location = New System.Drawing.Point(636, 242)
-        Me.patientName.Margin = New System.Windows.Forms.Padding(4)
-        Me.patientName.Name = "patientName"
-        Me.patientName.ReadOnly = True
-        Me.patientName.Size = New System.Drawing.Size(272, 38)
-        Me.patientName.TabIndex = 125
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(631, 202)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(88, 30)
-        Me.Label7.TabIndex = 138
-        Me.Label7.Text = "ชื่อผู้ป่วย"
-        '
-        'doctorName
-        '
-        Me.doctorName.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.doctorName.Location = New System.Drawing.Point(636, 563)
-        Me.doctorName.Margin = New System.Windows.Forms.Padding(4)
-        Me.doctorName.Name = "doctorName"
-        Me.doctorName.ReadOnly = True
-        Me.doctorName.Size = New System.Drawing.Size(272, 38)
-        Me.doctorName.TabIndex = 125
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(631, 523)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(90, 30)
-        Me.Label8.TabIndex = 138
-        Me.Label8.Text = "ชื่อแพทย์"
         '
         'Edit_PateintToWardForm
         '

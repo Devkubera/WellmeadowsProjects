@@ -95,13 +95,7 @@ Public Class Add_Presscipt
         Dim Mdosage = m_dosage.Text
         Dim Mdesc = m_desc.Text
 
-
-        'Console.WriteLine(MstartDate & " MstartDate")
-        'Console.WriteLine(MendDate & " MendDate")
-        'Console.WriteLine(Mdosage & " Mdosage")
-        'Console.WriteLine(Mdesc & " Mdesc")
-
-        Me.PW_PrescriptsTableAdapter.InsertPresscript(medicineID, pwID, doctorID, cnID, Mdosage, MstartDate, MendDate, Mdesc)
+        Me.PW_PrescriptsTableAdapter.InsertPresscript(medicineID, pwID, doctorID, MainForm.cnID, Mdosage, MstartDate, MendDate, Mdesc)
 
         Me.PW_PrescriptsTableAdapter.Fill(Me.WellmeadowsDataSet.PW_Prescripts)
         MessageBox.Show("ข้อมูลได้ถูกเพิ่มแล้ว", "บันทึกข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -161,7 +155,6 @@ Public Class Add_Presscipt
     End Sub
 
     Public Sub SetDisabledMedicine()
-
         m_id.Enabled = False
         m_name.Enabled = False
         m_method.Enabled = False

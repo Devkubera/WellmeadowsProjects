@@ -30,4 +30,14 @@
             Me.Close()
         End If
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        ' making search filter for data grid view by firstname, lastname and patient_id
+        Dim searchQuery As String = TextBox1.Text.Trim()
+        If searchQuery IsNot "" Then
+            Me.PatientsBindingSource.Filter = "firstName LIKE '%" & searchQuery & "%' OR lastName LIKE '%" & searchQuery & "%' OR patient_id LIKE '%" & searchQuery & "%'"
+        Else
+            Me.PatientsBindingSource.Filter = ""
+        End If
+    End Sub
 End Class

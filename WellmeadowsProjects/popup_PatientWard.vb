@@ -21,7 +21,7 @@ Public Class popup_PatientWard
         ' create sql string to query patients_ward data and join with patients table to get first name and last name where pwID not in pwIDList
         Dim sqlCode = "SELECT
 	        pw.pwID AS 'หมายเลขการรักษา',
-	        pw.cnID AS 'หมายเลขแพทย์',
+	        pw.cnID AS 'หมายเลขหัวหน้าพยาบาล',
 	        pw.patientID AS 'หมายเลขผู้ป่วย',
 	        p.firstName AS 'ชื่อผู้ป่วย',
             p.lastName AS 'นามสกุลผู้ป่วย',

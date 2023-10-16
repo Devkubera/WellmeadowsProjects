@@ -61,32 +61,33 @@ Public Class Patient_Presscipt
 
             ' คำสั่ง SQL สำหรับรวมข้อมูลจากตาราง Doctors และ Staffs
             Dim sql As String = "SELECT
-                    P.ID AS หมายเลขใบจ่ายยา,
-                    PW.pwID As หมายเลขผู้ป่วยในวอร์ด,
-	                M.mmID As หมายเลขยา,
-                    M.name AS ชื่อยา,
-	                Pt.ID As หมายเลขผู้ป่วย,
-                    Pt.firstName AS ชื่อผู้ป่วย, 
-	                Pt.lastName AS นามสกุลผู้ป่วย,
-	                D.doctorID As หมายเลขแพทย์,
-                    Dr.firstName AS ชื่อแพทย์,
-	                Dr.lastName AS นามสกุลแพทย์,
-	                CN.cnID As หมายเลขพยาบาล,
-                    Dr.firstName AS ชื่อพยาบาล,
-	                Dr.lastName AS นามสกุลพยาบาล,
-	                M.method As วิธีการให้ยา,
-                    P.dosage AS ปริมาณ,
-                    P.startDate AS วันที่เริ่มให้ยา,
-                    P.endDate AS วันที่สิ้นสุดการให้ยา,
-                    P.descript AS รายละเอียด,
-                    P.createAT AS วันที่สร้างข้อมูล
-                    FROM PW_Prescripts AS P
-                    INNER JOIN Med_Medicines AS M ON P.mmID = M.mmID
-                    INNER JOIN Patient_Wards AS PW ON P.pwID = PW.pwID
-                    INNER JOIN Patients AS Pt ON PW.patientID = Pt.patientID
-                    INNER JOIN Doctors AS D ON P.doctorID = D.doctorID
-                    INNER JOIN Staffs AS Dr ON D.staffID = Dr.staffID
-                    INNER JOIN ChargeNurses AS CN ON PW.cnID = CN.cnID;"
+		P.ID AS หมายเลขใบจ่ายยา,
+        PW.pwID As หมายเลขผู้ป่วยในวอร์ด,
+	    M.mmID As หมายเลขยา,
+        M.name AS ชื่อยา,
+	    Pt.ID As หมายเลขผู้ป่วย,
+        Pt.firstName AS ชื่อผู้ป่วย, 
+	    Pt.lastName AS นามสกุลผู้ป่วย,
+	    D.doctorID As หมายเลขแพทย์,
+        Dr.firstName AS ชื่อแพทย์,
+	    Dr.lastName AS นามสกุลแพทย์,
+	    P.cnID As หมายเลขหัวหน้าพยาบาล,
+        CNN.firstName AS ชื่อพยาบาล,
+	    CNN.lastName AS นามสกุลพยาบาล,
+	    M.method As วิธีการให้ยา,
+        P.dosage AS ปริมาณ,
+        P.startDate AS วันที่เริ่มให้ยา,
+        P.endDate AS วันที่สิ้นสุดการให้ยา,
+        P.descript AS รายละเอียด,
+        P.createAT AS วันที่สร้างข้อมูล
+        FROM PW_Prescripts AS P
+        INNER JOIN Med_Medicines AS M ON P.mmID = M.mmID
+        INNER JOIN Patient_Wards AS PW ON P.pwID = PW.pwID
+        INNER JOIN Patients AS Pt ON PW.patientID = Pt.patientID
+        INNER JOIN Doctors AS D ON P.doctorID = D.doctorID
+        INNER JOIN Staffs AS Dr ON D.staffID = Dr.staffID
+        INNER JOIN ChargeNurses AS CN ON P.cnID = CN.cnID
+		INNER JOIN Staffs AS CNN ON CN.staffID = CNN.staffID;"
 
             ' สร้าง SqlDataAdapter เพื่อดึงข้อมูล
             Dim adapter As New SqlDataAdapter(sql, connection)
@@ -196,5 +197,9 @@ Public Class Patient_Presscipt
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Add_Presscipt.Show()
+    End Sub
+
+    Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
+        Report_PrescriptForm.Show()
     End Sub
 End Class
