@@ -127,7 +127,7 @@ Partial Class Edit_Staff
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
         Me.btnAdd.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnAdd.Location = New System.Drawing.Point(879, 52)
+        Me.btnAdd.Location = New System.Drawing.Point(1091, 56)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(160, 49)
@@ -140,7 +140,7 @@ Partial Class Edit_Staff
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Button1.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Snow
-        Me.Button1.Location = New System.Drawing.Point(758, 52)
+        Me.Button1.Location = New System.Drawing.Point(970, 56)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 49)
@@ -459,7 +459,7 @@ Partial Class Edit_Staff
         Me.headerlb.AllowDrop = True
         Me.headerlb.AutoSize = True
         Me.headerlb.Font = New System.Drawing.Font("Prompt", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.headerlb.Location = New System.Drawing.Point(400, 52)
+        Me.headerlb.Location = New System.Drawing.Point(612, 56)
         Me.headerlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.headerlb.Name = "headerlb"
         Me.headerlb.Size = New System.Drawing.Size(244, 40)

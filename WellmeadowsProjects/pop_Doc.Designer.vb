@@ -33,6 +33,8 @@ Partial Class pop_Doc
         Me.StaffsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.StaffsTableAdapter()
         Me.DoctorsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.DoctorsTableAdapter()
         Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.seachbox = New System.Windows.Forms.RichTextBox()
         CType(Me.docDG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DoctorsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -132,11 +134,32 @@ Partial Class pop_Doc
         Me.TableAdapterManager.Ward_StaffsTableAdapter = Nothing
         Me.TableAdapterManager.WardsTableAdapter = Nothing
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Prompt", 12.0!)
+        Me.Label2.Location = New System.Drawing.Point(688, 23)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(227, 30)
+        Me.Label2.TabIndex = 26
+        Me.Label2.Text = "ค้นหาด้วยหมายเลขแพทย์"
+        '
+        'seachbox
+        '
+        Me.seachbox.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.seachbox.Location = New System.Drawing.Point(693, 68)
+        Me.seachbox.Name = "seachbox"
+        Me.seachbox.Size = New System.Drawing.Size(303, 35)
+        Me.seachbox.TabIndex = 25
+        Me.seachbox.Text = ""
+        '
         'pop_Doc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1052, 508)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.seachbox)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.docDG)
@@ -161,4 +184,6 @@ Partial Class pop_Doc
     Friend WithEvents DoctorsBindingSource As BindingSource
     Friend WithEvents DoctorsTableAdapter As WellmeadowsDataSetTableAdapters.DoctorsTableAdapter
     Friend WithEvents TableAdapterManager As WellmeadowsDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents Label2 As Label
+    Friend WithEvents seachbox As RichTextBox
 End Class

@@ -8,15 +8,15 @@ Public Class Add_Ward
             Dim Wdname = ward_name.Text
             Dim Wdlocatione = ward_location.Text
             Dim Wdtel = ward_tel.Text
-            Dim Wdbed = ward_bed.Text
 
-            Me.WardsTableAdapter.InsertWard(Wdname, Wdlocatione, Wdtel, Wdbed)
-            Me.WardsTableAdapter.Fill(Me.WellmeadowsDataSet.Wards)
+            Me.WardsTableAdapter.InsertWard(Wdname, Wdlocatione, Wdtel)
+
+            MessageBox.Show("เพิ่มข้อมูลสำเร็จ !", "เพิ่มข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            WardForm.WardForm_Load(sender, e)
             Me.Close()
 
         Catch ex As Exception
-            MessageBox.Show("Error. please check your data fill", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+            MessageBox.Show("เกิดข้อผผิดพลาดในการเพิ่มข้อมูล กรุณาตรวจสอบข้อมูลของท่าน " + Environment.NewLine + ex.Message, "เกิดข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Try
     End Sub
 

@@ -1,6 +1,7 @@
 ﻿Imports WellmeadowsProjects.WellmeadowsDataSetTableAdapters
 
 Public Class WardForm
+    Public backupData As DataTable
 
     Private Const ordinalIgnoreCase As StringComparison = StringComparison.OrdinalIgnoreCase
     Public wardData As New Dictionary(Of String, String)
@@ -17,9 +18,30 @@ Public Class WardForm
         WaitingListForm.Show()
     End Sub
 
-    Private Sub WardForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub WardForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Wards' table. You can move, or remove it, as needed.
         Me.WardsTableAdapter.Fill(Me.WellmeadowsDataSet.Wards)
+
+        ' making sql code to get data form ward table
+        Dim sql As String = "SELECT
+	        wardID AS 'หมายเลขวอร์ด',
+	        wardName AS 'ชื่อวอร์ด',
+	        wardLocation AS 'สถานที่ตั้ง',
+	        wardTel AS 'หมายเลขภายใน',
+	        (SELECT COUNT(bedID) FROM Beds WHERE Beds.wardID = Wards.wardID) AS 'จำนวนเตียง'
+        FROM WARDS;"
+
+        Dim dataTable As DataTable = StaffForm.sqlQueryDataTable(sql)
+
+        If dataTable Is Nothing Then
+            Console.WriteLine("Error not have ward in this ward : " & sql)
+            Return
+        End If
+
+        WardTable.DataSource = dataTable
+
+        ' backup data table
+        backupData = dataTable
 
     End Sub
 
@@ -42,7 +64,6 @@ Public Class WardForm
             Edit_Ward.ward_name.Text = wardData("wardName")
             Edit_Ward.ward_location.Text = wardData("wardLocation")
             Edit_Ward.ward_tel.Text = wardData("wardTel")
-            Edit_Ward.ward_bed.Text = wardData("wardBed")
 
         Else
             MessageBox.Show("กรุณาเลือกข้อมูลก่อน")
@@ -64,9 +85,22 @@ Public Class WardForm
         Dim searchText As String = SearchWard.Text.Trim()
         If String.IsNullOrEmpty(searchText) Then
             'เอา datasource มาใช้
-            WardsBindingSource.RemoveFilter()
+            WardTable.DataSource = backupData
         Else
-            WardsBindingSource.Filter = $"wardID LIKE '%{searchText}%' OR wardName LIKE '%{searchText}%' "
+            'WardsBindingSource.Filter = $"wardID LIKE '%{searchText}%' OR wardName LIKE '%{searchText}%' "
+            ' create sql code
+            Dim sql As String = $"SELECT
+	            wardID AS 'หมายเลขวอร์ด',
+	            wardName AS 'ชื่อวอร์ด',
+	            wardLocation AS 'สถานที่ตั้ง',
+	            wardTel AS 'หมายเลขภายใน',
+	            (SELECT COUNT(bedID) FROM Beds WHERE Beds.wardID = Wards.wardID) AS 'จำนวนเตียง'
+            FROM WARDS
+            WHERE Wards.wardID LIKE '%{searchText}%' OR Wards.wardName LIKE '%{searchText}%'"
+
+            Dim dataTable As DataTable = StaffForm.sqlQueryDataTable(sql)
+
+            WardTable.DataSource = dataTable
         End If
     End Sub
 

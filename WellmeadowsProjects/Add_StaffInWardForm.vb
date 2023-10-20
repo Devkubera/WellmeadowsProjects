@@ -61,6 +61,7 @@ Public Class Add_StaffInWardForm
 
             Ward_StaffsTableAdapter.InsertWardStaffs(shID, staffId.Text, wardId.Text)
 
+            StaffInWardForm.StaffInWardForm_Load(sender, e)
             MessageBox.Show("เพิ่มข้อมูลสำเร็จ")
             Me.Close()
         End If

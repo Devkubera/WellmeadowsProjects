@@ -44,9 +44,9 @@ Partial Class Patient_Visit
         'btnDelete
         '
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnDelete.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDelete.Location = New System.Drawing.Point(1097, 623)
+        Me.btnDelete.Location = New System.Drawing.Point(968, 602)
         Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(160, 46)
@@ -57,9 +57,9 @@ Partial Class Patient_Visit
         'btnUpdate
         '
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnUpdate.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUpdate.Location = New System.Drawing.Point(924, 623)
+        Me.btnUpdate.Location = New System.Drawing.Point(795, 602)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(160, 46)
@@ -81,11 +81,11 @@ Partial Class Patient_Visit
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
-        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(1144, 100)
+        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.btnAdd.Location = New System.Drawing.Point(1141, 602)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(113, 55)
+        Me.btnAdd.Size = New System.Drawing.Size(113, 46)
         Me.btnAdd.TabIndex = 15
         Me.btnAdd.Text = "เพิ่ม"
         Me.btnAdd.UseVisualStyleBackColor = False
@@ -94,7 +94,7 @@ Partial Class Patient_Visit
         '
         Me.lableSearch.AutoSize = True
         Me.lableSearch.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lableSearch.Location = New System.Drawing.Point(819, 78)
+        Me.lableSearch.Location = New System.Drawing.Point(824, 65)
         Me.lableSearch.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lableSearch.Name = "lableSearch"
         Me.lableSearch.Size = New System.Drawing.Size(134, 30)
@@ -104,7 +104,7 @@ Partial Class Patient_Visit
         'txtSearch
         '
         Me.txtSearch.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(823, 108)
+        Me.txtSearch.Location = New System.Drawing.Point(829, 99)
         Me.txtSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(299, 38)
@@ -114,10 +114,10 @@ Partial Class Patient_Visit
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Prompt", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(113, 91)
+        Me.Label1.Location = New System.Drawing.Point(117, 95)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(190, 40)
+        Me.Label1.Size = New System.Drawing.Size(199, 43)
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "Pateint Visits"
         '

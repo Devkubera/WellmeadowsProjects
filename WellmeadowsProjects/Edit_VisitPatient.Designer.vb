@@ -154,7 +154,7 @@ Partial Class Edit_VisitPatient
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
-        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.btnAdd.Location = New System.Drawing.Point(1122, 68)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
@@ -167,7 +167,7 @@ Partial Class Edit_VisitPatient
         'btnClear
         '
         Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnClear.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnClear.ForeColor = System.Drawing.Color.Snow
         Me.btnClear.Location = New System.Drawing.Point(1001, 68)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(4)

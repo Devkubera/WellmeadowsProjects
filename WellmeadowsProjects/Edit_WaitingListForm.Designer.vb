@@ -155,9 +155,9 @@ Partial Class Edit_WaitingListForm
         'btnSubmit
         '
         Me.btnSubmit.BackColor = System.Drawing.Color.LimeGreen
-        Me.btnSubmit.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSubmit.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnSubmit.ForeColor = System.Drawing.Color.White
-        Me.btnSubmit.Location = New System.Drawing.Point(1133, 47)
+        Me.btnSubmit.Location = New System.Drawing.Point(838, 47)
         Me.btnSubmit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(160, 46)

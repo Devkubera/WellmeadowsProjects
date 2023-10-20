@@ -85,7 +85,7 @@ Partial Class StaffForm
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Prompt", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(194, 90)
+        Me.Label2.Location = New System.Drawing.Point(292, 92)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(123, 22)
         Me.Label2.TabIndex = 26
@@ -95,7 +95,7 @@ Partial Class StaffForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Prompt", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(410, 90)
+        Me.Label1.Location = New System.Drawing.Point(508, 92)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(95, 22)
         Me.Label1.TabIndex = 25
@@ -106,7 +106,7 @@ Partial Class StaffForm
         Me.btnDel.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnDel.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDel.ForeColor = System.Drawing.Color.White
-        Me.btnDel.Location = New System.Drawing.Point(819, 534)
+        Me.btnDel.Location = New System.Drawing.Point(734, 505)
         Me.btnDel.Name = "btnDel"
         Me.btnDel.Size = New System.Drawing.Size(120, 37)
         Me.btnDel.TabIndex = 24
@@ -118,7 +118,7 @@ Partial Class StaffForm
         Me.btnEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnEdit.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEdit.ForeColor = System.Drawing.Color.White
-        Me.btnEdit.Location = New System.Drawing.Point(689, 534)
+        Me.btnEdit.Location = New System.Drawing.Point(604, 505)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(120, 37)
         Me.btnEdit.TabIndex = 23
@@ -130,7 +130,7 @@ Partial Class StaffForm
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
         Me.btnAdd.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.Black
-        Me.btnAdd.Location = New System.Drawing.Point(864, 109)
+        Me.btnAdd.Location = New System.Drawing.Point(864, 505)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(75, 37)
         Me.btnAdd.TabIndex = 22
@@ -141,7 +141,7 @@ Partial Class StaffForm
         '
         Me.searchlb.AutoSize = True
         Me.searchlb.Font = New System.Drawing.Font("Prompt", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.searchlb.Location = New System.Drawing.Point(618, 91)
+        Me.searchlb.Location = New System.Drawing.Point(716, 93)
         Me.searchlb.Name = "searchlb"
         Me.searchlb.Size = New System.Drawing.Size(188, 22)
         Me.searchlb.TabIndex = 21
@@ -150,7 +150,7 @@ Partial Class StaffForm
         'SearchStaff
         '
         Me.SearchStaff.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SearchStaff.Location = New System.Drawing.Point(622, 113)
+        Me.SearchStaff.Location = New System.Drawing.Point(720, 115)
         Me.SearchStaff.Name = "SearchStaff"
         Me.SearchStaff.Size = New System.Drawing.Size(219, 33)
         Me.SearchStaff.TabIndex = 18
@@ -159,7 +159,7 @@ Partial Class StaffForm
         '
         Me.cbbEduLevel.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbbEduLevel.FormattingEnabled = True
-        Me.cbbEduLevel.Location = New System.Drawing.Point(414, 112)
+        Me.cbbEduLevel.Location = New System.Drawing.Point(512, 114)
         Me.cbbEduLevel.Name = "cbbEduLevel"
         Me.cbbEduLevel.Size = New System.Drawing.Size(176, 34)
         Me.cbbEduLevel.TabIndex = 17
@@ -179,7 +179,7 @@ Partial Class StaffForm
         Me.cbbEduOrExp.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbbEduOrExp.FormattingEnabled = True
         Me.cbbEduOrExp.Items.AddRange(New Object() {"เจ้าหน้าที่", "ประวัติการทำงาน", "ประวัติการศึกษา"})
-        Me.cbbEduOrExp.Location = New System.Drawing.Point(198, 112)
+        Me.cbbEduOrExp.Location = New System.Drawing.Point(296, 114)
         Me.cbbEduOrExp.Name = "cbbEduOrExp"
         Me.cbbEduOrExp.Size = New System.Drawing.Size(183, 34)
         Me.cbbEduOrExp.TabIndex = 16

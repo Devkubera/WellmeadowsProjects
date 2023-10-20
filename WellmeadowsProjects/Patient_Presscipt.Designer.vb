@@ -49,9 +49,10 @@ Partial Class Patient_Presscipt
         'btnDelete
         '
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnDelete.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDelete.Location = New System.Drawing.Point(1081, 619)
-        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDelete.Location = New System.Drawing.Point(965, 606)
+        Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(160, 46)
         Me.btnDelete.TabIndex = 29
@@ -61,9 +62,10 @@ Partial Class Patient_Presscipt
         'btnUpdate
         '
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnUpdate.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUpdate.Location = New System.Drawing.Point(908, 619)
-        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnUpdate.Location = New System.Drawing.Point(792, 606)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(160, 46)
         Me.btnUpdate.TabIndex = 28
@@ -73,9 +75,10 @@ Partial Class Patient_Presscipt
         'btnReport
         '
         Me.btnReport.BackColor = System.Drawing.Color.RoyalBlue
+        Me.btnReport.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReport.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnReport.Location = New System.Drawing.Point(728, 619)
-        Me.btnReport.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnReport.Location = New System.Drawing.Point(612, 606)
+        Me.btnReport.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReport.Name = "btnReport"
         Me.btnReport.Size = New System.Drawing.Size(160, 46)
         Me.btnReport.TabIndex = 27
@@ -85,24 +88,24 @@ Partial Class Patient_Presscipt
         'lableSearch
         '
         Me.lableSearch.AutoSize = True
-        Me.lableSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lableSearch.Location = New System.Drawing.Point(829, 78)
+        Me.lableSearch.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lableSearch.Location = New System.Drawing.Point(944, 71)
         Me.lableSearch.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lableSearch.Name = "lableSearch"
-        Me.lableSearch.Size = New System.Drawing.Size(103, 20)
+        Me.lableSearch.Size = New System.Drawing.Size(134, 30)
         Me.lableSearch.TabIndex = 23
         Me.lableSearch.Text = "ค้นหาชื่อผู้ป่วย"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.25!)
-        Me.Label1.Location = New System.Drawing.Point(97, 87)
+        Me.Label1.Font = New System.Drawing.Font("Prompt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(107, 101)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(249, 35)
+        Me.Label1.Size = New System.Drawing.Size(230, 40)
         Me.Label1.TabIndex = 21
-        Me.Label1.Text = "Pateint Presscipt"
+        Me.Label1.Text = "Patient Presscipt"
         '
         'ViewPress
         '
@@ -111,7 +114,7 @@ Partial Class Patient_Presscipt
         Me.ViewPress.AllowUserToOrderColumns = True
         Me.ViewPress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ViewPress.Location = New System.Drawing.Point(104, 171)
-        Me.ViewPress.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ViewPress.Margin = New System.Windows.Forms.Padding(4)
         Me.ViewPress.Name = "ViewPress"
         Me.ViewPress.ReadOnly = True
         Me.ViewPress.RowHeadersWidth = 51
@@ -121,11 +124,11 @@ Partial Class Patient_Presscipt
         '
         'txtSearch
         '
-        Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(835, 112)
-        Me.txtSearch.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtSearch.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.Location = New System.Drawing.Point(950, 105)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(5)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(291, 30)
+        Me.txtSearch.Size = New System.Drawing.Size(291, 38)
         Me.txtSearch.TabIndex = 30
         '
         'PWPrescriptsBindingSource
@@ -190,9 +193,9 @@ Partial Class Patient_Presscipt
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
-        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(1141, 98)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Location = New System.Drawing.Point(1145, 606)
+        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(100, 46)
         Me.btnAdd.TabIndex = 31
@@ -212,7 +215,7 @@ Partial Class Patient_Presscipt
         Me.Controls.Add(Me.ViewPress)
         Me.Controls.Add(Me.lableSearch)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Patient_Presscipt"
         Me.Text = "Patient_Presscipt"
         CType(Me.ViewPress, System.ComponentModel.ISupportInitialize).EndInit()

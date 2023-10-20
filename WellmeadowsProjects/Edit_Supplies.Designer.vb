@@ -38,6 +38,7 @@ Partial Class Edit_Supplies
         '
         'sup_address
         '
+        Me.sup_address.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.sup_address.Location = New System.Drawing.Point(327, 587)
         Me.sup_address.Margin = New System.Windows.Forms.Padding(4)
         Me.sup_address.Name = "sup_address"
@@ -48,79 +49,82 @@ Partial Class Edit_Supplies
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.Label2.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(566, 438)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(100, 29)
+        Me.Label2.Size = New System.Drawing.Size(84, 30)
         Me.Label2.TabIndex = 72
         Me.Label2.Text = "เบอร์โทร"
         '
         'sup_tel
         '
+        Me.sup_tel.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.sup_tel.Location = New System.Drawing.Point(571, 485)
         Me.sup_tel.Margin = New System.Windows.Forms.Padding(4)
         Me.sup_tel.Name = "sup_tel"
-        Me.sup_tel.Size = New System.Drawing.Size(188, 22)
+        Me.sup_tel.Size = New System.Drawing.Size(188, 38)
         Me.sup_tel.TabIndex = 71
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.Label3.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(322, 540)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(52, 29)
+        Me.Label3.Size = New System.Drawing.Size(51, 30)
         Me.Label3.TabIndex = 68
         Me.Label3.Text = "ที่อยู่"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.Label4.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(810, 438)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(72, 29)
+        Me.Label4.Size = New System.Drawing.Size(64, 30)
         Me.Label4.TabIndex = 67
         Me.Label4.Text = "แฟกซ์"
         '
         'sup_fax
         '
+        Me.sup_fax.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.sup_fax.Location = New System.Drawing.Point(815, 485)
         Me.sup_fax.Margin = New System.Windows.Forms.Padding(4)
         Me.sup_fax.Name = "sup_fax"
-        Me.sup_fax.Size = New System.Drawing.Size(188, 22)
+        Me.sup_fax.Size = New System.Drawing.Size(188, 38)
         Me.sup_fax.TabIndex = 66
         '
         'lableSearch
         '
         Me.lableSearch.AutoSize = True
-        Me.lableSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.lableSearch.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lableSearch.Location = New System.Drawing.Point(322, 438)
         Me.lableSearch.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lableSearch.Name = "lableSearch"
-        Me.lableSearch.Size = New System.Drawing.Size(90, 29)
+        Me.lableSearch.Size = New System.Drawing.Size(89, 30)
         Me.lableSearch.TabIndex = 65
         Me.lableSearch.Text = "ชื่อผู้ผลิต"
         '
         'sup_name
         '
+        Me.sup_name.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.sup_name.Location = New System.Drawing.Point(327, 485)
         Me.sup_name.Margin = New System.Windows.Forms.Padding(4)
         Me.sup_name.Name = "sup_name"
-        Me.sup_name.Size = New System.Drawing.Size(188, 22)
+        Me.sup_name.Size = New System.Drawing.Size(188, 38)
         Me.sup_name.TabIndex = 64
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Prompt", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(530, 53)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(229, 36)
+        Me.Label1.Size = New System.Drawing.Size(218, 40)
         Me.Label1.TabIndex = 63
         Me.Label1.Text = "แก้ไขข้อมูลผู้ผลิต"
         '
@@ -136,14 +140,15 @@ Partial Class Edit_Supplies
         '
         'btnAdd
         '
-        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
+        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.btnAdd.Location = New System.Drawing.Point(1002, 53)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(160, 46)
         Me.btnAdd.TabIndex = 75
-        Me.btnAdd.Text = "แก้ไขข้อมูล"
+        Me.btnAdd.Text = "บันทึกข้อมูล"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
         'Edit_Supplies

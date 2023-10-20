@@ -160,4 +160,7 @@ Public Class Add_Presscipt
         m_method.Enabled = False
     End Sub
 
+    Private Sub Lable1_Click(sender As Object, e As EventArgs) Handles Lable1.Click
+
+    End Sub
 End Class

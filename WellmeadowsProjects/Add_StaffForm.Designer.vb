@@ -378,7 +378,7 @@ Partial Class Add_StaffForm
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
         Me.btnAdd.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnAdd.Location = New System.Drawing.Point(879, 52)
+        Me.btnAdd.Location = New System.Drawing.Point(1025, 34)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(160, 49)
@@ -391,7 +391,7 @@ Partial Class Add_StaffForm
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Button1.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Snow
-        Me.Button1.Location = New System.Drawing.Point(758, 52)
+        Me.Button1.Location = New System.Drawing.Point(904, 34)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 49)
@@ -827,7 +827,7 @@ Partial Class Add_StaffForm
         Me.headerlb.AllowDrop = True
         Me.headerlb.AutoSize = True
         Me.headerlb.Font = New System.Drawing.Font("Prompt", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.headerlb.Location = New System.Drawing.Point(400, 52)
+        Me.headerlb.Location = New System.Drawing.Point(546, 34)
         Me.headerlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.headerlb.Name = "headerlb"
         Me.headerlb.Size = New System.Drawing.Size(231, 40)
@@ -900,6 +900,7 @@ Partial Class Add_StaffForm
         Me.TableAdapterManager.ShiftsTableAdapter = Nothing
         Me.TableAdapterManager.Staff_ExperiencesTableAdapter = Me.Staff_ExperiencesTableAdapter
         Me.TableAdapterManager.Staff_QualificatesTableAdapter = Me.Staff_QualificatesTableAdapter
+        Me.TableAdapterManager.StaffsTableAdapter = Nothing
         Me.TableAdapterManager.SuppilersTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.Ward_RequestsTableAdapter = Nothing

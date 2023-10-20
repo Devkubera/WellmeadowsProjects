@@ -87,7 +87,7 @@ Partial Class StaffInWardForm
         Me.btnDel.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnDel.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDel.ForeColor = System.Drawing.Color.White
-        Me.btnDel.Location = New System.Drawing.Point(1081, 633)
+        Me.btnDel.Location = New System.Drawing.Point(962, 634)
         Me.btnDel.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDel.Name = "btnDel"
         Me.btnDel.Size = New System.Drawing.Size(160, 46)
@@ -100,7 +100,7 @@ Partial Class StaffInWardForm
         Me.btnEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnEdit.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEdit.ForeColor = System.Drawing.Color.White
-        Me.btnEdit.Location = New System.Drawing.Point(908, 633)
+        Me.btnEdit.Location = New System.Drawing.Point(789, 634)
         Me.btnEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(160, 46)
@@ -113,7 +113,7 @@ Partial Class StaffInWardForm
         Me.btnReport.BackColor = System.Drawing.Color.RoyalBlue
         Me.btnReport.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReport.ForeColor = System.Drawing.Color.White
-        Me.btnReport.Location = New System.Drawing.Point(728, 633)
+        Me.btnReport.Location = New System.Drawing.Point(609, 634)
         Me.btnReport.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReport.Name = "btnReport"
         Me.btnReport.Size = New System.Drawing.Size(160, 46)
@@ -126,7 +126,7 @@ Partial Class StaffInWardForm
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
         Me.btnAdd.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.Black
-        Me.btnAdd.Location = New System.Drawing.Point(1141, 114)
+        Me.btnAdd.Location = New System.Drawing.Point(1141, 634)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(100, 46)

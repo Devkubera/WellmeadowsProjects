@@ -2443,7 +2443,7 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddLocalDoctorsRow(ByVal localDocID As String, ByVal fullname As String, ByVal clinicID As String, ByVal address As String, ByVal tel As Integer) As LocalDoctorsRow
+        Public Overloads Function AddLocalDoctorsRow(ByVal localDocID As String, ByVal fullname As String, ByVal clinicID As String, ByVal address As String, ByVal tel As String) As LocalDoctorsRow
             Dim rowLocalDoctorsRow As LocalDoctorsRow = CType(Me.NewRow,LocalDoctorsRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, localDocID, fullname, clinicID, address, tel}
             rowLocalDoctorsRow.ItemArray = columnValuesArray
@@ -2489,7 +2489,7 @@ Partial Public Class WellmeadowsDataSet
             MyBase.Columns.Add(Me.columnclinicID)
             Me.columnaddress = New Global.System.Data.DataColumn("address", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnaddress)
-            Me.columntel = New Global.System.Data.DataColumn("tel", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columntel = New Global.System.Data.DataColumn("tel", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntel)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnlocalDocID}, false))
             Me.columnID.AutoIncrement = true
@@ -3790,7 +3790,7 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddPatient_kinsRow(ByVal kinsID As String, ByVal fullname As String, ByVal address As String, ByVal relationship As String, ByVal tel As Integer) As Patient_kinsRow
+        Public Overloads Function AddPatient_kinsRow(ByVal kinsID As String, ByVal fullname As String, ByVal address As String, ByVal relationship As String, ByVal tel As String) As Patient_kinsRow
             Dim rowPatient_kinsRow As Patient_kinsRow = CType(Me.NewRow,Patient_kinsRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, kinsID, fullname, address, relationship, tel}
             rowPatient_kinsRow.ItemArray = columnValuesArray
@@ -3836,7 +3836,7 @@ Partial Public Class WellmeadowsDataSet
             MyBase.Columns.Add(Me.columnaddress)
             Me.columnrelationship = New Global.System.Data.DataColumn("relationship", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnrelationship)
-            Me.columntel = New Global.System.Data.DataColumn("tel", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            Me.columntel = New Global.System.Data.DataColumn("tel", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntel)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnkinsID}, false))
             Me.columnID.AutoIncrement = true
@@ -7733,8 +7733,6 @@ Partial Public Class WellmeadowsDataSet
         
         Private columnwardTel As Global.System.Data.DataColumn
         
-        Private columntotalBed As Global.System.Data.DataColumn
-        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -7811,14 +7809,6 @@ Partial Public Class WellmeadowsDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property totalBedColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columntotalBed
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -7855,9 +7845,9 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddWardsRow(ByVal wardID As String, ByVal wardName As String, ByVal wardLocation As String, ByVal wardTel As Integer, ByVal totalBed As Integer) As WardsRow
+        Public Overloads Function AddWardsRow(ByVal wardID As String, ByVal wardName As String, ByVal wardLocation As String, ByVal wardTel As Integer) As WardsRow
             Dim rowWardsRow As WardsRow = CType(Me.NewRow,WardsRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, wardID, wardName, wardLocation, wardTel, totalBed}
+            Dim columnValuesArray() As Object = New Object() {Nothing, wardID, wardName, wardLocation, wardTel}
             rowWardsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowWardsRow)
             Return rowWardsRow
@@ -7885,7 +7875,6 @@ Partial Public Class WellmeadowsDataSet
             Me.columnwardName = MyBase.Columns("wardName")
             Me.columnwardLocation = MyBase.Columns("wardLocation")
             Me.columnwardTel = MyBase.Columns("wardTel")
-            Me.columntotalBed = MyBase.Columns("totalBed")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7901,8 +7890,6 @@ Partial Public Class WellmeadowsDataSet
             MyBase.Columns.Add(Me.columnwardLocation)
             Me.columnwardTel = New Global.System.Data.DataColumn("wardTel", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnwardTel)
-            Me.columntotalBed = New Global.System.Data.DataColumn("totalBed", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columntotalBed)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnwardID}, false))
             Me.columnID.AutoIncrement = true
             Me.columnID.AutoIncrementSeed = -1
@@ -13597,10 +13584,10 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property tel() As Integer
+        Public Property tel() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableLocalDoctors.telColumn),Integer)
+                    Return CType(Me(Me.tableLocalDoctors.telColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'tel' in table 'LocalDoctors' is DBNull.", e)
                 End Try
@@ -14345,10 +14332,10 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property tel() As Integer
+        Public Property tel() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablePatient_kins.telColumn),Integer)
+                    Return CType(Me(Me.tablePatient_kins.telColumn),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'tel' in table 'Patient_kins' is DBNull.", e)
                 End Try
@@ -17097,21 +17084,6 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property totalBed() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tableWards.totalBedColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalBed' in table 'Wards' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableWards.totalBedColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IswardIDNull() As Boolean
             Return Me.IsNull(Me.tableWards.wardIDColumn)
         End Function
@@ -17156,18 +17128,6 @@ Partial Public Class WellmeadowsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetwardTelNull()
             Me(Me.tableWards.wardTelColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IstotalBedNull() As Boolean
-            Return Me.IsNull(Me.tableWards.totalBedColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SettotalBedNull()
-            Me(Me.tableWards.totalBedColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -31414,17 +31374,15 @@ Namespace WellmeadowsDataSetTableAdapters
             tableMapping.ColumnMappings.Add("wardName", "wardName")
             tableMapping.ColumnMappings.Add("wardLocation", "wardLocation")
             tableMapping.ColumnMappings.Add("wardTel", "wardTel")
-            tableMapping.ColumnMappings.Add("totalBed", "totalBed")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Wards] WHERE (([ID] = @Original_ID) AND ((@IsNull_wardID = 1 A"& _ 
-                "ND [wardID] IS NULL) OR ([wardID] = @Original_wardID)) AND ((@IsNull_wardName = "& _ 
-                "1 AND [wardName] IS NULL) OR ([wardName] = @Original_wardName)) AND ((@IsNull_wa"& _ 
-                "rdLocation = 1 AND [wardLocation] IS NULL) OR ([wardLocation] = @Original_wardLo"& _ 
-                "cation)) AND ((@IsNull_wardTel = 1 AND [wardTel] IS NULL) OR ([wardTel] = @Origi"& _ 
-                "nal_wardTel)) AND ((@IsNull_totalBed = 1 AND [totalBed] IS NULL) OR ([totalBed] "& _ 
-                "= @Original_totalBed)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Wards] WHERE (([ID] = @Original_ID) AND ((@IsNull_wardID = 1 AND [wa"& _ 
+                "rdID] IS NULL) OR ([wardID] = @Original_wardID)) AND ((@IsNull_wardName = 1 AND "& _ 
+                "[wardName] IS NULL) OR ([wardName] = @Original_wardName)) AND ((@IsNull_wardLoca"& _ 
+                "tion = 1 AND [wardLocation] IS NULL) OR ([wardLocation] = @Original_wardLocation"& _ 
+                ")) AND ((@IsNull_wardTel = 1 AND [wardTel] IS NULL) OR ([wardTel] = @Original_wa"& _ 
+                "rdTel)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_wardID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wardID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -31435,35 +31393,30 @@ Namespace WellmeadowsDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_wardLocation", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wardLocation", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_wardTel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wardTel", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_wardTel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wardTel", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_totalBed", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalBed", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_totalBed", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalBed", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Wards] ([wardName], [wardLocation], [wardTel], [totalBed]) VAL"& _ 
-                "UES (@wardName, @wardLocation, @wardTel, @totalBed);"&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, wardID, wardName"& _ 
-                ", wardLocation, wardTel, totalBed FROM Wards WHERE (wardID = @wardID)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [Wards] ([wardName], [wardLocation], [wardTel]) VALUES (@wardName, @w"& _ 
+                "ardLocation, @wardTel);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, wardID, wardName, wardLocation, wardTel FROM"& _ 
+                " Wards WHERE (wardID = @wardID)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wardName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardLocation", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wardLocation", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardTel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wardTel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@totalBed", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalBed", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardID", Global.System.Data.SqlDbType.VarChar, 11, Global.System.Data.ParameterDirection.Input, 0, 0, "wardID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Wards] SET [wardName] = @wardName, [wardLocation] = @wardLocation, "& _ 
-                "[wardTel] = @wardTel, [totalBed] = @totalBed WHERE (([ID] = @Original_ID) AND (("& _ 
-                "@IsNull_wardID = 1 AND [wardID] IS NULL) OR ([wardID] = @Original_wardID)) AND ("& _ 
-                "(@IsNull_wardName = 1 AND [wardName] IS NULL) OR ([wardName] = @Original_wardNam"& _ 
-                "e)) AND ((@IsNull_wardLocation = 1 AND [wardLocation] IS NULL) OR ([wardLocation"& _ 
-                "] = @Original_wardLocation)) AND ((@IsNull_wardTel = 1 AND [wardTel] IS NULL) OR"& _ 
-                " ([wardTel] = @Original_wardTel)) AND ((@IsNull_totalBed = 1 AND [totalBed] IS N"& _ 
-                "ULL) OR ([totalBed] = @Original_totalBed)));"&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, wardID, wardName, wardLo"& _ 
-                "cation, wardTel, totalBed FROM Wards WHERE (wardID = @wardID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Wards] SET [wardName] = @wardName, [wardLocation] = @wardLocation, [wardT"& _ 
+                "el] = @wardTel WHERE (([ID] = @Original_ID) AND ((@IsNull_wardID = 1 AND [wardID"& _ 
+                "] IS NULL) OR ([wardID] = @Original_wardID)) AND ((@IsNull_wardName = 1 AND [war"& _ 
+                "dName] IS NULL) OR ([wardName] = @Original_wardName)) AND ((@IsNull_wardLocation"& _ 
+                " = 1 AND [wardLocation] IS NULL) OR ([wardLocation] = @Original_wardLocation)) A"& _ 
+                "ND ((@IsNull_wardTel = 1 AND [wardTel] IS NULL) OR ([wardTel] = @Original_wardTe"& _ 
+                "l)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT ID, wardID, wardName, wardLocation, wardTel FROM Wards WHERE (ward"& _ 
+                "ID = @wardID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wardName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardLocation", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wardLocation", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardTel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wardTel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@totalBed", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalBed", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_wardID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wardID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_wardID", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wardID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -31473,8 +31426,6 @@ Namespace WellmeadowsDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_wardLocation", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wardLocation", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_wardTel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wardTel", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_wardTel", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "wardTel", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_totalBed", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalBed", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_totalBed", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "totalBed", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardID", Global.System.Data.SqlDbType.VarChar, 11, Global.System.Data.ParameterDirection.Input, 0, 0, "wardID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -31491,7 +31442,7 @@ Namespace WellmeadowsDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ID, wardID, wardName, wardLocation, wardTel, totalBed FROM dbo.Wards"
+            Me._commandCollection(0).CommandText = "SELECT ID, wardID, wardName, wardLocation, wardTel FROM Wards"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -31500,22 +31451,20 @@ Namespace WellmeadowsDataSetTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardID", Global.System.Data.SqlDbType.VarChar, 11, Global.System.Data.ParameterDirection.Input, 0, 0, "wardID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "INSERT INTO Wards"&Global.Microsoft.VisualBasic.ChrW(10)&"                  (wardName, wardLocation, wardTel, totalBed)"&Global.Microsoft.VisualBasic.ChrW(10)&"V"& _ 
-                "ALUES (@wardName,@wardLocation,@wardTel,@totalBed)"
+            Me._commandCollection(2).CommandText = "INSERT INTO Wards"&Global.Microsoft.VisualBasic.ChrW(10)&"                  (wardName, wardLocation, wardTel)"&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES (@"& _ 
+                "wardName,@wardLocation,@wardTel)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "wardName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardLocation", Global.System.Data.SqlDbType.VarChar, 256, Global.System.Data.ParameterDirection.Input, 0, 0, "wardLocation", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardTel", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "wardTel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@totalBed", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "totalBed", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
             Me._commandCollection(3).CommandText = "UPDATE Wards"&Global.Microsoft.VisualBasic.ChrW(10)&"SET          wardName = @wardName, wardLocation = @wardLocation, war"& _ 
-                "dTel = @wardTel, totalBed = @totalBed"&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (wardID = @wardID);"
+                "dTel = @wardTel"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (wardID = @wardID);"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "wardName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardLocation", Global.System.Data.SqlDbType.VarChar, 256, Global.System.Data.ParameterDirection.Input, 0, 0, "wardLocation", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardTel", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "wardTel", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@totalBed", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "totalBed", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@wardID", Global.System.Data.SqlDbType.VarChar, 11, Global.System.Data.ParameterDirection.Input, 0, 0, "wardID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
@@ -31575,7 +31524,7 @@ Namespace WellmeadowsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_wardID As String, ByVal Original_wardName As String, ByVal Original_wardLocation As String, ByVal Original_wardTel As Global.System.Nullable(Of Integer), ByVal Original_totalBed As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_ID As Integer, ByVal Original_wardID As String, ByVal Original_wardName As String, ByVal Original_wardLocation As String, ByVal Original_wardTel As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_ID,Integer)
             If (Original_wardID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_wardID")
@@ -31604,13 +31553,6 @@ Namespace WellmeadowsDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             End If
-            If (Original_totalBed.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_totalBed.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -31630,7 +31572,7 @@ Namespace WellmeadowsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal wardName As String, ByVal wardLocation As String, ByVal wardTel As Global.System.Nullable(Of Integer), ByVal totalBed As Global.System.Nullable(Of Integer), ByVal wardID As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal wardName As String, ByVal wardLocation As String, ByVal wardTel As Global.System.Nullable(Of Integer), ByVal wardID As String) As Integer
             If (wardName Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -31646,15 +31588,10 @@ Namespace WellmeadowsDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (totalBed.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(totalBed.Value,Integer)
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
             If (wardID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("wardID")
             Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(wardID,String)
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(wardID,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -31675,7 +31612,7 @@ Namespace WellmeadowsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal wardName As String, ByVal wardLocation As String, ByVal wardTel As Global.System.Nullable(Of Integer), ByVal totalBed As Global.System.Nullable(Of Integer), ByVal Original_ID As Integer, ByVal Original_wardID As String, ByVal Original_wardName As String, ByVal Original_wardLocation As String, ByVal Original_wardTel As Global.System.Nullable(Of Integer), ByVal Original_totalBed As Global.System.Nullable(Of Integer), ByVal wardID As String) As Integer
+        Public Overloads Overridable Function Update(ByVal wardName As String, ByVal wardLocation As String, ByVal wardTel As Global.System.Nullable(Of Integer), ByVal Original_ID As Integer, ByVal Original_wardID As String, ByVal Original_wardName As String, ByVal Original_wardLocation As String, ByVal Original_wardTel As Global.System.Nullable(Of Integer), ByVal wardID As String) As Integer
             If (wardName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -31691,50 +31628,38 @@ Namespace WellmeadowsDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (totalBed.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(totalBed.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_ID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_ID,Integer)
             If (Original_wardID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_wardID")
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_wardID,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_wardID,String)
             End If
             If (Original_wardName Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_wardName,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_wardName,String)
             End If
             If (Original_wardLocation Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_wardLocation,String)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_wardLocation,String)
             End If
             If (Original_wardTel.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_wardTel.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_wardTel.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
-            End If
-            If (Original_totalBed.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_totalBed.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
             If (wardID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("wardID")
             Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(wardID,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(wardID,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -31782,7 +31707,7 @@ Namespace WellmeadowsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function InsertWard(ByVal wardName As String, ByVal wardLocation As String, ByVal wardTel As Global.System.Nullable(Of Integer), ByVal totalBed As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function InsertWard(ByVal wardName As String, ByVal wardLocation As String, ByVal wardTel As Global.System.Nullable(Of Integer)) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
             If (wardName Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
@@ -31798,11 +31723,6 @@ Namespace WellmeadowsDataSetTableAdapters
                 command.Parameters(2).Value = CType(wardTel.Value,Integer)
             Else
                 command.Parameters(2).Value = Global.System.DBNull.Value
-            End If
-            If (totalBed.HasValue = true) Then
-                command.Parameters(3).Value = CType(totalBed.Value,Integer)
-            Else
-                command.Parameters(3).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -31824,7 +31744,7 @@ Namespace WellmeadowsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
-        Public Overloads Overridable Function UpdateWard(ByVal wardName As String, ByVal wardLocation As String, ByVal wardTel As Global.System.Nullable(Of Integer), ByVal totalBed As Global.System.Nullable(Of Integer), ByVal wardID As String) As Integer
+        Public Overloads Overridable Function UpdateWard(ByVal wardName As String, ByVal wardLocation As String, ByVal wardTel As Global.System.Nullable(Of Integer), ByVal wardID As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
             If (wardName Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
@@ -31841,15 +31761,10 @@ Namespace WellmeadowsDataSetTableAdapters
             Else
                 command.Parameters(2).Value = Global.System.DBNull.Value
             End If
-            If (totalBed.HasValue = true) Then
-                command.Parameters(3).Value = CType(totalBed.Value,Integer)
-            Else
-                command.Parameters(3).Value = Global.System.DBNull.Value
-            End If
             If (wardID Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("wardID")
             Else
-                command.Parameters(4).Value = CType(wardID,String)
+                command.Parameters(3).Value = CType(wardID,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _

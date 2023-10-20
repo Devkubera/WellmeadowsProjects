@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class popup_ward
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,15 +20,10 @@ Partial Class popup_ward
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.WardTable = New System.Windows.Forms.DataGridView()
-        Me.WardIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.WardNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.wardLocation = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.wardTel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.totalBed = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.WardsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -47,61 +42,13 @@ Partial Class popup_ward
         Me.WardTable.AllowUserToAddRows = False
         Me.WardTable.AllowUserToDeleteRows = False
         Me.WardTable.AllowUserToOrderColumns = True
-        Me.WardTable.AutoGenerateColumns = False
         Me.WardTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.WardTable.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.WardIDDataGridViewTextBoxColumn, Me.WardNameDataGridViewTextBoxColumn, Me.wardLocation, Me.wardTel, Me.totalBed})
-        Me.WardTable.DataSource = Me.WardsBindingSource
         Me.WardTable.Location = New System.Drawing.Point(100, 202)
         Me.WardTable.Name = "WardTable"
         Me.WardTable.ReadOnly = True
         Me.WardTable.RowHeadersWidth = 51
         Me.WardTable.Size = New System.Drawing.Size(936, 272)
         Me.WardTable.TabIndex = 27
-        '
-        'WardIDDataGridViewTextBoxColumn
-        '
-        Me.WardIDDataGridViewTextBoxColumn.DataPropertyName = "wardID"
-        Me.WardIDDataGridViewTextBoxColumn.HeaderText = "หมายเลขวอร์ด"
-        Me.WardIDDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.WardIDDataGridViewTextBoxColumn.Name = "WardIDDataGridViewTextBoxColumn"
-        Me.WardIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.WardIDDataGridViewTextBoxColumn.Width = 125
-        '
-        'WardNameDataGridViewTextBoxColumn
-        '
-        Me.WardNameDataGridViewTextBoxColumn.DataPropertyName = "wardName"
-        Me.WardNameDataGridViewTextBoxColumn.HeaderText = "ชื่อวอร์ด"
-        Me.WardNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.WardNameDataGridViewTextBoxColumn.Name = "WardNameDataGridViewTextBoxColumn"
-        Me.WardNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.WardNameDataGridViewTextBoxColumn.Width = 125
-        '
-        'wardLocation
-        '
-        Me.wardLocation.DataPropertyName = "wardLocation"
-        Me.wardLocation.HeaderText = "ที่อยู่วอร์ด"
-        Me.wardLocation.MinimumWidth = 6
-        Me.wardLocation.Name = "wardLocation"
-        Me.wardLocation.ReadOnly = True
-        Me.wardLocation.Width = 125
-        '
-        'wardTel
-        '
-        Me.wardTel.DataPropertyName = "wardTel"
-        Me.wardTel.HeaderText = "เบอร์โทรศัพท์"
-        Me.wardTel.MinimumWidth = 6
-        Me.wardTel.Name = "wardTel"
-        Me.wardTel.ReadOnly = True
-        Me.wardTel.Width = 125
-        '
-        'totalBed
-        '
-        Me.totalBed.DataPropertyName = "totalBed"
-        Me.totalBed.HeaderText = "จำนวนเตียงทั้งหมด"
-        Me.totalBed.MinimumWidth = 6
-        Me.totalBed.Name = "totalBed"
-        Me.totalBed.ReadOnly = True
-        Me.totalBed.Width = 125
         '
         'WardsBindingSource
         '
@@ -214,9 +161,4 @@ Partial Class popup_ward
     Friend WithEvents WardsBindingSource As BindingSource
     Friend WithEvents WardsTableAdapter As WellmeadowsDataSetTableAdapters.WardsTableAdapter
     Friend WithEvents TableAdapterManager As WellmeadowsDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents WardIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents WardNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents wardLocation As DataGridViewTextBoxColumn
-    Friend WithEvents wardTel As DataGridViewTextBoxColumn
-    Friend WithEvents totalBed As DataGridViewTextBoxColumn
 End Class

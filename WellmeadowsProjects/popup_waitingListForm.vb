@@ -22,10 +22,16 @@
         ' back up data table
         backUpDataTable = dataTable
 
+        ' check count record in data table
+        If waitingListTable.Rows.Count <= 0 Then
+            ' if no record found
+            MessageBox.Show("ไม่พบข้อมูลผู้ป่วยที่รอเตียง ณ ขณะนี้", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.Close()
+            Return
+        End If
+
         ' frozen first column
         waitingListTable.Columns(0).Frozen = True
-
-
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

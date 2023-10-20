@@ -31,11 +31,6 @@ Partial Class WardForm
         Me.btnStaffInWard = New System.Windows.Forms.Button()
         Me.btnWaitinglist = New System.Windows.Forms.Button()
         Me.WardTable = New System.Windows.Forms.DataGridView()
-        Me.WardIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.WardNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.WardLocationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.WardTelDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TotalBedDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.WardsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.btnPInward = New System.Windows.Forms.Button()
@@ -71,7 +66,7 @@ Partial Class WardForm
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
         Me.btnAdd.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(1068, 157)
+        Me.btnAdd.Location = New System.Drawing.Point(1063, 665)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(117, 46)
@@ -84,7 +79,7 @@ Partial Class WardForm
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnDelete.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDelete.Location = New System.Drawing.Point(1025, 663)
+        Me.btnDelete.Location = New System.Drawing.Point(706, 665)
         Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(160, 46)
@@ -97,7 +92,7 @@ Partial Class WardForm
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnUpdate.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUpdate.Location = New System.Drawing.Point(851, 663)
+        Me.btnUpdate.Location = New System.Drawing.Point(883, 665)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(160, 46)
@@ -144,10 +139,7 @@ Partial Class WardForm
         '
         'WardTable
         '
-        Me.WardTable.AutoGenerateColumns = False
         Me.WardTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.WardTable.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.WardIDDataGridViewTextBoxColumn, Me.WardNameDataGridViewTextBoxColumn, Me.WardLocationDataGridViewTextBoxColumn, Me.WardTelDataGridViewTextBoxColumn, Me.TotalBedDataGridViewTextBoxColumn})
-        Me.WardTable.DataSource = Me.WardsBindingSource
         Me.WardTable.Location = New System.Drawing.Point(93, 236)
         Me.WardTable.Margin = New System.Windows.Forms.Padding(4)
         Me.WardTable.Name = "WardTable"
@@ -155,47 +147,6 @@ Partial Class WardForm
         Me.WardTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.WardTable.Size = New System.Drawing.Size(1087, 404)
         Me.WardTable.TabIndex = 20
-        '
-        'WardIDDataGridViewTextBoxColumn
-        '
-        Me.WardIDDataGridViewTextBoxColumn.DataPropertyName = "wardID"
-        Me.WardIDDataGridViewTextBoxColumn.HeaderText = "หมายเลขวอร์ด"
-        Me.WardIDDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.WardIDDataGridViewTextBoxColumn.Name = "WardIDDataGridViewTextBoxColumn"
-        Me.WardIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.WardIDDataGridViewTextBoxColumn.Width = 125
-        '
-        'WardNameDataGridViewTextBoxColumn
-        '
-        Me.WardNameDataGridViewTextBoxColumn.DataPropertyName = "wardName"
-        Me.WardNameDataGridViewTextBoxColumn.HeaderText = "ชื่อวอร์ด"
-        Me.WardNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.WardNameDataGridViewTextBoxColumn.Name = "WardNameDataGridViewTextBoxColumn"
-        Me.WardNameDataGridViewTextBoxColumn.Width = 125
-        '
-        'WardLocationDataGridViewTextBoxColumn
-        '
-        Me.WardLocationDataGridViewTextBoxColumn.DataPropertyName = "wardLocation"
-        Me.WardLocationDataGridViewTextBoxColumn.HeaderText = "ตำแหน่งที่ตั้งของวอร์ด"
-        Me.WardLocationDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.WardLocationDataGridViewTextBoxColumn.Name = "WardLocationDataGridViewTextBoxColumn"
-        Me.WardLocationDataGridViewTextBoxColumn.Width = 145
-        '
-        'WardTelDataGridViewTextBoxColumn
-        '
-        Me.WardTelDataGridViewTextBoxColumn.DataPropertyName = "wardTel"
-        Me.WardTelDataGridViewTextBoxColumn.HeaderText = "หมายเลขโทรศัพท์ประจำวอร์ด"
-        Me.WardTelDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.WardTelDataGridViewTextBoxColumn.Name = "WardTelDataGridViewTextBoxColumn"
-        Me.WardTelDataGridViewTextBoxColumn.Width = 175
-        '
-        'TotalBedDataGridViewTextBoxColumn
-        '
-        Me.TotalBedDataGridViewTextBoxColumn.DataPropertyName = "totalBed"
-        Me.TotalBedDataGridViewTextBoxColumn.HeaderText = "จำนวนเตียงทั้งหมดในแต่ละวอร์ด"
-        Me.TotalBedDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.TotalBedDataGridViewTextBoxColumn.Name = "TotalBedDataGridViewTextBoxColumn"
-        Me.TotalBedDataGridViewTextBoxColumn.Width = 195
         '
         'WardsBindingSource
         '
@@ -223,22 +174,22 @@ Partial Class WardForm
         'SearchWard
         '
         Me.SearchWard.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SearchWard.Location = New System.Drawing.Point(782, 160)
+        Me.SearchWard.Location = New System.Drawing.Point(831, 181)
         Me.SearchWard.Margin = New System.Windows.Forms.Padding(4)
         Me.SearchWard.Name = "SearchWard"
-        Me.SearchWard.Size = New System.Drawing.Size(261, 38)
+        Me.SearchWard.Size = New System.Drawing.Size(349, 38)
         Me.SearchWard.TabIndex = 18
         '
         'placeholderlb
         '
         Me.placeholderlb.AutoSize = True
         Me.placeholderlb.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.placeholderlb.Location = New System.Drawing.Point(777, 126)
+        Me.placeholderlb.Location = New System.Drawing.Point(826, 137)
         Me.placeholderlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.placeholderlb.Name = "placeholderlb"
-        Me.placeholderlb.Size = New System.Drawing.Size(234, 30)
+        Me.placeholderlb.Size = New System.Drawing.Size(276, 30)
         Me.placeholderlb.TabIndex = 21
-        Me.placeholderlb.Text = "ค้นหาด้วยหมายเลขวอร์ด..."
+        Me.placeholderlb.Text = "ค้นหาด้วยชื่อและหมายเลขวอร์ด"
         '
         'WardsTableAdapter
         '
@@ -274,11 +225,6 @@ Partial Class WardForm
     Friend WithEvents WellmeadowsDataSet As WellmeadowsDataSet
     Friend WithEvents WardsBindingSource As BindingSource
     Friend WithEvents WardsTableAdapter As WellmeadowsDataSetTableAdapters.WardsTableAdapter
-    Friend WithEvents WardIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents WardNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents WardLocationDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents WardTelDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents TotalBedDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents btnDelete As Button
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnAdd As Button

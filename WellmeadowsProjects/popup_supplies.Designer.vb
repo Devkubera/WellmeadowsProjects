@@ -36,6 +36,8 @@ Partial Class popup_supplies
         Me.SuppilersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.SuppilersTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.SuppilersTableAdapter()
+        Me.searchBox = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.supDG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SuppilersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,7 +48,7 @@ Partial Class popup_supplies
         Me.Button2.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Button2.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button2.Location = New System.Drawing.Point(883, 427)
+        Me.Button2.Location = New System.Drawing.Point(951, 425)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(123, 50)
@@ -80,7 +82,7 @@ Partial Class popup_supplies
         Me.supDG.RowHeadersWidth = 51
         Me.supDG.RowTemplate.Height = 24
         Me.supDG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.supDG.Size = New System.Drawing.Size(936, 258)
+        Me.supDG.Size = New System.Drawing.Size(1006, 258)
         Me.supDG.TabIndex = 7
         '
         'SupplierIDDataGridViewTextBoxColumn
@@ -160,15 +162,35 @@ Partial Class popup_supplies
         '
         Me.SuppilersTableAdapter.ClearBeforeFill = True
         '
+        'searchBox
+        '
+        Me.searchBox.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.searchBox.Location = New System.Drawing.Point(747, 102)
+        Me.searchBox.Name = "searchBox"
+        Me.searchBox.Size = New System.Drawing.Size(327, 38)
+        Me.searchBox.TabIndex = 27
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(742, 69)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(122, 30)
+        Me.Label2.TabIndex = 26
+        Me.Label2.Text = "ค้นหาด้วยชื่อ"
+        '
         'popup_supplies
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1201, 534)
+        Me.Controls.Add(Me.searchBox)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.supDG)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "popup_supplies"
         Me.Text = "popup_supplies"
         CType(Me.supDG, System.ComponentModel.ISupportInitialize).EndInit()
@@ -192,4 +214,6 @@ Partial Class popup_supplies
     Friend WithEvents TelDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FaxDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CreateAtDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents searchBox As TextBox
+    Friend WithEvents Label2 As Label
 End Class

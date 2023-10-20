@@ -34,27 +34,22 @@ Partial Class HomeForm
         '
         'timeLabel
         '
-        Me.timeLabel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.timeLabel.AutoSize = True
-        Me.timeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.timeLabel.Font = New System.Drawing.Font("Prompt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.timeLabel.Location = New System.Drawing.Point(400, 324)
         Me.timeLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.timeLabel.Name = "timeLabel"
-        Me.timeLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.timeLabel.Size = New System.Drawing.Size(0, 46)
+        Me.timeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.timeLabel.Size = New System.Drawing.Size(0, 43)
         Me.timeLabel.TabIndex = 3
         Me.timeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'day_label
         '
-        Me.day_label.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.day_label.AutoSize = True
+        Me.day_label.Dock = System.Windows.Forms.DockStyle.Fill
         Me.day_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.day_label.Location = New System.Drawing.Point(300, 230)
+        Me.day_label.Location = New System.Drawing.Point(0, 0)
         Me.day_label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.day_label.Name = "day_label"
         Me.day_label.RightToLeft = System.Windows.Forms.RightToLeft.Yes

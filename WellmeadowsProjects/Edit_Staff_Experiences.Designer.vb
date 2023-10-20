@@ -57,11 +57,10 @@ Partial Class Edit_Staff_Experiences
         Me.old_startDate = New System.Windows.Forms.DateTimePicker()
         Me.old_endDate = New System.Windows.Forms.DateTimePicker()
         Me.old_table = New System.Windows.Forms.DataGridView()
-        Me.old_table_endDates = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.old_table_startDates = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.old_table_positions = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.old_table_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.study_delete = New System.Windows.Forms.Button()
+        Me.old_table_positions = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.old_table_startDates = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.old_table_endDates = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.old_delete = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -397,19 +396,12 @@ Partial Class Edit_Staff_Experiences
         Me.old_table.Size = New System.Drawing.Size(911, 238)
         Me.old_table.TabIndex = 183
         '
-        'old_table_endDates
+        'old_table_name
         '
-        Me.old_table_endDates.HeaderText = "วันทำงานวันสุดท้าย"
-        Me.old_table_endDates.MinimumWidth = 6
-        Me.old_table_endDates.Name = "old_table_endDates"
-        Me.old_table_endDates.Width = 125
-        '
-        'old_table_startDates
-        '
-        Me.old_table_startDates.HeaderText = "วันทำงานวันแรก"
-        Me.old_table_startDates.MinimumWidth = 6
-        Me.old_table_startDates.Name = "old_table_startDates"
-        Me.old_table_startDates.Width = 125
+        Me.old_table_name.HeaderText = "ชื่อองค์กร"
+        Me.old_table_name.MinimumWidth = 6
+        Me.old_table_name.Name = "old_table_name"
+        Me.old_table_name.Width = 125
         '
         'old_table_positions
         '
@@ -418,25 +410,19 @@ Partial Class Edit_Staff_Experiences
         Me.old_table_positions.Name = "old_table_positions"
         Me.old_table_positions.Width = 125
         '
-        'old_table_name
+        'old_table_startDates
         '
-        Me.old_table_name.HeaderText = "ชื่อองค์กร"
-        Me.old_table_name.MinimumWidth = 6
-        Me.old_table_name.Name = "old_table_name"
-        Me.old_table_name.Width = 125
+        Me.old_table_startDates.HeaderText = "วันทำงานวันแรก"
+        Me.old_table_startDates.MinimumWidth = 6
+        Me.old_table_startDates.Name = "old_table_startDates"
+        Me.old_table_startDates.Width = 125
         '
-        'study_delete
+        'old_table_endDates
         '
-        Me.study_delete.BackColor = System.Drawing.Color.Crimson
-        Me.study_delete.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.study_delete.ForeColor = System.Drawing.Color.White
-        Me.study_delete.Location = New System.Drawing.Point(1342, 424)
-        Me.study_delete.Margin = New System.Windows.Forms.Padding(4)
-        Me.study_delete.Name = "study_delete"
-        Me.study_delete.Size = New System.Drawing.Size(76, 46)
-        Me.study_delete.TabIndex = 184
-        Me.study_delete.Text = "ลบ"
-        Me.study_delete.UseVisualStyleBackColor = False
+        Me.old_table_endDates.HeaderText = "วันทำงานวันสุดท้าย"
+        Me.old_table_endDates.MinimumWidth = 6
+        Me.old_table_endDates.Name = "old_table_endDates"
+        Me.old_table_endDates.Width = 125
         '
         'old_delete
         '
@@ -470,7 +456,6 @@ Partial Class Edit_Staff_Experiences
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.old_delete)
-        Me.Panel1.Controls.Add(Me.study_delete)
         Me.Panel1.Controls.Add(Me.old_table)
         Me.Panel1.Controls.Add(Me.old_endDate)
         Me.Panel1.Controls.Add(Me.old_startDate)
@@ -569,7 +554,6 @@ Partial Class Edit_Staff_Experiences
     Friend WithEvents old_table_positions As DataGridViewTextBoxColumn
     Friend WithEvents old_table_startDates As DataGridViewTextBoxColumn
     Friend WithEvents old_table_endDates As DataGridViewTextBoxColumn
-    Friend WithEvents study_delete As Button
     Friend WithEvents old_delete As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Panel1 As Panel

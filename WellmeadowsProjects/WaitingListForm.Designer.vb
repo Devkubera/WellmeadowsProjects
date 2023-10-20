@@ -23,6 +23,8 @@ Partial Class WaitingListForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.waitingListPanel = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cbb_bed_status = New System.Windows.Forms.ComboBox()
         Me.btnDel = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnReport = New System.Windows.Forms.Button()
@@ -31,8 +33,6 @@ Partial Class WaitingListForm
         Me.waitingListTable = New System.Windows.Forms.DataGridView()
         Me.SearchWaiting = New System.Windows.Forms.TextBox()
         Me.waitingListlb = New System.Windows.Forms.Label()
-        Me.cbb_bed_status = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.waitingListPanel.SuspendLayout()
         CType(Me.waitingListTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -56,12 +56,33 @@ Partial Class WaitingListForm
         Me.waitingListPanel.Size = New System.Drawing.Size(1339, 752)
         Me.waitingListPanel.TabIndex = 0
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(514, 83)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(133, 30)
+        Me.Label1.TabIndex = 56
+        Me.Label1.Text = "สถานะรอเตียง"
+        '
+        'cbb_bed_status
+        '
+        Me.cbb_bed_status.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbb_bed_status.FormattingEnabled = True
+        Me.cbb_bed_status.Items.AddRange(New Object() {"ยังไม่ได้เตียง", "ได้รับเตียงแล้ว"})
+        Me.cbb_bed_status.Location = New System.Drawing.Point(519, 117)
+        Me.cbb_bed_status.Name = "cbb_bed_status"
+        Me.cbb_bed_status.Size = New System.Drawing.Size(206, 38)
+        Me.cbb_bed_status.TabIndex = 55
+        '
         'btnDel
         '
         Me.btnDel.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnDel.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDel.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDel.ForeColor = System.Drawing.Color.White
-        Me.btnDel.Location = New System.Drawing.Point(1083, 633)
+        Me.btnDel.Location = New System.Drawing.Point(961, 620)
         Me.btnDel.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDel.Name = "btnDel"
         Me.btnDel.Size = New System.Drawing.Size(160, 46)
@@ -72,9 +93,9 @@ Partial Class WaitingListForm
         'btnEdit
         '
         Me.btnEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnEdit.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEdit.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEdit.ForeColor = System.Drawing.Color.White
-        Me.btnEdit.Location = New System.Drawing.Point(909, 633)
+        Me.btnEdit.Location = New System.Drawing.Point(787, 620)
         Me.btnEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(160, 46)
@@ -85,9 +106,9 @@ Partial Class WaitingListForm
         'btnReport
         '
         Me.btnReport.BackColor = System.Drawing.Color.RoyalBlue
-        Me.btnReport.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReport.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReport.ForeColor = System.Drawing.Color.White
-        Me.btnReport.Location = New System.Drawing.Point(729, 633)
+        Me.btnReport.Location = New System.Drawing.Point(607, 620)
         Me.btnReport.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReport.Name = "btnReport"
         Me.btnReport.Size = New System.Drawing.Size(160, 46)
@@ -98,9 +119,9 @@ Partial Class WaitingListForm
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
-        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.Color.Black
-        Me.btnAdd.Location = New System.Drawing.Point(1143, 110)
+        Me.btnAdd.Location = New System.Drawing.Point(1142, 620)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(100, 46)
@@ -112,7 +133,7 @@ Partial Class WaitingListForm
         '
         Me.placeholderlb.AutoSize = True
         Me.placeholderlb.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.placeholderlb.Location = New System.Drawing.Point(692, 84)
+        Me.placeholderlb.Location = New System.Drawing.Point(822, 83)
         Me.placeholderlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.placeholderlb.Name = "placeholderlb"
         Me.placeholderlb.Size = New System.Drawing.Size(377, 30)
@@ -135,7 +156,7 @@ Partial Class WaitingListForm
         'SearchWaiting
         '
         Me.SearchWaiting.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SearchWaiting.Location = New System.Drawing.Point(697, 118)
+        Me.SearchWaiting.Location = New System.Drawing.Point(827, 117)
         Me.SearchWaiting.Margin = New System.Windows.Forms.Padding(4)
         Me.SearchWaiting.Name = "SearchWaiting"
         Me.SearchWaiting.Size = New System.Drawing.Size(417, 38)
@@ -151,27 +172,6 @@ Partial Class WaitingListForm
         Me.waitingListlb.Size = New System.Drawing.Size(194, 46)
         Me.waitingListlb.TabIndex = 46
         Me.waitingListlb.Text = "Waiting List"
-        '
-        'cbb_bed_status
-        '
-        Me.cbb_bed_status.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbb_bed_status.FormattingEnabled = True
-        Me.cbb_bed_status.Items.AddRange(New Object() {"ยังไม่ได้เตียง", "ได้รับเตียงแล้ว"})
-        Me.cbb_bed_status.Location = New System.Drawing.Point(389, 118)
-        Me.cbb_bed_status.Name = "cbb_bed_status"
-        Me.cbb_bed_status.Size = New System.Drawing.Size(206, 38)
-        Me.cbb_bed_status.TabIndex = 55
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(384, 84)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(133, 30)
-        Me.Label1.TabIndex = 56
-        Me.Label1.Text = "สถานะรอเตียง"
         '
         'WaitingListForm
         '

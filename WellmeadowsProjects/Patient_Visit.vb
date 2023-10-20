@@ -49,8 +49,10 @@
 
         ' fill data grid ViewVisit
         Dim dataTable As DataTable = StaffForm.sqlQueryDataTable(sqlCode)
+
         ' backup data table
         backupDataTables = dataTable
+
         ' set value to data grid view
         ViewVisit.DataSource = dataTable
 
@@ -77,7 +79,7 @@
 	        PV.status AS สถานะ
         FROM Patient_Visits AS PV
         INNER JOIN Patients AS P ON (PV.patientID = P.patientID)
-        WHERE status IS NOT NULL AND status = 'Active' (p.firstName LIKE '%{txtSearch.Text}%' OR p.lastName LIKE '%{txtSearch.Text}%');"
+        WHERE status IS NOT NULL AND status = 'Active' AND (p.firstName LIKE '%{txtSearch.Text}%' OR p.lastName LIKE '%{txtSearch.Text}%');"
 
             ' fill data grid ViewVisit
             Dim dataTable As DataTable = StaffForm.sqlQueryDataTable(sqlCode)

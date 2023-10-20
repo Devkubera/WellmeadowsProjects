@@ -68,7 +68,7 @@ Partial Class PatientInWardForm
         'searchBox
         '
         Me.searchBox.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.searchBox.Location = New System.Drawing.Point(779, 115)
+        Me.searchBox.Location = New System.Drawing.Point(953, 124)
         Me.searchBox.Name = "searchBox"
         Me.searchBox.Size = New System.Drawing.Size(290, 38)
         Me.searchBox.TabIndex = 38
@@ -77,7 +77,7 @@ Partial Class PatientInWardForm
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Prompt", 10.0!)
-        Me.Label2.Location = New System.Drawing.Point(774, 85)
+        Me.Label2.Location = New System.Drawing.Point(948, 94)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(146, 26)
         Me.Label2.TabIndex = 37
@@ -87,7 +87,7 @@ Partial Class PatientInWardForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Prompt", 10.0!)
-        Me.Label1.Location = New System.Drawing.Point(451, 85)
+        Me.Label1.Location = New System.Drawing.Point(625, 94)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(108, 26)
         Me.Label1.TabIndex = 37
@@ -111,7 +111,7 @@ Partial Class PatientInWardForm
         Me.btnDel.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnDel.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnDel.ForeColor = System.Drawing.Color.White
-        Me.btnDel.Location = New System.Drawing.Point(1083, 633)
+        Me.btnDel.Location = New System.Drawing.Point(934, 629)
         Me.btnDel.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDel.Name = "btnDel"
         Me.btnDel.Size = New System.Drawing.Size(160, 46)
@@ -124,7 +124,7 @@ Partial Class PatientInWardForm
         Me.btnEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnEdit.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
-        Me.btnEdit.Location = New System.Drawing.Point(909, 633)
+        Me.btnEdit.Location = New System.Drawing.Point(760, 629)
         Me.btnEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(160, 46)
@@ -137,7 +137,7 @@ Partial Class PatientInWardForm
         Me.btnReport.BackColor = System.Drawing.Color.RoyalBlue
         Me.btnReport.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnReport.ForeColor = System.Drawing.Color.White
-        Me.btnReport.Location = New System.Drawing.Point(542, 633)
+        Me.btnReport.Location = New System.Drawing.Point(393, 629)
         Me.btnReport.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReport.Name = "btnReport"
         Me.btnReport.Size = New System.Drawing.Size(347, 46)
@@ -150,7 +150,7 @@ Partial Class PatientInWardForm
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
         Me.btnAdd.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnAdd.ForeColor = System.Drawing.Color.Transparent
-        Me.btnAdd.Location = New System.Drawing.Point(1114, 110)
+        Me.btnAdd.Location = New System.Drawing.Point(1113, 629)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(129, 46)
@@ -177,7 +177,7 @@ Partial Class PatientInWardForm
         Me.cbbPtype.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbbPtype.FormattingEnabled = True
         Me.cbbPtype.Items.AddRange(New Object() {"ทั้งหมด", "ผู้ป่วยใน", "ผู้ป่วยนอก"})
-        Me.cbbPtype.Location = New System.Drawing.Point(456, 115)
+        Me.cbbPtype.Location = New System.Drawing.Point(630, 124)
         Me.cbbPtype.Margin = New System.Windows.Forms.Padding(4)
         Me.cbbPtype.Name = "cbbPtype"
         Me.cbbPtype.Size = New System.Drawing.Size(273, 38)
@@ -187,7 +187,7 @@ Partial Class PatientInWardForm
         '
         Me.patientInWardlb.AutoSize = True
         Me.patientInWardlb.Font = New System.Drawing.Font("Prompt", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.patientInWardlb.Location = New System.Drawing.Point(97, 105)
+        Me.patientInWardlb.Location = New System.Drawing.Point(97, 116)
         Me.patientInWardlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.patientInWardlb.Name = "patientInWardlb"
         Me.patientInWardlb.Size = New System.Drawing.Size(244, 46)

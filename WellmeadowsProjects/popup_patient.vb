@@ -35,7 +35,7 @@
         ' making search filter for data grid view by firstname, lastname and patient_id
         Dim searchQuery As String = TextBox1.Text.Trim()
         If searchQuery IsNot "" Then
-            Me.PatientsBindingSource.Filter = "firstName LIKE '%" & searchQuery & "%' OR lastName LIKE '%" & searchQuery & "%' OR patient_id LIKE '%" & searchQuery & "%'"
+            Me.PatientsBindingSource.Filter = "firstName LIKE '%" & searchQuery & "%' OR lastName LIKE '%" & searchQuery & "%' OR patientID LIKE '%" & searchQuery & "%'"
         Else
             Me.PatientsBindingSource.Filter = ""
         End If

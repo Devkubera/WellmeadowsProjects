@@ -70,7 +70,7 @@ Partial Class Medicine
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnDelete.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDelete.Location = New System.Drawing.Point(1090, 635)
+        Me.btnDelete.Location = New System.Drawing.Point(986, 615)
         Me.btnDelete.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(160, 46)
@@ -83,7 +83,7 @@ Partial Class Medicine
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnUpdate.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUpdate.Location = New System.Drawing.Point(917, 635)
+        Me.btnUpdate.Location = New System.Drawing.Point(816, 615)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(160, 46)
@@ -101,7 +101,7 @@ Partial Class Medicine
         Me.ViewMedi.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.MmIDDataGridViewTextBoxColumn, Me.SupplierIDDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.DescriptionDataGridViewTextBoxColumn, Me.DosageDataGridViewTextBoxColumn, Me.MethodDataGridViewTextBoxColumn, Me.StockDataGridViewTextBoxColumn, Me.BuyscaleDataGridViewTextBoxColumn, Me.PriceperunitDataGridViewTextBoxColumn})
         Me.ViewMedi.DataSource = Me.MedMedicinesBindingSource
         Me.ViewMedi.Location = New System.Drawing.Point(113, 187)
-        Me.ViewMedi.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ViewMedi.Margin = New System.Windows.Forms.Padding(4)
         Me.ViewMedi.Name = "ViewMedi"
         Me.ViewMedi.ReadOnly = True
         Me.ViewMedi.RowHeadersWidth = 51
@@ -204,7 +204,7 @@ Partial Class Medicine
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
         Me.btnAdd.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(1150, 112)
+        Me.btnAdd.Location = New System.Drawing.Point(1156, 615)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(101, 46)
@@ -239,7 +239,7 @@ Partial Class Medicine
         Me.Label1.Location = New System.Drawing.Point(106, 112)
         Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(134, 40)
+        Me.Label1.Size = New System.Drawing.Size(140, 43)
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "Medicine"
         '
@@ -297,7 +297,7 @@ Partial Class Medicine
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Medicine"
         Me.Text = "Medicine"
         CType(Me.ViewMedi, System.ComponentModel.ISupportInitialize).EndInit()

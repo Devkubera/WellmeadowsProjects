@@ -75,12 +75,11 @@ Public Class StaffForm
         DataGridV1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
 
         ' if user it's not personal department, Then hide add button and edit button
-
-        If MainForm.personalID = "" Then
-            btnAdd.Visible = False
-            btnEdit.Visible = False
-            btnDel.Visible = False
-        End If
+        'If MainForm.personalID = "" Then
+        '    btnAdd.Visible = False
+        '    btnEdit.Visible = False
+        '    btnDel.Visible = False
+        'End If
 
     End Sub
 

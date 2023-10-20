@@ -45,26 +45,11 @@ Partial Class Edit_StaffInWardForm
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.headerlb = New System.Windows.Forms.Label()
-        Me.Ward_StaffsBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.Ward_StaffsBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.Ward_StaffsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.Ward_StaffsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Ward_StaffsTableAdapter()
         Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
         Me.editStaffInWardPanel.SuspendLayout()
-        CType(Me.Ward_StaffsBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Ward_StaffsBindingNavigator.SuspendLayout()
         CType(Me.Ward_StaffsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -204,7 +189,7 @@ Partial Class Edit_StaffInWardForm
         'btnCheck_shift
         '
         Me.btnCheck_shift.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnCheck_shift.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheck_shift.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheck_shift.ForeColor = System.Drawing.Color.AliceBlue
         Me.btnCheck_shift.Location = New System.Drawing.Point(240, 421)
         Me.btnCheck_shift.Margin = New System.Windows.Forms.Padding(4)
@@ -217,7 +202,7 @@ Partial Class Edit_StaffInWardForm
         'btnCheck_ward
         '
         Me.btnCheck_ward.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnCheck_ward.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheck_ward.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheck_ward.ForeColor = System.Drawing.Color.AliceBlue
         Me.btnCheck_ward.Location = New System.Drawing.Point(240, 321)
         Me.btnCheck_ward.Margin = New System.Windows.Forms.Padding(4)
@@ -230,7 +215,7 @@ Partial Class Edit_StaffInWardForm
         'btnCheck_staff
         '
         Me.btnCheck_staff.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnCheck_staff.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheck_staff.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheck_staff.ForeColor = System.Drawing.Color.AliceBlue
         Me.btnCheck_staff.Location = New System.Drawing.Point(235, 227)
         Me.btnCheck_staff.Margin = New System.Windows.Forms.Padding(4)
@@ -293,7 +278,7 @@ Partial Class Edit_StaffInWardForm
         '
         'btnEdit
         '
-        Me.btnEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnEdit.BackColor = System.Drawing.Color.LimeGreen
         Me.btnEdit.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.Location = New System.Drawing.Point(1133, 47)
@@ -301,7 +286,7 @@ Partial Class Edit_StaffInWardForm
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(160, 46)
         Me.btnEdit.TabIndex = 97
-        Me.btnEdit.Text = "แก้ไข"
+        Me.btnEdit.Text = "บันทึกข้อมูล"
         Me.btnEdit.UseVisualStyleBackColor = False
         '
         'btnClear
@@ -325,115 +310,9 @@ Partial Class Edit_StaffInWardForm
         Me.headerlb.Location = New System.Drawing.Point(459, 47)
         Me.headerlb.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.headerlb.Name = "headerlb"
-        Me.headerlb.Size = New System.Drawing.Size(396, 40)
+        Me.headerlb.Size = New System.Drawing.Size(413, 43)
         Me.headerlb.TabIndex = 95
         Me.headerlb.Text = "แก้ไขข้อมูลเจ้าหน้าที่ในแต่ละวอร์ด"
-        '
-        'Ward_StaffsBindingNavigator
-        '
-        Me.Ward_StaffsBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.Ward_StaffsBindingNavigator.BindingSource = Me.Ward_StaffsBindingSource
-        Me.Ward_StaffsBindingNavigator.CountItem = Me.BindingNavigatorCountItem
-        Me.Ward_StaffsBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.Ward_StaffsBindingNavigator.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.Ward_StaffsBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.Ward_StaffsBindingNavigatorSaveItem})
-        Me.Ward_StaffsBindingNavigator.Location = New System.Drawing.Point(0, 0)
-        Me.Ward_StaffsBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
-        Me.Ward_StaffsBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
-        Me.Ward_StaffsBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
-        Me.Ward_StaffsBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
-        Me.Ward_StaffsBindingNavigator.Name = "Ward_StaffsBindingNavigator"
-        Me.Ward_StaffsBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.Ward_StaffsBindingNavigator.Size = New System.Drawing.Size(1423, 27)
-        Me.Ward_StaffsBindingNavigator.TabIndex = 2
-        Me.Ward_StaffsBindingNavigator.Text = "BindingNavigator1"
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 24)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
-        '
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
-        '
-        'BindingNavigatorSeparator
-        '
-        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 27)
-        '
-        'BindingNavigatorPositionItem
-        '
-        Me.BindingNavigatorPositionItem.AccessibleName = "Position"
-        Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 27)
-        Me.BindingNavigatorPositionItem.Text = "0"
-        Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
-        '
-        'BindingNavigatorSeparator1
-        '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 27)
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorMoveNextItem.Text = "Move next"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorMoveLastItem.Text = "Move last"
-        '
-        'BindingNavigatorSeparator2
-        '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
-        '
-        'Ward_StaffsBindingNavigatorSaveItem
-        '
-        Me.Ward_StaffsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.Ward_StaffsBindingNavigatorSaveItem.Name = "Ward_StaffsBindingNavigatorSaveItem"
-        Me.Ward_StaffsBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 24)
-        Me.Ward_StaffsBindingNavigatorSaveItem.Text = "Save Data"
         '
         'Ward_StaffsBindingSource
         '
@@ -481,20 +360,15 @@ Partial Class Edit_StaffInWardForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1423, 752)
-        Me.Controls.Add(Me.Ward_StaffsBindingNavigator)
         Me.Controls.Add(Me.editStaffInWardPanel)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Edit_StaffInWardForm"
         Me.Text = "แก้ไขข้อมูลเจ้าหน้าที่ในแต่ละวอร์ด"
         Me.editStaffInWardPanel.ResumeLayout(False)
         Me.editStaffInWardPanel.PerformLayout()
-        CType(Me.Ward_StaffsBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Ward_StaffsBindingNavigator.ResumeLayout(False)
-        Me.Ward_StaffsBindingNavigator.PerformLayout()
         CType(Me.Ward_StaffsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -524,17 +398,4 @@ Partial Class Edit_StaffInWardForm
     Friend WithEvents Ward_StaffsBindingSource As BindingSource
     Friend WithEvents Ward_StaffsTableAdapter As WellmeadowsDataSetTableAdapters.Ward_StaffsTableAdapter
     Friend WithEvents TableAdapterManager As WellmeadowsDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents Ward_StaffsBindingNavigator As BindingNavigator
-    Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
-    Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
-    Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMoveFirstItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMovePreviousItem As ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator As ToolStripSeparator
-    Friend WithEvents BindingNavigatorPositionItem As ToolStripTextBox
-    Friend WithEvents BindingNavigatorSeparator1 As ToolStripSeparator
-    Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
-    Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
-    Friend WithEvents Ward_StaffsBindingNavigatorSaveItem As ToolStripButton
 End Class

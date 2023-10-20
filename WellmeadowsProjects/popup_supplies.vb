@@ -41,4 +41,17 @@
             Me.Close()
         End If
     End Sub
+
+    Private Sub searchBox_TextChanged(sender As Object, e As EventArgs) Handles searchBox.TextChanged
+        Dim res = searchBox.Text
+        If res Is Nothing Then
+            ' remove filter 
+            SuppilersBindingSource.RemoveFilter()
+            Dim dt = 1
+        Else
+            ' making filter search by fullname and supplierID
+            SuppilersBindingSource.Filter = $"name LIKE '%{res}%'"
+
+        End If
+    End Sub
 End Class

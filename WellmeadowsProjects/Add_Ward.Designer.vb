@@ -23,8 +23,6 @@ Partial Class Add_Ward
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.label5 = New System.Windows.Forms.Label()
-        Me.ward_bed = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ward_tel = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -42,103 +40,83 @@ Partial Class Add_Ward
         CType(Me.WardsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'label5
-        '
-        Me.label5.AutoSize = True
-        Me.label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label5.Location = New System.Drawing.Point(543, 256)
-        Me.label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.label5.Name = "label5"
-        Me.label5.Size = New System.Drawing.Size(149, 25)
-        Me.label5.TabIndex = 157
-        Me.label5.Text = "จำนวนเตียงทั้งหมด"
-        '
-        'ward_bed
-        '
-        Me.ward_bed.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ward_bed.Location = New System.Drawing.Point(548, 304)
-        Me.ward_bed.Margin = New System.Windows.Forms.Padding(4)
-        Me.ward_bed.Name = "ward_bed"
-        Me.ward_bed.Size = New System.Drawing.Size(188, 30)
-        Me.ward_bed.TabIndex = 156
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(316, 256)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(139, 25)
+        Me.Label1.Size = New System.Drawing.Size(161, 30)
         Me.Label1.TabIndex = 155
         Me.Label1.Text = "หมายเลขโทรศัพท์"
         '
         'ward_tel
         '
-        Me.ward_tel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ward_tel.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ward_tel.Location = New System.Drawing.Point(321, 304)
         Me.ward_tel.Margin = New System.Windows.Forms.Padding(4)
         Me.ward_tel.Name = "ward_tel"
-        Me.ward_tel.Size = New System.Drawing.Size(188, 30)
+        Me.ward_tel.Size = New System.Drawing.Size(415, 38)
         Me.ward_tel.TabIndex = 154
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(543, 135)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(153, 25)
+        Me.Label3.Size = New System.Drawing.Size(194, 30)
         Me.Label3.TabIndex = 153
         Me.Label3.Text = "ตำแน่งที่ตั้งของวอร์ด"
         '
         'ward_location
         '
-        Me.ward_location.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ward_location.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ward_location.Location = New System.Drawing.Point(548, 183)
         Me.ward_location.Margin = New System.Windows.Forms.Padding(4)
         Me.ward_location.Name = "ward_location"
-        Me.ward_location.Size = New System.Drawing.Size(188, 30)
+        Me.ward_location.Size = New System.Drawing.Size(188, 38)
         Me.ward_location.TabIndex = 152
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(316, 135)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 25)
+        Me.Label2.Size = New System.Drawing.Size(85, 30)
         Me.Label2.TabIndex = 151
         Me.Label2.Text = "ชื่อวอร์ด"
         '
         'ward_name
         '
-        Me.ward_name.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ward_name.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ward_name.Location = New System.Drawing.Point(321, 183)
         Me.ward_name.Margin = New System.Windows.Forms.Padding(4)
         Me.ward_name.Name = "ward_name"
-        Me.ward_name.Size = New System.Drawing.Size(188, 30)
+        Me.ward_name.Size = New System.Drawing.Size(188, 38)
         Me.ward_name.TabIndex = 150
         '
         'EditWard
         '
         Me.EditWard.AutoSize = True
-        Me.EditWard.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EditWard.Font = New System.Drawing.Font("Prompt", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EditWard.Location = New System.Drawing.Point(403, 44)
         Me.EditWard.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.EditWard.Name = "EditWard"
-        Me.EditWard.Size = New System.Drawing.Size(242, 31)
+        Me.EditWard.Size = New System.Drawing.Size(226, 35)
         Me.EditWard.TabIndex = 147
         Me.EditWard.Text = "เพิ่มข้อมูลวอร์ดผู้ป่วย"
         '
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
-        Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btnAdd.Location = New System.Drawing.Point(513, 403)
+        Me.btnAdd.Location = New System.Drawing.Point(452, 395)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(160, 49)
@@ -149,9 +127,9 @@ Partial Class Add_Ward
         'btnClear
         '
         Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnClear.ForeColor = System.Drawing.Color.Snow
-        Me.btnClear.Location = New System.Drawing.Point(376, 403)
+        Me.btnClear.Location = New System.Drawing.Point(692, 39)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(100, 49)
@@ -177,11 +155,14 @@ Partial Class Add_Ward
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.BedsTableAdapter = Nothing
+        Me.TableAdapterManager.ChargeNursesTableAdapter = Nothing
+        Me.TableAdapterManager.DoctorsTableAdapter = Nothing
         Me.TableAdapterManager.In_PatientsTableAdapter = Nothing
         Me.TableAdapterManager.LocalDoctorsTableAdapter = Nothing
         Me.TableAdapterManager.Login_logsTableAdapter = Nothing
         Me.TableAdapterManager.Med_EquipmentsTableAdapter = Nothing
         Me.TableAdapterManager.Med_MedicinesTableAdapter = Nothing
+        Me.TableAdapterManager.MedicalDirectorsTableAdapter = Nothing
         Me.TableAdapterManager.Patient_kinsTableAdapter = Nothing
         Me.TableAdapterManager.Patient_VisitsTableAdapter = Nothing
         Me.TableAdapterManager.Patient_WardsTableAdapter = Nothing
@@ -204,8 +185,6 @@ Partial Class Add_Ward
         Me.ClientSize = New System.Drawing.Size(1039, 710)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btnClear)
-        Me.Controls.Add(Me.label5)
-        Me.Controls.Add(Me.ward_bed)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ward_tel)
         Me.Controls.Add(Me.Label3)
@@ -214,6 +193,7 @@ Partial Class Add_Ward
         Me.Controls.Add(Me.ward_name)
         Me.Controls.Add(Me.EditWard)
         Me.Name = "Add_Ward"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add_Ward"
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WardsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -221,9 +201,6 @@ Partial Class Add_Ward
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents label5 As Label
-    Friend WithEvents ward_bed As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents ward_tel As TextBox
     Friend WithEvents Label3 As Label

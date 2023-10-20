@@ -52,4 +52,16 @@ Public Class popup_patientKin
 
 
     End Sub
+
+    Private Sub seachbox_TextChanged(sender As Object, e As EventArgs) Handles seachbox.TextChanged
+        Dim res = seachbox.Text
+        ' check if res is empty
+        If res = "" Then
+            ' remove data grid view filter
+            Me.Patient_kinsBindingSource.RemoveFilter()
+        Else
+            ' add filter to data grid view to search by fullname and tel
+            Me.Patient_kinsBindingSource.Filter = $"fullname LIKE '%{res}%' OR tel LIKE '%{res}%'"
+        End If
+    End Sub
 End Class

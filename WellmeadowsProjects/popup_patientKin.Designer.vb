@@ -35,6 +35,8 @@ Partial Class popup_patientKin
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.seachbox = New System.Windows.Forms.RichTextBox()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Patient_kinsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pateintKinDG, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,7 +89,7 @@ Partial Class popup_patientKin
         Me.pateintKinDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.pateintKinDG.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
         Me.pateintKinDG.DataSource = Me.Patient_kinsBindingSource
-        Me.pateintKinDG.Location = New System.Drawing.Point(167, 114)
+        Me.pateintKinDG.Location = New System.Drawing.Point(145, 134)
         Me.pateintKinDG.Name = "pateintKinDG"
         Me.pateintKinDG.RowHeadersWidth = 51
         Me.pateintKinDG.RowTemplate.Height = 24
@@ -140,7 +142,7 @@ Partial Class popup_patientKin
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Prompt", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(161, 57)
+        Me.Label1.Location = New System.Drawing.Point(139, 77)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(261, 35)
         Me.Label1.TabIndex = 2
@@ -151,18 +153,39 @@ Partial Class popup_patientKin
         Me.Button2.BackColor = System.Drawing.SystemColors.HotTrack
         Me.Button2.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button2.Location = New System.Drawing.Point(981, 379)
+        Me.Button2.Location = New System.Drawing.Point(959, 399)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(122, 50)
         Me.Button2.TabIndex = 6
         Me.Button2.Text = "ตกลง"
         Me.Button2.UseVisualStyleBackColor = False
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(677, 44)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(206, 30)
+        Me.Label2.TabIndex = 12
+        Me.Label2.Text = "ค้นหาด้วยชื่อ, เบอร์โทร"
+        '
+        'seachbox
+        '
+        Me.seachbox.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.seachbox.Location = New System.Drawing.Point(682, 77)
+        Me.seachbox.Name = "seachbox"
+        Me.seachbox.Size = New System.Drawing.Size(399, 35)
+        Me.seachbox.TabIndex = 11
+        Me.seachbox.Text = ""
+        '
         'popup_patientKin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1226, 450)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.seachbox)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.pateintKinDG)
@@ -188,4 +211,6 @@ Partial Class popup_patientKin
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents Label2 As Label
+    Friend WithEvents seachbox As RichTextBox
 End Class

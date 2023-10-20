@@ -5,6 +5,7 @@
     Public mdID As String = ""
     Public doctorID As String = ""
     Public personalID As String = ""
+    Public isAdmin As Boolean = False
 
     Private Sub switchForm(form As Form)
         PanelMain.Controls.Clear()
@@ -26,6 +27,15 @@
         Console.WriteLine($"staffID {staffID}")
         Console.WriteLine($"position {position}")
 
+        If personalID = "" And isAdmin = False Then
+            ' remove column in table layout panel
+            TableLayoutPanel1.ColumnStyles(1).Width = 0
+        End If
+
+        If cnID = "" And isAdmin = False Then
+            ' remove column in table layout panel
+            TableLayoutPanel1.ColumnStyles(4).Width = 0
+        End If
 
     End Sub
 
@@ -39,11 +49,6 @@
     End Sub
 
     Private Sub btnStaff_Click(sender As Object, e As EventArgs) Handles btnStaff.Click
-        If personalID = "" Then
-            MessageBox.Show("คุณไม่มีสิทธิเข้าถึงหน้า Staff ได้")
-            Return
-        End If
-
         Dim staff = New StaffForm()
         switchForm(staff)
     End Sub
@@ -59,11 +64,6 @@
     End Sub
 
     Private Sub btnMedical_Click(sender As Object, e As EventArgs) Handles btnMedical.Click
-        If cnID = "" Then
-            MessageBox.Show("คุณไม่มีสิทธิเข้าถึงหน้า Medicine ได้")
-            Return
-        End If
-
         Dim medicine = New Medicine()
         switchForm(medicine)
     End Sub

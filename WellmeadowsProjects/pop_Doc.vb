@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class pop_Doc
-
+    Public backupData As DataTable
     Public DocsData As New Dictionary(Of String, String)
     Public sqlConn As String = "Data Source=Zero\DATABASE66;Initial Catalog=Wellmeadows;Integrated Security=True"
 
@@ -10,14 +10,20 @@ Public Class pop_Doc
         Dim sqlCode = "SELECT D.doctorID AS 'หมายเลขแพทย์', S.firstName AS 'ชื่อ', S.lastName AS 'สกุล'
                             FROM Doctors D
                             INNER JOIN Staffs S ON (D.staffID = S.staffID)
-                            WHERE D.isActive = 'YES'"
-        Dim dataTable As DataTable = StaffForm.sqlQueryDataTable(sqlCode)
-        docDG.DataSource = dataTable
+                            WHERE D.isActive = 'YES';"
 
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Doctors' table. You can move, or remove it, as needed.
-        Me.DoctorsTableAdapter.Fill(Me.WellmeadowsDataSet.Doctors)
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staffs' table. You can move, or remove it, as needed.
-        Me.StaffsTableAdapter.Fill(Me.WellmeadowsDataSet.Staffs)
+        Dim dataTable As DataTable = StaffForm.sqlQueryDataTable(sqlCode)
+
+        ' check dataTable is not null
+        If dataTable Is Nothing Then
+            MessageBox.Show("ไม่พบข้อมูลแพทย์ในระบบ", "ไม่พบข้อมูล", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Close()
+            Return
+        End If
+
+        docDG.DataSource = dataTable
+        ' assign to backup
+        backupData = dataTable
 
         DocsData("id") = Nothing
 
@@ -65,4 +71,20 @@ Public Class pop_Doc
 
     End Sub
 
+    Private Sub seachbox_TextChanged(sender As Object, e As EventArgs) Handles seachbox.TextChanged
+        Dim des = seachbox.Text
+        ' check res is not null
+        If des = "" Then
+            docDG.DataSource = backupData
+        Else
+            Dim sqlCode = $"SELECT D.doctorID AS 'หมายเลขแพทย์', S.firstName AS 'ชื่อ', S.lastName AS 'สกุล'
+                            FROM Doctors D
+                            INNER JOIN Staffs S ON (D.staffID = S.staffID)
+                            WHERE D.isActive = 'YES' AND D.doctorID LIKE '%{des}%';"
+
+            Dim dataTable As DataTable = StaffForm.sqlQueryDataTable(sqlCode)
+
+            docDG.DataSource = dataTable
+        End If
+    End Sub
 End Class

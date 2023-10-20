@@ -8,7 +8,15 @@ Public Class LoginPage
         Dim staffTelValue As String = staffTel.Text
 
         If String.IsNullOrEmpty(staffIDValue) OrElse String.IsNullOrEmpty(staffTelValue) Then
-            MessageBox.Show("Please enter both Staff ID and Telephone.")
+            MessageBox.Show("โปรดกรอกข้อมูลให้ครบทุกช่อง", "กรอกข้อมูลไม่ถูกต้อง", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        If staffIDValue = "admin" And staffTelValue = "admin" Then
+            MessageBox.Show("เข้าสู่ระบบสำเร็จ ! (ADMIN)", "เข้าสู่ระบบสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MainForm.isAdmin = True
+            Me.Hide()
+            MainForm.Show()
             Return
         End If
 
@@ -39,7 +47,7 @@ Public Class LoginPage
 
                                         If ds2.Tables(0).Rows.Count > 0 Then
                                             Dim cnID As String = ds2.Tables(0).Rows(0)("cnID").ToString()
-                                            MessageBox.Show("cnID : " & cnID)
+                                            MessageBox.Show("หมายเลขหัวหน้าพยาบาลของท่านคือ " & cnID, "เข้าสู่ระบบสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                             MainForm.cnID = cnID
                                         End If
                                     End Using
@@ -55,7 +63,7 @@ Public Class LoginPage
 
                                         If ds2.Tables(0).Rows.Count > 0 Then
                                             Dim mdID As String = ds2.Tables(0).Rows(0)("mdID").ToString()
-                                            MessageBox.Show("mdID : " & mdID)
+                                            MessageBox.Show("หมายเลขผู้อำนวยการของท่านคือ " & mdID, "เข้าสู่ระบบสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                             MainForm.mdID = mdID
                                         End If
                                     End Using
@@ -72,7 +80,7 @@ Public Class LoginPage
 
                                         If ds2.Tables(0).Rows.Count > 0 Then
                                             Dim doctorID As String = ds2.Tables(0).Rows(0)("doctorID").ToString()
-                                            MessageBox.Show("doctorID : " & doctorID)
+                                            MessageBox.Show("หมายเลขแพทย์ของท่านคือ : " & doctorID, "เข้าสู่ระบบสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                             MainForm.doctorID = doctorID
                                         End If
                                     End Using
@@ -89,31 +97,32 @@ Public Class LoginPage
 
                                         If ds2.Tables(0).Rows.Count > 0 Then
                                             Dim staffID2 As String = ds2.Tables(0).Rows(0)("staffID").ToString()
-                                            MessageBox.Show("staffID : " & staffID2)
+                                            MessageBox.Show("หมายเลขเจ้าหน้าที่ฝ่ายบุคคลของท่านคือ : " & staffID2, "เข้าสู่ระบบสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                             MainForm.personalID = staffID2
                                         End If
                                     End Using
                                 End Using
 
+                            Else
+                                ' for other position
+                                MessageBox.Show("เข้าสู่ระบบสำเร็จ !", "เข้าสู่ระบบสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             End If
 
-                            'MessageBox.Show("staffID : " & staffID & " position : " & position)
-                            MessageBox.Show("เข้าสู่ระบบสำเร็จ")
-                            Me.Hide()
-                            MainForm.Show()
-                            'Save staffID to Reuse in Another Form
                             MainForm.staffID = staffIDValue
                             MainForm.position = position
 
+                            Me.Hide()
+                            MainForm.Show()
 
                         Else
-                            MessageBox.Show("เข้าสู่ระบบไม่สำเร็จ กรุณาตรวจสอบ")
+                            MessageBox.Show("ไม่พบข้อมูลของท่าน กรุณากรอกข้อมูลให้ถูกต้อง", "เข้าสู่ระบบไม่สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
                     End Using
                 End Using
             End Using
+
         Catch ex As Exception
-            MessageBox.Show("An error occurred: " & ex.Message)
+            MessageBox.Show("พบข้อผิดพลาดในการเข้าสู่ระบบ " & Environment.NewLine & ex.Message, "เข้าสู่ระบบไม่สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

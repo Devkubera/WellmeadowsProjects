@@ -80,7 +80,7 @@ Public Class Edit_StaffInWardForm
 
     End Sub
 
-    Private Sub Ward_StaffsBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles Ward_StaffsBindingNavigatorSaveItem.Click
+    Private Sub Ward_StaffsBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.Ward_StaffsBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.WellmeadowsDataSet)

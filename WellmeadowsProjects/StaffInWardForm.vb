@@ -105,6 +105,10 @@ Public Class StaffInWardForm
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Patient_Wards' table. You can move, or remove it, as needed.
         Me.Ward_StaffsTableAdapter.Fill(Me.WellmeadowsDataSet.Ward_Staffs)
 
+        'check if user is md or cn or personal -> invisible button report
+        If MainForm.mdID = "" And MainForm.cnID = "" And MainForm.personalID = "" Then
+            btnReport.Visible = False
+        End If
     End Sub
 
     Private Sub btnDel_Click(sender As Object, e As EventArgs) Handles btnDel.Click
@@ -351,8 +355,18 @@ Public Class StaffInWardForm
             Ward_StaffsTable.DataSource = dataTable
         End If
 
-        ' make frozen at first column
-        Ward_StaffsTable.Columns(0).Frozen = True
+        ' check count of record in ward_staffs table
+        If Ward_StaffsTable.Columns.Count > 0 Then
+            ' make frozen at first column
+            Ward_StaffsTable.Columns(0).Frozen = True
+        Else
+            MessageBox.Show("ไม่พบข้อมูล", "ไม่พบข้อมูล", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            cbbWardId.SelectedIndex = 0
+            cbbWardId_SelectedIndexChanged(sender, e)
+        End If
+
+
+
 
     End Sub
 
@@ -407,7 +421,8 @@ Public Class StaffInWardForm
 
     End Function
 
-    Private Sub staffInWardPanel_Paint(sender As Object, e As PaintEventArgs) Handles staffInWardPanel.Paint
-
+    Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
+        Report_EachWard.Report_title = cbbWardId.Text
+        Report_EachWard.Show()
     End Sub
 End Class

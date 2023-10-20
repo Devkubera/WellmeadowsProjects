@@ -28,7 +28,6 @@ Partial Class InPatient
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.ViewInPa = New System.Windows.Forms.DataGridView()
         Me.btnUp_Out_ward = New System.Windows.Forms.Button()
-        Me.btnReport = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         CType(Me.ViewInPa, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,7 +47,7 @@ Partial Class InPatient
         'txtSearch
         '
         Me.txtSearch.Font = New System.Drawing.Font("Prompt", 12.0!)
-        Me.txtSearch.Location = New System.Drawing.Point(758, 84)
+        Me.txtSearch.Location = New System.Drawing.Point(884, 86)
         Me.txtSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(362, 38)
@@ -57,11 +56,11 @@ Partial Class InPatient
         'lableSearch
         '
         Me.lableSearch.AutoSize = True
-        Me.lableSearch.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lableSearch.Location = New System.Drawing.Point(753, 50)
+        Me.lableSearch.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lableSearch.Location = New System.Drawing.Point(879, 52)
         Me.lableSearch.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lableSearch.Name = "lableSearch"
-        Me.lableSearch.Size = New System.Drawing.Size(261, 26)
+        Me.lableSearch.Size = New System.Drawing.Size(310, 30)
         Me.lableSearch.TabIndex = 2
         Me.lableSearch.Text = "ค้นหาผู้ป่วยด้วยชื่อ, หมายเลขวอร์ด"
         '
@@ -69,7 +68,7 @@ Partial Class InPatient
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
         Me.btnAdd.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(1147, 79)
+        Me.btnAdd.Location = New System.Drawing.Point(1146, 602)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(100, 46)
@@ -103,25 +102,12 @@ Partial Class InPatient
         Me.btnUp_Out_ward.Text = "อัพเดตผู้ป่วยที่ออกจากวอร์ดไปแล้ว"
         Me.btnUp_Out_ward.UseVisualStyleBackColor = False
         '
-        'btnReport
-        '
-        Me.btnReport.BackColor = System.Drawing.Color.RoyalBlue
-        Me.btnReport.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReport.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnReport.Location = New System.Drawing.Point(733, 602)
-        Me.btnReport.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnReport.Name = "btnReport"
-        Me.btnReport.Size = New System.Drawing.Size(160, 46)
-        Me.btnReport.TabIndex = 7
-        Me.btnReport.Text = "สร้างรายงาน"
-        Me.btnReport.UseVisualStyleBackColor = False
-        '
         'btnUpdate
         '
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnUpdate.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUpdate.Location = New System.Drawing.Point(913, 602)
+        Me.btnUpdate.Location = New System.Drawing.Point(796, 602)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(160, 46)
@@ -134,7 +120,7 @@ Partial Class InPatient
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnDelete.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDelete.Location = New System.Drawing.Point(1087, 602)
+        Me.btnDelete.Location = New System.Drawing.Point(970, 602)
         Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(160, 46)
@@ -149,7 +135,6 @@ Partial Class InPatient
         Me.ClientSize = New System.Drawing.Size(1360, 800)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnUpdate)
-        Me.Controls.Add(Me.btnReport)
         Me.Controls.Add(Me.btnUp_Out_ward)
         Me.Controls.Add(Me.ViewInPa)
         Me.Controls.Add(Me.btnAdd)
@@ -173,7 +158,6 @@ Partial Class InPatient
     Friend WithEvents btnAdd As Button
     Friend WithEvents ViewInPa As DataGridView
     Friend WithEvents btnUp_Out_ward As Button
-    Friend WithEvents btnReport As Button
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnDelete As Button
 End Class

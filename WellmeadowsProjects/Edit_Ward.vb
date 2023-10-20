@@ -22,17 +22,16 @@ Public Class Edit_Ward
                 ward_name.Text,
                 ward_location.Text,
                 ward_tel.Text,
-                ward_bed.Text,
                 wardID
             )
 
-            'Patient.ViewPa.Refresh()
-            'Patient.Patient_Load(New Object, Nothing)
+            MessageBox.Show("เพิ่มข้อมูลสำเร็จ !", "เพิ่มข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            WardForm.WardForm_Load(sender, e)
 
             Me.Close()
 
         Catch ex As Exception
-            MessageBox.Show("Error. please check your data fill", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("เกิดข้อผผิดพลาดในการแก้ไขข้อมูล กรุณาตรวจสอบข้อมูลของท่าน " + Environment.NewLine + ex.Message, "เกิดข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Try
 
     End Sub

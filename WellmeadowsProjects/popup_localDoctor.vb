@@ -43,7 +43,7 @@
         ' making search filter for the datagrid to search with firstname, lastname, and tel
         Dim searchQuery As String = seachbox.Text.Trim()
         If searchQuery IsNot "" Then
-            Me.LocalDoctorsBindingSource.Filter = "clinic_id LIKE '%" & searchQuery & "%' OR name LIKE '%" & searchQuery & "%' OR address LIKE '%" & searchQuery & "%' OR tel LIKE '%" & searchQuery & "%'"
+            Me.LocalDoctorsBindingSource.Filter = $"clinicID LIKE '%{searchQuery}%' OR fullname LIKE '%{searchQuery}%'"
         Else
             Me.LocalDoctorsBindingSource.Filter = ""
         End If
