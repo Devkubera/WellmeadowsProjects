@@ -659,12 +659,12 @@
                           <GroupExpression>=Fields!PatientType.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
-                      <Label>=Fields!PatientType.Value</Label>
                       <SortExpressions>
                         <SortExpression>
                           <Value>=Fields!PatientType.Value</Value>
                         </SortExpression>
                       </SortExpressions>
+                      <Label>=Fields!PatientType.Value</Label>
                     </ChartMember>
                   </ChartMembers>
                 </ChartCategoryHierarchy>
@@ -1069,12 +1069,12 @@
                           <GroupExpression>=Fields!age_range.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
-                      <Label>=Fields!age_range.Value</Label>
                       <SortExpressions>
                         <SortExpression>
                           <Value>=Fields!age_range.Value</Value>
                         </SortExpression>
                       </SortExpressions>
+                      <Label>=Fields!age_range.Value</Label>
                     </ChartMember>
                   </ChartMembers>
                 </ChartCategoryHierarchy>
@@ -1457,12 +1457,12 @@
                           <GroupExpression>=Fields!wardName.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
-                      <Label>=Fields!wardName.Value</Label>
                       <SortExpressions>
                         <SortExpression>
                           <Value>=Fields!wardName.Value</Value>
                         </SortExpression>
                       </SortExpressions>
+                      <Label>=Fields!wardName.Value</Label>
                     </ChartMember>
                   </ChartMembers>
                 </ChartCategoryHierarchy>
@@ -1808,7 +1808,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Patients Count In wards</Value>
+                        <Value>Top 5 Patients Count In wards</Value>
                         <Style>
                           <FontSize>14pt</FontSize>
                           <FontWeight>Normal</FontWeight>
@@ -1845,12 +1845,12 @@
                           <GroupExpression>=Fields!wardName.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
-                      <Label>=Fields!wardName.Value</Label>
                       <SortExpressions>
                         <SortExpression>
                           <Value>=Fields!wardName.Value</Value>
                         </SortExpression>
                       </SortExpressions>
+                      <Label>=Fields!wardName.Value</Label>
                     </ChartMember>
                   </ChartMembers>
                 </ChartCategoryHierarchy>
@@ -1881,6 +1881,7 @@
                           <DataElementOutput>Output</DataElementOutput>
                         </ChartDataPoint>
                       </ChartDataPoints>
+                      <Type>Bar</Type>
                       <Style />
                       <ChartEmptyPoints>
                         <Style />

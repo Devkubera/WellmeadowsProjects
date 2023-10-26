@@ -12,7 +12,9 @@ Public Class Add_Ward
             Me.WardsTableAdapter.InsertWard(Wdname, Wdlocatione, Wdtel)
 
             MessageBox.Show("เพิ่มข้อมูลสำเร็จ !", "เพิ่มข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
             WardForm.WardForm_Load(sender, e)
+
             Me.Close()
 
         Catch ex As Exception

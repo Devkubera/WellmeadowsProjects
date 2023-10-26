@@ -25,14 +25,19 @@ Public Class Edit_Ward
                 wardID
             )
 
-            MessageBox.Show("เพิ่มข้อมูลสำเร็จ !", "เพิ่มข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            WardForm.WardForm_Load(sender, e)
-
-            Me.Close()
+            MessageBox.Show("แก้ไขข้อมูลสำเร็จ !", "เพิ่มข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Catch ex As Exception
             MessageBox.Show("เกิดข้อผผิดพลาดในการแก้ไขข้อมูล กรุณาตรวจสอบข้อมูลของท่าน " + Environment.NewLine + ex.Message, "เกิดข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Try
+
+        ' refresh data ward form
+        Dim dataTable As DataTable = StaffForm.sqlQueryDataTable(WardForm.sqlString)
+        WardForm.WardTable.DataSource = dataTable
+        'WardForm.WardForm_Load(sender, e)
+
+        ' close this form
+        Me.Close()
 
     End Sub
 End Class

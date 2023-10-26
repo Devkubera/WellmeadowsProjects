@@ -29,7 +29,6 @@ Partial Class DashbordForm
         Dim ReportDataSource4 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource5 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource6 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.MedEquipmentsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.CountstaffviewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -53,6 +52,7 @@ Partial Class DashbordForm
         Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
         Me.Count_PatientInWardBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Count_PatientInWardTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Count_PatientInWardTableAdapter()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.MedEquipmentsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CountstaffviewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,34 +64,6 @@ Partial Class DashbordForm
         CType(Me.Count_StaffInWardBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Count_PatientInWardBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'ReportViewer1
-        '
-        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.MedEquipmentsBindingSource
-        ReportDataSource2.Name = "StaffCount_ds"
-        ReportDataSource2.Value = Me.CountstaffviewBindingSource
-        ReportDataSource3.Name = "WardCount_ds"
-        ReportDataSource3.Value = Me.CountwardviewBindingSource
-        ReportDataSource4.Name = "CountAdmitPT_ds"
-        ReportDataSource4.Value = Me.CountInPatientviewBindingSource
-        ReportDataSource5.Name = "BedCount_ds"
-        ReportDataSource5.Value = Me.CounttotalBedviewBindingSource
-        ReportDataSource6.Name = "CountPtType_ds"
-        ReportDataSource6.Value = Me.CountPatientTypeBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource3)
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource4)
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource5)
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource6)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "WellmeadowsProjects.DashboardData.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(966, 615)
-        Me.ReportViewer1.TabIndex = 0
         '
         'MedEquipmentsBindingSource
         '
@@ -218,13 +190,43 @@ Partial Class DashbordForm
         '
         Me.Count_PatientInWardTableAdapter.ClearBeforeFill = True
         '
+        'ReportViewer1
+        '
+        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.MedEquipmentsBindingSource
+        ReportDataSource2.Name = "StaffCount_ds"
+        ReportDataSource2.Value = Me.CountstaffviewBindingSource
+        ReportDataSource3.Name = "WardCount_ds"
+        ReportDataSource3.Value = Me.CountwardviewBindingSource
+        ReportDataSource4.Name = "CountAdmitPT_ds"
+        ReportDataSource4.Value = Me.CountInPatientviewBindingSource
+        ReportDataSource5.Name = "BedCount_ds"
+        ReportDataSource5.Value = Me.CounttotalBedviewBindingSource
+        ReportDataSource6.Name = "CountPtType_ds"
+        ReportDataSource6.Value = Me.CountPatientTypeBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource3)
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource4)
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource5)
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource6)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "WellmeadowsProjects.DashboardData.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
+        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(4)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.ServerReport.BearerToken = Nothing
+        Me.ReportViewer1.Size = New System.Drawing.Size(1288, 757)
+        Me.ReportViewer1.TabIndex = 0
+        '
         'DashbordForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(966, 615)
+        Me.ClientSize = New System.Drawing.Size(1288, 757)
         Me.Controls.Add(Me.ReportViewer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "DashbordForm"
         Me.Text = "DashbordForm"
         CType(Me.MedEquipmentsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -240,8 +242,6 @@ Partial Class DashbordForm
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents WellmeadowsDataSet As WellmeadowsDataSet
     Friend WithEvents StaffsBindingSource As BindingSource
     Friend WithEvents StaffsTableAdapter As WellmeadowsDataSetTableAdapters.StaffsTableAdapter
@@ -265,4 +265,5 @@ Partial Class DashbordForm
     Friend WithEvents TableAdapterManager As WellmeadowsDataSetTableAdapters.TableAdapterManager
     Friend WithEvents Count_PatientInWardBindingSource As BindingSource
     Friend WithEvents Count_PatientInWardTableAdapter As WellmeadowsDataSetTableAdapters.Count_PatientInWardTableAdapter
+    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
 End Class

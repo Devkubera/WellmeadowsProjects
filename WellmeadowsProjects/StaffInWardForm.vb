@@ -35,16 +35,6 @@ Public Class StaffInWardForm
             Edit_StaffInWardForm.endTime.Text = wardStaffsData("endTime")
             Edit_StaffInWardForm.wardId.Text = wardStaffsData("wardID")
 
-
-            'Console.WriteLine(wardStaffsData("wsID"))
-            'Console.WriteLine(wardStaffsData("staffid"))
-            'Console.WriteLine(wardStaffsData("firstName"))
-            'Console.WriteLine(wardStaffsData("lastName"))
-            'Console.WriteLine(wardStaffsData("startTime"))
-            'Console.WriteLine(wardStaffsData("endTime"))
-            'Console.WriteLine(wardStaffsData("wardID"))
-            'Console.WriteLine(wardStaffsData("wardName"))
-
         Else
             MessageBox.Show("กรุณาเลือกข้อมูลก่อน")
         End If
@@ -106,9 +96,11 @@ Public Class StaffInWardForm
         Me.Ward_StaffsTableAdapter.Fill(Me.WellmeadowsDataSet.Ward_Staffs)
 
         'check if user is md or cn or personal -> invisible button report
-        If MainForm.mdID = "" And MainForm.cnID = "" And MainForm.personalID = "" Then
+        If MainForm.mdID = "" And MainForm.cnID = "" And MainForm.personalID = "" And MainForm.isAdmin = False Then
             btnReport.Visible = False
         End If
+
+        cbbWardId_SelectedIndexChanged(sender, e)
     End Sub
 
     Private Sub btnDel_Click(sender As Object, e As EventArgs) Handles btnDel.Click
@@ -132,224 +124,19 @@ Public Class StaffInWardForm
 
             Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
             Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 1 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W1';" 'set ค่าตาม wardname หรือ wardid ได้ ตาม combobox
 
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 2 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ', 
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W2';"
+            btnReport.Visible = False
+        Else
+            btnReport.Visible = True
 
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 3 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
+            Dim sqlMsg = $"SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
                                  shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
                                  wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
                             FROM Ward_Staffs 
                                 INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
                                 INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
                                 INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W3';"
-
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 4 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W4';"
-
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 5 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W5';"
-
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 6 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W6';"
-
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 7 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W7';"
-
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 8 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W8';"
-
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 9 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W9';"
-
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 10 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W10';"
-
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 11 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W11';"
-
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 12 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W12';"
-
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 13 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W13';"
-
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 14 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W14';"
-
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 15 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W15';"
-
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 16 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W16';"
-
-            Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
-            Ward_StaffsTable.DataSource = dataTable
-        End If
-        If cbbWardId.SelectedIndex = 17 Then
-            Dim sqlMsg = "SELECT Ward_Staffs.wsID AS 'ID', staffs.staffID AS 'หมายเลขพนักงาน', staffs.firstName AS 'ชื่อ', staffs.lastName AS 'นามสกุล', shifts.shiftID As 'หมายเลขกะ',
-                                 shifts.startTime AS 'เวลาเริ่มงาน', shifts.endTime AS 'เวลาเลิกงาน', 
-                                 wards.wardID AS 'หมายเลขวอร์ด', wards.wardName AS 'ชื่อวอร์ด'
-                            FROM Ward_Staffs 
-                                INNER JOIN staffs ON Ward_Staffs.staffID = staffs.staffID
-                                INNER JOIN shifts ON Ward_Staffs.shiftID = shifts.shiftID
-                                INNER JOIN wards ON Ward_Staffs.wardID = wards.wardID
-                            WHERE wards.wardId = 'W17';"
+                            WHERE wards.wardId = '{cbbWardId.Text}';" 'set ค่าตาม wardname หรือ wardid ได้ ตาม combobox
 
             Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
             Ward_StaffsTable.DataSource = dataTable
@@ -364,10 +151,6 @@ Public Class StaffInWardForm
             cbbWardId.SelectedIndex = 0
             cbbWardId_SelectedIndexChanged(sender, e)
         End If
-
-
-
-
     End Sub
 
     Public Function sqlQueryReader(sqlCode As String)
@@ -418,7 +201,6 @@ Public Class StaffInWardForm
             ' Return dataTable to using in Datasource = dataTable
             Return dataTable
         End If
-
     End Function
 
     Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click

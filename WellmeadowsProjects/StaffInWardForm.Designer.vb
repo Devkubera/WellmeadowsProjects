@@ -64,7 +64,7 @@ Partial Class StaffInWardForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(850, 78)
+        Me.Label1.Location = New System.Drawing.Point(942, 67)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(214, 30)
@@ -139,10 +139,10 @@ Partial Class StaffInWardForm
         Me.cbbWardId.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbbWardId.FormattingEnabled = True
         Me.cbbWardId.Items.AddRange(New Object() {"ทั้งหมด"})
-        Me.cbbWardId.Location = New System.Drawing.Point(855, 118)
+        Me.cbbWardId.Location = New System.Drawing.Point(947, 102)
         Me.cbbWardId.Margin = New System.Windows.Forms.Padding(4)
         Me.cbbWardId.Name = "cbbWardId"
-        Me.cbbWardId.Size = New System.Drawing.Size(229, 38)
+        Me.cbbWardId.Size = New System.Drawing.Size(296, 38)
         Me.cbbWardId.TabIndex = 27
         '
         'StaffInWardlb

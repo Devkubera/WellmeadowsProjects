@@ -2,7 +2,13 @@
 
 Public Class WardForm
     Public backupData As DataTable
-
+    Public sqlString As String = "SELECT
+	        wardID AS 'หมายเลขวอร์ด',
+	        wardName AS 'ชื่อวอร์ด',
+	        wardLocation AS 'สถานที่ตั้ง',
+	        wardTel AS 'หมายเลขภายใน',
+	        (SELECT COUNT(bedID) FROM Beds WHERE Beds.wardID = Wards.wardID) AS 'จำนวนเตียง'
+        FROM WARDS;"
     Private Const ordinalIgnoreCase As StringComparison = StringComparison.OrdinalIgnoreCase
     Public wardData As New Dictionary(Of String, String)
 
@@ -31,18 +37,24 @@ Public Class WardForm
 	        (SELECT COUNT(bedID) FROM Beds WHERE Beds.wardID = Wards.wardID) AS 'จำนวนเตียง'
         FROM WARDS;"
 
+        ' execute sql code
         Dim dataTable As DataTable = StaffForm.sqlQueryDataTable(sql)
 
         If dataTable Is Nothing Then
-            Console.WriteLine("Error not have ward in this ward : " & sql)
+            Console.WriteLine("Error. No data in this ward : ")
             Return
+        Else
+            ' set data table to data grid view
+            WardTable.DataSource = dataTable
+
+            ' adjust column width to auto
+            WardTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+
+            ' backup data table
+            backupData = dataTable
         End If
 
-        WardTable.DataSource = dataTable
-
-        ' backup data table
-        backupData = dataTable
-
+        Console.WriteLine("Hello World")
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -58,7 +70,6 @@ Public Class WardForm
             wardData("wardLocation") = WardTable.SelectedRows(0).Cells(2).Value.ToString
             wardData("wardTel") = WardTable.SelectedRows(0).Cells(3).Value.ToString
             wardData("wardBed") = WardTable.SelectedRows(0).Cells(4).Value.ToString
-
 
             Edit_Ward.wardID = wardData("wardID")
             Edit_Ward.ward_name.Text = wardData("wardName")
@@ -87,7 +98,6 @@ Public Class WardForm
             'เอา datasource มาใช้
             WardTable.DataSource = backupData
         Else
-            'WardsBindingSource.Filter = $"wardID LIKE '%{searchText}%' OR wardName LIKE '%{searchText}%' "
             ' create sql code
             Dim sql As String = $"SELECT
 	            wardID AS 'หมายเลขวอร์ด',
@@ -102,10 +112,6 @@ Public Class WardForm
 
             WardTable.DataSource = dataTable
         End If
-    End Sub
-
-    Private Sub placeholderlb_Click(sender As Object, e As EventArgs) Handles placeholderlb.Click
-
     End Sub
 
     Private Sub wardPanel_Paint(sender As Object, e As PaintEventArgs) Handles wardPanel.Paint

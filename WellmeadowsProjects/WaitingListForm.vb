@@ -118,11 +118,34 @@
             dataTable.DefaultView.RowFilter = ""
             waitingListTable.DataSource = backUpDataTable
 
-        Else
+        ElseIf cbb_bed_status.SelectedIndex = 1 Then
             ' if not 0, filter data finding isGetBed Data type is bite = 1
-
+            Dim dataTable As DataTable = backUpDataTable
+            dataTable.DefaultView.RowFilter = "สถานะรอเตียง = 0"
+            ' check data table record found count
+            If dataTable.DefaultView.Count = 0 Then
+                ' if not found, show message box
+                MessageBox.Show("ไม่พบข้อมูลผู้ป่วยที่ยังไม่ได้รับเตียง", "ไม่พบข้อมูล", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                ' set selected index to 0
+                cbb_bed_status.SelectedIndex = 0
+                cbb_bed_status_SelectedIndexChanged(sender, e)
+                Return
+            End If
+            waitingListTable.DataSource = dataTable
+        Else
+            ' if not 0, filter data finding isGetBed Data type is bite = 0
             Dim dataTable As DataTable = backUpDataTable
             dataTable.DefaultView.RowFilter = "สถานะรอเตียง = 1"
+            ' check data table record found count
+            If dataTable.DefaultView.Count = 0 Then
+                ' if not found, show message box
+                MessageBox.Show("ไม่พบข้อมูลผู้ป่วยที่ได้รับเตียงแล้ว", "ไม่พบข้อมูล", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                ' set selected index to 0
+                cbb_bed_status.SelectedIndex = 0
+                cbb_bed_status_SelectedIndexChanged(sender, e)
+                Return
+            End If
+            ' set data to data grid view
             waitingListTable.DataSource = dataTable
         End If
     End Sub

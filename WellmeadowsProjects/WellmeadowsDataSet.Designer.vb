@@ -9008,8 +9008,6 @@ Partial Public Class WellmeadowsDataSet
         
         Private columnวันที่ออก As Global.System.Data.DataColumn
         
-        Private columnสถานะ As Global.System.Data.DataColumn
-        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -9110,14 +9108,6 @@ Partial Public Class WellmeadowsDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property สถานะColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnสถานะ
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -9154,9 +9144,9 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddIN_Patients_Report_ViewRow(ByVal ลำดับ As String, ByVal หมายเลขผู้ป่วย As String, ByVal ชื่อ_นามสกุล As String, ByVal วอร์ด As String, ByVal หมายเลขเตียง As Integer, ByVal จำนวนวันที่อยู As Integer, ByVal วันที่เข้าพักอยู่ As Date, ByVal วันที่ออก As Date, ByVal สถานะ As Boolean) As IN_Patients_Report_ViewRow
+        Public Overloads Function AddIN_Patients_Report_ViewRow(ByVal ลำดับ As String, ByVal หมายเลขผู้ป่วย As String, ByVal ชื่อ_นามสกุล As String, ByVal วอร์ด As String, ByVal หมายเลขเตียง As Integer, ByVal จำนวนวันที่อยู As Integer, ByVal วันที่เข้าพักอยู่ As Date, ByVal วันที่ออก As Date) As IN_Patients_Report_ViewRow
             Dim rowIN_Patients_Report_ViewRow As IN_Patients_Report_ViewRow = CType(Me.NewRow,IN_Patients_Report_ViewRow)
-            Dim columnValuesArray() As Object = New Object() {ลำดับ, หมายเลขผู้ป่วย, ชื่อ_นามสกุล, วอร์ด, หมายเลขเตียง, จำนวนวันที่อยู, วันที่เข้าพักอยู่, วันที่ออก, สถานะ}
+            Dim columnValuesArray() As Object = New Object() {ลำดับ, หมายเลขผู้ป่วย, ชื่อ_นามสกุล, วอร์ด, หมายเลขเตียง, จำนวนวันที่อยู, วันที่เข้าพักอยู่, วันที่ออก}
             rowIN_Patients_Report_ViewRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowIN_Patients_Report_ViewRow)
             Return rowIN_Patients_Report_ViewRow
@@ -9193,7 +9183,6 @@ Partial Public Class WellmeadowsDataSet
             Me.columnจำนวนวันที่อยู = MyBase.Columns("จำนวนวันที่อยู")
             Me.columnวันที่เข้าพักอยู่ = MyBase.Columns("วันที่เข้าพักอยู่")
             Me.columnวันที่ออก = MyBase.Columns("วันที่ออก")
-            Me.columnสถานะ = MyBase.Columns("สถานะ")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9215,8 +9204,6 @@ Partial Public Class WellmeadowsDataSet
             MyBase.Columns.Add(Me.columnวันที่เข้าพักอยู่)
             Me.columnวันที่ออก = New Global.System.Data.DataColumn("วันที่ออก", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnวันที่ออก)
-            Me.columnสถานะ = New Global.System.Data.DataColumn("สถานะ", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnสถานะ)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnหมายเลขเตียง}, true))
             Me.columnหมายเลขผู้ป่วย.MaxLength = 11
             Me.columnชื่อ_นามสกุล.ReadOnly = true
@@ -9701,13 +9688,13 @@ Partial Public Class WellmeadowsDataSet
         
         Private columnวันที่เริ่มให้ยา As Global.System.Data.DataColumn
         
-        Private columnชื่อผู้ป่วย As Global.System.Data.DataColumn
-        
-        Private columnวิธีใช้ As Global.System.Data.DataColumn
-        
-        Private columnวันที่หยุดยา As Global.System.Data.DataColumn
-        
         Private columnชื่อยาและปริมาณ As Global.System.Data.DataColumn
+        
+        Private columnชื่อ_นามสกุล As Global.System.Data.DataColumn
+        
+        Private columnวิธีการใช้ As Global.System.Data.DataColumn
+        
+        Private columnวันที่หยุดให้ยา As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
@@ -9778,33 +9765,33 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property ชื่อผู้ป่วยColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnชื่อผู้ป่วย
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property วิธีใช้Column() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnวิธีใช้
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property วันที่หยุดยาColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnวันที่หยุดยา
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public ReadOnly Property ชื่อยาและปริมาณColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnชื่อยาและปริมาณ
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property ชื่อ_นามสกุลColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnชื่อ_นามสกุล
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property วิธีการใช้Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnวิธีการใช้
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property วันที่หยุดให้ยาColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnวันที่หยุดให้ยา
             End Get
         End Property
         
@@ -9845,9 +9832,9 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddPrescript_Report_ViewRow(ByVal ลำดับ As String, ByVal หมายเลขผู้ป่วย As String, ByVal วอร์ด As String, ByVal วันที่เริ่มให้ยา As Date, ByVal ชื่อผู้ป่วย As String, ByVal วิธีใช้ As String, ByVal วันที่หยุดยา As Date, ByVal ชื่อยาและปริมาณ As String) As Prescript_Report_ViewRow
+        Public Overloads Function AddPrescript_Report_ViewRow(ByVal ลำดับ As String, ByVal หมายเลขผู้ป่วย As String, ByVal วอร์ด As String, ByVal วันที่เริ่มให้ยา As Date, ByVal ชื่อยาและปริมาณ As String, ByVal ชื่อ_นามสกุล As String, ByVal วิธีการใช้ As String, ByVal วันที่หยุดให้ยา As Date) As Prescript_Report_ViewRow
             Dim rowPrescript_Report_ViewRow As Prescript_Report_ViewRow = CType(Me.NewRow,Prescript_Report_ViewRow)
-            Dim columnValuesArray() As Object = New Object() {ลำดับ, หมายเลขผู้ป่วย, วอร์ด, วันที่เริ่มให้ยา, ชื่อผู้ป่วย, วิธีใช้, วันที่หยุดยา, ชื่อยาและปริมาณ}
+            Dim columnValuesArray() As Object = New Object() {ลำดับ, หมายเลขผู้ป่วย, วอร์ด, วันที่เริ่มให้ยา, ชื่อยาและปริมาณ, ชื่อ_นามสกุล, วิธีการใช้, วันที่หยุดให้ยา}
             rowPrescript_Report_ViewRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPrescript_Report_ViewRow)
             Return rowPrescript_Report_ViewRow
@@ -9874,10 +9861,10 @@ Partial Public Class WellmeadowsDataSet
             Me.columnหมายเลขผู้ป่วย = MyBase.Columns("หมายเลขผู้ป่วย")
             Me.columnวอร์ด = MyBase.Columns("วอร์ด")
             Me.columnวันที่เริ่มให้ยา = MyBase.Columns("วันที่เริ่มให้ยา")
-            Me.columnชื่อผู้ป่วย = MyBase.Columns("ชื่อผู้ป่วย")
-            Me.columnวิธีใช้ = MyBase.Columns("วิธีใช้")
-            Me.columnวันที่หยุดยา = MyBase.Columns("วันที่หยุดยา")
             Me.columnชื่อยาและปริมาณ = MyBase.Columns("ชื่อยาและปริมาณ")
+            Me.columnชื่อ_นามสกุล = MyBase.Columns("ชื่อ_นามสกุล")
+            Me.columnวิธีการใช้ = MyBase.Columns("วิธีการใช้")
+            Me.columnวันที่หยุดให้ยา = MyBase.Columns("วันที่หยุดให้ยา")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9891,21 +9878,21 @@ Partial Public Class WellmeadowsDataSet
             MyBase.Columns.Add(Me.columnวอร์ด)
             Me.columnวันที่เริ่มให้ยา = New Global.System.Data.DataColumn("วันที่เริ่มให้ยา", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnวันที่เริ่มให้ยา)
-            Me.columnชื่อผู้ป่วย = New Global.System.Data.DataColumn("ชื่อผู้ป่วย", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnชื่อผู้ป่วย)
-            Me.columnวิธีใช้ = New Global.System.Data.DataColumn("วิธีใช้", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnวิธีใช้)
-            Me.columnวันที่หยุดยา = New Global.System.Data.DataColumn("วันที่หยุดยา", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnวันที่หยุดยา)
             Me.columnชื่อยาและปริมาณ = New Global.System.Data.DataColumn("ชื่อยาและปริมาณ", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnชื่อยาและปริมาณ)
+            Me.columnชื่อ_นามสกุล = New Global.System.Data.DataColumn("ชื่อ_นามสกุล", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnชื่อ_นามสกุล)
+            Me.columnวิธีการใช้ = New Global.System.Data.DataColumn("วิธีการใช้", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnวิธีการใช้)
+            Me.columnวันที่หยุดให้ยา = New Global.System.Data.DataColumn("วันที่หยุดให้ยา", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnวันที่หยุดให้ยา)
             Me.columnหมายเลขผู้ป่วย.MaxLength = 11
             Me.columnวอร์ด.MaxLength = 50
-            Me.columnชื่อผู้ป่วย.ReadOnly = true
-            Me.columnชื่อผู้ป่วย.MaxLength = 101
-            Me.columnวิธีใช้.MaxLength = 50
             Me.columnชื่อยาและปริมาณ.ReadOnly = true
             Me.columnชื่อยาและปริมาณ.MaxLength = 82
+            Me.columnชื่อ_นามสกุล.ReadOnly = true
+            Me.columnชื่อ_นามสกุล.MaxLength = 101
+            Me.columnวิธีการใช้.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -17836,21 +17823,6 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property สถานะ() As Boolean
-            Get
-                Try 
-                    Return CType(Me(Me.tableIN_Patients_Report_View.สถานะColumn),Boolean)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'สถานะ' in table 'IN_Patients_Report_View' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableIN_Patients_Report_View.สถานะColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsลำดับNull() As Boolean
             Return Me.IsNull(Me.tableIN_Patients_Report_View.ลำดับColumn)
         End Function
@@ -17931,18 +17903,6 @@ Partial Public Class WellmeadowsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub Setวันที่ออกNull()
             Me(Me.tableIN_Patients_Report_View.วันที่ออกColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsสถานะNull() As Boolean
-            Return Me.IsNull(Me.tableIN_Patients_Report_View.สถานะColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetสถานะNull()
-            Me(Me.tableIN_Patients_Report_View.สถานะColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -18189,51 +18149,6 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property ชื่อผู้ป่วย() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablePrescript_Report_View.ชื่อผู้ป่วยColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ชื่อผู้ป่วย' in table 'Prescript_Report_View' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePrescript_Report_View.ชื่อผู้ป่วยColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property วิธีใช้() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablePrescript_Report_View.วิธีใช้Column),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'วิธีใช้' in table 'Prescript_Report_View' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePrescript_Report_View.วิธีใช้Column) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property วันที่หยุดยา() As Date
-            Get
-                Try 
-                    Return CType(Me(Me.tablePrescript_Report_View.วันที่หยุดยาColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'วันที่หยุดยา' in table 'Prescript_Report_View' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablePrescript_Report_View.วันที่หยุดยาColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property ชื่อยาและปริมาณ() As String
             Get
                 Try 
@@ -18245,6 +18160,52 @@ Partial Public Class WellmeadowsDataSet
             End Get
             Set
                 Me(Me.tablePrescript_Report_View.ชื่อยาและปริมาณColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property ชื่อ_นามสกุล() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablePrescript_Report_View.ชื่อ_นามสกุลColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ชื่อ_นามสกุล' in table 'Prescript_Report_View' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePrescript_Report_View.ชื่อ_นามสกุลColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property วิธีการใช้() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablePrescript_Report_View.วิธีการใช้Column),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'วิธีการใช้' in table 'Prescript_Report_View' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePrescript_Report_View.วิธีการใช้Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property วันที่หยุดให้ยา() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tablePrescript_Report_View.วันที่หยุดให้ยาColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'วันที่หยุดให้ยา' in table 'Prescript_Report_View' is DBNull"& _ 
+                            ".", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablePrescript_Report_View.วันที่หยุดให้ยาColumn) = value
             End Set
         End Property
         
@@ -18298,42 +18259,6 @@ Partial Public Class WellmeadowsDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function Isชื่อผู้ป่วยNull() As Boolean
-            Return Me.IsNull(Me.tablePrescript_Report_View.ชื่อผู้ป่วยColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub Setชื่อผู้ป่วยNull()
-            Me(Me.tablePrescript_Report_View.ชื่อผู้ป่วยColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function Isวิธีใช้Null() As Boolean
-            Return Me.IsNull(Me.tablePrescript_Report_View.วิธีใช้Column)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub Setวิธีใช้Null()
-            Me(Me.tablePrescript_Report_View.วิธีใช้Column) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function Isวันที่หยุดยาNull() As Boolean
-            Return Me.IsNull(Me.tablePrescript_Report_View.วันที่หยุดยาColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub Setวันที่หยุดยาNull()
-            Me(Me.tablePrescript_Report_View.วันที่หยุดยาColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function Isชื่อยาและปริมาณNull() As Boolean
             Return Me.IsNull(Me.tablePrescript_Report_View.ชื่อยาและปริมาณColumn)
         End Function
@@ -18342,6 +18267,42 @@ Partial Public Class WellmeadowsDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub Setชื่อยาและปริมาณNull()
             Me(Me.tablePrescript_Report_View.ชื่อยาและปริมาณColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isชื่อ_นามสกุลNull() As Boolean
+            Return Me.IsNull(Me.tablePrescript_Report_View.ชื่อ_นามสกุลColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setชื่อ_นามสกุลNull()
+            Me(Me.tablePrescript_Report_View.ชื่อ_นามสกุลColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isวิธีการใช้Null() As Boolean
+            Return Me.IsNull(Me.tablePrescript_Report_View.วิธีการใช้Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setวิธีการใช้Null()
+            Me(Me.tablePrescript_Report_View.วิธีการใช้Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isวันที่หยุดให้ยาNull() As Boolean
+            Return Me.IsNull(Me.tablePrescript_Report_View.วันที่หยุดให้ยาColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setวันที่หยุดให้ยาNull()
+            Me(Me.tablePrescript_Report_View.วันที่หยุดให้ยาColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -33441,7 +33402,6 @@ Namespace WellmeadowsDataSetTableAdapters
             tableMapping.ColumnMappings.Add("จำนวนวันที่อยู", "จำนวนวันที่อยู")
             tableMapping.ColumnMappings.Add("วันที่เข้าพักอยู่", "วันที่เข้าพักอยู่")
             tableMapping.ColumnMappings.Add("วันที่ออก", "วันที่ออก")
-            tableMapping.ColumnMappings.Add("สถานะ", "สถานะ")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -33459,7 +33419,7 @@ Namespace WellmeadowsDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT ลำดับ, หมายเลขผู้ป่วย, ชื่อ_นามสกุล, วอร์ด, หมายเลขเตียง, จำนวนวันที่อยู, "& _ 
-                "วันที่เข้าพักอยู่, วันที่ออก, สถานะ FROM IN_Patients_Report_View"
+                "วันที่เข้าพักอยู่, วันที่ออก FROM IN_Patients_Report_View"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -33798,10 +33758,10 @@ Namespace WellmeadowsDataSetTableAdapters
             tableMapping.ColumnMappings.Add("หมายเลขผู้ป่วย", "หมายเลขผู้ป่วย")
             tableMapping.ColumnMappings.Add("วอร์ด", "วอร์ด")
             tableMapping.ColumnMappings.Add("วันที่เริ่มให้ยา", "วันที่เริ่มให้ยา")
-            tableMapping.ColumnMappings.Add("ชื่อผู้ป่วย", "ชื่อผู้ป่วย")
-            tableMapping.ColumnMappings.Add("วิธีใช้", "วิธีใช้")
-            tableMapping.ColumnMappings.Add("วันที่หยุดยา", "วันที่หยุดยา")
             tableMapping.ColumnMappings.Add("ชื่อยาและปริมาณ", "ชื่อยาและปริมาณ")
+            tableMapping.ColumnMappings.Add("ชื่อ_นามสกุล", "ชื่อ_นามสกุล")
+            tableMapping.ColumnMappings.Add("วิธีการใช้", "วิธีการใช้")
+            tableMapping.ColumnMappings.Add("วันที่หยุดให้ยา", "วันที่หยุดให้ยา")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -33818,8 +33778,8 @@ Namespace WellmeadowsDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT ลำดับ, หมายเลขผู้ป่วย, วอร์ด, วันที่เริ่มให้ยา, ชื่อผู้ป่วย, วันที่หยุดยา,"& _ 
-                " วิธีใช้, ชื่อยาและปริมาณ FROM Prescript_Report_View"
+            Me._commandCollection(0).CommandText = "SELECT ลำดับ, หมายเลขผู้ป่วย, วอร์ด, วันที่เริ่มให้ยา, ชื่อยาและปริมาณ, ชื่อ_นามส"& _ 
+                "กุล, วันที่หยุดให้ยา, วิธีการใช้ FROM Prescript_Report_View"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

@@ -71,7 +71,7 @@ Partial Class WaitingListForm
         '
         Me.cbb_bed_status.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbb_bed_status.FormattingEnabled = True
-        Me.cbb_bed_status.Items.AddRange(New Object() {"ยังไม่ได้เตียง", "ได้รับเตียงแล้ว"})
+        Me.cbb_bed_status.Items.AddRange(New Object() {"ทั้งหมด", "ยังไม่ได้เตียง", "ได้รับเตียงแล้ว"})
         Me.cbb_bed_status.Location = New System.Drawing.Point(519, 117)
         Me.cbb_bed_status.Name = "cbb_bed_status"
         Me.cbb_bed_status.Size = New System.Drawing.Size(206, 38)

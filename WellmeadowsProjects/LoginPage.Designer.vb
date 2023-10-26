@@ -56,7 +56,7 @@ Partial Class LoginPage
         Me.staffID.Name = "staffID"
         Me.staffID.Size = New System.Drawing.Size(519, 38)
         Me.staffID.TabIndex = 1
-        Me.staffID.Text = "S5"
+        Me.staffID.Text = "admin"
         '
         'staffTel
         '
@@ -67,7 +67,7 @@ Partial Class LoginPage
         Me.staffTel.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.staffTel.Size = New System.Drawing.Size(519, 38)
         Me.staffTel.TabIndex = 2
-        Me.staffTel.Text = "0894561230"
+        Me.staffTel.Text = "admin"
         '
         'Label2
         '

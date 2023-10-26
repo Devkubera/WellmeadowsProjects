@@ -34,9 +34,12 @@ Partial Class HomeForm
         '
         'timeLabel
         '
+        Me.timeLabel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.timeLabel.AutoSize = True
         Me.timeLabel.Font = New System.Drawing.Font("Prompt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.timeLabel.Location = New System.Drawing.Point(400, 324)
+        Me.timeLabel.Location = New System.Drawing.Point(491, 322)
         Me.timeLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.timeLabel.Name = "timeLabel"
         Me.timeLabel.RightToLeft = System.Windows.Forms.RightToLeft.No

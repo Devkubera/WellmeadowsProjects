@@ -35,21 +35,11 @@ Partial Class StaffForm
         Me.cbbEduLevel = New System.Windows.Forms.ComboBox()
         Me.Stafflabel = New System.Windows.Forms.Label()
         Me.cbbEduOrExp = New System.Windows.Forms.ComboBox()
-        Me.StaffsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
-        Me.StaffsTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.StaffsTableAdapter()
-        Me.Staff_ExperiencesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Staff_ExperiencesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Staff_ExperiencesTableAdapter()
-        Me.TableAdapterManager = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager()
-        Me.Staff_QualificatesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Staff_QualificatesTableAdapter()
-        Me.Staff_QualificatesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.StaffPanel.SuspendLayout()
         CType(Me.DataGridV1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StaffsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Staff_ExperiencesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Staff_QualificatesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StaffPanel
@@ -104,11 +94,11 @@ Partial Class StaffForm
         'btnDel
         '
         Me.btnDel.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnDel.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDel.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnDel.ForeColor = System.Drawing.Color.White
-        Me.btnDel.Location = New System.Drawing.Point(734, 505)
+        Me.btnDel.Location = New System.Drawing.Point(712, 505)
         Me.btnDel.Name = "btnDel"
-        Me.btnDel.Size = New System.Drawing.Size(120, 37)
+        Me.btnDel.Size = New System.Drawing.Size(120, 42)
         Me.btnDel.TabIndex = 24
         Me.btnDel.Text = "ลบ"
         Me.btnDel.UseVisualStyleBackColor = False
@@ -116,11 +106,11 @@ Partial Class StaffForm
         'btnEdit
         '
         Me.btnEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(182, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnEdit.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEdit.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnEdit.ForeColor = System.Drawing.Color.White
-        Me.btnEdit.Location = New System.Drawing.Point(604, 505)
+        Me.btnEdit.Location = New System.Drawing.Point(582, 505)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(120, 37)
+        Me.btnEdit.Size = New System.Drawing.Size(120, 42)
         Me.btnEdit.TabIndex = 23
         Me.btnEdit.Text = "แก้ไข"
         Me.btnEdit.UseVisualStyleBackColor = False
@@ -128,11 +118,11 @@ Partial Class StaffForm
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
-        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.btnAdd.ForeColor = System.Drawing.Color.Black
-        Me.btnAdd.Location = New System.Drawing.Point(864, 505)
+        Me.btnAdd.Location = New System.Drawing.Point(841, 505)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(75, 37)
+        Me.btnAdd.Size = New System.Drawing.Size(98, 42)
         Me.btnAdd.TabIndex = 22
         Me.btnAdd.Text = "เพิ่ม"
         Me.btnAdd.UseVisualStyleBackColor = False
@@ -184,64 +174,10 @@ Partial Class StaffForm
         Me.cbbEduOrExp.Size = New System.Drawing.Size(183, 34)
         Me.cbbEduOrExp.TabIndex = 16
         '
-        'StaffsBindingSource
-        '
-        Me.StaffsBindingSource.DataMember = "Staffs"
-        Me.StaffsBindingSource.DataSource = Me.WellmeadowsDataSet
-        '
         'WellmeadowsDataSet
         '
         Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
         Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'StaffsTableAdapter
-        '
-        Me.StaffsTableAdapter.ClearBeforeFill = True
-        '
-        'Staff_ExperiencesBindingSource
-        '
-        Me.Staff_ExperiencesBindingSource.DataMember = "Staff_Experiences"
-        Me.Staff_ExperiencesBindingSource.DataSource = Me.WellmeadowsDataSet
-        '
-        'Staff_ExperiencesTableAdapter
-        '
-        Me.Staff_ExperiencesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BedsTableAdapter = Nothing
-        Me.TableAdapterManager.ChargeNursesTableAdapter = Nothing
-        Me.TableAdapterManager.DoctorsTableAdapter = Nothing
-        Me.TableAdapterManager.In_PatientsTableAdapter = Nothing
-        Me.TableAdapterManager.LocalDoctorsTableAdapter = Nothing
-        Me.TableAdapterManager.Login_logsTableAdapter = Nothing
-        Me.TableAdapterManager.Med_EquipmentsTableAdapter = Nothing
-        Me.TableAdapterManager.Med_MedicinesTableAdapter = Nothing
-        Me.TableAdapterManager.MedicalDirectorsTableAdapter = Nothing
-        Me.TableAdapterManager.Patient_kinsTableAdapter = Nothing
-        Me.TableAdapterManager.Patient_VisitsTableAdapter = Nothing
-        Me.TableAdapterManager.Patient_WardsTableAdapter = Nothing
-        Me.TableAdapterManager.PatientsTableAdapter = Nothing
-        Me.TableAdapterManager.PW_PrescriptsTableAdapter = Nothing
-        Me.TableAdapterManager.ShiftsTableAdapter = Nothing
-        Me.TableAdapterManager.Staff_ExperiencesTableAdapter = Me.Staff_ExperiencesTableAdapter
-        Me.TableAdapterManager.Staff_QualificatesTableAdapter = Me.Staff_QualificatesTableAdapter
-        Me.TableAdapterManager.StaffsTableAdapter = Me.StaffsTableAdapter
-        Me.TableAdapterManager.SuppilersTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = WellmeadowsProjects.WellmeadowsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.Ward_RequestsTableAdapter = Nothing
-        Me.TableAdapterManager.Ward_StaffsTableAdapter = Nothing
-        Me.TableAdapterManager.WardsTableAdapter = Nothing
-        '
-        'Staff_QualificatesTableAdapter
-        '
-        Me.Staff_QualificatesTableAdapter.ClearBeforeFill = True
-        '
-        'Staff_QualificatesBindingSource
-        '
-        Me.Staff_QualificatesBindingSource.DataMember = "Staff_Qualificates"
-        Me.Staff_QualificatesBindingSource.DataSource = Me.WellmeadowsDataSet
         '
         'Timer1
         '
@@ -261,10 +197,7 @@ Partial Class StaffForm
         Me.StaffPanel.ResumeLayout(False)
         Me.StaffPanel.PerformLayout()
         CType(Me.DataGridV1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StaffsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Staff_ExperiencesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Staff_QualificatesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -281,13 +214,6 @@ Partial Class StaffForm
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents WellmeadowsDataSet As WellmeadowsDataSet
-    Friend WithEvents StaffsBindingSource As BindingSource
-    Friend WithEvents StaffsTableAdapter As WellmeadowsDataSetTableAdapters.StaffsTableAdapter
-    Friend WithEvents Staff_ExperiencesBindingSource As BindingSource
-    Friend WithEvents Staff_ExperiencesTableAdapter As WellmeadowsDataSetTableAdapters.Staff_ExperiencesTableAdapter
-    Friend WithEvents TableAdapterManager As WellmeadowsDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents Staff_QualificatesTableAdapter As WellmeadowsDataSetTableAdapters.Staff_QualificatesTableAdapter
-    Friend WithEvents Staff_QualificatesBindingSource As BindingSource
     Friend WithEvents Timer1 As Timer
     Friend WithEvents DataGridV1 As DataGridView
 End Class

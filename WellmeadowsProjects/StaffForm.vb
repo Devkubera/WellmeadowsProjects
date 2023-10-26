@@ -5,21 +5,29 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Public Class StaffForm
     Public sqlConn = "Data Source=Zero\DATABASE66;Initial Catalog=Wellmeadows;Integrated Security=True"
     Public staffDataSourceBackup As DataTable
+
     Private Sub btnAdd_Click_1(sender As Object, e As EventArgs) Handles btnAdd.Click
+        Dim isAddStaffExp As Boolean = False
+        Dim isAddStaffQuali As Boolean = False
+
+        If isAddStaffExp = True Then
+            Add_Staff_ExpForm1.ShowDialog()
+            Return
+        End If
         Add_StaffForm.Show()
     End Sub
 
     Public Sub StaffForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Qualificates' table. You can move, or remove it, as needed.
-        Me.Staff_QualificatesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Qualificates)
+        'Me.Staff_QualificatesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Qualificates)
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Experiences' table. You can move, or remove it, as needed.
-        Me.Staff_ExperiencesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Experiences)
+        'Me.Staff_ExperiencesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Experiences)
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Experiences' table. You can move, or remove it, as needed.
-        Me.Staff_ExperiencesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Experiences)
+        'Me.Staff_ExperiencesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Experiences)
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Experiences' table. You can move, or remove it, as needed.
-        Me.Staff_ExperiencesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Experiences)
+        'Me.Staff_ExperiencesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Experiences)
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staffs' table. You can move, or remove it, as needed.
-        Me.StaffsTableAdapter.Fill(Me.WellmeadowsDataSet.Staffs)
+        'Me.StaffsTableAdapter.Fill(Me.WellmeadowsDataSet.Staffs)
 
         'connection string
         Using connection As New SqlConnection("Data Source=Zero\DATABASE66;Initial Catalog=Wellmeadows;Integrated Security=True")
@@ -41,7 +49,7 @@ Public Class StaffForm
                 End While
 
             Catch ex As Exception
-
+                Console.WriteLine("Error to pull data from staff qualificates : " & ex.Message)
             End Try
             connection.Close()
         End Using
@@ -121,13 +129,30 @@ Public Class StaffForm
                 Edit_Staff.Staff_gender.SelectedItem = gender
             End If
 
-            Edit_Staff.Show()
+            Edit_Staff.ShowDialog()
         ElseIf cbbEduOrExp.SelectedIndex = 1 Then
+            ' get staffID from data table
+            Dim staffID = DataGridV1.SelectedRows(0).Cells(0).Value.ToString()
+            ' get staff full name from data table
+            Dim staffName = DataGridV1.SelectedRows(0).Cells(1).Value.ToString()
 
+            ' assign value
+            Edit_Staff_Experiences.Staff_name.Text = staffName
+            Edit_Staff_Experiences.Staff_number.Text = staffID
 
-            Edit_Staff_Experiences.Show()
+            Edit_Staff_Experiences.ShowDialog()
+
         Else
-            Edit_Staff_Qualificates.Show()
+            ' get staffID from data table
+            Dim staffID = DataGridV1.SelectedRows(0).Cells(0).Value.ToString()
+            ' get staff full name from data table
+            Dim staffName = DataGridV1.SelectedRows(0).Cells(1).Value.ToString()
+
+            ' assign value
+            Edit_Staff_Qualificates.Staff_name.Text = staffName
+            Edit_Staff_Qualificates.Staff_number.Text = staffID
+
+            Edit_Staff_Qualificates.ShowDialog()
         End If
     End Sub
 
@@ -176,6 +201,9 @@ Public Class StaffForm
                         WHERE organization LIKE '%{selectedValue}%';"
                     Dim dataTable As DataTable = sqlQueryDataTable(sqlMsg)
                     DataGridV1.DataSource = dataTable
+
+                    Dim add_staff_exp As Form = Add_Staff_ExpForm1
+
                 End If
 
                 If cbbEduOrExp.SelectedIndex = 2 Then
@@ -233,6 +261,11 @@ Public Class StaffForm
             staffDataSourceBackup = dataTable
 
             seacrhLabelName = "ค้นหาด้วยชื่อ"
+
+            ' show button staff
+            btnAdd.Visible = True
+            btnDel.Visible = True
+
         End If
 
         If cbbEduOrExp.SelectedIndex = 1 Then
@@ -250,6 +283,11 @@ Public Class StaffForm
             DataGridV1.DataSource = dataTable
 
             seacrhLabelName = "ค้นหาด้วยชื่อองค์กร"
+
+            ' hide button staff
+            btnAdd.Visible = False
+            btnDel.Visible = False
+
         End If
 
         If cbbEduOrExp.SelectedIndex = 2 Then
@@ -268,6 +306,10 @@ Public Class StaffForm
             DataGridV1.DataSource = dataTable
 
             seacrhLabelName = "ค้นหาด้วยชื่อคณะ / สาขา"
+
+            ' hide button staff
+            btnAdd.Visible = False
+            btnDel.Visible = False
         End If
 
         searchlb.Text = seacrhLabelName
@@ -365,10 +407,6 @@ Public Class StaffForm
         dataGridView.Columns(0).Frozen = True
     End Sub
 
-    Private Sub StaffPanel_Paint(sender As Object, e As PaintEventArgs) Handles StaffPanel.Paint
-
-    End Sub
-
     'create sql query to insert data to database
     Public Function sqlExecuteNonQuery(sqlCode As String)
         Using connection As New SqlConnection(sqlConn)
@@ -399,4 +437,16 @@ Public Class StaffForm
 
         Return cbb
     End Function
+
+    Private Sub btnDel_Click(sender As Object, e As EventArgs) Handles btnDel.Click
+
+    End Sub
+
+    Private Sub StaffPanel_Paint(sender As Object, e As PaintEventArgs) Handles StaffPanel.Paint
+
+    End Sub
+
+    Private Sub btn_add_exp_Click(sender As Object, e As EventArgs)
+        Add_Staff_ExpForm1.ShowDialog()
+    End Sub
 End Class
