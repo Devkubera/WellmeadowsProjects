@@ -76,7 +76,7 @@ Partial Class Patient
         Me.txtSearch.Location = New System.Drawing.Point(543, 136)
         Me.txtSearch.Margin = New System.Windows.Forms.Padding(5)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(505, 38)
+        Me.txtSearch.Size = New System.Drawing.Size(724, 38)
         Me.txtSearch.TabIndex = 12
         '
         'lableSearch
