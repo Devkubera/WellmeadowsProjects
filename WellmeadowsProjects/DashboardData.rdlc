@@ -1459,7 +1459,8 @@
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!wardName.Value</Value>
+                          <Value>=Fields!TotalStaffs.Value</Value>
+                          <Direction>Descending</Direction>
                         </SortExpression>
                       </SortExpressions>
                       <Label>=Fields!wardName.Value</Label>
@@ -1847,7 +1848,7 @@
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!wardName.Value</Value>
+                          <Value>=Fields!TotalPatients.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <Label>=Fields!wardName.Value</Label>

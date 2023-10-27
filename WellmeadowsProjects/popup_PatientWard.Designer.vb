@@ -37,7 +37,7 @@ Partial Class popup_PatientWard
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button2.Font = New System.Drawing.Font("Prompt", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
         Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button2.Location = New System.Drawing.Point(873, 426)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)

@@ -147,6 +147,9 @@
             ' refresh staffForm data grid view
             StaffForm.StaffForm_Load(sender, e)
 
+            ' reload data grid view
+            StaffForm.cbbEduOrExp_SelectedIndexChanged(sender, e)
+
             ' close this form
             Me.Close()
 

@@ -84,7 +84,11 @@
             ' reload this form
             Edit_Staff_Qualificates_Load(sender, e)
 
+            StaffForm.cbbEduOrExp.SelectedIndex = 0
             StaffForm.StaffForm_Load(sender, e)
+            StaffForm.cbbEduOrExp_SelectedIndexChanged(sender, e)
+
+            Me.Close()
 
         Else
             ' if some field is empty then show error message

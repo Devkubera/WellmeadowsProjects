@@ -41,7 +41,15 @@ Public Class Add_StaffForm
     End Sub
 
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        ' try cast
+        ' check all field is not null
+        If (Staff_firstName.Text <> "" And Staff_lastName.Text <> "" And Staff_gender.Text <> "" And Staff_tel.Text <> "" And Staff_nin.Text <> "" And Staff_address.Text <> "" And Staff_salary.Text <> "" And Staff_salaryScale.Text <> "" And Staff_paidType.Text <> "" And Staff_hoursWeek.Text <> "" And Staff_contactType.Text <> "" And Staff_position.Text <> "") Then
+        Else
+            ' show message กรุณากรอกข้อมูลให้ครบทุกช่อง
+            MessageBox.Show("กรุณากรอกข้อมูลให้ครบทุกช่อง", "ข้อมูลไม่ครบ", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        ' try cast to insert data to data table
         Try
             'Staff Data
             Dim firstName = Staff_firstName.Text
@@ -99,7 +107,6 @@ Public Class Add_StaffForm
             End If
 
             ' Staff Qualification insert
-
             For Each row As DataGridViewRow In study_table.Rows
 
                 If Not row.IsNewRow Then
@@ -128,7 +135,6 @@ Public Class Add_StaffForm
             Next
 
             ' Staff Experiences insert
-
             For Each row As DataGridViewRow In old_table.Rows
                 If Not row.IsNewRow Then
                     Dim rowdata As New List(Of String)
@@ -162,10 +168,11 @@ Public Class Add_StaffForm
             MessageBox.Show("เพิ่มข้อมูลเรียบร้อยแล้ว", "เพิ่มข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             ' refresh staff gridview
-            StaffForm.StaffForm_Load(sender, e)
+            StaffForm.reloadDataTable(sender, e)
 
             ' close form
             Me.Close()
+
         Catch ex As Exception
             ' show messagebox insert incorrect
             MessageBox.Show("เกิดข้อผิดพลาดในการเพิ่มข้อมูล กรุณาตรวจสอบข้อมูล", "เกิดข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error)

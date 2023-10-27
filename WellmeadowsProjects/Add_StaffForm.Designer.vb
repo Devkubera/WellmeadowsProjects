@@ -320,6 +320,7 @@ Partial Class Add_StaffForm
         '
         'old_startDate
         '
+        Me.old_startDate.Checked = False
         Me.old_startDate.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.old_startDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.old_startDate.Location = New System.Drawing.Point(553, 850)
@@ -328,6 +329,7 @@ Partial Class Add_StaffForm
         Me.old_startDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.old_startDate.Size = New System.Drawing.Size(148, 33)
         Me.old_startDate.TabIndex = 182
+        Me.old_startDate.Value = New Date(2019, 7, 18, 0, 0, 0, 0)
         '
         'old_company
         '
@@ -337,7 +339,7 @@ Partial Class Add_StaffForm
         Me.old_company.Name = "old_company"
         Me.old_company.Size = New System.Drawing.Size(360, 33)
         Me.old_company.TabIndex = 181
-        Me.old_company.Text = "SUT"
+        Me.old_company.Text = "มหาวิทยาลัยเทคโนโลยีสุรนารี"
         '
         'old_position
         '
@@ -376,7 +378,7 @@ Partial Class Add_StaffForm
         'btnAdd
         '
         Me.btnAdd.BackColor = System.Drawing.Color.LimeGreen
-        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.btnAdd.Location = New System.Drawing.Point(1025, 34)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
@@ -389,7 +391,7 @@ Partial Class Add_StaffForm
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button1.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Snow
         Me.Button1.Location = New System.Drawing.Point(904, 34)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4)
@@ -575,13 +577,13 @@ Partial Class Add_StaffForm
         Me.Staff_address.Name = "Staff_address"
         Me.Staff_address.Size = New System.Drawing.Size(426, 105)
         Me.Staff_address.TabIndex = 157
-        Me.Staff_address.Text = "บางรัก"
+        Me.Staff_address.Text = "111 ถนนมหาวิทยาลัย ตำบลสุรนารี อำเภอเมือง จังหวัดนครราชสีมา 30000"
         '
         'Staff_contactType
         '
         Me.Staff_contactType.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Staff_contactType.FormattingEnabled = True
-        Me.Staff_contactType.Items.AddRange(New Object() {"P", "T"})
+        Me.Staff_contactType.Items.AddRange(New Object() {"Permanent", "Temporary"})
         Me.Staff_contactType.Location = New System.Drawing.Point(32, 849)
         Me.Staff_contactType.Margin = New System.Windows.Forms.Padding(4)
         Me.Staff_contactType.Name = "Staff_contactType"
@@ -603,7 +605,7 @@ Partial Class Add_StaffForm
         '
         Me.Staff_paidType.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Staff_paidType.FormattingEnabled = True
-        Me.Staff_paidType.Items.AddRange(New Object() {"W", "M"})
+        Me.Staff_paidType.Items.AddRange(New Object() {"Weekly", "Monthly"})
         Me.Staff_paidType.Location = New System.Drawing.Point(32, 767)
         Me.Staff_paidType.Margin = New System.Windows.Forms.Padding(4)
         Me.Staff_paidType.Name = "Staff_paidType"
@@ -629,7 +631,7 @@ Partial Class Add_StaffForm
         Me.Staff_hoursWeek.Name = "Staff_hoursWeek"
         Me.Staff_hoursWeek.Size = New System.Drawing.Size(200, 33)
         Me.Staff_hoursWeek.TabIndex = 152
-        Me.Staff_hoursWeek.Text = "40"
+        Me.Staff_hoursWeek.Text = "50"
         '
         'paidtypelb
         '
@@ -661,7 +663,7 @@ Partial Class Add_StaffForm
         Me.Staff_salaryScale.Name = "Staff_salaryScale"
         Me.Staff_salaryScale.Size = New System.Drawing.Size(198, 33)
         Me.Staff_salaryScale.TabIndex = 149
-        Me.Staff_salaryScale.Text = "0.5"
+        Me.Staff_salaryScale.Text = "1.0"
         '
         'salarylb
         '
@@ -682,7 +684,7 @@ Partial Class Add_StaffForm
         Me.Staff_salary.Name = "Staff_salary"
         Me.Staff_salary.Size = New System.Drawing.Size(199, 33)
         Me.Staff_salary.TabIndex = 147
-        Me.Staff_salary.Text = "50000"
+        Me.Staff_salary.Text = "28000"
         '
         'ninlb
         '
@@ -756,7 +758,7 @@ Partial Class Add_StaffForm
         Me.study_major.Name = "study_major"
         Me.study_major.Size = New System.Drawing.Size(360, 33)
         Me.study_major.TabIndex = 140
-        Me.study_major.Text = "แพทย์ศาสตร์"
+        Me.study_major.Text = "เทคโนโลยีดิจิทัล"
         '
         'study_cer
         '
@@ -820,7 +822,7 @@ Partial Class Add_StaffForm
         Me.Staff_lastName.Name = "Staff_lastName"
         Me.Staff_lastName.Size = New System.Drawing.Size(202, 33)
         Me.Staff_lastName.TabIndex = 134
-        Me.Staff_lastName.Text = "จันทร์อังคาร"
+        Me.Staff_lastName.Text = "อาวรณ์ใจ"
         '
         'headerlb
         '
@@ -853,7 +855,7 @@ Partial Class Add_StaffForm
         Me.Staff_firstName.Name = "Staff_firstName"
         Me.Staff_firstName.Size = New System.Drawing.Size(202, 33)
         Me.Staff_firstName.TabIndex = 131
-        Me.Staff_firstName.Text = "ประหยัด"
+        Me.Staff_firstName.Text = "สังวร"
         '
         'subheaderlb1
         '

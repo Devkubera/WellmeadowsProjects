@@ -143,7 +143,7 @@ Public Class StaffInWardForm
         End If
 
         ' check count of record in ward_staffs table
-        If Ward_StaffsTable.Columns.Count > 0 Then
+        If Ward_StaffsTable.DataSource IsNot Nothing Then
             ' make frozen at first column
             Ward_StaffsTable.Columns(0).Frozen = True
         Else

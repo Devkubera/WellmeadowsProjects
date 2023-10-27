@@ -74,20 +74,20 @@ Partial Class StaffForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Prompt", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(292, 92)
+        Me.Label2.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(291, 85)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(123, 22)
+        Me.Label2.Size = New System.Drawing.Size(141, 26)
         Me.Label2.TabIndex = 26
         Me.Label2.Text = "วิธีการแสดงข้อมูล"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Prompt", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(508, 92)
+        Me.Label1.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(507, 85)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(95, 22)
+        Me.Label1.Size = New System.Drawing.Size(107, 26)
         Me.Label1.TabIndex = 25
         Me.Label1.Text = "วุฒิการศึกษา"
         '
@@ -130,10 +130,10 @@ Partial Class StaffForm
         'searchlb
         '
         Me.searchlb.AutoSize = True
-        Me.searchlb.Font = New System.Drawing.Font("Prompt", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.searchlb.Location = New System.Drawing.Point(716, 93)
+        Me.searchlb.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.searchlb.Location = New System.Drawing.Point(715, 86)
         Me.searchlb.Name = "searchlb"
-        Me.searchlb.Size = New System.Drawing.Size(188, 22)
+        Me.searchlb.Size = New System.Drawing.Size(216, 26)
         Me.searchlb.TabIndex = 21
         Me.searchlb.Text = "ค้นหาเจ้าหน้าที่ด้วยชื่อองค์กร"
         '

@@ -88,7 +88,7 @@ Partial Class Edit_StaffInWardForm
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(701, 379)
+        Me.Label6.Location = New System.Drawing.Point(708, 379)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(115, 30)
@@ -98,7 +98,7 @@ Partial Class Edit_StaffInWardForm
         'endTime
         '
         Me.endTime.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.endTime.Location = New System.Drawing.Point(706, 421)
+        Me.endTime.Location = New System.Drawing.Point(713, 421)
         Me.endTime.Margin = New System.Windows.Forms.Padding(4)
         Me.endTime.Name = "endTime"
         Me.endTime.Size = New System.Drawing.Size(184, 38)
@@ -108,7 +108,7 @@ Partial Class Edit_StaffInWardForm
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(486, 379)
+        Me.Label5.Location = New System.Drawing.Point(493, 379)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(134, 30)
@@ -119,7 +119,7 @@ Partial Class Edit_StaffInWardForm
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(486, 279)
+        Me.Label4.Location = New System.Drawing.Point(493, 279)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(137, 30)
@@ -130,7 +130,7 @@ Partial Class Edit_StaffInWardForm
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(923, 185)
+        Me.Label3.Location = New System.Drawing.Point(930, 185)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(84, 30)
@@ -141,7 +141,7 @@ Partial Class Edit_StaffInWardForm
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(701, 185)
+        Me.Label2.Location = New System.Drawing.Point(708, 185)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(37, 30)
@@ -152,7 +152,7 @@ Partial Class Edit_StaffInWardForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(486, 185)
+        Me.Label1.Location = New System.Drawing.Point(493, 185)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(164, 30)
@@ -162,7 +162,7 @@ Partial Class Edit_StaffInWardForm
         'lastname
         '
         Me.lastname.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lastname.Location = New System.Drawing.Point(928, 227)
+        Me.lastname.Location = New System.Drawing.Point(935, 227)
         Me.lastname.Margin = New System.Windows.Forms.Padding(4)
         Me.lastname.Name = "lastname"
         Me.lastname.Size = New System.Drawing.Size(184, 38)
@@ -171,7 +171,7 @@ Partial Class Edit_StaffInWardForm
         'firstname
         '
         Me.firstname.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.firstname.Location = New System.Drawing.Point(706, 227)
+        Me.firstname.Location = New System.Drawing.Point(713, 227)
         Me.firstname.Margin = New System.Windows.Forms.Padding(4)
         Me.firstname.Name = "firstname"
         Me.firstname.Size = New System.Drawing.Size(184, 38)
@@ -180,7 +180,7 @@ Partial Class Edit_StaffInWardForm
         'ShiftTime
         '
         Me.ShiftTime.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ShiftTime.Location = New System.Drawing.Point(491, 421)
+        Me.ShiftTime.Location = New System.Drawing.Point(498, 421)
         Me.ShiftTime.Margin = New System.Windows.Forms.Padding(4)
         Me.ShiftTime.Name = "ShiftTime"
         Me.ShiftTime.Size = New System.Drawing.Size(184, 38)
@@ -189,7 +189,7 @@ Partial Class Edit_StaffInWardForm
         'btnCheck_shift
         '
         Me.btnCheck_shift.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnCheck_shift.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheck_shift.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheck_shift.ForeColor = System.Drawing.Color.AliceBlue
         Me.btnCheck_shift.Location = New System.Drawing.Point(240, 421)
         Me.btnCheck_shift.Margin = New System.Windows.Forms.Padding(4)
@@ -202,7 +202,7 @@ Partial Class Edit_StaffInWardForm
         'btnCheck_ward
         '
         Me.btnCheck_ward.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnCheck_ward.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheck_ward.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheck_ward.ForeColor = System.Drawing.Color.AliceBlue
         Me.btnCheck_ward.Location = New System.Drawing.Point(240, 321)
         Me.btnCheck_ward.Margin = New System.Windows.Forms.Padding(4)
@@ -215,7 +215,7 @@ Partial Class Edit_StaffInWardForm
         'btnCheck_staff
         '
         Me.btnCheck_staff.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnCheck_staff.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCheck_staff.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheck_staff.ForeColor = System.Drawing.Color.AliceBlue
         Me.btnCheck_staff.Location = New System.Drawing.Point(235, 227)
         Me.btnCheck_staff.Margin = New System.Windows.Forms.Padding(4)
@@ -250,7 +250,7 @@ Partial Class Edit_StaffInWardForm
         'wardId
         '
         Me.wardId.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.wardId.Location = New System.Drawing.Point(491, 321)
+        Me.wardId.Location = New System.Drawing.Point(498, 321)
         Me.wardId.Margin = New System.Windows.Forms.Padding(4)
         Me.wardId.Name = "wardId"
         Me.wardId.Size = New System.Drawing.Size(184, 38)
@@ -270,7 +270,7 @@ Partial Class Edit_StaffInWardForm
         'staffId
         '
         Me.staffId.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.staffId.Location = New System.Drawing.Point(491, 227)
+        Me.staffId.Location = New System.Drawing.Point(498, 227)
         Me.staffId.Margin = New System.Windows.Forms.Padding(4)
         Me.staffId.Name = "staffId"
         Me.staffId.Size = New System.Drawing.Size(184, 38)
@@ -279,7 +279,7 @@ Partial Class Edit_StaffInWardForm
         'btnEdit
         '
         Me.btnEdit.BackColor = System.Drawing.Color.LimeGreen
-        Me.btnEdit.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.btnEdit.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.Location = New System.Drawing.Point(1133, 47)
         Me.btnEdit.Margin = New System.Windows.Forms.Padding(4)
@@ -292,7 +292,7 @@ Partial Class Edit_StaffInWardForm
         'btnClear
         '
         Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnClear.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.btnClear.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClear.ForeColor = System.Drawing.Color.White
         Me.btnClear.Location = New System.Drawing.Point(953, 47)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(4)

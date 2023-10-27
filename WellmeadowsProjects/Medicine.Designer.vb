@@ -229,17 +229,17 @@ Partial Class Medicine
         Me.txtSearch.Location = New System.Drawing.Point(816, 117)
         Me.txtSearch.Margin = New System.Windows.Forms.Padding(5, 3, 5, 3)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(303, 38)
+        Me.txtSearch.Size = New System.Drawing.Size(434, 38)
         Me.txtSearch.TabIndex = 23
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Prompt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Prompt", 16.0!, System.Drawing.FontStyle.Bold)
         Me.Label1.Location = New System.Drawing.Point(106, 112)
         Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(140, 43)
+        Me.Label1.Size = New System.Drawing.Size(138, 40)
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "Medicine"
         '

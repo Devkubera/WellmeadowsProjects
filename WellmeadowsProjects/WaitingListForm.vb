@@ -54,14 +54,19 @@
             pwIDList.Add(row.Cells(0).Value)
         Next
 
-        ' frozen first column
-        waitingListTable.Columns(0).Frozen = True
+        If dataTable Is Nothing Then
+            ' if no record found
+            MessageBox.Show("ไม่พบข้อมูลผู้ป่วยที่รอเตียง ณ ขณะนี้", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            ' frozen first column
+            waitingListTable.Columns(0).Frozen = True
+        End If
 
         ' set cbb bed status default value
         cbb_bed_status.SelectedIndex = 0
 
         ' if user it's not cn or md
-        If MainForm.cnID <> "" Or MainForm.mdID <> "" Then
+        If MainForm.cnID <> "" Or MainForm.mdID <> "" Or MainForm.isAdmin = True Then
             Console.WriteLine("if")
             btnReport.Visible = True
             btnAdd.Visible = True
@@ -112,41 +117,43 @@
     End Sub
 
     Private Sub cbb_bed_status_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbb_bed_status.SelectedIndexChanged
-        If cbb_bed_status.SelectedIndex = 0 Then
-            ' if selected index is 0, show all data
-            Dim dataTable As DataTable = backUpDataTable
-            dataTable.DefaultView.RowFilter = ""
-            waitingListTable.DataSource = backUpDataTable
+        If backUpDataTable IsNot Nothing Then
+            If cbb_bed_status.SelectedIndex = 0 Then
+                ' if selected index is 0, show all data
+                Dim dataTable As DataTable = backUpDataTable
+                dataTable.DefaultView.RowFilter = ""
+                waitingListTable.DataSource = backUpDataTable
 
-        ElseIf cbb_bed_status.SelectedIndex = 1 Then
-            ' if not 0, filter data finding isGetBed Data type is bite = 1
-            Dim dataTable As DataTable = backUpDataTable
-            dataTable.DefaultView.RowFilter = "สถานะรอเตียง = 0"
-            ' check data table record found count
-            If dataTable.DefaultView.Count = 0 Then
-                ' if not found, show message box
-                MessageBox.Show("ไม่พบข้อมูลผู้ป่วยที่ยังไม่ได้รับเตียง", "ไม่พบข้อมูล", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                ' set selected index to 0
-                cbb_bed_status.SelectedIndex = 0
-                cbb_bed_status_SelectedIndexChanged(sender, e)
-                Return
+            ElseIf cbb_bed_status.SelectedIndex = 1 Then
+                ' if not 0, filter data finding isGetBed Data type is bite = 1
+                Dim dataTable As DataTable = backUpDataTable
+                dataTable.DefaultView.RowFilter = "สถานะรอเตียง = 0"
+                ' check data table record found count
+                If dataTable.DefaultView.Count = 0 Then
+                    ' if not found, show message box
+                    MessageBox.Show("ไม่พบข้อมูลผู้ป่วยที่ยังไม่ได้รับเตียง", "ไม่พบข้อมูล", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    ' set selected index to 0
+                    cbb_bed_status.SelectedIndex = 0
+                    cbb_bed_status_SelectedIndexChanged(sender, e)
+                    Return
+                End If
+                waitingListTable.DataSource = dataTable
+            Else
+                ' if not 0, filter data finding isGetBed Data type is bite = 0
+                Dim dataTable As DataTable = backUpDataTable
+                dataTable.DefaultView.RowFilter = "สถานะรอเตียง = 1"
+                ' check data table record found count
+                If dataTable.DefaultView.Count = 0 Then
+                    ' if not found, show message box
+                    MessageBox.Show("ไม่พบข้อมูลผู้ป่วยที่ได้รับเตียงแล้ว", "ไม่พบข้อมูล", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    ' set selected index to 0
+                    cbb_bed_status.SelectedIndex = 0
+                    cbb_bed_status_SelectedIndexChanged(sender, e)
+                    Return
+                End If
+                ' set data to data grid view
+                waitingListTable.DataSource = dataTable
             End If
-            waitingListTable.DataSource = dataTable
-        Else
-            ' if not 0, filter data finding isGetBed Data type is bite = 0
-            Dim dataTable As DataTable = backUpDataTable
-            dataTable.DefaultView.RowFilter = "สถานะรอเตียง = 1"
-            ' check data table record found count
-            If dataTable.DefaultView.Count = 0 Then
-                ' if not found, show message box
-                MessageBox.Show("ไม่พบข้อมูลผู้ป่วยที่ได้รับเตียงแล้ว", "ไม่พบข้อมูล", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                ' set selected index to 0
-                cbb_bed_status.SelectedIndex = 0
-                cbb_bed_status_SelectedIndexChanged(sender, e)
-                Return
-            End If
-            ' set data to data grid view
-            waitingListTable.DataSource = dataTable
         End If
     End Sub
 End Class

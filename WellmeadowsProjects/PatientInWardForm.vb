@@ -4,7 +4,7 @@
         ' if user is not md and cn
         Console.WriteLine(MainForm.mdID & "mdID")
         Console.WriteLine(MainForm.cnID & "cnID")
-        If MainForm.cnID <> "" Then
+        If MainForm.cnID <> "" Or MainForm.isAdmin = True Then
             Console.WriteLine("if")
             btnReport.Visible = True
             btnAdd.Visible = True
@@ -52,8 +52,12 @@
         Dim result As DataTable = StaffForm.sqlQueryDataTable(sqlCode)
         ' set value to data grid view
         pateintInWardTable.DataSource = result
+
         ' set frozen first column
-        pateintInWardTable.Columns(0).Frozen = True
+        If result IsNot Nothing Then
+            pateintInWardTable.Columns(0).Frozen = True
+
+        End If
 
         backUpDataTable = result
 

@@ -104,10 +104,16 @@ Public Class Add_Patient
             Console.WriteLine(pt_date.Value & " date regis")
             Console.WriteLine(pt_birthday.Value & " DOB")
             Me.PatientsTableAdapter.InsertPatient(Pfname, Plname, Paddress, Pgender, Pstatus, Ptel, pt_birthday.Value, pt_date.Value, kinID, localID)
-            Me.PatientsTableAdapter.Fill(Me.WellmeadowsDataSet.Patients)
+
+            ' show message insert success
+            MessageBox.Show("เพิ่มข้อมูลสำเร็จ", "เพิ่มข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' reload this form
+            Patient.Patient_Load(sender, e)
+
             Me.Close()
         Catch ex As Exception
-            MessageBox.Show("Error. please check your data fill", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("กรุณากรอกข้อมูลให้ครบทุกช่อง", "เกิดข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub

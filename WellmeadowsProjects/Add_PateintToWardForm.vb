@@ -5,8 +5,11 @@
         Dim dataTable As DataTable = StaffForm.sqlQueryDataTable(sqlCode)
         ' set value to data grid view
         visitDatagrid.DataSource = dataTable
-        ' frozen first column and last column
-        visitDatagrid.Columns(0).Frozen = True
+
+        If dataTable IsNot Nothing Then
+            ' frozen first column
+            visitDatagrid.Columns(0).Frozen = True
+        End If
 
         ' make data grid can't select all rows
         visitDatagrid.MultiSelect = False
@@ -15,7 +18,7 @@
         wardID_combobox = StaffForm.getWardIDtoCombobox(wardID_combobox)
 
         ' get CNID from main form
-        If MainForm.cnID <> "" Then
+        If MainForm.cnID <> "" Or MainForm.isAdmin = True Then
             cnID.Text = MainForm.cnID
         Else
             ' message box notify that not have permission to open this page

@@ -238,8 +238,8 @@ Partial Class Edit_Staff_Experiences
         '
         Me.btnUpdate.BackColor = System.Drawing.Color.LimeGreen
         Me.btnUpdate.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.btnUpdate.ForeColor = System.Drawing.Color.White
-        Me.btnUpdate.Location = New System.Drawing.Point(552, 600)
+        Me.btnUpdate.ForeColor = System.Drawing.Color.Black
+        Me.btnUpdate.Location = New System.Drawing.Point(956, 48)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(135, 49)

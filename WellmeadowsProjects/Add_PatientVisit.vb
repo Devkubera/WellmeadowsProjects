@@ -56,12 +56,9 @@
             Return
         End If
 
-        ' let say we already have staffID
-        Dim staffID = "S1"
-
         ' sql query to insert data to patient visit table
         Dim sqlCode = $"INSERT INTO Patient_Visits (patientID, staffID, doctorID, wardID, app_date, app_type, status)
-        VALUES ('{visit_p_ID.Text}', '{staffID}', '{visit_d_ID.Text}', '{visit_w_Id.Text}', '{visit_date.Text}', '{visit_type.Text}', 'Active');"
+        VALUES ('{visit_p_ID.Text}', '{MainForm.staffID}', '{visit_d_ID.Text}', '{visit_w_Id.Text}', '{visit_date.Text}', '{visit_type.Text}', 'Active');"
         StaffForm.sqlExecuteNonQuery(sqlCode)
 
         MessageBox.Show("เพิ่มข้อมูลเรียบร้อยแล้ว")

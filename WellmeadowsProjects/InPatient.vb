@@ -53,7 +53,9 @@
         ViewInPa.DataSource = dataTable
 
         ' frozen first and last column
-        ViewInPa.Columns(0).Frozen = True
+        If dataTable IsNot Nothing Then
+            ViewInPa.Columns(0).Frozen = True
+        End If
 
         dataBackup = dataTable
     End Sub
@@ -99,18 +101,32 @@
             Return
         End If
 
-        ' get pwID from selected row
-        Dim pwID As String = ViewInPa.CurrentRow.Cells(0).Value.ToString()
+        ' make sure user want to delete data
+        Dim confirm As DialogResult = MessageBox.Show("คุณต้องการลบข้อมูลใช่หรือไม่", "แจ้งเตือน", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If confirm = DialogResult.No Then
+            Return
+        ElseIf confirm = DialogResult.Yes Then
+            ' get pwID from selected row
+            Dim pwID As String = ViewInPa.CurrentRow.Cells(0).Value.ToString()
 
-        ' delete data in in_patient table
-        Dim sqlCode = $"DELETE FROM In_Patients WHERE pwID = '{pwID}';"
-        StaffForm.sqlExecuteNonQuery(sqlCode)
+            ' delete data in in_patient table
+            Dim sqlCode = $"DELETE FROM In_Patients WHERE pwID = '{pwID}';"
+            StaffForm.sqlExecuteNonQuery(sqlCode)
 
-        'Show messagebox delete success
-        MessageBox.Show("ลบข้อมูลเรียบร้อยแล้ว", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' delete data in patient_ward table
+            sqlCode = $"DELETE FROM Patient_Wards WHERE pwID = '{pwID}';"
+            StaffForm.sqlExecuteNonQuery(sqlCode)
 
-        ' reload data in data grid view
-        InPatient_Load(sender, e)
+            'Show messagebox delete success
+            MessageBox.Show("ลบข้อมูลเรียบร้อยแล้ว", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' reload data in data grid view
+            InPatient_Load(sender, e)
+
+            ' reload data in patient wards form
+            PatientInWardForm.PatientInWardForm_Load(sender, e)
+        End If
+
     End Sub
 
     Private Sub btnUp_Out_ward_Click(sender As Object, e As EventArgs) Handles btnUp_Out_ward.Click

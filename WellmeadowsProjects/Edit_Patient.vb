@@ -47,10 +47,16 @@ Public Class Edit_Patient
             'Patient.ViewPa.Refresh()
             'Patient.Patient_Load(New Object, Nothing)
 
+            ' refresh patient form
+            Patient.Patient_Load(sender, e)
+
+            ' show message อัพเดทสำเร็จ
+            MessageBox.Show("อัพเดทสำเร็จ !", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
             Me.Close()
 
         Catch ex As Exception
-            MessageBox.Show("Error. please check your data fill", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("เกิดข้อผิดพลาด กรุณากรอกข้อมูลให้ครบทุกช่อง", "เกิดข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub

@@ -57,7 +57,12 @@ Public Class Add_InPatient
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        ' write sql code to update data in in_patient table by update with pwID
+
+        ' make sure that all field is not empty
+        If ip_id.Text = "" Or ippw_id.Text = "" Or ipw_id.Text = "" Or ip_date.Text = "" Or ipb_id.Text = "" Or ip_expect.Text = "" Then
+            MessageBox.Show("กรุณากรอกข้อมูลให้ครบ", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
 
         ' sum date_expected and date_place store in variable
         Dim selectedDate As Date = ip_date.Value

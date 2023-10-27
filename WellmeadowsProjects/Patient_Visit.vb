@@ -16,8 +16,8 @@
         FROM Patient_Visits AS PV
         INNER JOIN Patients AS P ON (PV.patientID = P.patientID)
         INNER JOIN Doctors AS D ON (PV.doctorID = D.doctorID)
-        INNER JOIN Staffs AS S ON (D.staffID = S.staffID)
-        WHERE status IS NOT NULL AND status = 'Active'"
+        INNER JOIN Staffs AS S ON (D.staffID = S.staffID)"
+    'WHERE status IS NOT NULL AND status = 'Active'"
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Add_PatientVisit.Show()
     End Sub
@@ -57,7 +57,9 @@
         ViewVisit.DataSource = dataTable
 
         ' frozen first column and last column
-        ViewVisit.Columns(0).Frozen = True
+        If dataTable IsNot Nothing Then
+            ViewVisit.Columns(0).Frozen = True
+        End If
     End Sub
 
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
@@ -79,7 +81,7 @@
 	        PV.status AS สถานะ
         FROM Patient_Visits AS PV
         INNER JOIN Patients AS P ON (PV.patientID = P.patientID)
-        WHERE status IS NOT NULL AND status = 'Active' AND (p.firstName LIKE '%{txtSearch.Text}%' OR p.lastName LIKE '%{txtSearch.Text}%');"
+        WHERE (p.firstName LIKE '%{txtSearch.Text}%' OR p.lastName LIKE '%{txtSearch.Text}%');"
 
             ' fill data grid ViewVisit
             Dim dataTable As DataTable = StaffForm.sqlQueryDataTable(sqlCode)
@@ -94,19 +96,24 @@
             Dim index As Integer = ViewVisit.SelectedRows(0).Index
             ' get selected row id
             Dim visitID As String = ViewVisit.SelectedRows(0).Cells(0).Value.ToString
-            ' get selected row patient id
-            Dim patientID As String = ViewVisit.SelectedRows(0).Cells(1).Value.ToString
-            ' get selected row doctor id
-            Dim doctorID As String = ViewVisit.SelectedRows(0).Cells(4).Value.ToString
-            ' get selected row ward id
-            Dim wardID As String = ViewVisit.SelectedRows(0).Cells(5).Value.ToString
 
+            ' try to delete Patient_Visits with visitID
+            Try
+                ' sql query to delete Patient_Visits
+                Dim sqlDel = $"DELETE FROM Patient_Visits WHERE visitID = '{visitID}';"
+
+                ' execute sql query
+                StaffForm.sqlExecuteNonQuery(sqlDel)
+            Catch ex As Exception
+                MessageBox.Show("ไม่สามารถลบข้อมูลได้")
+                Return
+            End Try
 
             ' sql query to update Patient_Visits status to drop - not use
-            Dim sqlCode3 = $"UPDATE Patient_Visits SET status = 'Drop' WHERE visitID = '{visitID}';"
+            Dim sqlCode = $"UPDATE Patient_Visits SET status = 'Drop' WHERE visitID = '{visitID}';"
 
             ' execute sql query
-            StaffForm.sqlExecuteNonQuery(sqlCode3)
+            StaffForm.sqlExecuteNonQuery(sqlCode)
 
             ' remove selected row from data grid view
             ViewVisit.Rows.RemoveAt(index)

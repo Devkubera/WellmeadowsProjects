@@ -18,16 +18,6 @@ Public Class StaffForm
     End Sub
 
     Public Sub StaffForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Qualificates' table. You can move, or remove it, as needed.
-        'Me.Staff_QualificatesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Qualificates)
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Experiences' table. You can move, or remove it, as needed.
-        'Me.Staff_ExperiencesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Experiences)
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Experiences' table. You can move, or remove it, as needed.
-        'Me.Staff_ExperiencesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Experiences)
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staff_Experiences' table. You can move, or remove it, as needed.
-        'Me.Staff_ExperiencesTableAdapter.Fill(Me.WellmeadowsDataSet.Staff_Experiences)
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staffs' table. You can move, or remove it, as needed.
-        'Me.StaffsTableAdapter.Fill(Me.WellmeadowsDataSet.Staffs)
 
         'connection string
         Using connection As New SqlConnection("Data Source=Zero\DATABASE66;Initial Catalog=Wellmeadows;Integrated Security=True")
@@ -56,6 +46,7 @@ Public Class StaffForm
 
         ' Set default data grid view to show staffs
         cbbEduOrExp.SelectedIndex = 0
+        cbbEduOrExp_SelectedIndexChanged(sender, e)
 
         Dim sqlMsg = "SELECT 
 	            staffID AS 'รหัสเจ้าหน้าที่',
@@ -88,7 +79,12 @@ Public Class StaffForm
         '    btnEdit.Visible = False
         '    btnDel.Visible = False
         'End If
+    End Sub
 
+    Public Sub reloadDataTable(sender As Object, e As EventArgs)
+        ' reload data grid view
+        StaffForm_Load(sender, e)
+        cbbEduOrExp_SelectedIndexChanged(sender, e)
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
@@ -233,7 +229,7 @@ Public Class StaffForm
 
     End Sub
 
-    Private Sub cbbEduOrExp_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbbEduOrExp.SelectedIndexChanged
+    Public Sub cbbEduOrExp_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbbEduOrExp.SelectedIndexChanged
         ' reset data source
         DataGridV1.DataSource = Nothing
 
@@ -439,6 +435,25 @@ Public Class StaffForm
     End Function
 
     Private Sub btnDel_Click(sender As Object, e As EventArgs) Handles btnDel.Click
+        ' delete staff by staffID
+        Dim staffID = DataGridV1.SelectedRows(0).Cells(0).Value.ToString()
+
+        ' delete staff experiences by staffID
+        Dim sqlMsg = $"DELETE FROM Staff_Experiences WHERE staffID = '{staffID}';"
+        sqlExecuteNonQuery(sqlMsg)
+
+        ' delete staff qualificates by staffID
+        sqlMsg = $"DELETE FROM Staff_Qualificates WHERE staffID = '{staffID}';"
+        sqlExecuteNonQuery(sqlMsg)
+
+        sqlMsg = $"DELETE FROM Staffs WHERE staffID = '{staffID}';"
+        sqlExecuteNonQuery(sqlMsg)
+
+        ' show message box
+        MessageBox.Show("ลบข้อมูลเรียบร้อยแล้ว", "ลบข้อมูล", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        ' reload data grid view
+        cbbEduOrExp_SelectedIndexChanged(sender, e)
 
     End Sub
 

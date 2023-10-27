@@ -5,7 +5,7 @@
         wardID_combobox = StaffForm.getWardIDtoCombobox(wardID_combobox)
 
         ' get CNID from main form
-        If MainForm.cnID <> "" Then
+        If MainForm.cnID <> "" Or MainForm.isAdmin = True Then
             cnID.Text = MainForm.cnID
         Else
             ' message box notify that not have permission to open this page
