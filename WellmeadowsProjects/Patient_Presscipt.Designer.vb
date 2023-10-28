@@ -99,11 +99,11 @@ Partial Class Patient_Presscipt
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Prompt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Prompt", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(107, 101)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(230, 40)
+        Me.Label1.Size = New System.Drawing.Size(250, 43)
         Me.Label1.TabIndex = 21
         Me.Label1.Text = "Patient Presscipt"
         '
@@ -217,6 +217,7 @@ Partial Class Patient_Presscipt
         Me.Controls.Add(Me.Label1)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Patient_Presscipt"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Patient_Presscipt"
         CType(Me.ViewPress, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PWPrescriptsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

@@ -190,6 +190,7 @@ Partial Class popup_patientKin
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.pateintKinDG)
         Me.Name = "popup_patientKin"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "popup_patientKin"
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Patient_kinsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

@@ -163,6 +163,7 @@ Partial Class popup_shifts
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "popup_shifts"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "popup_shifts"
         CType(Me.shiftTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ShiftsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

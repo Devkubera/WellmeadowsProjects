@@ -192,6 +192,7 @@ Partial Class popup_supplies
         Me.Controls.Add(Me.supDG)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "popup_supplies"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "popup_supplies"
         CType(Me.supDG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SuppilersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

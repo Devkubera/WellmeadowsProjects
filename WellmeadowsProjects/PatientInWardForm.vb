@@ -10,18 +10,21 @@
             btnAdd.Visible = True
             btnEdit.Visible = True
             btnDel.Visible = True
+            btn_open_inp.Visible = True
         ElseIf MainForm.mdID <> "" Then
             Console.WriteLine("else if")
             btnReport.Visible = True
             btnAdd.Visible = False
             btnEdit.Visible = False
             btnDel.Visible = False
+            btn_open_inp.Visible = True
         Else
             Console.WriteLine("else")
             btnReport.Visible = False
             btnAdd.Visible = False
             btnEdit.Visible = False
             btnDel.Visible = False
+            btn_open_inp.Visible = False
         End If
 
         'TODO: This line of code loads data into the 'WellmeadowsDataSet.Patient_Wards' table. You can move, or remove it, as needed.
@@ -113,7 +116,7 @@
         ElseIf cbbPtype.SelectedIndex = 1 Then
 
             ' check main form CN and MD is available
-            If MainForm.cnID <> "" Or MainForm.mdID <> "" Then
+            If MainForm.cnID <> "" Or MainForm.mdID <> "" Or MainForm.isAdmin = True Then
                 btnReport.Visible = True
             Else
                 btnReport.Visible = False
@@ -149,7 +152,7 @@
         Else
 
             ' check main form CN and MD is available
-            If MainForm.cnID <> "" Or MainForm.mdID <> "" Then
+            If MainForm.cnID <> "" Or MainForm.mdID <> "" Or MainForm.isAdmin = True Then
                 btnReport.Visible = True
             Else
                 btnReport.Visible = False
@@ -270,7 +273,7 @@
         pateintInWardTable.DataSource = dataTable
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_open_inp.Click
         InPatient.Show()
     End Sub
 End Class

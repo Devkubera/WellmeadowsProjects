@@ -148,6 +148,7 @@ Partial Class Add_PateintToWardForm
         '
         'wardID_combobox
         '
+        Me.wardID_combobox.Enabled = False
         Me.wardID_combobox.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.wardID_combobox.FormattingEnabled = True
         Me.wardID_combobox.Location = New System.Drawing.Point(1089, 443)

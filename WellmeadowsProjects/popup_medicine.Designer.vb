@@ -26,11 +26,6 @@ Partial Class popup_medicine
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.medicineDG = New System.Windows.Forms.DataGridView()
-        Me.MedMedicinesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
-        Me.Med_MedicinesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Med_MedicinesTableAdapter()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.MmIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SupplierIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,6 +35,11 @@ Partial Class popup_medicine
         Me.StockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BuyscaleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PriceperunitDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MedMedicinesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
+        Me.Med_MedicinesTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Med_MedicinesTableAdapter()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.medicineDG, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MedMedicinesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,7 +64,7 @@ Partial Class popup_medicine
         Me.Label1.Font = New System.Drawing.Font("Prompt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(25, 54)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(294, 40)
+        Me.Label1.Size = New System.Drawing.Size(310, 43)
         Me.Label1.TabIndex = 21
         Me.Label1.Text = "เลือกข้อมูลที่ท่านต้องการ"
         '
@@ -86,38 +86,6 @@ Partial Class popup_medicine
         Me.medicineDG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.medicineDG.Size = New System.Drawing.Size(936, 258)
         Me.medicineDG.TabIndex = 20
-        '
-        'MedMedicinesBindingSource
-        '
-        Me.MedMedicinesBindingSource.DataMember = "Med_Medicines"
-        Me.MedMedicinesBindingSource.DataSource = Me.WellmeadowsDataSet
-        '
-        'WellmeadowsDataSet
-        '
-        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
-        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Med_MedicinesTableAdapter
-        '
-        Me.Med_MedicinesTableAdapter.ClearBeforeFill = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(641, 58)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(327, 38)
-        Me.TextBox1.TabIndex = 23
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(636, 25)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(143, 30)
-        Me.Label2.TabIndex = 21
-        Me.Label2.Text = "ค้นหาด้วยชื่อยา"
         '
         'MmIDDataGridViewTextBoxColumn
         '
@@ -201,6 +169,38 @@ Partial Class popup_medicine
         Me.PriceperunitDataGridViewTextBoxColumn.ReadOnly = True
         Me.PriceperunitDataGridViewTextBoxColumn.Width = 125
         '
+        'MedMedicinesBindingSource
+        '
+        Me.MedMedicinesBindingSource.DataMember = "Med_Medicines"
+        Me.MedMedicinesBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
+        'WellmeadowsDataSet
+        '
+        Me.WellmeadowsDataSet.DataSetName = "WellmeadowsDataSet"
+        Me.WellmeadowsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Med_MedicinesTableAdapter
+        '
+        Me.Med_MedicinesTableAdapter.ClearBeforeFill = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(641, 58)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(327, 38)
+        Me.TextBox1.TabIndex = 23
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(636, 25)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(143, 30)
+        Me.Label2.TabIndex = 21
+        Me.Label2.Text = "ค้นหาด้วยชื่อยา"
+        '
         'popup_medicine
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -212,6 +212,7 @@ Partial Class popup_medicine
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.medicineDG)
         Me.Name = "popup_medicine"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "popup_medicine"
         CType(Me.medicineDG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MedMedicinesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

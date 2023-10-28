@@ -177,6 +177,7 @@ Partial Class popup_wardstaffs
         Me.Controls.Add(Me.seachbox)
         Me.Controls.Add(Me.Label1)
         Me.Name = "popup_wardstaffs"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "popup_staffs"
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StaffsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

@@ -98,6 +98,7 @@ Partial Class popup_waitingListForm
         Me.Controls.Add(Me.SearchWaiting)
         Me.Controls.Add(Me.waitingListlb)
         Me.Name = "popup_waitingListForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "popup_waitingListForm"
         CType(Me.waitingListTable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

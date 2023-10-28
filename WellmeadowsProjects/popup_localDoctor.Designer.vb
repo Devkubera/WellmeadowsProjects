@@ -161,6 +161,7 @@ Partial Class popup_localDoctor
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.doctorDG)
         Me.Name = "popup_localDoctor"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "popup_localDoctor"
         CType(Me.doctorDG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LocalDoctorsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

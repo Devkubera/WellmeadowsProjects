@@ -213,7 +213,7 @@ Partial Class Add_Presscipt
         Me.Label1.Location = New System.Drawing.Point(508, 37)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(231, 40)
+        Me.Label1.Size = New System.Drawing.Size(240, 43)
         Me.Label1.TabIndex = 120
         Me.Label1.Text = "เพิ่มข้อมูลการให้ยา"
         '
@@ -557,6 +557,7 @@ Partial Class Add_Presscipt
         Me.Controls.Add(Me.Label1)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Add_Presscipt"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add_Presscipt"
         CType(Me.PatientsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()

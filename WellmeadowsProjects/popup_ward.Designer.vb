@@ -143,6 +143,7 @@ Partial Class popup_ward
         Me.Controls.Add(Me.seachbox)
         Me.Controls.Add(Me.Label1)
         Me.Name = "popup_ward"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "popup_ward"
         CType(Me.WardTable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WardsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

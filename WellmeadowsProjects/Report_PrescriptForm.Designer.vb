@@ -24,20 +24,13 @@ Partial Class Report_PrescriptForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.PrescriptReportViewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.WellmeadowsDataSet = New WellmeadowsProjects.WellmeadowsDataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.PrescriptReportViewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Prescript_Report_ViewTableAdapter = New WellmeadowsProjects.WellmeadowsDataSetTableAdapters.Prescript_Report_ViewTableAdapter()
-        Me.PrescriptReportViewBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.PrescriptReportViewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PrescriptReportViewBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PrescriptReportViewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PrescriptReportViewBindingSource
-        '
-        Me.PrescriptReportViewBindingSource.DataMember = "Prescript_Report_View"
-        Me.PrescriptReportViewBindingSource.DataSource = Me.WellmeadowsDataSet
         '
         'WellmeadowsDataSet
         '
@@ -47,25 +40,25 @@ Partial Class Report_PrescriptForm
         'ReportViewer1
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource1.Name = "dataset_prescript_report"
-        ReportDataSource1.Value = Me.PrescriptReportViewBindingSource1
+        ReportDataSource1.Name = "prescriptReportView"
+        ReportDataSource1.Value = Me.PrescriptReportViewBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "WellmeadowsProjects.Report_Prescript.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(4)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
         Me.ReportViewer1.Size = New System.Drawing.Size(1313, 1055)
         Me.ReportViewer1.TabIndex = 0
         '
+        'PrescriptReportViewBindingSource
+        '
+        Me.PrescriptReportViewBindingSource.DataMember = "Prescript_Report_View"
+        Me.PrescriptReportViewBindingSource.DataSource = Me.WellmeadowsDataSet
+        '
         'Prescript_Report_ViewTableAdapter
         '
         Me.Prescript_Report_ViewTableAdapter.ClearBeforeFill = True
-        '
-        'PrescriptReportViewBindingSource1
-        '
-        Me.PrescriptReportViewBindingSource1.DataMember = "Prescript_Report_View"
-        Me.PrescriptReportViewBindingSource1.DataSource = Me.WellmeadowsDataSet
         '
         'Report_PrescriptForm
         '
@@ -73,12 +66,11 @@ Partial Class Report_PrescriptForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1313, 1055)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Report_PrescriptForm"
         Me.Text = "Report_PrescriptForm"
-        CType(Me.PrescriptReportViewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PrescriptReportViewBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PrescriptReportViewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -87,5 +79,4 @@ Partial Class Report_PrescriptForm
     Friend WithEvents WellmeadowsDataSet As WellmeadowsDataSet
     Friend WithEvents PrescriptReportViewBindingSource As BindingSource
     Friend WithEvents Prescript_Report_ViewTableAdapter As WellmeadowsDataSetTableAdapters.Prescript_Report_ViewTableAdapter
-    Friend WithEvents PrescriptReportViewBindingSource1 As BindingSource
 End Class

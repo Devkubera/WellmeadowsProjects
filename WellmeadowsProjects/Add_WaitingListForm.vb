@@ -1,5 +1,5 @@
 ﻿Public Class Add_WaitingListForm
-
+    Public isAddFormWaitingList As Boolean = False
     Private Sub Add_WaitingListForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' load all wardID from get ward ID function in staff Form to wardID combobox
         wardId = StaffForm.getWardIDtoCombobox(wardId)
@@ -13,8 +13,12 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        ' show popup form
-        popup_PatientWard.Show()
+        If isAddFormWaitingList = False Then
+            isAddFormWaitingList = True
+            ' delay 0.8 second
+            Threading.Thread.Sleep(800)
+        End If
+        popup_PatientWard.ShowDialog()
     End Sub
 
     Private Sub addWaitingListPanel_Paint(sender As Object, e As PaintEventArgs) Handles addWaitingListPanel.Paint

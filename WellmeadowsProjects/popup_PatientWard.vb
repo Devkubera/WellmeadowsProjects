@@ -6,20 +6,28 @@ Public Class popup_PatientWard
     Private Sub popup_PatientWard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Patient_WardsTableAdapter.Fill(Me.WellmeadowsDataSet.Patient_Wards)
 
-        ' check pwIDList from WaitingListForm is empty or not
-        If WaitingListForm.pwIDList.Count = 0 Then
-            ' if empty, query all data
-            queryAllData()
-        Else
+        ' check pwIDList from WaitingListForm is empty or this form has open by add_waitingListForm page
+        If WaitingListForm.pwIDList.Count > 0 Or Add_WaitingListForm.isAddFormWaitingList = True Then
             ' if not empty, query data that not in pwIDList
             queryDataNotInList()
+            ' show message box that ไม่พบข้อมูลผู้ป่วยในที่รอเตียง ณ ขณะนี้
+            If pwDG.Rows.Count = 0 Then
+                MessageBox.Show("ไม่พบข้อมูลผู้ป่วยในที่รอเตียง ณ ขณะนี้", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        Else
+            ' if empty, query all data
+            queryAllData()
         End If
 
     End Sub
 
     Private Sub queryDataNotInList()
-        ' create sql string to query patients_ward data and join with patients table to get first name and last name where pwID not in pwIDList
-        Dim sqlCode = "SELECT
+
+        ' check if waitling list array record = 1
+        ' Then, Make it not join with comma by declare new variable store it
+        If WaitingListForm.pwIDList.ToArray.Count = 1 Then
+            ' create sql string to query patients_ward data and join with patients table to get first name and last name where pwID not in pwIDList
+            Dim sqlCode = $"SELECT
 	        pw.pwID AS 'หมายเลขการรักษา',
 	        pw.cnID AS 'หมายเลขหัวหน้าพยาบาล',
 	        pw.patientID AS 'หมายเลขผู้ป่วย',
@@ -31,11 +39,49 @@ Public Class popup_PatientWard
 	        pw.on_ward_date AS 'วันที่ทำการรักษา'
         FROM Patient_Wards AS pw
         INNER JOIN Patients AS p ON (pw.patientID = p.patientID)
-        WHERE pw.pwID NOT IN ('" & String.Join("','", WaitingListForm.pwIDList.ToArray) & "')"
-        ' query data from database
-        Dim dataTable As DataTable = StaffForm.sqlQueryDataTable(sqlCode)
-        ' add data to the data grid view
-        pwDG.DataSource = dataTable
+        WHERE pw.pwID NOT IN ('{String.Join("", WaitingListForm.pwIDList.ToArray)}') AND pw.patientType = 'ผู้ป่วยใน'"
+
+            ' query data from database
+            Dim dataTable As DataTable = StaffForm.sqlQueryDataTable(sqlCode)
+
+            ' check if dataTable is not nothing
+            If dataTable IsNot Nothing Then
+                ' add data to the data grid view
+                pwDG.DataSource = dataTable
+                Console.WriteLine("Add data to pwDG success by queryDataNotInList If")
+            End If
+        Else
+            ' create sql string to query patients_ward data and join with patients table to get first name and last name where pwID not in pwIDList
+            Dim sqlCode = $"SELECT
+	        pw.pwID AS 'หมายเลขการรักษา',
+	        pw.cnID AS 'หมายเลขหัวหน้าพยาบาล',
+	        pw.patientID AS 'หมายเลขผู้ป่วย',
+	        p.firstName AS 'ชื่อผู้ป่วย',
+            p.lastName AS 'นามสกุลผู้ป่วย',
+            pw.visitID AS 'หมายเลขประวัติ',
+	        pw.doctorID AS 'รหัสแพทย์',
+	        pw.wardID AS 'รหัสวอร์ด',
+	        pw.on_ward_date AS 'วันที่ทำการรักษา'
+        FROM Patient_Wards AS pw
+        INNER JOIN Patients AS p ON (pw.patientID = p.patientID)
+        WHERE pw.pwID NOT IN ('{String.Join("','", WaitingListForm.pwIDList.ToArray)}') AND pw.patientType = 'ผู้ป่วยใน'"
+
+            ' query data from database
+            Dim dataTable As DataTable = StaffForm.sqlQueryDataTable(sqlCode)
+
+            ' check if dataTable is not nothing
+            If dataTable IsNot Nothing Then
+                ' add data to the data grid view
+                pwDG.DataSource = dataTable
+                Console.WriteLine("Add data to pwDG success by queryDataNotInList Else")
+            End If
+        End If
+
+
+        ' console.writeline all pwID in pwIDList
+        For Each pwID As String In WaitingListForm.pwIDList
+            Console.WriteLine("pwID : " + pwID)
+        Next
 
     End Sub
 
@@ -97,5 +143,18 @@ Public Class popup_PatientWard
             Add_Presscipt.SetDisabledPW()
             Me.Close()
         End If
+    End Sub
+
+    'making sub data work on this form is close
+    Private Sub popup_PatientWard_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ' If WaitingListForm.isAddFormWaitingList = True Then make it false
+        ' It's mean this form has open by add_waitingListForm page
+        ' We don't need out-patient data in this form But in pw_prescript page it is necessary
+        If Add_WaitingListForm.isAddFormWaitingList = True Then
+            Add_WaitingListForm.isAddFormWaitingList = False
+            Console.WriteLine("Make isAddFormWaitingList = False")
+        End If
+
+        Console.WriteLine("Popup patient ward form is closed")
     End Sub
 End Class

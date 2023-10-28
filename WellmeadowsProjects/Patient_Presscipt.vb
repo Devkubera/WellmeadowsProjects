@@ -56,11 +56,7 @@ Public Class Patient_Presscipt
     End Sub
 
     Public Sub Patient_Presscipt_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Using connection As New SqlConnection(sqlConn) ' แทนที่ Your_Connection_String ด้วยข้อมูลการเชื่อมต่อฐานข้อมูลของคุณ
-            connection.Open()
-
-            ' คำสั่ง SQL สำหรับรวมข้อมูลจากตาราง Doctors และ Staffs
-            Dim sql As String = "SELECT
+        Dim sqlCode As String = "SELECT
 		P.ID AS หมายเลขใบจ่ายยา,
         PW.pwID As หมายเลขผู้ป่วยในวอร์ด,
 	    M.mmID As หมายเลขยา,
@@ -89,32 +85,13 @@ Public Class Patient_Presscipt
         INNER JOIN ChargeNurses AS CN ON P.cnID = CN.cnID
 		INNER JOIN Staffs AS CNN ON CN.staffID = CNN.staffID;"
 
-            ' สร้าง SqlDataAdapter เพื่อดึงข้อมูล
-            Dim adapter As New SqlDataAdapter(sql, connection)
-
-            ' สร้าง DataTable เพื่อเก็บข้อมูล
-            Dim dataTable As New DataTable()
-            adapter.Fill(dataTable)
-
-            ' แสดงข้อมูลบน DataGridView
+        Dim dataTable As DataTable = sqlQueryDataTable(sqlCode)
+        ' check if data table is empty
+        If dataTable IsNot Nothing Then
             ViewPress.DataSource = dataTable
-
-            ' ปิดการเชื่อมต่อ
-            connection.Close()
-
-        End Using
-
-
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Med_Medicines' table. You can move, or remove it, as needed.
-        Me.Med_MedicinesTableAdapter.Fill(Me.WellmeadowsDataSet.Med_Medicines)
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Patients' table. You can move, or remove it, as needed.
-        Me.PatientsTableAdapter.Fill(Me.WellmeadowsDataSet.Patients)
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.PW_Prescripts' table. You can move, or remove it, as needed.
-        Me.PW_PrescriptsTableAdapter.Fill(Me.WellmeadowsDataSet.PW_Prescripts)
-
-
-
-
+        Else
+            MessageBox.Show("ไม่พบข้อมูลใบจ่ายยา", "แจ้งเตือน", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click

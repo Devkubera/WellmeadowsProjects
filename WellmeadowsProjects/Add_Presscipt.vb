@@ -97,7 +97,7 @@ Public Class Add_Presscipt
 
         Me.PW_PrescriptsTableAdapter.InsertPresscript(medicineID, pwID, doctorID, MainForm.cnID, Mdosage, MstartDate, MendDate, Mdesc)
 
-        Me.PW_PrescriptsTableAdapter.Fill(Me.WellmeadowsDataSet.PW_Prescripts)
+        'Me.PW_PrescriptsTableAdapter.Fill(Me.WellmeadowsDataSet.PW_Prescripts)
         MessageBox.Show("ข้อมูลได้ถูกเพิ่มแล้ว", "บันทึกข้อมูลสำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         ' refresh patient presscript data
@@ -115,18 +115,6 @@ Public Class Add_Presscipt
     End Sub
 
     Private Sub Add_Presscipt_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Patient_Wards' table. You can move, or remove it, as needed.
-        Me.Patient_WardsTableAdapter.Fill(Me.WellmeadowsDataSet.Patient_Wards)
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Doctors' table. You can move, or remove it, as needed.
-        Me.DoctorsTableAdapter.Fill(Me.WellmeadowsDataSet.Doctors)
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.PW_Prescripts' table. You can move, or remove it, as needed.
-        Me.PW_PrescriptsTableAdapter.Fill(Me.WellmeadowsDataSet.PW_Prescripts)
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Med_Medicines' table. You can move, or remove it, as needed.
-        Me.Med_MedicinesTableAdapter.Fill(Me.WellmeadowsDataSet.Med_Medicines)
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Staffs' table. You can move, or remove it, as needed.
-        Me.StaffsTableAdapter.Fill(Me.WellmeadowsDataSet.Staffs)
-        'TODO: This line of code loads data into the 'WellmeadowsDataSet.Patients' table. You can move, or remove it, as needed.
-        Me.PatientsTableAdapter.Fill(Me.WellmeadowsDataSet.Patients)
 
     End Sub
 

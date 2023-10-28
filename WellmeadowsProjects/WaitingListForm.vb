@@ -48,11 +48,6 @@
         ' back up data table
         backUpDataTable = dataTable
 
-        ' get all pwID in wating list data grid view
-
-        For Each row As DataGridViewRow In waitingListTable.Rows
-            pwIDList.Add(row.Cells(0).Value)
-        Next
 
         If dataTable Is Nothing Then
             ' if no record found
@@ -60,6 +55,13 @@
         Else
             ' frozen first column
             waitingListTable.Columns(0).Frozen = True
+            ' get all pwID in wating list data grid view
+            For Each row As DataGridViewRow In waitingListTable.Rows
+                If row.Cells(0).Value Is Nothing Or row.Cells(0).Value = "" Then
+                Else
+                    pwIDList.Add(row.Cells(0).Value)
+                End If
+            Next
         End If
 
         ' set cbb bed status default value

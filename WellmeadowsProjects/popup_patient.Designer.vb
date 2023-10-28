@@ -212,7 +212,7 @@ Partial Class popup_patient
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.patientDG)
         Me.Name = "popup_patient"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "popup_patient"
         CType(Me.patientDG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PatientsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

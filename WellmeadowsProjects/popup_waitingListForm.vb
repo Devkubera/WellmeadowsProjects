@@ -12,7 +12,7 @@
         FROM In_Patients AS INP
         INNER JOIN Patient_Wards AS PW ON (INP.pwID = PW.pwID)
         INNER JOIN Patients AS P ON (PW.patientID = P.patientID)
-        WHERE inp.isGetBed = 0"
+        WHERE inp.isGetBed = 0 AND PW.patientType = 'ผู้ป่วยใน'"
 
         ' query data from database
         Dim dataTable As DataTable = StaffForm.sqlQueryDataTable(sqlCode)

@@ -40,28 +40,28 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
+              <Width>1.71683cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.135cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.865cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.97984cm</Width>
+            </TablixColumn>
+            <TablixColumn>
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.88893cm</Width>
-            </TablixColumn>
-            <TablixColumn>
               <Width>2.5cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.90841cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.5cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>3.28317cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>3.897cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -137,7 +137,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ชื่อผู้ป่วย</Value>
+                              <Value>ชื่อ นามสกุล</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -160,36 +160,6 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox12">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>วอร์ด</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox12</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
                     <Textbox Name="Textbox10">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -197,7 +167,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ชื่อยา/ปริมาณ</Value>
+                              <Value>วอร์ด</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -227,7 +197,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>วิธีใช้</Value>
+                              <Value>ชื่อยาและปริมาณ</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -257,7 +227,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>วันที่เริ่มให้ยา</Value>
+                              <Value>วิธีการใช้</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -265,6 +235,36 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox14</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox12">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>วันที่เริ่มให้ยา</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox12</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -375,21 +375,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ชื่อผู้ป่วย">
+                    <Textbox Name="ชื่อ_นามสกุล">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ชื่อผู้ป่วย.Value</Value>
+                              <Value>=Fields!ชื่อ_นามสกุล.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ชื่อผู้ป่วย</rd:DefaultName>
+                      <rd:DefaultName>ชื่อ_นามสกุล</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -465,21 +465,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="วิธีใช้">
+                    <Textbox Name="วิธีการใช้">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!วิธีใช้.Value</Value>
+                              <Value>=Fields!วิธีการใช้.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>วิธีใช้</rd:DefaultName>
+                      <rd:DefaultName>วิธีการใช้</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -525,21 +525,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="วันที่หยุดยา">
+                    <Textbox Name="วันที่หยุดให้ยา">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!วันที่หยุดยา.Value</Value>
+                              <Value>=Fields!วันที่หยุดให้ยา.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>วันที่หยุดยา</rd:DefaultName>
+                      <rd:DefaultName>วันที่หยุดให้ยา</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -579,11 +579,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>dataset_prescript_report</DataSetName>
-        <Top>4.56353cm</Top>
-        <Left>0.61329cm</Left>
+        <DataSetName>prescriptReportView</DataSetName>
+        <Top>4.47887cm</Top>
+        <Left>1.71396cm</Left>
         <Height>1.2cm</Height>
-        <Width>22.9775cm</Width>
+        <Width>19.69667cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -617,7 +617,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="dataset_prescript_report">
+    <DataSet Name="prescriptReportView">
       <Query>
         <DataSourceName>WellmeadowsDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -639,21 +639,21 @@
           <DataField>วันที่เริ่มให้ยา</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="ชื่อผู้ป่วย">
-          <DataField>ชื่อผู้ป่วย</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="วิธีใช้">
-          <DataField>วิธีใช้</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="วันที่หยุดยา">
-          <DataField>วันที่หยุดยา</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
         <Field Name="ชื่อยาและปริมาณ">
           <DataField>ชื่อยาและปริมาณ</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ชื่อ_นามสกุล">
+          <DataField>ชื่อ_นามสกุล</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="วิธีการใช้">
+          <DataField>วิธีการใช้</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="วันที่หยุดให้ยา">
+          <DataField>วันที่หยุดให้ยา</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

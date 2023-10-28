@@ -72,7 +72,7 @@ Partial Class Edit_Presscript
         Me.btnEdit.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEdit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.btnEdit.Location = New System.Drawing.Point(1109, 29)
-        Me.btnEdit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEdit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(160, 46)
         Me.btnEdit.TabIndex = 46
@@ -86,7 +86,7 @@ Partial Class Edit_Presscript
         Me.Label1.Location = New System.Drawing.Point(517, 39)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(263, 40)
+        Me.Label1.Size = New System.Drawing.Size(273, 43)
         Me.Label1.TabIndex = 34
         Me.Label1.Text = "แก้ไขข้อมูลการจ่ายยา"
         '
@@ -114,7 +114,7 @@ Partial Class Edit_Presscript
         Me.btnCheck_doc.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheck_doc.ForeColor = System.Drawing.Color.AliceBlue
         Me.btnCheck_doc.Location = New System.Drawing.Point(890, 152)
-        Me.btnCheck_doc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCheck_doc.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCheck_doc.Name = "btnCheck_doc"
         Me.btnCheck_doc.Size = New System.Drawing.Size(188, 38)
         Me.btnCheck_doc.TabIndex = 207
@@ -147,7 +147,7 @@ Partial Class Edit_Presscript
         '
         Me.doc_firstname.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.doc_firstname.Location = New System.Drawing.Point(799, 248)
-        Me.doc_firstname.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.doc_firstname.Margin = New System.Windows.Forms.Padding(4)
         Me.doc_firstname.Name = "doc_firstname"
         Me.doc_firstname.ReadOnly = True
         Me.doc_firstname.Size = New System.Drawing.Size(188, 38)
@@ -168,7 +168,7 @@ Partial Class Edit_Presscript
         '
         Me.doc_lastname.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.doc_lastname.Location = New System.Drawing.Point(1038, 248)
-        Me.doc_lastname.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.doc_lastname.Margin = New System.Windows.Forms.Padding(4)
         Me.doc_lastname.Name = "doc_lastname"
         Me.doc_lastname.ReadOnly = True
         Me.doc_lastname.Size = New System.Drawing.Size(188, 38)
@@ -180,7 +180,7 @@ Partial Class Edit_Presscript
         Me.btnCheck_medicine.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheck_medicine.ForeColor = System.Drawing.Color.AliceBlue
         Me.btnCheck_medicine.Location = New System.Drawing.Point(243, 415)
-        Me.btnCheck_medicine.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCheck_medicine.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCheck_medicine.Name = "btnCheck_medicine"
         Me.btnCheck_medicine.Size = New System.Drawing.Size(188, 38)
         Me.btnCheck_medicine.TabIndex = 201
@@ -193,7 +193,7 @@ Partial Class Edit_Presscript
         Me.btnCheck_patient.Font = New System.Drawing.Font("Prompt", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCheck_patient.ForeColor = System.Drawing.Color.AliceBlue
         Me.btnCheck_patient.Location = New System.Drawing.Point(243, 147)
-        Me.btnCheck_patient.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCheck_patient.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCheck_patient.Name = "btnCheck_patient"
         Me.btnCheck_patient.Size = New System.Drawing.Size(188, 38)
         Me.btnCheck_patient.TabIndex = 200
@@ -229,7 +229,7 @@ Partial Class Edit_Presscript
         Me.m_method.FormattingEnabled = True
         Me.m_method.Items.AddRange(New Object() {"Oral", "Skin"})
         Me.m_method.Location = New System.Drawing.Point(141, 598)
-        Me.m_method.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.m_method.Margin = New System.Windows.Forms.Padding(4)
         Me.m_method.Name = "m_method"
         Me.m_method.Size = New System.Drawing.Size(264, 38)
         Me.m_method.TabIndex = 197
@@ -282,7 +282,7 @@ Partial Class Edit_Presscript
         '
         Me.pt_firstName.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pt_firstName.Location = New System.Drawing.Point(148, 332)
-        Me.pt_firstName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pt_firstName.Margin = New System.Windows.Forms.Padding(4)
         Me.pt_firstName.Name = "pt_firstName"
         Me.pt_firstName.ReadOnly = True
         Me.pt_firstName.Size = New System.Drawing.Size(188, 38)
@@ -303,7 +303,7 @@ Partial Class Edit_Presscript
         '
         Me.m_dosage.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.m_dosage.Location = New System.Drawing.Point(461, 600)
-        Me.m_dosage.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.m_dosage.Margin = New System.Windows.Forms.Padding(4)
         Me.m_dosage.Name = "m_dosage"
         Me.m_dosage.Size = New System.Drawing.Size(277, 38)
         Me.m_dosage.TabIndex = 190
@@ -323,7 +323,7 @@ Partial Class Edit_Presscript
         '
         Me.m_name.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.m_name.Location = New System.Drawing.Point(461, 517)
-        Me.m_name.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.m_name.Margin = New System.Windows.Forms.Padding(4)
         Me.m_name.Name = "m_name"
         Me.m_name.ReadOnly = True
         Me.m_name.Size = New System.Drawing.Size(277, 38)
@@ -344,7 +344,7 @@ Partial Class Edit_Presscript
         '
         Me.m_id.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.m_id.Location = New System.Drawing.Point(140, 517)
-        Me.m_id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.m_id.Margin = New System.Windows.Forms.Padding(4)
         Me.m_id.Name = "m_id"
         Me.m_id.ReadOnly = True
         Me.m_id.Size = New System.Drawing.Size(265, 38)
@@ -365,7 +365,7 @@ Partial Class Edit_Presscript
         '
         Me.m_desc.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.m_desc.Location = New System.Drawing.Point(796, 517)
-        Me.m_desc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.m_desc.Margin = New System.Windows.Forms.Padding(4)
         Me.m_desc.Name = "m_desc"
         Me.m_desc.Size = New System.Drawing.Size(416, 117)
         Me.m_desc.TabIndex = 184
@@ -386,7 +386,7 @@ Partial Class Edit_Presscript
         '
         Me.pt_lastName.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pt_lastName.Location = New System.Drawing.Point(387, 332)
-        Me.pt_lastName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pt_lastName.Margin = New System.Windows.Forms.Padding(4)
         Me.pt_lastName.Name = "pt_lastName"
         Me.pt_lastName.ReadOnly = True
         Me.pt_lastName.Size = New System.Drawing.Size(188, 38)
@@ -407,7 +407,7 @@ Partial Class Edit_Presscript
         '
         Me.pt_id.Font = New System.Drawing.Font("Prompt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pt_id.Location = New System.Drawing.Point(148, 245)
-        Me.pt_id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pt_id.Margin = New System.Windows.Forms.Padding(4)
         Me.pt_id.Name = "pt_id"
         Me.pt_id.ReadOnly = True
         Me.pt_id.Size = New System.Drawing.Size(188, 38)
@@ -501,6 +501,7 @@ Partial Class Edit_Presscript
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Edit_Presscript"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit_Presscript"
         CType(Me.PW_PrescriptsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WellmeadowsDataSet, System.ComponentModel.ISupportInitialize).EndInit()

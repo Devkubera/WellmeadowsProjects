@@ -96,6 +96,7 @@ Partial Class popup_PatientWard
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.pwDG)
         Me.Name = "popup_PatientWard"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "popup_PatientWard"
         CType(Me.pwDG, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PatientWardsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

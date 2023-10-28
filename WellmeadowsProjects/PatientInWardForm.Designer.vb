@@ -27,7 +27,7 @@ Partial Class PatientInWardForm
         Me.searchBox = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_open_inp = New System.Windows.Forms.Button()
         Me.btnDel = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnReport = New System.Windows.Forms.Button()
@@ -50,7 +50,7 @@ Partial Class PatientInWardForm
         Me.patientInWardPanel.Controls.Add(Me.searchBox)
         Me.patientInWardPanel.Controls.Add(Me.Label2)
         Me.patientInWardPanel.Controls.Add(Me.Label1)
-        Me.patientInWardPanel.Controls.Add(Me.Button1)
+        Me.patientInWardPanel.Controls.Add(Me.btn_open_inp)
         Me.patientInWardPanel.Controls.Add(Me.btnDel)
         Me.patientInWardPanel.Controls.Add(Me.btnEdit)
         Me.patientInWardPanel.Controls.Add(Me.btnReport)
@@ -93,18 +93,18 @@ Partial Class PatientInWardForm
         Me.Label1.TabIndex = 37
         Me.Label1.Text = "ประเภทผู้ป่วย"
         '
-        'Button1
+        'btn_open_inp
         '
-        Me.Button1.BackColor = System.Drawing.Color.Black
-        Me.Button1.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(1019, 28)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(223, 46)
-        Me.Button1.TabIndex = 36
-        Me.Button1.Text = "ข้อมูลผู้ป่วยใน"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btn_open_inp.BackColor = System.Drawing.Color.Black
+        Me.btn_open_inp.Font = New System.Drawing.Font("Prompt", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_open_inp.ForeColor = System.Drawing.Color.White
+        Me.btn_open_inp.Location = New System.Drawing.Point(1019, 28)
+        Me.btn_open_inp.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_open_inp.Name = "btn_open_inp"
+        Me.btn_open_inp.Size = New System.Drawing.Size(223, 46)
+        Me.btn_open_inp.TabIndex = 36
+        Me.btn_open_inp.Text = "ข้อมูลผู้ป่วยใน"
+        Me.btn_open_inp.UseVisualStyleBackColor = False
         '
         'btnDel
         '
@@ -261,7 +261,7 @@ Partial Class PatientInWardForm
     Friend WithEvents pateintInWardTable As DataGridView
     Friend WithEvents cbbPtype As ComboBox
     Friend WithEvents patientInWardlb As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn_open_inp As Button
     Friend WithEvents WellmeadowsDataSet As WellmeadowsDataSet
     Friend WithEvents Patient_WardsBindingSource As BindingSource
     Friend WithEvents Patient_WardsTableAdapter As WellmeadowsDataSetTableAdapters.Patient_WardsTableAdapter
