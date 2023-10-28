@@ -653,8 +653,8 @@ VALUES
 -- Generate mockup data for Med_Medicines table
 INSERT INTO Med_Medicines (supplierID, name, description, dosage, method, stock, buy_scale, price_per_unit)
 VALUES 
-  (1, N'ยาแก้ปวดท้อง', N'ยาแก้ปวดท้อง 10 มิลลิกรัม', 10, N'น้ำ', 50, 1.3, 15.00),
-  (2, N'ยาลดไข้', N'ยาลดไข้ 500 มิลลิกรัม', 5, N'เม็ด', 40, 1.4, 10.00);
+  (1, N'ยาแก้ปวดท้อง', N'ยาแก้ปวดท้อง 10 มิลลิกรัม', 10, N'รับประทาน', 50, 1.3, 15.00),
+  (2, N'ยาลดไข้', N'ยาลดไข้ 500 มิลลิกรัม', 5, N'รับประทาน', 40, 1.4, 10.00);
 
 -- Generate mockup data for PW_Prescripts table
 INSERT INTO PW_Prescripts (mmID, pwID, doctorID, cnID, dosage, startDate, endDate, createAT,descript)
@@ -741,30 +741,15 @@ WHERE
 	ip.isGetBed = 0;
 
 --Prescript_Report
-CREATE VIEW Prescript_Report_View AS
-SELECT
-    ROW_NUMBER() OVER (ORDER BY ip.pwID) AS ลำดับ,
-    p.patientID AS หมายเลขผู้ป่วย,
-    CONCAT(pt.firstName, ' ', pt.lastName) AS ชื่อ_นามสกุล,
-    w.wardName AS วอร์ด,
-     CONCAT(mm.name, ' / ', pwp.dosage) AS ชื่อยาและปริมาณ,
-	 mm.method AS วิธีการใช้,
-	 pwp.startDate AS วันที่เริ่มให้ยา,
-	 pwp.endDate AS วันที่หยุดให้ยา
-FROM
-    In_Patients ip
-JOIN
-    Patient_Wards p  ON ip.pwID = p.pwID
-JOIN
-    Patients pt ON pt.patientID = p.patientID
-JOIN 
-	Wards w ON p.wardID = w.wardID
-JOIN 
-	Beds b ON b.bedID = ip.bedID
-JOIN
-	PW_Prescripts pwp ON pwp.pwID = p.pwID
-JOIN
-	Med_Medicines mm ON mm.mmID = pwp.mmID;
+	CREATE VIEW Prescript_Report_View AS
+	SELECT ROW_NUMBER() OVER (ORDER BY ip.pwID) AS ลำดับ, p.patientID AS หมายเลขผู้ป่วย, CONCAT(pt.firstName, ' ', pt.lastName) AS ชื่อ_นามสกุล, w.wardName AS วอร์ด, CONCAT(mm.name, ' / ', pwp.dosage) AS ชื่อยาและปริมาณ, mm.method AS วิธีการใช้, 
+	pwp.startDate AS วันที่เริ่มให้ยา, pwp.endDate AS วันที่หยุดให้ยา
+	FROM		  PW_Prescripts ip JOIN
+                  Patient_Wards p ON ip.pwID = p.pwID JOIN
+                  Patients pt ON pt.patientID = p.patientID JOIN
+                  Wards w ON p.wardID = w.wardID JOIN
+                  PW_Prescripts pwp ON pwp.pwID = p.pwID JOIN
+                  Med_Medicines mm ON mm.mmID = pwp.mmID;
 
 
 -- dashboard
