@@ -3,7 +3,8 @@ Imports System.Diagnostics.Eventing
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class StaffForm
-    Public sqlConn = "Data Source=Zero\DATABASE66;Initial Catalog=Wellmeadows;Integrated Security=True"
+    Dim sqlClass As New SqlConnectionStr()
+    Public sqlConn = sqlClass.sqlConn
     Public staffDataSourceBackup As DataTable
 
     Private Sub btnAdd_Click_1(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -19,8 +20,12 @@ Public Class StaffForm
 
     Public Sub StaffForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'connection string
-        Using connection As New SqlConnection("Data Source=Zero\DATABASE66;Initial Catalog=Wellmeadows;Integrated Security=True")
+        ' get sql connection string
+        Dim sqlClass As New SqlConnectionStr()
+        Dim sqlConn = sqlClass.sqlConn
+
+        'making connection string
+        Using connection As New SqlConnection(sqlConn)
             connection.Open()
             Try
                 ' Set deafault combobox edu level
@@ -357,7 +362,7 @@ Public Class StaffForm
                 ' สร้าง SqlDataAdapter เพื่อดึงข้อมูล
                 Dim adapter As New SqlDataAdapter(sql, connection)
 
-                adapter.Fill(DataTable)
+                adapter.Fill(dataTable)
 
             Catch ex As Exception
                 Console.WriteLine("Error to fetch data : " & ex.Message)

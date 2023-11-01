@@ -1,7 +1,10 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class LoginPage
-    Dim constr As String = "Data Source=Zero\DATABASE66;Initial Catalog=Wellmeadows;Integrated Security=True"
+    ' get sql connection string
+    Dim sqlClass As New SqlConnectionStr()
+    Dim sqlConn = sqlClass.sqlConn
+    Dim constr = sqlConn
 
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
         Dim staffIDValue As String = staffID.Text

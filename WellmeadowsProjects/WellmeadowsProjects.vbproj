@@ -450,6 +450,7 @@
     <Compile Include="Report_WaitinglistForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="sqlConnString.vb" />
     <Compile Include="Supplies.Designer.vb">
       <DependentUpon>Supplies.vb</DependentUpon>
     </Compile>

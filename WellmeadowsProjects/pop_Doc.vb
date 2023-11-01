@@ -3,8 +3,10 @@
 Public Class pop_Doc
     Public backupData As DataTable
     Public DocsData As New Dictionary(Of String, String)
-    Public sqlConn As String = "Data Source=Zero\DATABASE66;Initial Catalog=Wellmeadows;Integrated Security=True"
 
+    ' get sql connection string
+    Dim sqlClass As New SqlConnectionStr()
+    Public sqlConn = sqlClass.sqlConn
     Private Sub pop_Doc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim sqlCode = "SELECT D.doctorID AS 'หมายเลขแพทย์', S.firstName AS 'ชื่อ', S.lastName AS 'สกุล'

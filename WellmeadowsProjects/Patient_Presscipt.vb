@@ -3,8 +3,9 @@ Imports WellmeadowsProjects.WellmeadowsDataSetTableAdapters
 
 Public Class Patient_Presscipt
     Public psData As New Dictionary(Of String, String)
-    Public sqlConn As String = "Data Source=Zero\DATABASE66;Initial Catalog=Wellmeadows;Integrated Security=True"
-
+    ' get sql connection string
+    Dim sqlClass As New SqlConnectionStr()
+    Public sqlConn = sqlClass.sqlConn
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
 

@@ -2,7 +2,9 @@
 
 Public Class popup_PatientWard
     Public pwData As New Dictionary(Of String, String)
-    Public sqlConn As String = "Data Source=Zero\DATABASE66;Initial Catalog=Wellmeadows;Integrated Security=True"
+    ' get sql connection string
+    Dim sqlClass As New SqlConnectionStr()
+    Public sqlConn As String = sqlClass.sqlConn
     Private Sub popup_PatientWard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Patient_WardsTableAdapter.Fill(Me.WellmeadowsDataSet.Patient_Wards)
 
